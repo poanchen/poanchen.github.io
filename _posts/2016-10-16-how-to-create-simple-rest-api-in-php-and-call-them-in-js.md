@@ -8,7 +8,9 @@ date: 2016-10-16
 
 In this post, we are going to talk about how we can create a simple REST API in PHP and call them in JavaScript using various technologies. For example, using **XMLHttpRequest**, **jQuery AJAX** and **AngularJS Ajax**. In order to create a simple REST API that might actually be used in practice, we are going to use WordPress API namely the [username_exists()](https://codex.wordpress.org/Function_Reference/username_exists) function that allow us to check if the username exist in a WordPress database and return true if the username exists or false otherwise. For simplicity, we are going to skip on how to build a WordPress site, and go straight to writing the PHP code for the simple REST API.
 <br>
+
 ## PHP code for simple REST API
+
 <pre>
   <code class="php">
     // Include the wp-load.php so that we can use username_exists() function in WordPress API
@@ -38,7 +40,9 @@ An example of a response from this simple REST API is as follows, or you may cli
   </code>
 </pre>
 In this way, now we have a really simple REST API that allow us to check if the username exist or not. This is especially useful in registration form where we allow the user to know if the username exist or not before they submit the form. This can be done using JavaScript. First example that I would like to show is using **XMLHttpRequest**. Here is a sample code that does the job.<br>
+
 ## Code for using XMLHttpRequest
+
 <pre>
   <code class="html">
     &lt;input type="text" id="username" name="username" placeholder="username"&gt;
@@ -75,7 +79,9 @@ In this way, now we have a really simple REST API that allow us to check if the 
 Live link are [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistXML.html).<br>
 As the user type, they may immediately see if the username is taken or not. An example of taken username is 'test'!<br>
 Another example that I would like to show is using **jQuery AJAX**. Here is a sample code that does the job.<br>
+
 ## Code for using jQuery AJAX
+
 <pre>
   <code class="html">
     &lt;input type="text" id="username" name="username" placeholder="username"&gt;
@@ -118,7 +124,9 @@ Another example that I would like to show is using **jQuery AJAX**. Here is a sa
 Live link are [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html).<br>
 As the user type, they may immediately see if the username is taken or not. An example of taken username is ‘test’!<br>
 Another example that I would like to show is using **AngularJS Ajax**. Here is a sample code that does the job.<br>
+
 ## Code for using AngularJS Ajax
+
 <pre>
   <code class="html">
     &lt;div ng-app="usernameApp" ng-controller="usernameController"&gt;
@@ -155,10 +163,15 @@ Another example that I would like to show is using **AngularJS Ajax**. Here is a
 </pre>
 Live link are [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistAngular.html).<br>
 As the user type, they may immediately see if the username is taken or not. An example of taken username is ‘test’!<br>
+
 ## Wrapping Up
+
 Hopefully this guide has given you the confidence to do many other things with querying a simple REST API using various technologies like pure JavaScript with XMLHttpRequest or AJAX call via jQuery or AngularJS Ajax. Please go ahead and take a look at the code and add more things to it to make it do more interesting things. I am sure that you will start getting the hang of it while you add those new things. I hope that this post has helped you and good luck to you!
+
 ## Resources
+
 I'll try to keep this list current and up to date. If you know of a great resource you'd like to share or notice a broken link, please [get in touch](https://github.com/poanchen).
+
 ### WordPress APIs
 * [WordPress APIs « WordPress Codex](https://codex.wordpress.org/WordPress_APIs) by [WordPress](https://wordpress.org/)
 
