@@ -6,7 +6,7 @@ author_url: https://github.com/poanchen
 date: 2016-10-16
 ---
 
-In this post, we are going to talk about how we can create a simple REST API in PHP and call them in JavaScript using various technologies. For example, using **XMLHttpRequest**, **jQuery AJAX** and **AngularJS Ajax**. In order to create a simple REST API that might actually be used in practice, we are going to use WordPress API namely the [username_exists()](https://codex.wordpress.org/Function_Reference/username_exists) function that allow us to check if the username exist in a WordPress database and return true if the username exists or false otherwise. For simplicity, we are going to skip on how to build a WordPress site, and go straight to writing the PHP code for the simple REST API.
+In this post, we are going to talk about how we can create a simple REST API in PHP and call them in JavaScript using various technologies. For example, using **XMLHttpRequest**, **jQuery AJAX** and **AngularJS AJAX**. In order to create a simple REST API that might actually be used in practice, we are going to use WordPress API namely the [username_exists()](https://codex.wordpress.org/Function_Reference/username_exists) function that allow us to check if the username exist in a WordPress database and return true if the username exists or false otherwise. For simplicity, we are going to skip on how to build a WordPress site, and go straight to writing the PHP code for the simple REST API.
 <br>
 
 ## PHP code for simple REST API
@@ -123,9 +123,9 @@ Another example that I would like to show is using **jQuery AJAX**. Here is a sa
 </pre>
 Live link are [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html).<br>
 As the user type, they may immediately see if the username is taken or not. An example of taken username is ‘test’!<br>
-Another example that I would like to show is using **AngularJS Ajax**. Here is a sample code that does the job.<br>
+Another example that I would like to show is using **AngularJS AJAX**. Here is a sample code that does the job.<br>
 
-## Code for using AngularJS Ajax
+## Code for using AngularJS AJAX
 
 <pre>
   <code class="html">
@@ -166,7 +166,7 @@ As the user type, they may immediately see if the username is taken or not. An e
 
 ## Wrapping Up
 
-Hopefully this guide has given you the confidence to do many other things with querying a simple REST API using various technologies like pure JavaScript with XMLHttpRequest or AJAX call via jQuery or AngularJS Ajax. Please go ahead and take a look at the code and add more things to it to make it do more interesting things. I am sure that you will start getting the hang of it while you add those new things. I hope that this post has helped you and good luck to you!
+Hopefully this guide has given you the confidence to do many other things with querying a simple REST API using various technologies like pure JavaScript with XMLHttpRequest or AJAX call via jQuery or AngularJS AJAX. Please go ahead and take a look at the code and add more things to it to make it do more interesting things. I am sure that you will start getting the hang of it while you add those new things. I hope that this post has helped you and good luck to you!
 
 ## Resources
 
@@ -185,5 +185,5 @@ I'll try to keep this list current and up to date. If you know of a great resour
 ### jQuery AJAX
 * [jQuery.ajax() - jQuery API Documentation](http://api.jquery.com/jquery.ajax/) by [jQuery](http://jquery.com/)
 
-### AngularJS Ajax
+### AngularJS AJAX
 * [AngularJS Documentation for $http](https://docs.angularjs.org/api/ng/service/$http) by [AngularJS](https://angularjs.org/)
