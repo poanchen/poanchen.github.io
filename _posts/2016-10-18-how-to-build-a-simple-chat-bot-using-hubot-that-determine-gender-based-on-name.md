@@ -18,7 +18,7 @@ Today, I am going to teach you guys how to build a chat bot using Hubot. So, wha
 </pre>
 In the chat room, a possible chat would be like this,<br>
 
-<img src="/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-1-ex.png" alt="chat example for hello world version"><br>
+<img src="/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-1-ex.PNG" alt="chat example for hello world version"><br>
 
 Pretty simple hul?!<br>
 But, I have a question through. Is it possible that Hubot can grab what I just typed like when I said "hi Hubot", can the Hubot get the word "Hubot"? <br>Yes, indeed. You can do that. Just watch!
@@ -35,7 +35,7 @@ But, I have a question through. Is it possible that Hubot can grab what I just t
 </pre>
 In the chat room, a possible chat would be like this,<br>
 
-<img src="/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-2-ex.png" alt="chat example for pass parameter to hubot"><br>
+<img src="/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-2-ex.PNG" alt="chat example for pass parameter to hubot"><br>
 
 Not bad hul?!<br>
 Okay, now before we begin. I would like to introduce an amazing REST API that we will be using is called Genderize.io. A REST API that determines the gender of a first name which will help us to make this tutorial a lot easier. Thanks to [Genderize.io](https://genderize.io/). The REST API that we will be calling is **https://api.genderize.io**. An example on how this would be used.
@@ -75,11 +75,11 @@ Now, with this REST API. We can easily build a Hubot that allow the user to ask 
 </pre>
 In the chat room, a possible chat would be like this,<br>
 
-<img src="/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-3-ex.png" alt="chat example for checking gender for peter"><br>
+<img src="/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-3-ex.PNG" alt="chat example for checking gender for peter"><br>
 
 or<br>
 
-<img src="/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-4-ex.png" alt="chat example for checking gender for belle"><br>
+<img src="/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-4-ex.PNG" alt="chat example for checking gender for belle"><br>
 
 Normally, the higher the probability, the greater chance that the response is correct!
 
