@@ -51,7 +51,7 @@ Okay, now before we begin. I would like to introduce an amazing REST API that we
 ## Example on the response for https://api.genderize.io/?name=peter
 
 <pre>
-  <code class="html">
+  <code class="json">
     {"name":"peter","gender":"male","probability":"1.00","count":796}
   </code>
 </pre>
