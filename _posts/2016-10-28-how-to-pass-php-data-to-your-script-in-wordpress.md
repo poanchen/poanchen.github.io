@@ -160,7 +160,7 @@ We need to wrap everythings in the DOMContentLoaded because without it, the java
 
 ## Wrapping Up
 
-Hopefully this guide has given you the confidence to pass PHP data to JavaScript file. Hopefully, you can . I hope that this tutorial has helped you and you can use this function in your own code and enjoy its benefits! Thank you for reading!
+Hopefully this guide has given you the confidence to pass PHP data to JavaScript file in WordPress. Hopefully, you can . I hope that this tutorial has helped you and you can use this function in your own code and enjoy its benefits! Thank you for reading!
 
 ## Resources
 
