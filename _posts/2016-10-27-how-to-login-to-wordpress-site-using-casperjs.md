@@ -67,6 +67,7 @@ When you run this CasperJS script, and see the message printed. That means that 
 When this script is completed, you should see an image saved in where you put your CasperJS script.
 
 ## Complete code for CasperJS script that signin to a WordPress site, then take a screenshot when it is in
+
 <pre>
   <code class="javascript">
     var page = require('webpage').create();
