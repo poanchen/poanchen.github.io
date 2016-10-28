@@ -3,7 +3,7 @@ layout: post
 title: "How to login to a WordPress site using CasperJS?"
 author: Poan (Baron) Chen
 author_url: https://github.com/poanchen
-date: 2016-10-28
+date: 2016-10-27
 ---
 Today, I am going to show you guys how to login to a site using CasperJS. CasperJS, is a navigation scripting and testing utility for [PhantomJS](http://phantomjs.org/), written in JavaScript. It allows us to test websites a lot like [PHPUnit](https://github.com/sebastianbergmann/phpunit/). Imagine that using CasperJS to automate the testing on your site. How it can help you to automate the repetitive tasks. How it can save your time and help you focus on implmenting your business logics. In this tutorial, we are going to impersonate a typical user who wants to login to a WordPress site, with correct username and password, they will be granted to signin. To prove that we are logged in to the site, we will be taking a screenshot when we passed the signin part. If you haven't already, install [CasperJS](http://casperjs.org/) or [PhantomJS](http://phantomjs.org/) before we continue on. Now, let's dive right in.
 
