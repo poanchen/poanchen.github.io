@@ -262,3 +262,4 @@ I'll try to keep this list current and up to date. If you know of a great resour
 
 * [CasperJS documentation](http://docs.casperjs.org/en/latest/) by [CasperJS](http://casperjs.org/).
 * [Take screenshots at different viewport sizes using CasperJS](https://gist.github.com/nhoizey/4060568) by [nhoizey](https://github.com/nhoizey).
+* [Check out various screen sizes for different smart phones](http://www.gsmarena.com/) by GSMArena.com.
