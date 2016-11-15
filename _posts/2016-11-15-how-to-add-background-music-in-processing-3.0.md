@@ -24,11 +24,11 @@ If you are new to Processing, there are two functions that are very important in
 First, you need to have your Processing software open,<br>
 Second, go to Sketch->Import Library->Add Library. Then, a Contribution Manager window should pop up.<br>
 
-<img src="/img/2016/11/15/how-to-add-background-music-in-processing-3.0/how to add library.PNG" alt="How to add library">
+<img src="/img/2016/11/15/how-to-add-background-music-in-processing-3.0/how to add library.png" alt="How to add library">
 
 Third, in the filter input box, type in "Sound" and select install and wait for a few moments.
 
-<img src="/img/2016/11/15/how-to-add-background-music-in-processing-3.0/install the library.PNG" alt="Install the library">
+<img src="/img/2016/11/15/how-to-add-background-music-in-processing-3.0/install the library.png" alt="Install the library">
 
 And then, once it is installed completely. Close the window and lets add few lines of code to see if it is actually working.
 
