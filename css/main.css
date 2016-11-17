@@ -39,16 +39,3 @@ ul.posts {
 ul.posts li {
   list-style: none;
 }
-.cv {
-  line-height: 23px;
-  width: 90%;
-}
-.cv li { 
-  line-height: 23px;
-}
-.cv h2 { 
-  font-size: 26.5px;
-}
-.cv h1 { 
-  font-size: 32.5px;
-}
