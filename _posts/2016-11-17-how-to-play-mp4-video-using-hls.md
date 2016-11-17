@@ -49,7 +49,7 @@ As you can see, the first chunk of the overall stream is sample0.ts and follow b
 </pre>
 Notice that I set the resolution of video to 840x560. Please refer to this [site](https://linux.die.net/man/1/ffmpeg) if you are interested in other size. When you hit the ENTER button, it should begin for conversion and it might look something similar like this.
 
-<img src="/img/2016/11/17/how-to-play-mp4-video-using-hls/Converting to m3u8 from mp4.png" alt="Converting to m3u8 from mp4">
+<img src="/img/2016/11/17/how-to-play-mp4-video-using-hls/Converting to m3u8 from mp4.PNG" alt="Converting to m3u8 from mp4">
 
 Wait for it to be finished (it might take some time depends on the size of your video and machine specs). When it is done, you should see bunch of ts file like sample0.ts, sample1.ts, and sample.m3u8. This means that you have successfully convert your mp4 file to m3u8 format. Now, when we have all these. We can dive right into how to use hls.js to play m3u8 file. We first need to include the hls.js from the CDN.
 
