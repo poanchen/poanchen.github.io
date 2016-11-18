@@ -57,7 +57,7 @@ Okay, now before we begin. I would like to introduce an amazing REST API that we
 </pre>
 Now, with this REST API. We can easily build a Hubot that allow the user to ask them if a given first name is a male or a female.
 
-## Example on calling a GET request in Hubot
+## Example on calling a GET request in Hubot &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/chatbotThatDetermineGenderBasedOnName.coffee" target="_blank">source code</a>
 
 <pre>
   <code class="coffeescript">

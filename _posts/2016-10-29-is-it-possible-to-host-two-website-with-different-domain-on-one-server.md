@@ -7,7 +7,7 @@ date: 2016-10-29
 ---
 If you have ever play around with server administration, you probably already knew the answer for this. The answer for this question is a BIG yes. It is totally possible to host two website on one server. And, you can easily achieve it by using Apache HTTP Server. However, there are various reason why you would do that. There are two reasons that I can come up with. One is, it is more cost-effective as having another server running will cost a bit more. Two is, both website is not consider as high traffic website. Otherwise, it is probably a good idea to separate them. Anyways, our focus in this article would be how you would do that in practice. In this post, we will be using Apache HTTP Server. Apache HTTP Server is consider to be the most used web server in the world according to [Web Server Usage Statistics](https://trends.builtwith.com/web-server). In our example, say we have two website with two different domain name. One is example.com, another one is example.net. Two completely different domain name, and we are going to host them on one server with the help of Apache. Also, to make it simpler. Both website will be using HTTP protocol instead of HTTPS. So, we do not need to get their own SSL certificate. Also, to do this. All we need to do is modify some Apache config file then we will be able to host two different website on one server. Now, a sample of how the example.com conf file might look something like this.
 
-## Apache config file for example.com
+## Apache config file for example.com &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/29/is-it-possible-to-host-two-website-with-different-domain-on-one-server/www-example-com.conf" target="_blank">source code</a>
 
 <pre>
   <code class="apache">
@@ -23,7 +23,7 @@ If you have ever play around with server administration, you probably already kn
 </pre>
 The file that you should be modifying is this file, /etc/apache2/sites-enabled/000-default.conf. This is the default config file for apache. The above code is basically telling apache that when a client request a webpage for www.example.com and the port was 80 or HTTP. Then, please go to the root directory, which is /var/www/example.com to find the webpage. Also, make sure to log the access activities to the file namely /var/www/example.com/log/access.log in the server, if there are any errors, then log them into this, /var/www/example.com/log/error.log.
 
-## Apache config file for example.net
+## Apache config file for example.net &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/29/is-it-possible-to-host-two-website-with-different-domain-on-one-server/www-example-net.conf" target="_blank">source code</a>
 
 <pre>
   <code class="apache">

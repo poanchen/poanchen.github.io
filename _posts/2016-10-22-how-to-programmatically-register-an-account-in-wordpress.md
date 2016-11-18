@@ -7,7 +7,7 @@ date: 2016-10-22
 ---
 Today, I am going to show you guys how to programmatically create an account for a user in WordPress. To help you understand clearly, we are going to write a REST API in PHP in the back-end. In the front-end, we will be using jQuery AJAX to query it. In case of error like username already exist, we will be printing out the error to the user in real-time. Lets get started!
 
-## PHP code to start with (directly grabbed from [here](https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js))
+## PHP code to start with (directly grabbed from [here](https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js)) &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">source code</a>
 
 <pre>
   <code class="php">
@@ -39,7 +39,7 @@ The output should look something like this.
 </pre>
 The reason why the username is empty. It is because we didn't pass in any username to the PHP file. We just simply call it.
 
-## HTML Code to start with (directly grabbed from [here](https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js))
+## HTML Code to start with (directly grabbed from [here](https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js)) &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html" target="_blank">source code</a>
 
 <pre>
   <code class="html">
@@ -456,7 +456,7 @@ Now, with the PHP code and HTML code combined. You may try to email field. Try t
   </code>
 </pre>
 
-## HTML Code to check if user's password is at least length of 5.
+## HTML Code to check if user's password is at least length of 5. &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccountJquery.html" target="_blank">source code</a>
 
 <pre>
   <code class="html">
@@ -551,7 +551,7 @@ Now, with the PHP code and HTML code combined. You may try to email field. Try t
 Now, you may try to input your password, and it will alert you whenever your password length isn't at least length of 5!<br>
 Okay. Now, we have user's username, email and password. I think it is time to create an account for them in WordPress.
 
-## PHP code to create an account for user in WordPress.
+## PHP code to create an account for user in WordPress. &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php" target="_blank">source code</a>
 
 <pre>
   <code class="php">

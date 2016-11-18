@@ -66,7 +66,7 @@ When you run this CasperJS script, and see the message printed. That means that 
 </pre>
 When this script is completed, you should see an image saved in where you put your CasperJS script.
 
-## Complete code for CasperJS script that signin to a WordPress site, then take a screenshot when it is in
+## Complete code for CasperJS script that signin to a WordPress site, then take a screenshot when it is in &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/27/how-to-login-to-wordpress-site-using-casperjs/loginToWordpressSite.js" target="_blank">source code</a>
 
 <pre>
   <code class="javascript">

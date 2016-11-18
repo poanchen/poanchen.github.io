@@ -36,7 +36,7 @@ The code will simply tried to see if user provide an input file, otherwise, it w
 </pre>
 Now, the @variable should have the contents of the file when you execute like this, $ casperjs screenshots.js urls.json. Of course, the urls.json should look something like this.
 
-## What the urls.json looks like
+## What the urls.json looks like &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/urls.json" target="_blank">source code</a>
 
 <pre>
   <code class="json">
@@ -162,7 +162,7 @@ A sample of the output of this would look something like this.<br><br>
 <img src="/img/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/outputFromTakingScreenshotsForEachUrl.PNG" alt="Output from taking screenshots for each opened url"><br><br>
 Now, when you run the code like this, $ casperjs screenshots.js urls.json, you should see screenshots has been taken for each url that we opened on different device. To be more clear, the full code for screenshots.js is as follows.
 
-## CasperJS code (screenshots.js) for taking screenshot for different device for each url that we opened
+## CasperJS code (screenshots.js) for taking screenshot for different device for each url that we opened &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/screenshots.js" target="_blank">source code</a>
 
 <pre>
   <code class="javascript">

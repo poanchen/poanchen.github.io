@@ -40,6 +40,9 @@ Nowadays, it is no surprise that user will usually receive an email when they fi
   </code>
 </pre>
 The above code should be fairly simple. We are using WordPress built-in function to send an email. For more information about it, please go to this [site](https://developer.wordpress.org/reference/functions/wp_mail/). Another thing that I would like to add is, in order to see the error message. You must set your WP_DEBUG_LOG to true in your wp-config.php file. On instruction on how to turn it on, please go to this [site](https://premium.wpmudev.org/blog/debugging-wordpress-how-to-use-wp_debug) by [WPMU DEV](https://premium.wpmudev.org/). **Don’t forget that WP_DEBUG is for local development use and should not be used on production.** The following example that I would like to show is hook this function up with an action provided by WordPress. In this way, whenever there is a new user sign up, this function will get called automatically.
+
+## Full PHP code for sending a welcome email to user &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/17/how-to-automatically-send-welcome-email-to-user-when-they-sign-up-in-wp/functions.php" target="_blank">source code</a>
+
 <pre>
   <code class="php">
     function send_welcome_email_to_new_user($user_id) {

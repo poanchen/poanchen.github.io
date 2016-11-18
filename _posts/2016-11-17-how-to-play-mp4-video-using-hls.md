@@ -124,7 +124,7 @@ In the code, we first check if the browser is HLS supported, then we initialize 
 </pre>
 Now, even if the browser happen to not support hls, user may still be able to watch the video. If you would like to see the live demo, please visit [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html).
 
-## Full code for playM3u8UsingHlsJs.html
+## Full code for playM3u8UsingHlsJs.html &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html" target="_blank">source code</a>
 
 <pre>
   <code class="html">

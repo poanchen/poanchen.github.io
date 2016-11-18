@@ -62,7 +62,7 @@ Just like any other programming language, you need to import the library before 
 </pre>
 Now, when you run the application, you should hear your audio playing in the background. Pretty simple hul?! In the future tutorial, I will be teaching you guys how to draw simple things with Processing. Here is the full code to the solution.
 
-## Full Processing code to play audio in the background
+## Full Processing code to play audio in the background &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/15/how-to-add-background-music-in-processing-3.0/backgroundMusic.pde" target="_blank">source code</a>
 
 <pre>
   <code class="java">

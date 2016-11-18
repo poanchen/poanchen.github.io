@@ -7,7 +7,7 @@ date: 2016-10-28
 ---
 Today, I am going to show you guys how to pass PHP data like an array to your JavaScript file in WordPress. However, you might be thinking why would I need to pass PHP data to the script. For example, have to ever encounter where you need to use some object or data from PHP in a JavaScript file, but you do not quite want to build a REST API for it as the data isn't used a lot. Or, have to ever need to embedded php code in your JavaScript in WordPress? If the answer is positive, then this article is for you. This article will teach you on how to properly pass PHP data (an array) to your JavaScript file. However, in order to make this interesting, we are going to have a PHP file that contains some ielts conversation audios from [AEHelp](https://www.aehelp.com/). Then, we are going to have another PHP file where learner can see and listen to all the audios. We also gonna have a JavaScript file that will get the audios from the PHP file and generate html for each audio on the fly. Now, we can begin.
 
-## PHP code that contains all the audios
+## PHP code that contains all the audios &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/audioPlaylist.php" target="_blank">source code</a>
 
 <pre>
   <code class="php">
@@ -92,7 +92,7 @@ Now that we have enqueue the js file in the WordPress head. Now, we simply need 
 </pre>
 With this, the JavaScript can now add audio to that Div. Now it is time to create the js file that generate html for each audio on the fly. Then, we are done!
 
-## JavaScript code to generate html for each audio
+## JavaScript code to generate html for each audio &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/createPlaylist.js" target="_blank">source code</a>
 
 <pre>
   <code class="javascript">
@@ -132,7 +132,7 @@ We need to wrap everythings in the DOMContentLoaded because without it, the java
 
 <img src="/img/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/audioPlaylist.PNG" alt="example on the audio playlist look like in HTML"><br>
 
-## Complete code for PHP that show audio playlist to user
+## Complete code for PHP that show audio playlist to user &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/showPlaylistToUser.php" target="_blank">source code</a>
 
 <pre>
   <code class="php">

@@ -7,7 +7,7 @@ date: 2016-10-19
 ---
 You probably have heard of Node.js at some points in your life. Maybe it is at [stack overflow](http://stackoverflow.com/) or somewhere else. No surprise that Node.js became really popular as there are increasing interest in [JavaScript](http://githut.info/) on [Github](https://github.com/). Normally, people use [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets), and [JavaScript](https://www.javascript.com/) for front-end development. In the back-end, some popular programming languages like [PHP](https://secure.php.net/) on [WordPress](https://wordpress.com/) or [Symfony](https://symfony.com/), [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) on [spring](https://spring.io/) or [J2EE](http://www.theserverside.com/definition/J2EE-Java-2-Platform-Enterprise-Edition), [Python](https://www.python.org/) on [django](https://www.djangoproject.com/) or [Ruby on Rails](http://rubyonrails.org/). However, today we are going to talk about how to set up a Node.js application for production on Ubuntu 14.04 using [Apache2](https://httpd.apache.org/) server. Thanks to Chrome's V8 JavaScript engine, as the runtime environment interprets JavaScript. It allows the developer to write JavaScript in the back-end. One benefit would be that normally a developer who came from front-end who already knew JavaScript can easily pick up and implement a back end system using JavaScript and do not need to know other languages like frameworks that we talked about above. In this tutorial, we will cover setting up a production-ready Node.js environment that is composed of two Ubuntu 14.04 servers; one server will run Node.js applications managed by [PM2](http://pm2.keymetrics.io/), while the other will provide users with access to the application through an Apache2 reverse proxy to the application server. This guide uses two Ubuntu 14.04 servers with private networking in the same server. For simplicity, we also assume that you already have a domain name that points to your web server, so that you may access your web server via a domain name instead of its public IP address. Once you have those set up, then we may continue on this tutorial. We all know that in the local development for Node.js, we usually make a few changes along the way and simply uses the localhost IP address, i.e. 127.0.0.1, wherever the app server's private IP address is used. Here, is the simplest hello world version of Node.js with [Express](http://expressjs.com/).
 
-## Hello world version of Node.js
+## Hello world version of Node.js &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/server.js" target="_blank">source code</a>
 
 <pre>
   <code class="javascript">
@@ -109,7 +109,7 @@ Now, we need to go to Apache2 folder and insert the following configuration for 
   </code>
 </pre>
 
-## add the following configuration in the 000-default.conf file
+## add the following configuration in the 000-default.conf file &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/000-default.conf" target="_blank">source code</a>
 
 <pre>
   <code class="apache">
