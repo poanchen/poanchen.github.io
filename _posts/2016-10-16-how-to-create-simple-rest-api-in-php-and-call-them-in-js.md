@@ -76,6 +76,11 @@ In this way, now we have a really simple REST API that allow us to check if the 
     &lt;/script&gt;
   </code>
 </pre>
+
+<a href="https://codepen.io/poanchen/pen/MbJNod?editors=101" target="_blank">
+  <img src="https://blog.codepen.io/wp-content/uploads/2012/06/TryItOn-CodePen.svg" width="150"/>
+</a>
+
 Live link are [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistXML.html).<br>
 As the user type, they may immediately see if the username is taken or not. An example of taken username is 'test'!<br>
 Another example that I would like to show is using **jQuery AJAX**. Here is a sample code that does the job.<br>
@@ -121,6 +126,11 @@ Another example that I would like to show is using **jQuery AJAX**. Here is a sa
     &lt;/script&gt;
   </code>
 </pre>
+
+<a href="https://codepen.io/poanchen/pen/eBgqwJ?editors=101" target="_blank">
+  <img src="https://blog.codepen.io/wp-content/uploads/2012/06/TryItOn-CodePen.svg" width="150"/>
+</a>
+
 Live link are [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html).<br>
 As the user type, they may immediately see if the username is taken or not. An example of taken username is ‘test’!<br>
 Another example that I would like to show is using **AngularJS AJAX**. Here is a sample code that does the job.<br>
@@ -161,6 +171,11 @@ Another example that I would like to show is using **AngularJS AJAX**. Here is a
     &lt;/script&gt;    
   </code>
 </pre>
+
+<a href="https://codepen.io/poanchen/pen/Lbxwwj?editors=101" target="_blank">
+  <img src="https://blog.codepen.io/wp-content/uploads/2012/06/TryItOn-CodePen.svg" width="150"/>
+</a>
+
 Live link are [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistAngular.html).<br>
 As the user type, they may immediately see if the username is taken or not. An example of taken username is ‘test’!<br>
 

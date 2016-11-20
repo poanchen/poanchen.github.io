@@ -548,6 +548,12 @@ Now, with the PHP code and HTML code combined. You may try to email field. Try t
     &lt;/script&gt;
   </code>
 </pre>
+
+<a href="https://codepen.io/poanchen/pen/gLmYOB?editors=101" target="_blank">
+  <img src="https://blog.codepen.io/wp-content/uploads/2012/06/TryItOn-CodePen.svg" width="150"/>
+</a>
+
+Live link are [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccountJquery.html).<br>
 Now, you may try to input your password, and it will alert you whenever your password length isn't at least length of 5!<br>
 Okay. Now, we have user's username, email and password. I think it is time to create an account for them in WordPress.
 
@@ -620,7 +626,6 @@ Okay. Now, we have user's username, email and password. I think it is time to cr
     echo json_encode($data, JSON_PRETTY_PRINT);
   </code>
 </pre>
-Live link are [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccountJquery.html).<br>
 One of the flaw that I would like to mention is. There wasn't any validation to check if the user is a robot or not. User may type random things and create hundreds of account in WordPress which should not be use in production. Probably next time, I will have a tutorial about how to prevent robot register hundreds of account on your site.
 
 ## Wrapping Up
