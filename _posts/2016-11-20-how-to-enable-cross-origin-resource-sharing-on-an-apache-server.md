@@ -7,7 +7,7 @@ date: 2016-11-20
 ---
 Today, I am going to show you guys how to enable cross-origin resource sharing on an apache server. Before we start, I would like to ask you a question. Have you ever come cross this error message while development? To be more specific, here is what the error message might look like.
 
-<img src="/img/2016/11/20/how-to-enable-cross-origin-resource-sharing-on-an-apache-server/example of error message for cors.png" alt="An example of error message of CORS"><br>
+<img src="/img/2016/11/20/how-to-enable-cross-origin-resource-sharing-on-an-apache-server/example of error message for cors.PNG" alt="An example of error message of CORS"><br>
 
 If yes, then you are in luck. By following this tutorial, you may solve this problem. So, what exactly is cross-origin resource sharing? [Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) is a mechanism that allows restricted resources (e.g. file) on a web page to be requested from another domain outside the domain from which the resource originated. For example, a HTML page served from http://www.domain-a.com makes a &lt;img&gt; src request for http://www.domain-b.com. For security reasons, browsers restrict cross-origin HTTP requests initiated from within scripts. For example, in the error message shown above, the script in HTML was trying to make a XMLHttpRequest and Fetch some JSON from domain namely the https://www.jenrenalcare.com. However, the HTML page was served from https://s.codepen.io. As we know, a web application using XMLHttpRequest or Fetch could only make HTTP requests to its own domain. So, how do we solve this in the server side? Here are the steps that what you should do.
 First, change directory to where you put your apache conf file.
