@@ -9,7 +9,7 @@ Hello everyone, I thought that by creating this tutorial about how to build a se
 
 ## Screenshots of dummy data in the database
 
-<img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/dummy data in the database.png" alt="An example of dummy data in the database"><br>
+<img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/dummy data in the database.PNG" alt="An example of dummy data in the database"><br>
 Now, we need to add the url search into the url pattern in the Django in order for it to work like this, http://127.0.0.1:8000/search. To do that in Django, we can configure it in urls.py.
 
 ## Add search url into the urls.py
@@ -156,7 +156,7 @@ Now, when you go to http://127.0.0.1:8000/search, you should be able to see some
 
 ## Screenshots of printing out all the billionaire in the database
 
-<img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/sample output of all the billionaire in the database.png" alt="Sample output of all the billionaire in the database"><br>
+<img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/sample output of all the billionaire in the database.PNG" alt="Sample output of all the billionaire in the database"><br>
 It seems to be working fine. Now, let's work on the filtering part in the search page. There are few ways of doing filtering with Amazon Dynamodb, we will be using scan operation as our database is consider small. In production, you should use query instead for better performace. For more information about this, go ahead and read [this offical document](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html) by Amazon. First, we need to work on the filter expression that is designed for Amazon Dynamodb. Your code should look something like this.
 
 ## In method get_list_of_billionaires,
@@ -238,15 +238,15 @@ Now, your search page should be fully working. Here are some of the examples.
 
 ## Screenshots of searching for billionaire whose net worth is under 40 Billion and currently lives in New York, NY
 
-<img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search for billionaire whose net worth is under 40 Billion and currently lives in New York, NY.png" alt="Result of billionaire whose net worth is under 40 Billion and currently lives in New York, NY"><br>
+<img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search for billionaire whose net worth is under 40 Billion and currently lives in New York, NY.PNG" alt="Result of billionaire whose net worth is under 40 Billion and currently lives in New York, NY"><br>
 
 ## Screenshots of searching for billionaire whose net worth is under 51 Billion
 
-<img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search for billionaire whose net worth is under 51 Billion.png" alt="Result of billionaire whose net worth is under 51 Billion"><br>
+<img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search for billionaire whose net worth is under 51 Billion.PNG" alt="Result of billionaire whose net worth is under 51 Billion"><br>
 
 ## Screenshots of searching for billionaire who currently lives in Medina, WA
 
-<img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search for billionaire who currently lives in Medina, WA.png" alt="Result of billionaire who currently lives in Medina, WA"><br>
+<img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search for billionaire who currently lives in Medina, WA.PNG" alt="Result of billionaire who currently lives in Medina, WA"><br>
 
 ## Full code for urls.py
 
