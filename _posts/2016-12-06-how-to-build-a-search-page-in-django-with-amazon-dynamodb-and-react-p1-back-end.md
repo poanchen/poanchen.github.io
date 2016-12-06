@@ -248,7 +248,7 @@ Now, your search page should be fully working. Here are some of the examples.
 
 <img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search for billionaire who currently lives in Medina, WA.PNG" alt="Result of billionaire who currently lives in Medina, WA"><br>
 
-## Full code for urls.py
+## Full code for urls.py &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/urls.py" target="_blank">source code</a>
 
 <pre>
   <code class="python">
@@ -262,7 +262,7 @@ Now, your search page should be fully working. Here are some of the examples.
   </code>
 </pre>
 
-## Full code for views.py
+## Full code for views.py &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/views.py" target="_blank">source code</a>
 
 <pre>
   <code class="python">
@@ -360,7 +360,7 @@ Now, your search page should be fully working. Here are some of the examples.
   </code>
 </pre>
 
-## Full code for search.html
+## Full code for search.html &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search.html" target="_blank">source code</a>
 
 <pre>
   <code class="html">
