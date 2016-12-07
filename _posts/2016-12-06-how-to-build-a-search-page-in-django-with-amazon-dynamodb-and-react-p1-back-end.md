@@ -5,7 +5,7 @@ author: Poan (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-12-06
 ---
-Hello everyone, I thought that by creating this tutorial about how to build a search page in [Django](https://www.djangoproject.com/) along with [Amazon Dynamodb](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html) and [React](https://facebook.github.io/react/) might help you guys to understand more about those trending technologies. First off, I would like to briefly talk about the search page. As you guys can imagine, a search page is a place where you allow user to search for what they want. For example, you would like to find a billionaire whose net worth is under 50 Billion and currently lives in Palo Alto, CA. For simplicity, we will be ignoring on how you would set up a Django environment in your own computer. If you have not done so, please go to [here](https://docs.djangoproject.com/en/1.10/intro/install/). Also, we will be skipping on how to set up Amazon dynamodb as well. If you have trouble with setting up for Amazon Dynamodb, please go to [here](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SampleData.CreateTables.html) for more detailed instruction. Now, before we do anything, we should fill in some dummy datas into the database for us to use later. Here is what the data looks like in the database.
+Hello everyone, I thought that by creating this tutorial about how to build a search page in [Django](https://www.djangoproject.com/) along with [Amazon Dynamodb](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html) and [React](https://facebook.github.io/react/) might help you guys to understand more about those trending technologies. First off, I would like to briefly talk about the search page. As you guys can imagine, a search page is a place where you allow user to search for what they want. For example, you would like to find a billionaire whose net worth is under 50 Billion and currently lives in Palo Alto, CA. For simplicity, we will be ignoring on how you would set up a Django environment in your own computer. If you have not done so, please go to [here](https://docs.djangoproject.com/en/1.10/intro/install/). Also, we will be skipping on how to set up Amazon dynamodb as well. If you have trouble with setting up for Amazon Dynamodb, please go to [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SampleData.CreateTables.html) for more detailed instruction. Now, before we do anything, we should fill in some dummy datas into the database for us to use later. Here is what the data looks like in the database.
 
 ## Screenshots of dummy data in the database
 
@@ -377,3 +377,25 @@ Now, your search page should be fully working. Here are some of the examples.
 ## Wrapping Up
 
 Hopefully this guide has given you the confidence to do the scan operation in Amazon Dynamodb and see how it works with the Django under the hood. I hope that this tutorial has helped you and thank you for reading!
+
+## Resources
+
+I'll try to keep this list current and up to date. If you know of a great resource you'd like to share or notice a broken link, please [get in touch](https://github.com/poanchen).
+
+### Getting started
+
+* [Django](https://www.djangoproject.com/)
+* [Introduction of Amazon Dynamodb](https://aws.amazon.com/dynamodb)
+* [Amazon Dynamodb](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
+* [React](https://facebook.github.io/react/)
+* [Source code of React](https://github.com/facebook/react)
+
+### Django
+
+* [Install Django](https://docs.djangoproject.com/en/1.10/intro/install/)
+* [Templates in Django](https://docs.djangoproject.com/en/1.10/topics/templates/)
+
+### Amazon Dynamodb
+
+* [Set up Amazon Dynamodb](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SampleData.CreateTables.html)
+- [Query and Scan Operations in DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html)
