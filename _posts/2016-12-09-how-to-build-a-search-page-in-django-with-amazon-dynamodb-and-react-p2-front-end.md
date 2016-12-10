@@ -485,8 +485,9 @@ Now, let's try to add the filter for the net worth as well. Here is the code.
           }
         },
         updateForLocation(e) {
+          var net_worth_in_number = parseInt(this.state.selectedNetWorth.split(' ')[3].split('B')[0]);
           this.setState({ selectedLocation : e.target.value });
-          var filteredBillionaire = this.state.ListOfBillionaireFromDB.filter(billionaire =&gt; billionaire.current_location == e.target.value)
+          var filteredBillionaire = this.state.ListOfBillionaireFromDB.filter(billionaire =&gt; billionaire.current_location == e.target.value && billionaire.net_worth < net_worth_in_number)
           this.setState({ showedBillionaire : filteredBillionaire });
         },
         updateForNetWorth(e) {
