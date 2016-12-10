@@ -22,7 +22,7 @@ Before we begin, If you have not yet read the post about how to build a search p
 </pre>
 Then, we need to modify the code so that we are using React way to represent the information. Before, we do anything. We first try to print the hello world in React way. And, here is how we are doing it.
 
-## Hello World version of React code
+## Hello World version of React code &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/hello-world-in-react-way.html" target="_blank">source code</a>
 
 <pre>
   <code class="html">
@@ -48,7 +48,7 @@ Then, we need to modify the code so that we are using React way to represent the
 </pre>
 Pretty simple hul! Then, we simply need to pass the data from Django controller to React. But, before we do that. We probably need to modify the back-end code a little bit in order for it to work. In the views.py from the part 1, there is a method called get_list_of_tutors and we need to make sure that @variables items is a JSON when it is return. We may simply do something like this.
 
-## Modify the views.py a little bit so that the get_list_of_tutors returns as a JSON
+## Modify the views.py a little bit so that the get_list_of_tutors returns as a JSON &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/modified-views.py" target="_blank">source code</a>
 
 <pre>
   <code class="python">
@@ -240,7 +240,7 @@ When you combine them together, you should see something like this.
 <img src="/img/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/dropdown menu with the list of unfiltered billionaire.PNG" alt="An example of dropdown menu with the list of unfiltered billionaire"><br>
 Right now, if you try to select different city, the list does not change at all. Let's use the filter so that it actually changes too according to the user's selection. Before, we do that, let's try to combine the ReactDOM of CurrentLocation and ListOfBillionaire so that they are all in the same ReactDOM. Something like this.
 
-## Full code of combined React code
+## Full code of combined React code &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/combined-ReactDOM-code-for-both-dropdown.html" target="_blank">source code</a>
 
 <pre>
   <code class="html">
@@ -322,7 +322,7 @@ Right now, if you try to select different city, the list does not change at all.
 </pre>
 Whenever there is a change of dropdown, the list of people should be changed as well. Thanks to React! Here is the code that does that.
 
-## Full code for dropdown filter for location of the billionaire
+## Full code for dropdown filter for location of the billionaire &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/filter-location-in-react-way.html" target="_blank">source code</a>
 
 <pre>
   <code class="html">
@@ -412,7 +412,7 @@ As you may see, in the update method, everytime when there is a change in the dr
 <img src="/img/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/demo on how the dropdown filter works.gif" alt="A demo on how the dropdown filter works"><br>
 Now, let's try to add the filter for the net worth as well. Here is the code.
 
-## Full code for dropdown filter for net worth and location of the billionaire
+## Full code for dropdown filter for net worth and location of the billionaire &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/filter-in-react-way-full-code.html" target="_blank">source code</a>
 
 <pre>
   <code class="html">
