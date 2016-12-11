@@ -541,3 +541,18 @@ Now, let's try to add the filter for the net worth as well. Here is the code.
 ## Wrapping Up
 
 Hopefully this guide has given you the confidence to do the filter in React way. The other way that uses the server side filtering will be discussed in the next part. Anyways, I hope that this tutorial has helped you and thank you for reading!
+
+## Resources
+
+I'll try to keep this list current and up to date. If you know of a great resource you'd like to share or notice a broken link, please [get in touch](https://github.com/poanchen).
+
+### Getting started
+
+* [How to build a search page in Django with Amazon Dynamodb and React? Part 1 (Back-end)](/blog/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end)
+* [React](https://facebook.github.io/react/)
+* [Source code of React](https://github.com/facebook/react)
+
+### React
+
+* [React for beginner](https://facebook.github.io/react/docs/hello-world.html)
+* [Intro to React](https://facebook.github.io/react/tutorial/tutorial.html)
