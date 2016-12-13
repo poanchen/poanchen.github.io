@@ -554,5 +554,6 @@ I'll try to keep this list current and up to date. If you know of a great resour
 
 ### React
 
+* [Learning React.js: Getting Started and Concepts](https://scotch.io/tutorials/learning-react-getting-started-and-concepts)
 * [React for beginner](https://facebook.github.io/react/docs/hello-world.html)
 * [Intro to React](https://facebook.github.io/react/tutorial/tutorial.html)
