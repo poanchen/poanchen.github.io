@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Is it possible to host two website with different domain name on one server? If yes, how would you do that?"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-10-29
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to build a simple chat bot using Hubot that determine gender based on their first name?"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-10-18
 ---

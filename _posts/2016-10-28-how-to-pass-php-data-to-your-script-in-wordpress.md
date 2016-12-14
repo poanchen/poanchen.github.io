@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to pass PHP data to your script in WordPress?"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-10-28
 ---

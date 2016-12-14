@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to automatically send a welcome email to new user when they sign up for their account in WordPress programmatically?"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-10-17
 ---

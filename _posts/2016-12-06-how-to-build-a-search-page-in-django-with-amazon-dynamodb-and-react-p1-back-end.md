@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to build a search page in Django with Amazon Dynamodb and React? Part 1 (Back-end)"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-12-06
 ---

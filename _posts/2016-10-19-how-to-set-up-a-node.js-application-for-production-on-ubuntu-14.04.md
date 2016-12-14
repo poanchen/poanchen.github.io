@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to set up a Node.js application for production on Ubuntu 14.04?"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-10-19
 ---

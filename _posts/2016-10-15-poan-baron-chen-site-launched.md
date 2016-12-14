@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Poan (Baron) Chen, Launches Site"
-author: Poan (Baron) Chen
+title: "PoAn (Baron) Chen, Launches Site"
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-10-15
 ---

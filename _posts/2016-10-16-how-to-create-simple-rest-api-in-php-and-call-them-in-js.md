@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to create a simple REST API in PHP and call them in JavaScript"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-10-16
 ---

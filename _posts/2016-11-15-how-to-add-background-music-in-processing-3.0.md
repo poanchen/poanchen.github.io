@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to add background music in Processing 3.0?"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-11-15
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to login to a WordPress site using CasperJS?"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-10-27
 ---

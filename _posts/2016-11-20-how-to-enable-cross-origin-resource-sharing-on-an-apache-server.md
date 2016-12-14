@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to enable cross-origin resource sharing on an apache server?"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-11-20
 ---

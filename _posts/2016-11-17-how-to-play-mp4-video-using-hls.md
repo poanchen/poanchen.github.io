@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to play mp4 video using hls.js?"
-author: Poan (Baron) Chen
+author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2016-11-17
 ---
