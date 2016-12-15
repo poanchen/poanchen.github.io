@@ -387,6 +387,7 @@ I'll try to keep this list current and up to date. If you know of a great resour
 * [Django](https://www.djangoproject.com/)
 * [Introduction of Amazon Dynamodb](https://aws.amazon.com/dynamodb)
 * [Amazon Dynamodb](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
+* [Learning React.js: Getting Started and Concepts](https://scotch.io/tutorials/learning-react-getting-started-and-concepts)
 * [React](https://facebook.github.io/react/)
 * [Source code of React](https://github.com/facebook/react)
 
