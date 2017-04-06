@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to setup pretty url in WordPress through LAMP stack?"
+title: "How to set up pretty url in WordPress?"
 author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2017-04-02
