@@ -20,11 +20,39 @@ a:hover {
   text-decoration: underline;
 }
 h1 {
-  font-size: 3em;
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+  nav ul, footer ul {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  p {
+    font-size: 1.5em;
+  }
+  ul.posts {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* phones */
+  nav ul, footer ul {
+    font-size: 3em;
+  }
+  h1 {
+    font-size: 5em;
+  }
+  p {
+    font-size: 3em;
+  }
+  ul.posts {
+    font-size: 3em;
+  }
+}
 p {
-  font-size: 1.5em;
   line-height: 1.4em;
   color: #333;
 }
@@ -34,7 +62,6 @@ footer {
 }
 ul.posts { 
   margin: 20px auto 40px;
-  font-size: 1.5em;
 }
 ul.posts li {
   list-style: none;
