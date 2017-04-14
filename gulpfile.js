@@ -25,7 +25,10 @@ gulp.task('watch-all', function() {
 
 gulp.task('deploy', function () {
   return gulp.src("./_site/**/*")
-    .pipe(deploy())
+    .pipe(deploy({ 
+      remoteUrl: "https://github.com/poanchen/poanchen.github.io.git",
+      branch: "master"
+    }))
 });
 
 gulp.task('default', ['minify-css', 'minify-js', 'watch-all']);
