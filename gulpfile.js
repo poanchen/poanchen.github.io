@@ -2,11 +2,13 @@ var gulp      = require('gulp');
 var minifyCss = require('gulp-minify-css');
 var uglify    = require('gulp-uglify');
 var deploy    = require('gulp-gh-pages');
+var rename    = require('gulp-rename');
 
 // minimized all the css files
 gulp.task('minify-css', function() {
   gulp.src('./src/css/*.css')
   .pipe(minifyCss())
+  .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('app/css'));
 });
 
@@ -14,6 +16,7 @@ gulp.task('minify-css', function() {
 gulp.task('minify-js', function() {
   gulp.src('./src/js/*.js')
   .pipe(uglify())
+  .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('app/js'));
 });
 
