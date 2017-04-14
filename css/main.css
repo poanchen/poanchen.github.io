@@ -40,16 +40,16 @@ h1 {
 @media only screen and (max-width: 767px) {
   /* phones */
   nav ul, footer ul {
-    font-size: 3em;
+    font-size: 1.5em;
   }
   h1 {
-    font-size: 5em;
+    font-size: 3.5em;
   }
   p {
-    font-size: 3em;
+    font-size: 2em;
   }
   ul.posts {
-    font-size: 3em;
+    font-size: 2em;
   }
 }
 p {
