@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>How to take screenshots at different screen sizes using CasperJS?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/app/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to take screenshots at different screen sizes using CasperJS?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 12 Nov 2016
+  
+</p>
+
+<div class="post">
+  <p>Today, I am going to show you guys how to take screenshots at different screen sizes using <a href="http://casperjs.org/">CasperJS</a>. To make it more fun, we are going to take a screenshots on different device with variety screen sizes. For example, iPhone 4s, iPhone 5, iPhone 6, iPad mini 4, Desktop 720p, and Desktop 1080p. Also, to make this script more useful, the urls that we will be getting the screenshots are from a file that may contains as many urls as you want. I believe this script will be useful for QA to test their site to see what will their site looks like on different device. If you haven’t already, install <a href="http://casperjs.org/">CasperJS</a> or <a href="http://phantomjs.org/">PhantomJS</a> before we continue on. Now, let’s dive right in.</p>
+
+<h2 id="casperjs-code-screenshotsjs-to-start-with">CasperJS code (screenshots.js) to start with</h2>
+
+<pre>
+  <code class="javascript">
+    var casper = require("casper").create();
+    var fs = require('fs');
+    var urls = [];
+    var inputFile;
+    var contents;
+    var contentsToJSON;
+
+    if (casper.cli.has(0)) {
+      inputFile = casper.cli.get(0).toLowerCase();
+    }else{
+      casper.echo("No file passed, aborting...").exit();
+    }
+  </code>
+</pre>
+<p>The code will simply tried to see if user provide an input file, otherwise, it will simply throws error and abort. Next things is, we need to get all the urls from the input file.</p>
+
+<h2 id="casperjs-code-screenshotsjs-to-get-the-contents-from-the-input-file">CasperJS code (screenshots.js) to get the contents from the input file</h2>
+
+<pre>
+  <code class="javascript">
+    contents = fs.read(inputFile);
+  </code>
+</pre>
+<p>Now, the @variable should have the contents of the file when you execute like this, $ casperjs screenshots.js urls.json. Of course, the urls.json should look something like this.</p>
+
+<h2 id="what-the-urlsjson-looks-like-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161112how-to-take-screenshots-at-different-screen-sizes-using-casperjsurlsjson-targetblanksource-codea">What the urls.json looks like   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/urls.json" target="_blank">source code</a></h2>
+
+<pre>
+  <code class="json">
+    {
+      "links": [
+        {
+          "url": "http://www.example.com"
+        },
+        {
+          "url": "http://www.example.net"
+        }
+      ]
+    }
+  </code>
+</pre>
+<p>Now, what we are having in the @variable contents is a string. But, it is not so much helpful for us because it is a string and we need to get the urls from it. As a result, we need to use the JSON.parse to convert the string to JSON, so that JavaScript can read it.</p>
+
+<h2 id="casperjs-code-screenshotsjs-to-use-jsonparse-to-read-the-urls-from-the-variable-contents">CasperJS code (screenshots.js) to use JSON.parse to read the urls from the @variable contents</h2>
+
+<pre>
+  <code class="javascript">
+    contentsToJSON = JSON.parse(contents);
+
+    var listOfLinks = contentsToJSON.links;
+    listOfLinks.forEach(function (currentValue, index, arr) {
+      urls.push({url: currentValue.url});
+    });
+  </code>
+</pre>
+<p>Now the @variable urls should have all the urls from the input file. Now, we need to open each url. This is how we are going to do.</p>
+
+<h2 id="casperjs-code-screenshotsjs-to-open-each-url">CasperJS code (screenshots.js) to open each url</h2>
+
+<pre>
+  <code class="javascript">
+    casper.start().each(urls, function(self, link) {
+      self.thenOpen(link.url, function() {
+        this.echo("url: " + link.url + " has been opened!");
+      });
+    });
+
+    casper.run();
+  </code>
+</pre>
+<p>A sample of the output of this would look something like this.<br /><br />
+<img src="/img/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/outputFromOpenedUrls.PNG" alt="Output from the opened urls" /><br />
+<br />
+Now that each urls has been open, we need to set the height and width for different screen size. So that we can take a screenshot for different size of screen later. Notice that we will be including device like iPhone 4s, iPhone 5, iPhone 6, iPad mini 4, Desktop 720p, and Desktop 1080p. And, the code will look something like this.</p>
+
+<h2 id="casperjs-code-screenshotsjs-for-different-device-at-different-screen-size">CasperJS code (screenshots.js) for different device at different screen size</h2>
+
+<pre>
+  <code class="javascript">
+    var viewports = [
+      {
+        'name': 'Apple-iPhone-4s-portrait',
+        'viewport': {width: 320, height: 480}
+      },
+      {
+        'name': 'Apple-iPhone-4s-landscape',
+        'viewport': {width: 480, height: 320}
+      },
+      {
+        'name': 'Apple-iPhone-5-portrait',
+        'viewport': {width: 320, height: 568}
+      },
+      {
+        'name': 'Apple-iPhone-5-landscape',
+        'viewport': {width: 568, height: 320}
+      },
+      {
+        'name': 'Apple-iPhone-6-portrait',
+        'viewport': {width: 540, height: 960}
+      },
+      {
+        'name': 'Apple-iPhone-6-landscape',
+        'viewport': {width: 960, height: 540}
+      },
+      {
+        'name': 'Apple-iPad-mini-4-portrait',
+        'viewport': {width: 768, height: 1024}
+      },
+      {
+        'name': 'Apple-iPad-mini-4-landscape',
+        'viewport': {width: 1024, height: 768}
+      },
+      {
+        'name': 'Desktop-720p-HD',
+        'viewport': {width: 1280, height: 720}
+      },
+      {
+        'name': 'Desktop-1080p-HD',
+        'viewport': {width: 1920, height: 1080}
+      }
+    ];
+  </code>
+</pre>
+<p>This will be the list of width and height for different device at different screen size. And, now we have this. We can try to take a screenshot on different device for each url that we opened.</p>
+
+<h2 id="casperjs-code-screenshotsjs-for-taking-screenshot-for-different-device-for-each-url-that-we-opened">CasperJS code (screenshots.js) for taking screenshot for different device for each url that we opened</h2>
+
+<pre>
+  <code class="javascript">
+    casper.start().each(urls, function(self, link) {
+      self.thenOpen(link.url, function() {
+        var folderPath = 'screenshots/' + link.url.split('//')[1].split('/')[0] + '/';
+        console.log("Taking screenshot for the url " + link.url + "...")
+        viewports.forEach(function (currentValue) {
+          console.log('Screenshot for ' + currentValue.name + ' (' + currentValue.viewport.width + 'x' + currentValue.viewport.height + ')', 'info');
+          self.viewport(currentValue.viewport.width, currentValue.viewport.height);
+          self.capture(folderPath + currentValue.name + '-' + currentValue.viewport.width + 'x' + currentValue.viewport.height + '.png', {
+            top: 0,
+            left: 0,
+            width: currentValue.viewport.width,
+            height: currentValue.viewport.height
+          });
+        });
+      });
+    });
+  </code>
+</pre>
+<p>A sample of the output of this would look something like this.<br /><br />
+<img src="/img/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/outputFromTakingScreenshotsForEachUrl.PNG" alt="Output from taking screenshots for each opened url" /><br /><br />
+Now, when you run the code like this, $ casperjs screenshots.js urls.json, you should see screenshots has been taken for each url that we opened on different device. To be more clear, the full code for screenshots.js is as follows.</p>
+
+<h2 id="casperjs-code-screenshotsjs-for-taking-screenshot-for-different-device-for-each-url-that-we-opened-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161112how-to-take-screenshots-at-different-screen-sizes-using-casperjsscreenshotsjs-targetblanksource-codea">CasperJS code (screenshots.js) for taking screenshot for different device for each url that we opened   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/screenshots.js" target="_blank">source code</a></h2>
+
+<pre>
+  <code class="javascript">
+    var casper = require("casper").create();
+    var fs = require('fs');
+    var urls = [];
+    var inputFile;
+    var contents;
+    var contentsToJSON;
+    var viewports = [
+      {
+        'name': 'Apple-iPhone-4s-portrait',
+        'viewport': {width: 320, height: 480}
+      },
+      {
+        'name': 'Apple-iPhone-4s-landscape',
+        'viewport': {width: 480, height: 320}
+      },
+      {
+        'name': 'Apple-iPhone-5-portrait',
+        'viewport': {width: 320, height: 568}
+      },
+      {
+        'name': 'Apple-iPhone-5-landscape',
+        'viewport': {width: 568, height: 320}
+      },
+      {
+        'name': 'Apple-iPhone-6-portrait',
+        'viewport': {width: 540, height: 960}
+      },
+      {
+        'name': 'Apple-iPhone-6-landscape',
+        'viewport': {width: 960, height: 540}
+      },
+      {
+        'name': 'Apple-iPad-mini-4-portrait',
+        'viewport': {width: 768, height: 1024}
+      },
+      {
+        'name': 'Apple-iPad-mini-4-landscape',
+        'viewport': {width: 1024, height: 768}
+      },
+      {
+        'name': 'Desktop-720p-HD',
+        'viewport': {width: 1280, height: 720}
+      },
+      {
+        'name': 'Desktop-1080p-HD',
+        'viewport': {width: 1920, height: 1080}
+      }
+    ];
+
+    if (casper.cli.has(0)) {
+      inputFile = casper.cli.get(0).toLowerCase();
+    }else{
+      casper.echo("No file passed, aborting...").exit();
+    }
+
+    contents = fs.read(inputFile);
+    contentsToJSON = JSON.parse(contents);
+
+    var listOfLinks = contentsToJSON.links;
+    listOfLinks.forEach(function (currentValue, index, arr) {
+      urls.push({url: currentValue.url});
+    });
+
+    casper.start().each(urls, function(self, link) {
+      self.thenOpen(link.url, function() {
+        var folderPath = 'screenshots/' + link.url.split('//')[1].split('/')[0] + '/';
+        console.log("Taking screenshot for the url " + link.url + "...")
+        viewports.forEach(function (currentValue) {
+          console.log('Screenshot for ' + currentValue.name + ' (' + currentValue.viewport.width + 'x' + currentValue.viewport.height + ')', 'info');
+          self.viewport(currentValue.viewport.width, currentValue.viewport.height);
+          self.capture(folderPath + currentValue.name + '-' + currentValue.viewport.width + 'x' + currentValue.viewport.height + '.png', {
+            top: 0,
+            left: 0,
+            width: currentValue.viewport.width,
+            height: currentValue.viewport.height
+          });
+        });
+      });
+    });
+
+    casper.run();
+  </code>
+</pre>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully this guide has given you the confidence to use CasperJS to open urls and take a screenshot. I hope that this tutorial has helped you and thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen">get in touch</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="http://docs.casperjs.org/en/latest/">CasperJS documentation</a> by <a href="http://casperjs.org/">CasperJS</a>.</li>
+  <li><a href="https://gist.github.com/nhoizey/4060568">Take screenshots at different viewport sizes using CasperJS</a> by <a href="https://github.com/nhoizey">nhoizey</a>.</li>
+  <li><a href="http://www.gsmarena.com/">Check out various screen sizes for different smart phones</a> by GSMArena.com.</li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "https://poanchen.github.io/blog/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs";
+    this.page.identifier = "/blog/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//poanchen.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.js"></script>
+</body>
+
+</html>

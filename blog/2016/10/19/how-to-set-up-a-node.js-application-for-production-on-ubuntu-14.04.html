@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>How to set up a Node.js application for production on Ubuntu 14.04?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/app/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to set up a Node.js application for production on Ubuntu 14.04?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 19 Oct 2016
+  
+</p>
+
+<div class="post">
+  <p>You probably have heard of Node.js at some points in your life. Maybe it is at <a href="http://stackoverflow.com/">stack overflow</a> or somewhere else. No surprise that Node.js became really popular as there are increasing interest in <a href="http://githut.info/">JavaScript</a> on <a href="https://github.com/">Github</a>. Normally, people use <a href="https://en.wikipedia.org/wiki/HTML">HTML</a>, <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a>, and <a href="https://www.javascript.com/">JavaScript</a> for front-end development. In the back-end, some popular programming languages like <a href="https://secure.php.net/">PHP</a> on <a href="https://wordpress.com/">WordPress</a> or <a href="https://symfony.com/">Symfony</a>, <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a> on <a href="https://spring.io/">spring</a> or <a href="http://www.theserverside.com/definition/J2EE-Java-2-Platform-Enterprise-Edition">J2EE</a>, <a href="https://www.python.org/">Python</a> on <a href="https://www.djangoproject.com/">django</a> or <a href="http://rubyonrails.org/">Ruby on Rails</a>. However, today we are going to talk about how to set up a Node.js application for production on Ubuntu 14.04 using <a href="https://httpd.apache.org/">Apache2</a> server. Thanks to Chrome’s V8 JavaScript engine, as the runtime environment interprets JavaScript. It allows the developer to write JavaScript in the back-end. One benefit would be that normally a developer who came from front-end who already knew JavaScript can easily pick up and implement a back end system using JavaScript and do not need to know other languages like frameworks that we talked about above. In this tutorial, we will cover setting up a production-ready Node.js environment that is composed of two Ubuntu 14.04 servers; one server will run Node.js applications managed by <a href="http://pm2.keymetrics.io/">PM2</a>, while the other will provide users with access to the application through an Apache2 reverse proxy to the application server. This guide uses two Ubuntu 14.04 servers with private networking in the same server. For simplicity, we also assume that you already have a domain name that points to your web server, so that you may access your web server via a domain name instead of its public IP address. Once you have those set up, then we may continue on this tutorial. We all know that in the local development for Node.js, we usually make a few changes along the way and simply uses the localhost IP address, i.e. 127.0.0.1, wherever the app server’s private IP address is used. Here, is the simplest hello world version of Node.js with <a href="http://expressjs.com/">Express</a>.</p>
+
+<h2 id="hello-world-version-of-nodejs-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161019how-to-set-up-a-nodejs-application-for-production-on-ubuntu-1404serverjs-targetblanksource-codea">Hello world version of Node.js   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/server.js" target="_blank">source code</a></h2>
+
+<pre>
+  <code class="javascript">
+    var express = require('express');
+    var app = express();
+
+    app.get('/', function (request, response) {
+      response.send("Hello World");
+    });
+
+    app.listen(8080);
+  </code>
+</pre>
+<p>When you run it, you should see something like this,</p>
+
+<p><img src="/img/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/hello world of nodejs.PNG" alt="chat example for hello world version" /><br /></p>
+
+<p>This Node.js application simply listens on the specified IP address and port, and returns “Hello World” with a 200 HTTP status code. This means that the application is only reachable from servers on the same private network, such as our web server. Let’s test the application through the private IP address. Open another a terminal session and connect to your web server. Because the web server is on the same private network, it should be able to reach the private IP address of the application using curl. Be sured to change the PRIVATE_IP_ADDRESS to your private IP address and PORT_THAT_Node_JS_APP_LISTEN if you changed to something else.</p>
+
+<h2 id="curl-to-your-nodejs-application-via-private-ip-address">curl to your Node.js application via private IP address</h2>
+
+<pre>
+  <code class="html">
+    curl http://PRIVATE_IP_ADDRESS:PORT_THAT_Node_JS_APP_LISTEN
+  </code>
+</pre>
+<p>This should return Hello World! Once this is good. Then, we may proceed and install PM2. Now, we will install PM2, which is a process manager for Node.js application that is running, and configured to listen on the proper IP address and port your specify earlier. And, we will be using <a href="https://www.npmjs.com/">npm</a> to install our PM2.</p>
+
+<h2 id="installing-pm2-using-npm">installing PM2 using npm</h2>
+
+<pre>
+  <code class="html">
+    sudo pm2 install pm2 -g
+  </code>
+</pre>
+<p>Once this is installed, then we may use PM2 to start a Node.js as simple as this, also be sured to replaced YOUR_NODE_JS_SERVER_NAME_FILE with the name of the Node.js server file you named.</p>
+
+<h2 id="start-nodejs-application-with-pm2">start Node.js application with PM2</h2>
+
+<pre>
+  <code class="html">
+    sudo pm2 YOUR_NODE_JS_SERVER_NAME_FILE.js
+  </code>
+</pre>
+<p>Then, you should be able to see that PM2 is now running. You may use the following command to check if the Node.js application is running or not via PM2.</p>
+
+<h2 id="check-if-nodejs-application-is-running-or-not-with-pm2">check if Node.js application is running or not with PM2</h2>
+
+<pre>
+  <code class="html">
+    sudo pm2 list
+  </code>
+</pre>
+<p>Now, you should be able to see your application is running in that output from the command above.<br />Normally, PM2 will restart automatically if the application crashes or is killed (thanks to PM2), but additonal step need to get the application running again if the web server boot or reboot itself. Hence, be sured to run the following command, so that your PM2 will restart your node.js application say one day you reboot your web server.</p>
+
+<h2 id="run-the-command-so-that-one-day-when-you-reboot-your-web-server-the-pm2-will-automatically-restart-your-nodejs-application">run the command so that one day when you reboot your web server, the PM2 will automatically restart your Node.js application</h2>
+
+<pre>
+  <code class="html">
+    sudo pm2 startup ubuntu
+  </code>
+</pre>
+<p>Once this is done, then we may proceed and set up a reverse proxy server so that we can access our Node.js application via the domain name that you have. In order for this to work, you need to have Apache2 installed in your web server and it can be achieved like this,</p>
+
+<h2 id="installing-apache2-on-a-web-server-via-a-command-line">installing Apache2 on a web server via a command line</h2>
+
+<pre>
+  <code class="html">
+    sudo apt-get update
+    sudo apt-get install apache2
+  </code>
+</pre>
+<p>Then, you may use the following command to see if it is running,</p>
+
+<h2 id="checking-if-apache2-is-running">checking if Apache2 is running</h2>
+
+<pre>
+  <code class="html">
+    sudo service apache2 status
+  </code>
+</pre>
+<p>It should print something like apache2 is running. If it is not already running, use the following command to start the Apache2,</p>
+
+<h2 id="start-the-apache2-server">start the Apache2 server</h2>
+
+<pre>
+  <code class="html">
+    sudo service apache2 start
+  </code>
+</pre>
+<p>Now, we need to go to Apache2 folder and insert the following configuration for the Apache2 server to work with PM2. Do the following command to get to Apache2 folder and modify the following file,</p>
+
+<h2 id="about-to-make-changes-to-the-config-file-for-apache2-so-that-we-may-access-nodejs-application-via-a-domain-name">about to make changes to the config file for Apache2, so that we may access Node.js application via a domain name</h2>
+
+<pre>
+  <code class="html">
+    cd /etc/apache2/sites-enabled/
+    sudo vi 000-default.conf
+  </code>
+</pre>
+
+<h2 id="add-the-following-configuration-in-the-000-defaultconf-file-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161019how-to-set-up-a-nodejs-application-for-production-on-ubuntu-1404000-defaultconf-targetblanksource-codea">add the following configuration in the 000-default.conf file   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/000-default.conf" target="_blank">source code</a></h2>
+
+<pre>
+  <code class="apache">
+    &lt;VirtualHost *:80&gt;
+      ServerAdmin webmaster@localhost
+      ServerName THIS_IS_WHERE_YOU_PUT_YOUR_DOMAIN_NAME_HERE
+
+      ProxyRequests off
+
+      &lt;Proxy *&gt;
+        Order deny,allow
+        Allow from all
+      &lt;/Proxy&gt;
+
+      &lt;Location /&gt;
+        ProxyPass http://PRIVATE_IP_ADDRESS:PORT_THAT_Node_JS_APP_LISTEN/
+        ProxyPassReverse http://PRIVATE_IP_ADDRESS:PORT_THAT_Node_JS_APP_LISTEN/
+      &lt;/Location&gt;
+    &lt;/VirtualHost&gt;
+  </code>
+</pre>
+<p>Now, we need to restart the Apache2 server to take effect.</p>
+
+<h2 id="restart-your-apache2-server">restart your Apache2 server</h2>
+
+<pre>
+  <code class="html">
+    sudo service apache2 restart
+  </code>
+</pre>
+<p>Assume that your Node.js application is running using PM2, and your application and Apache2 configuration are correct, you should now be able to access your application via the reverse proxy of the web server. Try it out by accessing your web server with the domain name that you have (the one you put in the Apache2 config file).</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully this guide has given you the confidence to do configuration setting with running Node.js application using PM2, and access the application via a reverse proxy of the web server with Apache2. If you would like to learn more and do this in <a href="https://www.nginx.com/">Nginx way</a>, please go <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04">here</a>. As our tutorial is greatly inspired from it. I am sure that with this guide, you will now be more comfortable with doing the server side configuration with your Node.js application and Apache2 server on Ubuntu 14.04. I hope that this post has helped you and thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen">get in touch</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="https://www.digitalocean.com/community/tags/node-js?type=tutorials">How to set up Node.js on various kind of server</a> by <a href="https://www.digitalocean.com/">DigitalOcean</a>.</li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "https://poanchen.github.io/blog/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04";
+    this.page.identifier = "/blog/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//poanchen.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.js"></script>
+</body>
+
+</html>

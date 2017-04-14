@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>How to login to a WordPress site using CasperJS?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/app/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to login to a WordPress site using CasperJS?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 27 Oct 2016
+  
+</p>
+
+<div class="post">
+  <p>Today, I am going to show you guys how to login to a site using CasperJS. CasperJS, is a navigation scripting and testing utility for <a href="http://phantomjs.org/">PhantomJS</a>, written in JavaScript. It allows us to test websites a lot like <a href="https://github.com/sebastianbergmann/phpunit/">PHPUnit</a>. Imagine that using CasperJS to automate the testing on your site. How it can help you to automate the repetitive tasks. How it can save your time and help you focus on implmenting your business logics. In this tutorial, we are going to impersonate a typical user who wants to login to a WordPress site, with correct username and password, they will be granted to signin. To prove that we are logged in to the site, we will be taking a screenshot when we passed the signin part. If you haven’t already, install <a href="http://casperjs.org/">CasperJS</a> or <a href="http://phantomjs.org/">PhantomJS</a> before we continue on. Now, let’s dive right in.</p>
+
+<h2 id="casperjs-code-to-start-with">CasperJS code to start with</h2>
+
+<pre>
+  <code class="javascript">
+    var page = require('webpage').create();
+    var casper = require('casper').create();
+
+    var urlBeforeLoggedIn = "https://www.jenrenalcare.com/wp-login.php";
+    var urlAfterLoggedIn = "https://www.jenrenalcare.com/wp-admin/";
+  </code>
+</pre>
+<p>The above code is a simple set up to get the CasperJS working. Those two variables namely urlBeforeLoggedIn and urlAfterLoggedIn. We will be using those url to sign in and for after sign in. Then, we need to get the CasperJS to open a site. It can be as simple as something like this.</p>
+
+<h2 id="casperjs-code-to-open-a-site">CasperJS code to open a site</h2>
+
+<pre>
+  <code class="javascript">
+    casper.start(urlBeforeLoggedIn);
+  </code>
+</pre>
+<p>This simply means that CasperJS start by going to this specific site. Then, now we need to login to the site. With CasperJS, we can simply achieve it by doing,</p>
+
+<h2 id="casperjs-code-to-submit-a-post-form">CasperJS code to submit a POST form</h2>
+
+<pre>
+  <code class="javascript">
+    casper.waitForSelector('form[method="post"]', function() {
+      casper.fillSelectors('form[method="post"]', {
+        'input[name="log"]': 'put_your_username_or_email_address_here',
+        'input[name="pwd"]': 'put_your_password_here'
+      }, true);
+    });
+  </code>
+</pre>
+<p>By the way, I used the web browser page inspector to get the name of the username field and password field which is log and pwd. At the end, I also set true, so that the form will be submitted automatically. Be sured to put your real username and password there. Then, all we need to do is wait for the site to transfer to the logged in area.</p>
+
+<h2 id="casperjs-code-to-wait-for-the-url-to-redirect-to-logged-in-area">CasperJS code to wait for the url to redirect to logged in area</h2>
+
+<pre>
+  <code class="javascript">
+    casper.waitForUrl(urlAfterLoggedIn, function() {
+      this.echo("Now, with correct username and password, you should be signed in to the site when you see this.");
+    });
+  </code>
+</pre>
+<p>When you run this CasperJS script, and see the message printed. That means that you have successfully signed in with CasperJS. To prove that we are signed in, I will be taking screenshot using the built-in function in CasperJS.</p>
+
+<h2 id="casperjs-code-to-screenshot-where-we-are-in-casperjs-script">CasperJS code to screenshot where we are in CasperJS script</h2>
+
+<pre>
+  <code class="javascript">
+    casper.waitForUrl(urlAfterLoggedIn, function() {
+      this.viewport(3000, 1080);
+      this.capture('./screenshot.png', {top: 0,left: 0,width: 3000, height: 1080});
+    });
+  </code>
+</pre>
+<p>When this script is completed, you should see an image saved in where you put your CasperJS script.</p>
+
+<h2 id="complete-code-for-casperjs-script-that-signin-to-a-wordpress-site-then-take-a-screenshot-when-it-is-in-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161027how-to-login-to-wordpress-site-using-casperjslogintowordpresssitejs-targetblanksource-codea">Complete code for CasperJS script that signin to a WordPress site, then take a screenshot when it is in   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/27/how-to-login-to-wordpress-site-using-casperjs/loginToWordpressSite.js" target="_blank">source code</a></h2>
+
+<pre>
+  <code class="javascript">
+    var page = require('webpage').create();
+    var casper = require('casper').create();
+
+    var urlBeforeLoggedIn = "https://www.jenrenalcare.com/wp-login.php";
+    var urlAfterLoggedIn = "https://www.jenrenalcare.com/wp-admin/";
+
+    casper.start(urlBeforeLoggedIn);
+
+    casper.waitForSelector('form[method="post"]', function() {
+      casper.fillSelectors('form[method="post"]', {
+        'input[name="log"]': 'put_your_username_or_email_address_here',
+        'input[name="pwd"]': 'put_your_password_here'
+      }, true);
+    });
+
+    casper.waitForUrl(urlAfterLoggedIn, function() {
+      this.viewport(3000, 1080);
+      this.capture('./screenshot.png', {top: 0,left: 0,width: 3000, height: 1080});
+    });
+  </code>
+</pre>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully this guide has given you the confidence to use CasperJS to simulate user activity on a web page. For example, login. I hope that this tutorial has helped you and thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen">get in touch</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="http://docs.casperjs.org/en/latest/">CasperJS documentation</a> by <a href="http://casperjs.org/">CasperJS</a>.</li>
+  <li><a href="https://github.com/poanchen/image-downloader">Image downloader using CasperJS</a> by <a href="https://github.com/poanchen">poanchen</a>.</li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "https://poanchen.github.io/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs";
+    this.page.identifier = "/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//poanchen.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.js"></script>
+</body>
+
+</html>

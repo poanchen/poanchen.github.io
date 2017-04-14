@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>How to check if an image already existed in wp-content/upload directory?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/app/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to check if an image already existed in wp-content/upload directory?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 10 Apr 2017
+  
+</p>
+
+<div class="post">
+  <p>If you have never play with WordPress, your first thought might be using file_exists(path) in PHP, which is perfectly fine. However, the way how WordPress organize their uploaded pictures is by their month of upload time. For example, say today is April, 10, 2017 and you just uploaded a picture named example.png. In WordPress, it will be stored in /wp-content/upload/2017/04/example.png with three other different sizes for thumbnail, medium and large size. If you were to use file_exists(path) in PHP, you would need to look for it recursively. And, here is how WordPress would really help you to solve this problem quickly. Every time, when an user upload an image through the WordPress back-end system. The image info will be stored in the database. So, to check if an image is already uploaded in wp-content/upload directory, we can simply make a database query.</p>
+
+<p>Here is the function that will try to find the image, if it does exist then it will return the image post id. Otherwise, a null will be return.  <a href="https://github.com/poanchen/code-for-blog/blob/master/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory/does-file-exists-sample.php" target="_blank">source code</a></p>
+
+<pre>
+  <code class="php">
+    function does_file_exists($filename) {
+      global $wpdb;
+      
+      return intval( $wpdb-&gt;get_var( "SELECT post_id FROM {$wpdb-&gt;postmeta} WHERE meta_value LIKE '%/$filename'" ) );
+    }
+  </code>
+</pre>
+
+<p>We can now use this function to check if an image exist in the server.  <a href="https://github.com/poanchen/code-for-blog/blob/master/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory/does-file-exists-sample.php" target="_blank">source code</a></p>
+
+<pre>
+  <code class="php">
+    if ( null == ( $thumb_id = does_file_exists( 'example.png' ) ) ) {
+      // hummm....seems like we have never seen this file name before, let's do an upload
+    } else {
+      // nice...the image already exist!!!
+    }
+  </code>
+</pre>
+
+<p>Now, with this function, you may check if an image exist in the server or not.</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully this guide has helped you to solve your problem of checking if an image is already uploaded in the server. I hope that this tutorial has helped you and thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen">get in touch</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="https://www.w3schools.com/php/func_filesystem_file_exists.asp">file_exists()</a></li>
+  <li><a href="https://codex.wordpress.org/Using_Images">Using Images</a></li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "https://poanchen.github.io/blog/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory";
+    this.page.identifier = "/blog/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//poanchen.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>How to add background music in Processing 3.0?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/app/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to add background music in Processing 3.0?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 15 Nov 2016
+  
+</p>
+
+<div class="post">
+  <p>Today, I am going to show you guys how to add background music in <a href="https://processing.org/">Processing 3.0</a>. Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. One of the aims of Processing is to allow non-programmers to start computer programming aided by visual feedback. As Processing is a fairly simple programming language that uses simplified syntax and a graphics user interface, some of the visual art school in Canada actually uses Processing to teach their students (who has no prior knowledge in programming) how to make things with code in an arts-oriented approach. I have to say that Processing is a very powerful tool and you can do a lot of really interesting things with it. Some of the amazing works by people around the world can be seen <a href="https://processing.org/exhibition/">here</a>. Pretty much anything you can think of visually, you can do it in Processing. The sky’s the limit. If you haven’t already, install <a href="https://processing.org/download/">Processing 3.0</a> before we continue on. Now, we can begin.</p>
+
+<h2 id="processing-code-to-start-with">Processing code to start with</h2>
+
+<pre>
+  <code class="java">
+    //runs once when the app first starts
+    void setup() {
+    }
+
+    //runs all the time, this is the main app loop
+    void draw() {
+    }
+  </code>
+</pre>
+<p>If you are new to Processing, there are two functions that are very important in Processing. One is setup and another one is draw. Think of setup as an one-time pad. It will only be called/runned once unless you restart the application. Draw is a function that will be consistently called/runned during the application and will continually to be running unless you terminate your program. Think of it as a while loop that does not break. Now, in order to add audio in Processing 3.0. We need to use a library called Sound by <a href="https://processingfoundation.org/">The Processing Foundation</a>. Here are the steps to get it up and running.<br /><br />
+First, you need to have your Processing software open,<br />
+Second, go to Sketch-&gt;Import Library-&gt;Add Library. Then, a Contribution Manager window should pop up.<br /></p>
+
+<p><img src="/img/2016/11/15/how-to-add-background-music-in-processing-3.0/how to add library.png" alt="How to add library" /></p>
+
+<p>Third, in the filter input box, type in “Sound” and select install and wait for a few moments.</p>
+
+<p><img src="/img/2016/11/15/how-to-add-background-music-in-processing-3.0/install the library.png" alt="Install the library" /></p>
+
+<p>And then, once it is installed completely. Close the window and lets add few lines of code to see if it is actually working.</p>
+
+<h2 id="processing-code-to-see-if-the-sound-is-actually-working">Processing code to see if the Sound is actually working</h2>
+
+<pre>
+  <code class="java">
+    //right above the setup function, add the following code
+    import processing.sound.*;
+    
+    SoundFile file;
+    //replace the sample.mp3 with your audio file name here
+    String audioName = "sample.mp3";
+    String path;
+  </code>
+</pre>
+<p>Just like any other programming language, you need to import the library before you can use it. Here, for simplicity, add your audio/mp3 file within the same folder as your sketch_XXXXXXXX.pde file.</p>
+
+<h2 id="processing-code-to-add-the-audio">Processing code to add the audio</h2>
+
+<pre>
+  <code class="java">
+    //runs once when the app first starts
+    void setup() {
+      // for more info about sketchPath, go to https://processing.org/discourse/beta/num_1229443269.html
+      path = sketchPath(audioName);
+      file = new SoundFile(this, path);
+      file.play();
+    }
+  </code>
+</pre>
+<p>Now, when you run the application, you should hear your audio playing in the background. Pretty simple hul?! In the future tutorial, I will be teaching you guys how to draw simple things with Processing. Here is the full code to the solution.</p>
+
+<h2 id="full-processing-code-to-play-audio-in-the-background-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161115how-to-add-background-music-in-processing-30backgroundmusicpde-targetblanksource-codea">Full Processing code to play audio in the background   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/15/how-to-add-background-music-in-processing-3.0/backgroundMusic.pde" target="_blank">source code</a></h2>
+
+<pre>
+  <code class="java">
+    import processing.sound.*;
+    
+    SoundFile file;
+    //put your audio file name here
+    String audioName = "sample.mp3";
+    String path;
+
+    //runs once when the app first starts
+    void setup() {
+      // for more info about sketchPath, go to https://processing.org/discourse/beta/num_1229443269.html
+      path = sketchPath(audioName);
+      file = new SoundFile(this, path);
+      file.play();
+    }
+
+    //runs all the time, this is the main app loop
+    void draw() {
+    }
+  </code>
+</pre>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully this guide has given you the confidence to start building really simple things with Processing. I hope that this tutorial has helped you and thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen">get in touch</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="https://processing.org/reference/">Processing documentation</a> by <a href="https://processing.org/">Processing</a>.</li>
+</ul>
+
+<h3 id="example-of-processing-work">Example of Processing work</h3>
+
+<ul>
+  <li><a href="https://github.com/poanchen/try-to-avoid-PPAP-game">PPAP game developed with Processing</a> by <a href="https://github.com/poanchen">poanchen</a> and Mandy.</li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "https://poanchen.github.io/blog/2016/11/15/how-to-add-background-music-in-processing-3.0";
+    this.page.identifier = "/blog/2016/11/15/how-to-add-background-music-in-processing-3.0";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//poanchen.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.js"></script>
+</body>
+
+</html>
