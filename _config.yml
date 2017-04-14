@@ -3,3 +3,8 @@ markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 gems:
   - jekyll-sitemap
+exclude:
+  - package.json
+  - node_modules
+  - gulpfile.js
+  - src
