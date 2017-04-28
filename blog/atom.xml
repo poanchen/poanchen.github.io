@@ -3,7 +3,7 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-04-14T00:44:48-07:00</updated>
+  <updated>2017-04-27T23:51:48-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
@@ -2055,6 +2055,8 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
       this.viewport(3000, 1080);
       this.capture('./screenshot.png', {top: 0,left: 0,width: 3000, height: 1080});
     });
+
+    casper.run();
   &lt;/code&gt;
 &lt;/pre&gt;
 
