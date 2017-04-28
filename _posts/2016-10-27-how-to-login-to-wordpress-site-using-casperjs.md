@@ -89,6 +89,8 @@ When this script is completed, you should see an image saved in where you put yo
       this.viewport(3000, 1080);
       this.capture('./screenshot.png', {top: 0,left: 0,width: 3000, height: 1080});
     });
+
+    casper.run();
   </code>
 </pre>
 
