@@ -3,12 +3,91 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-04-27T23:51:48-07:00</updated>
+  <updated>2017-05-07T00:28:25-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to set up password authentication with Apache on Ubuntu 14.04</title>
+      <link href="https://poanchen.github.io/blog/2017/05/07/how-to-set-up-password-authentication-with-apache-on-ubuntu-1404"/>
+      <updated>2017-05-07T00:00:00-07:00</updated>
+      <id>https://poanchen.github.io//blog/2017/05/07/how-to-set-up-password-authentication-with-apache-on-ubuntu-1404</id>
+      <content type="html">&lt;p&gt;When setting up a web server, there are often sections of the site that you wish to restrict access to. In order to restrict access to a certain page, a password-authentication will be used. In this guide, we will demonstrate how to password protect assets on an Apache web server running on Ubuntu 14.04.&lt;/p&gt;
+
+&lt;p&gt;First, you need to install the Apache Utilities Package.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/05/07/how-to-set-up-password-authentication-with-apache-on-ubuntu-1404/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    sudo apt-get update
+    sudo apt-get install apache2 apache2-utils
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Next, you need to create the password file for the Apache Utilities to use.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/05/07/how-to-set-up-password-authentication-with-apache-on-ubuntu-1404/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    sudo htpasswd -c /etc/apache2/.htpasswd username
+  &lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;You will be asked to supply and confirm a password for the user you just created.&lt;/p&gt;
+
+&lt;p&gt;You may view the username and encrypted password for each user:  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/05/07/how-to-set-up-password-authentication-with-apache-on-ubuntu-1404/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    cat /etc/apache2/.htpasswd
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Next, all you need to do is to configure the Apache file for the access control.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/05/07/how-to-set-up-password-authentication-with-apache-on-ubuntu-1404/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    sudo vi /etc/apache2/sites-enabled/000-default.conf
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Add the following code to your Apache config file.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/05/07/how-to-set-up-password-authentication-with-apache-on-ubuntu-1404/000-default-le-ssl.conf&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    &amp;lt;Directory /path/to/protect&amp;gt;
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Require all granted
+    &amp;lt;/Directory&amp;gt;
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now, you need to restart your Apache web server for it to take effect.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/05/07/how-to-set-up-password-authentication-with-apache-on-ubuntu-1404/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    sudo service apache2 restart
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;To confirm that your content is protected, try to access your restricted content in a web browser. A login widget should pop up.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has helped you to solve your problem of adding simple password authentication using Apache Utilities. I hope that this tutorial has helped you and thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-apache-on-ubuntu-14-04&quot;&gt;How To Set Up Password Authentication with Apache on Ubuntu 14.04&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>How to check if an image already existed in wp-content/upload directory?</title>
