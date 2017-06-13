@@ -102,3 +102,4 @@ I'll try to keep this list current and up to date. If you know of a great resour
 ### Example of Processing work
 
 * [PPAP game developed with Processing](https://github.com/poanchen/try-to-avoid-PPAP-game) by [poanchen](https://github.com/poanchen) and Mandy.
+* [A simple music player developed with Processing](https://github.com/poanchen/music-player) by [poanchen](https://github.com/poanchen) and Mandy.
