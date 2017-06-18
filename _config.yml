@@ -1,6 +1,7 @@
 name: "Poan (Baron) Chen, a happy developer"
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+url: https://poanchen.github.io
 gems:
   - jekyll-sitemap
 exclude:
