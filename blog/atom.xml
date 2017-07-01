@@ -3,12 +3,69 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-06-19T01:50:13-07:00</updated>
+  <updated>2017-07-01T13:03:05-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to recover all your deleted cron jobs?</title>
+      <link href="https://poanchen.github.io/blog/2017/07/01/how-to-recover-all-your-deleted-cron-jobs"/>
+      <updated>2017-07-01T00:00:00-07:00</updated>
+      <id>https://poanchen.github.io//blog/2017/07/01/how-to-recover-all-your-deleted-cron-jobs</id>
+      <content type="html">&lt;p&gt;Cron jobs can be easily removed simply by providing a wrong options. I usually use the command ‘crontab -e’ to add/modify all my scheduled cron jobs. (In fact, I just mistyped e as r haha) Sometimes, I mistyped to option ‘r’ instead of ‘e’ which in fact will removed all my cron jobs according to &lt;a href=&quot;https://www.computerhope.com/unix/ucrontab.htm&quot;&gt;this&lt;/a&gt;. When the moment I first did it, I panicked. Searched online and was trying to figure out how to recover this. Then, I got this idea of creating a bash script/command line tool that will help others to recover from disaster. And, here is what I &lt;a href=&quot;https://github.com/poanchen/recover-crontab&quot;&gt;did&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Say, one day you accidentally did this. You do not need to panicked because you got me. I will walk you through how to use this script to recover all your deleted cron jobs.&lt;/p&gt;
+
+&lt;p&gt;First step, you need to download the latest released version of the bash script from my &lt;a href=&quot;https://github.com/poanchen/recover-crontab/releases&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    wget https://github.com/poanchen/recover-crontab/archive/x.x.x.zip
+    wget https://github.com/poanchen/recover-crontab/archive/x.x.x.tar.gz
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Unzip them,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    unzip x.x.x.zip
+    tar xvzf x.x.x.tar.gz
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Go to the directory and run the script like this,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    ./recover-crontab.sh -u [PUT YOUR USERNAME HERE]
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;You will be promoted to input your scheduled time like this,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/poanchen/recover-crontab/master/demo.PNG&quot; alt=&quot;recover-crontab demo&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;At the end, you can find the ready-to-go command from the stdout or output.txt file. Hint: Use command ‘crontab -e’ to add/modify your cron jobs.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has help you to recover from the incident. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/poanchen/recover-crontab&quot;&gt;recover-crontab&lt;/a&gt; by &lt;a href=&quot;https://www.github.com/poanchen&quot;&gt;PoAn (Baron) Chen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>Mutable vs Immutable object in JavaScript</title>

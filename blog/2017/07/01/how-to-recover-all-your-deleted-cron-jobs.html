@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<!--
+=======================================================================================================================
+  ____         _           ______                      __   ____ _               _  __        __   _         _ _       
+ |  _ \ ___   / \   _ __  / | __ )  __ _ _ __ ___  _ __\ \ / ___| |__   ___ _ __( )_\ \      / ___| |__  ___(_| |_ ___ 
+ | |_) / _ \ / _ \ | '_ \| ||  _ \ / _` | '__/ _ \| '_ \| | |   | '_ \ / _ | '_ |/ __\ \ /\ / / _ | '_ \/ __| | __/ _ \
+ |  __| (_) / ___ \| | | | || |_) | (_| | | | (_) | | | | | |___| | | |  __| | | \__ \\ V  V |  __| |_) \__ | | ||  __/
+ |_|   \___/_/   \_|_| |_| ||____/ \__,_|_|  \___/|_| |_| |\____|_| |_|\___|_| |_|___/ \_/\_/ \___|_.__/|___|_|\__\___|
+                          \_\                          /_/                      
+=======================================================================================================================
+==========================================https://poanchen.github.io/contact===========================================
+==========================================Brought to you by PoAn (Baron) Chen==========================================
+-->
+
+<html>
+
+<head>
+  <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
+  <title>How to recover all your deleted cron jobs?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/app/css/index.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to recover all your deleted cron jobs?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 01 Jul 2017
+  
+</p>
+
+<div class="post">
+  <p>Cron jobs can be easily removed simply by providing a wrong options. I usually use the command ‘crontab -e’ to add/modify all my scheduled cron jobs. (In fact, I just mistyped e as r haha) Sometimes, I mistyped to option ‘r’ instead of ‘e’ which in fact will removed all my cron jobs according to <a href="https://www.computerhope.com/unix/ucrontab.htm">this</a>. When the moment I first did it, I panicked. Searched online and was trying to figure out how to recover this. Then, I got this idea of creating a bash script/command line tool that will help others to recover from disaster. And, here is what I <a href="https://github.com/poanchen/recover-crontab">did</a>.</p>
+
+<p>Say, one day you accidentally did this. You do not need to panicked because you got me. I will walk you through how to use this script to recover all your deleted cron jobs.</p>
+
+<p>First step, you need to download the latest released version of the bash script from my <a href="https://github.com/poanchen/recover-crontab/releases">GitHub repo</a>.</p>
+
+<pre>
+  <code class="bash">
+    wget https://github.com/poanchen/recover-crontab/archive/x.x.x.zip
+    wget https://github.com/poanchen/recover-crontab/archive/x.x.x.tar.gz
+  </code>
+</pre>
+
+<p>Unzip them,</p>
+
+<pre>
+  <code class="bash">
+    unzip x.x.x.zip
+    tar xvzf x.x.x.tar.gz
+  </code>
+</pre>
+
+<p>Go to the directory and run the script like this,</p>
+
+<pre>
+  <code class="bash">
+    ./recover-crontab.sh -u [PUT YOUR USERNAME HERE]
+  </code>
+</pre>
+
+<p>You will be promoted to input your scheduled time like this,</p>
+
+<p><img src="https://raw.githubusercontent.com/poanchen/recover-crontab/master/demo.PNG" alt="recover-crontab demo" /><br /></p>
+
+<p>At the end, you can find the ready-to-go command from the stdout or output.txt file. Hint: Use command ‘crontab -e’ to add/modify your cron jobs.</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully this guide has help you to recover from the incident. Thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen">get in touch</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="https://github.com/poanchen/recover-crontab">recover-crontab</a> by <a href="https://www.github.com/poanchen">PoAn (Baron) Chen</a></li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script src="/app/js/disqus.min.js"></script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+    <li><a href="https://www.quora.com/profile/PoAn-Baron-Chen-1">quora.com/profile/PoAn-Baron-Chen-1</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.min.js"></script>
+</body>
+
+</html>
