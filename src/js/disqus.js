@@ -1,6 +1,6 @@
 var disqus_config = function () {
-  this.page.url = "https://poanchen.github.io{{ page.url }}";
-  this.page.identifier = "{{ page.url }}";
+  this.page.url = document.location.href;
+  this.page.identifier = document.location.pathname;
 };
 (function() { // DON'T EDIT BELOW THIS LINE
   var d = document, s = d.createElement('script');
