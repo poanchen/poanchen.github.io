@@ -3,12 +3,111 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-07-23T11:11:23-07:00</updated>
+  <updated>2017-07-24T23:29:06-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to use Gulp.js to deploy your site to live through Github?</title>
+      <link href="https://poanchen.github.io/blog/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github"/>
+      <updated>2017-07-24T00:00:00-07:00</updated>
+      <id>https://poanchen.github.io//blog/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github</id>
+      <content type="html">&lt;p&gt;Today, I am going to show you guys how to use &lt;a href=&quot;http://gulpjs.com/&quot;&gt;Gulp.js&lt;/a&gt; to deploy your site to live through &lt;a href=&quot;https://www.github.com&quot;&gt;Github&lt;/a&gt;. Before we start, I would like to clarify couple of things. In this tutorial, we are making the following assumptions, (it works best when you set up your site the same way we did)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You are using Github to host your website (that means your website’s code is also on Github).&lt;/li&gt;
+  &lt;li&gt;You have two branch in your repo, one named dev and another named master. (the idea of having two branch is that all your development code will be push to the dev branch, and once everything looks good, then you simply push it to master branch, which will get roll out to production automatically, thanks to Github)&lt;/li&gt;
+  &lt;li&gt;Your production-ready code will be saved in the directory named prod.&lt;/li&gt;
+  &lt;li&gt;Assuming you have &lt;a href=&quot;http://gulpjs.com/&quot;&gt;Gulp.js&lt;/a&gt; and &lt;a href=&quot;https://www.npmjs.com/package/gulp-gh-pages&quot;&gt;gulp-gh-pages&lt;/a&gt; installed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Okay, let’s get it started. Here is an example of what your production code might looks like,&lt;/p&gt;
+
+&lt;p&gt;index.html (it should be stored in a directory called prod)  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github/prod/index.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;html&quot;&gt;
+    &amp;lt;!DOCTYPE html&amp;gt;
+    &amp;lt;html&amp;gt;
+      &amp;lt;head&amp;gt;
+        &amp;lt;title&amp;gt;Page Title&amp;lt;/title&amp;gt;
+      &amp;lt;/head&amp;gt;
+      &amp;lt;body&amp;gt;
+        &amp;lt;h1&amp;gt;Hello world&amp;lt;/h1&amp;gt;
+      &amp;lt;/body&amp;gt;
+    &amp;lt;/html&amp;gt;
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Next, we need to create the gulpfile.js to describe what our gulp task would be,&lt;/p&gt;
+
+&lt;p&gt;gulpfile.js  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github/gulpfile.js&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;javascript&quot;&gt;
+    var gulp   = require('gulp');
+    var deploy = require('gulp-gh-pages');
+
+    gulp.task('deploy', function () {
+      return gulp.src(&quot;./prod/**/*&quot;)
+        .pipe(deploy({ 
+          remoteUrl: &quot;https://github.com/your_github_username_here/your_github_username_here.github.io.git&quot;,
+          branch: &quot;master&quot;
+        }))
+    });
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;In this way, you can deploy your site to live through the following command whenever you are ready,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    gulp deploy
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;During the development, you should always push your code to dev branch in order to keep the production/master branch clean. (you should never directly push it to master branch except through the gulp deploy command)&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    git add .
+    git commit -m &quot;your commit message&quot;
+    git push origin dev
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now, your file structure should looks something like this,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    | gulpfile.js
+    |-&amp;gt; prod
+    |-&amp;gt;-&amp;gt; index.html
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Note: For simplicity, I do not minimized my html code. However, in the real world, I would normally create a directory called src and put all my development code here. And then I will create bunch of gulp task that will minimized all my html/js/css files and port it to prod directory. Then, I will have my .gitignore to ignore my prod directory. So that I do not accidentally commit my production-ready/minimized code to my dev branch. In this way, when I deploy my site through ‘gulp deploy’, all my code will be minimized in production. And, all my development code will stay readable/not minimized. This is consider best practice in terms of how you would organize your project/web app. Here is an example of what the &lt;a href=&quot;https://github.com/poanchen/pwa-to-do-list/blob/dev/gulpfile.js&quot;&gt;gulpfile.js&lt;/a&gt; would look like in case you need an example.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has teach you how to use Gulp.js to deploy your site to live through Github. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp&quot;&gt;Gulp.js Github&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/shinnn/gulp-gh-pages&quot;&gt;gulp-gh-pages Github&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/poanchen/pwa-to-do-list&quot;&gt;Example of a repo that uses the best practice that I mentioned earlier&lt;/a&gt; by &lt;a href=&quot;https://www.github.com/poanchen&quot;&gt;PoAn (Baron) Chen&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/poanchen/poanchen.github.io&quot;&gt;Example of a site that uses Gulp.js to deploy&lt;/a&gt; by &lt;a href=&quot;https://www.github.com/poanchen&quot;&gt;PoAn (Baron) Chen&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>How to recover all your deleted cron jobs?</title>

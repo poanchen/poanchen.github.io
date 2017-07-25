@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<!--
+=======================================================================================================================
+  ____         _           ______                      __   ____ _               _  __        __   _         _ _       
+ |  _ \ ___   / \   _ __  / | __ )  __ _ _ __ ___  _ __\ \ / ___| |__   ___ _ __( )_\ \      / ___| |__  ___(_| |_ ___ 
+ | |_) / _ \ / _ \ | '_ \| ||  _ \ / _` | '__/ _ \| '_ \| | |   | '_ \ / _ | '_ |/ __\ \ /\ / / _ | '_ \/ __| | __/ _ \
+ |  __| (_) / ___ \| | | | || |_) | (_| | | | (_) | | | | | |___| | | |  __| | | \__ \\ V  V |  __| |_) \__ | | ||  __/
+ |_|   \___/_/   \_|_| |_| ||____/ \__,_|_|  \___/|_| |_| |\____|_| |_|\___|_| |_|___/ \_/\_/ \___|_.__/|___|_|\__\___|
+                          \_\                          /_/                      
+=======================================================================================================================
+==========================================https://poanchen.github.io/contact===========================================
+==========================================Brought to you by PoAn (Baron) Chen==========================================
+-->
+
+<html>
+
+<head>
+  <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
+  <title>How to use Gulp.js to deploy your site to live through Github?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/app/css/index.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to use Gulp.js to deploy your site to live through Github?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 24 Jul 2017
+  
+</p>
+
+<div class="post">
+  <p>Today, I am going to show you guys how to use <a href="http://gulpjs.com/">Gulp.js</a> to deploy your site to live through <a href="https://www.github.com">Github</a>. Before we start, I would like to clarify couple of things. In this tutorial, we are making the following assumptions, (it works best when you set up your site the same way we did)</p>
+
+<ul>
+  <li>You are using Github to host your website (that means your website’s code is also on Github).</li>
+  <li>You have two branch in your repo, one named dev and another named master. (the idea of having two branch is that all your development code will be push to the dev branch, and once everything looks good, then you simply push it to master branch, which will get roll out to production automatically, thanks to Github)</li>
+  <li>Your production-ready code will be saved in the directory named prod.</li>
+  <li>Assuming you have <a href="http://gulpjs.com/">Gulp.js</a> and <a href="https://www.npmjs.com/package/gulp-gh-pages">gulp-gh-pages</a> installed.</li>
+</ul>
+
+<p>Okay, let’s get it started. Here is an example of what your production code might looks like,</p>
+
+<p>index.html (it should be stored in a directory called prod)  <a href="https://github.com/poanchen/code-for-blog/blob/master/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github/prod/index.html" target="_blank">source code</a></p>
+<pre>
+  <code class="html">
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;Page Title&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;Hello world&lt;/h1&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  </code>
+</pre>
+
+<p>Next, we need to create the gulpfile.js to describe what our gulp task would be,</p>
+
+<p>gulpfile.js  <a href="https://github.com/poanchen/code-for-blog/blob/master/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github/gulpfile.js" target="_blank">source code</a></p>
+<pre>
+  <code class="javascript">
+    var gulp   = require('gulp');
+    var deploy = require('gulp-gh-pages');
+
+    gulp.task('deploy', function () {
+      return gulp.src("./prod/**/*")
+        .pipe(deploy({ 
+          remoteUrl: "https://github.com/your_github_username_here/your_github_username_here.github.io.git",
+          branch: "master"
+        }))
+    });
+  </code>
+</pre>
+
+<p>In this way, you can deploy your site to live through the following command whenever you are ready,</p>
+
+<pre>
+  <code class="bash">
+    gulp deploy
+  </code>
+</pre>
+
+<p>During the development, you should always push your code to dev branch in order to keep the production/master branch clean. (you should never directly push it to master branch except through the gulp deploy command)</p>
+
+<pre>
+  <code class="bash">
+    git add .
+    git commit -m "your commit message"
+    git push origin dev
+  </code>
+</pre>
+
+<p>Now, your file structure should looks something like this,</p>
+
+<pre>
+  <code class="bash">
+    | gulpfile.js
+    |-&gt; prod
+    |-&gt;-&gt; index.html
+  </code>
+</pre>
+
+<p>Note: For simplicity, I do not minimized my html code. However, in the real world, I would normally create a directory called src and put all my development code here. And then I will create bunch of gulp task that will minimized all my html/js/css files and port it to prod directory. Then, I will have my .gitignore to ignore my prod directory. So that I do not accidentally commit my production-ready/minimized code to my dev branch. In this way, when I deploy my site through ‘gulp deploy’, all my code will be minimized in production. And, all my development code will stay readable/not minimized. This is consider best practice in terms of how you would organize your project/web app. Here is an example of what the <a href="https://github.com/poanchen/pwa-to-do-list/blob/dev/gulpfile.js">gulpfile.js</a> would look like in case you need an example.</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully this guide has teach you how to use Gulp.js to deploy your site to live through Github. Thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen">get in touch</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="https://github.com/gulpjs/gulp">Gulp.js Github</a>.</li>
+  <li><a href="https://pages.github.com/">Github Pages</a>.</li>
+  <li><a href="https://github.com/shinnn/gulp-gh-pages">gulp-gh-pages Github</a>.</li>
+  <li><a href="https://github.com/poanchen/pwa-to-do-list">Example of a repo that uses the best practice that I mentioned earlier</a> by <a href="https://www.github.com/poanchen">PoAn (Baron) Chen</a>.</li>
+  <li><a href="https://github.com/poanchen/poanchen.github.io">Example of a site that uses Gulp.js to deploy</a> by <a href="https://www.github.com/poanchen">PoAn (Baron) Chen</a>.</li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script src="/app/js/disqus.min.js"></script>
+<noscript>
+Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+    <li><a href="https://www.quora.com/profile/PoAn-Baron-Chen-1">quora.com/profile/PoAn-Baron-Chen-1</a></li>
+    <li><a href="https://opencollective.com/poanchen">opencollective.com/poanchen</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.min.js"></script>
+</body>
+
+</html>
