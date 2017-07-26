@@ -3,12 +3,53 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-07-24T23:29:06-07:00</updated>
+  <updated>2017-07-25T22:46:20-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to convert a large PDF to HTML?</title>
+      <link href="https://poanchen.github.io/blog/2017/07/25/how-to-convert-a-large-PDF-to-html"/>
+      <updated>2017-07-25T00:00:00-07:00</updated>
+      <id>https://poanchen.github.io//blog/2017/07/25/how-to-convert-a-large-PDF-to-html</id>
+      <content type="html">&lt;p&gt;PDF is an awesome format that allows people to view the document easily across different platform while staying consistent (it will look the same). However, viewing a large PDF on a website could be an issue when the size is too large. On top of that, web browser usually needs to download the whole PDF off before the user can actually sees it. It can be very inefficient and waste of time as the PDF gets larger and larger. A 20MB size of PDF with slower internet connection could take a min to download. Nowadays, people are impatient. User would not likes the idea of having to wait for a min or more before viewing a PDF. Here is where the &lt;a href=&quot;https://en.wikipedia.org/wiki/Lazy_loading&quot;&gt;lazy load&lt;/a&gt; comes into play. Lazy load is where it only trigger to load the contents that the user is requesting/got to. Contents that user never request/got to will not get load. This means two things. One is that it will help us to save some bandwidth for the server-side. Two is user will be able to view the PDF ALMOST immediately. The concept of Lazy load is wildly used on the internet. Because it allows the website to load faster (only load necessary contents) and performance is very important for high traffic website. So now,  back to the topic, how can we leverage the benefit of lazy load with the PDF? We simply turn it into a HTML. It sounds simple. But turning a PDF into a HTML is a lot of work programmically. So today, I am going to show you guys a tool that will do the job. It is called &lt;a href=&quot;https://www.idrsolutions.com/jpdf2html5/&quot;&gt;JPDF2HTML5&lt;/a&gt;. This is one of the simplest tool that I can find online that will convert a large PDF to HTML. Please head over to their site to download the trial version of the tool, &lt;a href=&quot;https://www.idrsolutions.com/jpdf2html5/downloads/trial/&quot; target=&quot;_blank&quot;&gt;https://www.idrsolutions.com/jpdf2html5/downloads/trial/&lt;/a&gt;. You should be able to see a JAR file when you downloaded off from their site. The next thing you want to do is to run the following command,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    java -jar jpdf2html-trial.jar [the PDF you want to convert from] [the destination/path you want it to go] [password for PDF if any]
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;For example, this is an example command that will convert a test.pdf and save the HTML to my desktop.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    java -jar jpdf2html-trial.jar test.pdf C:\Users\myUserName\Desktop
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;It is that simple.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has help you to convert your large PDF to HTML. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.idrsolutions.com/jpdf2html5/support&quot;&gt;jpdf2html documentation and support&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.idrsolutions.com/jpdf2html5/example-conversions/&quot;&gt;Sample site from IDR Solutions&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://s3-ap-northeast-1.amazonaws.com/syd-tw/2016%3F%3F%3F%3F/index.html?page=2&quot;&gt;I once coverted a 364MB PDF to HTML and here it is&lt;/a&gt; and &lt;a href=&quot;https://www.nyf.tw/%E9%9B%BB%E5%AD%90%E5%9E%8B%E9%8C%84/&quot;&gt;here is the hosting website that uses it&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>How to use Gulp.js to deploy your site to live through Github?</title>
