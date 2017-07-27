@@ -3,12 +3,125 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-07-25T22:46:20-07:00</updated>
+  <updated>2017-07-27T01:15:53-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to add Disqus to your Jekyll site?</title>
+      <link href="https://poanchen.github.io/blog/2017/07/27/how-to-add-disqus-to-your-jekyll-site"/>
+      <updated>2017-07-27T00:00:00-07:00</updated>
+      <id>https://poanchen.github.io//blog/2017/07/27/how-to-add-disqus-to-your-jekyll-site</id>
+      <content type="html">&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a popular static site generator that is perfect for blogging. In fact, this site &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io&quot;&gt;uses Jekyll&lt;/a&gt; as well. Unlike &lt;a href=&quot;https://www.wordpress.com&quot;&gt;WordPress&lt;/a&gt;, Jekyll does not use/have database at all. Which makes it extremely fast because it does need to make a trip to DB when fetching a blog. Since Jekyll is simply a static site generator, there are disadvantages. For example, it does have provide/have the ability for people to comment like WordPress did. However, you can still use a 3rd party library to complement that. &lt;a href=&quot;https://disqus.com&quot;&gt;Disqus&lt;/a&gt; is a popular library that allows you to add commenting system to your site easily. In this tutorial, I am going to show you guys how to add Disqus to your Jekyll site in two ways.&lt;/p&gt;
+
+&lt;p&gt;First way:&lt;/p&gt;
+
+&lt;p&gt;Create a disqus.html file and save it within the folder name _includes&lt;/p&gt;
+
+&lt;p&gt;Here is an example of the disqus.html file,   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/07/27/how-to-add-disqus-to-your-jekyll-site/_includes/disqus.html#L1-L22&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;html&quot;&gt;
+    &amp;lt;div id=&quot;disqus_thread&quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;script type=&quot;text/javascript&quot;&amp;gt;
+      var disqus_config = function () {
+        // Here is an example,
+        // this.page.url = &quot;https://poanchen.github.io&amp;lcub;&amp;lcub; page.url &amp;rcub;&amp;rcub;&quot;;
+        this.page.url = &quot;[put_your_site_url_here]&amp;lcub;&amp;lcub; page.url &amp;rcub;&amp;rcub;&quot;;
+        this.page.identifier = &quot;&amp;lcub;&amp;lcub; page.url &amp;rcub;&amp;rcub;&quot;;
+      };
+
+      // You should be able to get the following lines of code from your Disqus admin.
+      // https://disqus.com/admin/universalcode
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//[your_username].disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    &amp;lt;/script&amp;gt;
+    &amp;lt;noscript&amp;gt;
+      Please enable JavaScript to view the &amp;lt;a href=&quot;https://disqus.com/?ref_noscript&quot;&amp;gt;comments powered by Disqus.&amp;lt;/a&amp;gt;
+    &amp;lt;/noscript&amp;gt;
+  &lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Use this way if you do not mind inline JavaScript.&lt;/p&gt;
+
+&lt;p&gt;And, go to any site that you would like comment included and do this,&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;jekyll&quot;&gt;
+    // some contents
+    &amp;lcub;&amp;percnt; include disqus.html &amp;percnt;&amp;rcub;
+    // some contents
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Second way:&lt;/p&gt;
+
+&lt;p&gt;Create a disqus.html file and save it within the folder name _includes&lt;/p&gt;
+
+&lt;p&gt;Here is an example of the disqus.html file,   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/07/27/how-to-add-disqus-to-your-jekyll-site/_includes/disqus.html#L24-L29&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;html&quot;&gt;
+    &amp;lt;div id=&quot;disqus_thread&quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;script src=&quot;/path/to/your/disqus.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;noscript&amp;gt;
+      Please enable JavaScript to view the &amp;lt;a href=&quot;https://disqus.com/?ref_noscript&quot;&amp;gt;comments powered by Disqus.&amp;lt;/a&amp;gt;
+    &amp;lt;/noscript&amp;gt;
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Create a disqus.js file and save it to anywhere you like, (we saved it in src/js/disqus.js)   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/07/27/how-to-add-disqus-to-your-jekyll-site/src/js/disqus.js&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;javascript&quot;&gt;
+    var disqus_config = function () {
+      // we are using document.location.* here because Jekyll code does not work well in JS code.
+      this.page.url = document.location.href;
+      this.page.identifier = document.location.pathname;
+    };
+
+    // You should be able to get the following lines of code from your Disqus admin.
+    // https://disqus.com/admin/universalcode
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '//[your_username].disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  &lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Use this way if you mind inline JavaScript.&lt;/p&gt;
+
+&lt;p&gt;And, go to any site that you would like comment included and do this,&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;jekyll&quot;&gt;
+    // some contents
+    &amp;lcub;&amp;percnt; include disqus.html &amp;percnt;&amp;rcub;
+    // some contents
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Setting up the code this way allows you to enable commenting on a page-by-page basis.&lt;br /&gt;
+It is that simple.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has help you to add Disqus to your Jekyll site. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@r3id/how-to-add-disqus-to-your-jekyll-site-dca477da3585&quot;&gt;How to: Add Disqus to your Jekyll site&lt;/a&gt; by &lt;a href=&quot;https://medium.com/@r3id&quot;&gt;Alan Reid&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://disqus.com/admin/universalcode&quot;&gt;Here is where you would find your Disqus code&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>How to convert a large PDF to HTML?</title>

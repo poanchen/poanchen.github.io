@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<!--
+=======================================================================================================================
+  ____         _           ______                      __   ____ _               _  __        __   _         _ _       
+ |  _ \ ___   / \   _ __  / | __ )  __ _ _ __ ___  _ __\ \ / ___| |__   ___ _ __( )_\ \      / ___| |__  ___(_| |_ ___ 
+ | |_) / _ \ / _ \ | '_ \| ||  _ \ / _` | '__/ _ \| '_ \| | |   | '_ \ / _ | '_ |/ __\ \ /\ / / _ | '_ \/ __| | __/ _ \
+ |  __| (_) / ___ \| | | | || |_) | (_| | | | (_) | | | | | |___| | | |  __| | | \__ \\ V  V |  __| |_) \__ | | ||  __/
+ |_|   \___/_/   \_|_| |_| ||____/ \__,_|_|  \___/|_| |_| |\____|_| |_|\___|_| |_|___/ \_/\_/ \___|_.__/|___|_|\__\___|
+                          \_\                          /_/                      
+=======================================================================================================================
+==========================================https://poanchen.github.io/contact===========================================
+==========================================Brought to you by PoAn (Baron) Chen==========================================
+-->
+
+<html>
+
+<head>
+  <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
+  <title>How to add Disqus to your Jekyll site?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/app/css/index.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to add Disqus to your Jekyll site?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 27 Jul 2017
+  
+</p>
+
+<div class="post">
+  <p><a href="https://jekyllrb.com">Jekyll</a> is a popular static site generator that is perfect for blogging. In fact, this site <a href="https://github.com/poanchen/poanchen.github.io">uses Jekyll</a> as well. Unlike <a href="https://www.wordpress.com">WordPress</a>, Jekyll does not use/have database at all. Which makes it extremely fast because it does need to make a trip to DB when fetching a blog. Since Jekyll is simply a static site generator, there are disadvantages. For example, it does have provide/have the ability for people to comment like WordPress did. However, you can still use a 3rd party library to complement that. <a href="https://disqus.com">Disqus</a> is a popular library that allows you to add commenting system to your site easily. In this tutorial, I am going to show you guys how to add Disqus to your Jekyll site in two ways.</p>
+
+<p>First way:</p>
+
+<p>Create a disqus.html file and save it within the folder name _includes</p>
+
+<p>Here is an example of the disqus.html file,   <a href="https://github.com/poanchen/code-for-blog/blob/master/2017/07/27/how-to-add-disqus-to-your-jekyll-site/_includes/disqus.html#L1-L22" target="_blank">source code</a></p>
+<pre>
+  <code class="html">
+    &lt;div id="disqus_thread"&gt;&lt;/div&gt;
+    &lt;script type="text/javascript"&gt;
+      var disqus_config = function () {
+        // Here is an example,
+        // this.page.url = "https://poanchen.github.io&lcub;&lcub; page.url &rcub;&rcub;";
+        this.page.url = "[put_your_site_url_here]&lcub;&lcub; page.url &rcub;&rcub;";
+        this.page.identifier = "&lcub;&lcub; page.url &rcub;&rcub;";
+      };
+
+      // You should be able to get the following lines of code from your Disqus admin.
+      // https://disqus.com/admin/universalcode
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//[your_username].disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    &lt;/script&gt;
+    &lt;noscript&gt;
+      Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;
+    &lt;/noscript&gt;
+  </code>
+</pre>
+<p>Use this way if you do not mind inline JavaScript.</p>
+
+<p>And, go to any site that you would like comment included and do this,</p>
+<pre>
+  <code class="jekyll">
+    // some contents
+    &lcub;&percnt; include disqus.html &percnt;&rcub;
+    // some contents
+  </code>
+</pre>
+
+<p>Second way:</p>
+
+<p>Create a disqus.html file and save it within the folder name _includes</p>
+
+<p>Here is an example of the disqus.html file,   <a href="https://github.com/poanchen/code-for-blog/blob/master/2017/07/27/how-to-add-disqus-to-your-jekyll-site/_includes/disqus.html#L24-L29" target="_blank">source code</a></p>
+<pre>
+  <code class="html">
+    &lt;div id="disqus_thread"&gt;&lt;/div&gt;
+    &lt;script src="/path/to/your/disqus.js"&gt;&lt;/script&gt;
+    &lt;noscript&gt;
+      Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;
+    &lt;/noscript&gt;
+  </code>
+</pre>
+
+<p>Create a disqus.js file and save it to anywhere you like, (we saved it in src/js/disqus.js)   <a href="https://github.com/poanchen/code-for-blog/blob/master/2017/07/27/how-to-add-disqus-to-your-jekyll-site/src/js/disqus.js" target="_blank">source code</a></p>
+<pre>
+  <code class="javascript">
+    var disqus_config = function () {
+      // we are using document.location.* here because Jekyll code does not work well in JS code.
+      this.page.url = document.location.href;
+      this.page.identifier = document.location.pathname;
+    };
+
+    // You should be able to get the following lines of code from your Disqus admin.
+    // https://disqus.com/admin/universalcode
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '//[your_username].disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </code>
+</pre>
+<p>Use this way if you mind inline JavaScript.</p>
+
+<p>And, go to any site that you would like comment included and do this,</p>
+<pre>
+  <code class="jekyll">
+    // some contents
+    &lcub;&percnt; include disqus.html &percnt;&rcub;
+    // some contents
+  </code>
+</pre>
+
+<p>Setting up the code this way allows you to enable commenting on a page-by-page basis.<br />
+It is that simple.</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully this guide has help you to add Disqus to your Jekyll site. Thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen">get in touch</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="https://medium.com/@r3id/how-to-add-disqus-to-your-jekyll-site-dca477da3585">How to: Add Disqus to your Jekyll site</a> by <a href="https://medium.com/@r3id">Alan Reid</a>.</li>
+  <li><a href="https://disqus.com/admin/universalcode">Here is where you would find your Disqus code</a>.</li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script src="/app/js/disqus.min.js"></script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+    <li><a href="https://www.quora.com/profile/PoAn-Baron-Chen-1">quora.com/profile/PoAn-Baron-Chen-1</a></li>
+    <li><a href="https://opencollective.com/poanchen">opencollective.com/poanchen</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.min.js"></script>
+</body>
+
+</html>
