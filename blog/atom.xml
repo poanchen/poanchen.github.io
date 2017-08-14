@@ -3,7 +3,7 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-07-27T01:15:53-07:00</updated>
+  <updated>2017-08-14T02:20:35-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
@@ -3358,7 +3358,7 @@ Okay. Now, we have user’s username, email and password. I think it is time to 
 &lt;/pre&gt;
 &lt;p&gt;In the chat room, a possible chat would be like this,&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-1-ex.PNG&quot; alt=&quot;chat example for hello world version&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-1-ex.png&quot; alt=&quot;chat example for hello world version&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Pretty simple hul?!&lt;br /&gt;
 But, I have a question through. Is it possible that Hubot can grab what I just typed like when I said “hi Hubot”, can the Hubot get the word “Hubot”? &lt;br /&gt;Yes, indeed. You can do that. Just watch!&lt;/p&gt;
@@ -3375,7 +3375,7 @@ But, I have a question through. Is it possible that Hubot can grab what I just t
 &lt;/pre&gt;
 &lt;p&gt;In the chat room, a possible chat would be like this,&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-2-ex.PNG&quot; alt=&quot;chat example for pass parameter to hubot&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-2-ex.png&quot; alt=&quot;chat example for pass parameter to hubot&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Not bad hul?!&lt;br /&gt;
 Okay, now before we begin. I would like to introduce an amazing REST API that we will be using is called Genderize.io. A REST API that determines the gender of a first name which will help us to make this tutorial a lot easier. Thanks to &lt;a href=&quot;https://genderize.io/&quot;&gt;Genderize.io&lt;/a&gt;. The REST API that we will be calling is &lt;strong&gt;https://api.genderize.io&lt;/strong&gt;. An example on how this would be used.&lt;/p&gt;
@@ -3415,11 +3415,11 @@ Okay, now before we begin. I would like to introduce an amazing REST API that we
 &lt;/pre&gt;
 &lt;p&gt;In the chat room, a possible chat would be like this,&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-3-ex.PNG&quot; alt=&quot;chat example for checking gender for peter&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-3-ex.png&quot; alt=&quot;chat example for checking gender for peter&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;or&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-4-ex.PNG&quot; alt=&quot;chat example for checking gender for belle&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/hubot-4-ex.png&quot; alt=&quot;chat example for checking gender for belle&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Normally, the higher the probability, the greater chance that the response is correct!&lt;/p&gt;
 
