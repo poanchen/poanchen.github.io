@@ -40,7 +40,7 @@ index your new blog
 ```
 Troubleshooting
 ----------------------
-In case you ran into problem like "/usr/bin/env: node: No such file or directory" when you try to run gulp, this was due to the misnaming convention between nodejs and node. You simply need to run this command to make this error goes away,
+1. In case you ran into problem like `/usr/bin/env: node: No such file or directory` when you try to run gulp, this was due to the misnaming convention between nodejs and node. You simply need to run this command to make this error goes away,
 
 ```
 ln -s /usr/bin/nodejs /usr/bin/node
@@ -48,4 +48,9 @@ ln -s /usr/bin/nodejs /usr/bin/node
 
 Thanks to https://github.com/nodejs/node-v0.x-archive/issues/3911
 
+2. In case you ran into problem like `require': cannot load such file -- jekyll-sitemap (LoadError)` when you try to run jekyll server, this was due to the missing jekyll-sitemap in gem. You simply need to run this command to make this error goes away,
 
+```
+gem install jekyll-sitemap
+```
+Thanks to https://github.com/holman/left/issues/34
