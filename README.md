@@ -7,11 +7,12 @@ Development Usage
 ```
 1. git clone https://github.com/poanchen/poanchen.github.io.git
 2. cd poanchen.github.io/
-3. gulp // this will run the default gulp task that will minimized all the css/js files in
+3. npm install
+4. gulp // this will run the default gulp task that will minimized all the css/js files in
 the src folder as well as watching any css/js files changes and minimized automatically
-4. jekyll server
-5. Head over to http://localhost:4000 or http://127.0.0.1:4000
-6. Site should be running now!!!
+5. jekyll server
+6. Head over to http://localhost:4000 or http://127.0.0.1:4000
+7. Site should be running now!!!
 ```
 
 
