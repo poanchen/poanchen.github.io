@@ -7,8 +7,8 @@ Development Usage
 ```
 1. git clone https://github.com/poanchen/poanchen.github.io.git
 2. cd poanchen.github.io/
-3. gulp // this will run the default gulp task that will minimized all the css/js files in the src folder
-as well as watching any css/js files changes and minimized automatically
+3. gulp // this will run the default gulp task that will minimized all the css/js files in
+the src folder as well as watching any css/js files changes and minimized automatically
 4. jekyll server
 5. Head over to http://localhost:4000 or http://127.0.0.1:4000
 6. Site should be running now!!!
@@ -22,10 +22,12 @@ Steps to deploy the site to live
 1. git add .
 2. git commit -m "your commit message"
 3. git push origin dev
-4. gulp // this will run the default gulp task that will minimized all the css/js files in the src folder
+4. gulp // this will run the default gulp task that will minimized all the css/js files in 
+the src folder
 5. jekyll build // so that it will properly build the site as well as a correct sitemap.xml
-6. gulp deploy // this will commit the jekyll-gulp-generated production-ready code to master branch, then 
-Github will automatically roll the site to live
-7. Remember to head over to Webmaster Tools to update the sitemap.xml so that Google will index your new blog
+6. gulp deploy // this will commit the jekyll-gulp-generated production-ready code to master 
+branch, then Github will automatically roll the site to live
+7. Remember to head over to Webmaster Tools to update the sitemap.xml so that Google will 
+index your new blog
 8. You are done!!!
 ```
