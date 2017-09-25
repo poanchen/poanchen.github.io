@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<!--
+=======================================================================================================================
+  ____         _           ______                      __   ____ _               _  __        __   _         _ _       
+ |  _ \ ___   / \   _ __  / | __ )  __ _ _ __ ___  _ __\ \ / ___| |__   ___ _ __( )_\ \      / ___| |__  ___(_| |_ ___ 
+ | |_) / _ \ / _ \ | '_ \| ||  _ \ / _` | '__/ _ \| '_ \| | |   | '_ \ / _ | '_ |/ __\ \ /\ / / _ | '_ \/ __| | __/ _ \
+ |  __| (_) / ___ \| | | | || |_) | (_| | | | (_) | | | | | |___| | | |  __| | | \__ \\ V  V |  __| |_) \__ | | ||  __/
+ |_|   \___/_/   \_|_| |_| ||____/ \__,_|_|  \___/|_| |_| |\____|_| |_|\___|_| |_|___/ \_/\_/ \___|_.__/|___|_|\__\___|
+                          \_\                          /_/                      
+=======================================================================================================================
+==========================================https://poanchen.github.io/contact===========================================
+==========================================Brought to you by PoAn (Baron) Chen==========================================
+-->
+
+<html>
+
+<head>
+  <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
+  <title>How to fix 'error This file requires compiler and library support for the ISO C++ 2011 standard'?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/app/css/index.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to fix 'error This file requires compiler and library support for the ISO C++ 2011 standard'?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 24 Sep 2017
+  
+</p>
+
+<div class="post">
+  <p>Have you ever seen this error message</p>
+<pre>
+  <code class="bash">
+    error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+  </code>
+</pre>
+<p>before when you are running</p>
+<pre>
+  <code class="bash">
+    cmake CMakeLists.txt
+  </code>
+</pre>
+<p>command in a C++ project?</p>
+
+<p>You are in luck. In this short tutorial, we are going to show you guys how to solve this issue.</p>
+
+<p>You simply need to add the following line of code into your CMakeLists.txt file and it should works now.</p>
+
+<pre>
+  <code class="cmake">
+    SET(CMAKE_CXX_FLAGS "-std=c++11 -O3")
+  </code>
+</pre>
+
+<p>Tada. Your project should build successfully now =)</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully this guide has help you to make the error message goes away. Thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen">get in touch</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="http://blog.csdn.net/xbcReal/article/details/63689872">error This file requires compiler and library support for the ISO C++ 2011 standard</a> by <a href="http://my.csdn.net/xbcReal">xbcReal</a>.</li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script src="/app/js/disqus.min.js"></script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+    <li><a href="https://www.quora.com/profile/PoAn-Baron-Chen-1">quora.com/profile/PoAn-Baron-Chen-1</a></li>
+    <li><a href="https://opencollective.com/poanchen">opencollective.com/poanchen</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.min.js"></script>
+</body>
+
+</html>

@@ -3,12 +3,59 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-08-14T02:20:35-07:00</updated>
+  <updated>2017-09-24T17:12:07-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to fix 'error This file requires compiler and library support for the ISO C++ 2011 standard'?</title>
+      <link href="https://poanchen.github.io/blog/2017/09/24/How-to-fix-error-This-file-requires-compiler-and-library-support-for-the-ISO-C++-2011-standard"/>
+      <updated>2017-09-24T00:00:00-07:00</updated>
+      <id>https://poanchen.github.io//blog/2017/09/24/How-to-fix-error-This-file-requires-compiler-and-library-support-for-the-ISO-C++-2011-standard</id>
+      <content type="html">&lt;p&gt;Have you ever seen this error message&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+  &lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;before when you are running&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    cmake CMakeLists.txt
+  &lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;command in a C++ project?&lt;/p&gt;
+
+&lt;p&gt;You are in luck. In this short tutorial, we are going to show you guys how to solve this issue.&lt;/p&gt;
+
+&lt;p&gt;You simply need to add the following line of code into your CMakeLists.txt file and it should works now.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;cmake&quot;&gt;
+    SET(CMAKE_CXX_FLAGS &quot;-std=c++11 -O3&quot;)
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Tada. Your project should build successfully now =)&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has help you to make the error message goes away. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/xbcReal/article/details/63689872&quot;&gt;error This file requires compiler and library support for the ISO C++ 2011 standard&lt;/a&gt; by &lt;a href=&quot;http://my.csdn.net/xbcReal&quot;&gt;xbcReal&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>How to add Disqus to your Jekyll site?</title>
@@ -605,7 +652,7 @@ Immutable object - The object cannot be changed once created.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;p&gt;Then, we need to modify the code so that we are using React way to represent the information. Before, we do anything. We first try to print the hello world in React way. And, here is how we are doing it.&lt;/p&gt;
 
-&lt;h2 id=&quot;hello-world-version-of-react-code-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161209how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-endhello-world-in-react-wayhtml-targetblanksource-codea&quot;&gt;Hello World version of React code   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/hello-world-in-react-way.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;hello-world-version-of-react-code-source-code&quot;&gt;Hello World version of React code   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/hello-world-in-react-way.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;
@@ -631,7 +678,7 @@ Immutable object - The object cannot be changed once created.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;p&gt;Pretty simple hul! Then, we simply need to pass the data from Django controller to React. But, before we do that. We probably need to modify the back-end code a little bit in order for it to work. In the views.py from the part 1, there is a method called get_list_of_tutors and we need to make sure that @variables items is a JSON when it is return. We may simply do something like this.&lt;/p&gt;
 
-&lt;h2 id=&quot;modify-the-viewspy-a-little-bit-so-that-the-getlistoftutors-returns-as-a-json-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161209how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-endmodified-viewspy-targetblanksource-codea&quot;&gt;Modify the views.py a little bit so that the get_list_of_tutors returns as a JSON   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/modified-views.py&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;modify-the-viewspy-a-little-bit-so-that-the-get_list_of_tutors-returns-as-a-json-source-code&quot;&gt;Modify the views.py a little bit so that the get_list_of_tutors returns as a JSON   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/modified-views.py&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;python&quot;&gt;
@@ -823,7 +870,7 @@ Immutable object - The object cannot be changed once created.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/img/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/dropdown menu with the list of unfiltered billionaire.PNG&quot; alt=&quot;An example of dropdown menu with the list of unfiltered billionaire&quot; /&gt;&lt;br /&gt;
 Right now, if you try to select different city, the list does not change at all. Let’s use the filter so that it actually changes too according to the user’s selection. Before, we do that, let’s try to combine the ReactDOM of CurrentLocation and ListOfBillionaire so that they are all in the same ReactDOM. Something like this.&lt;/p&gt;
 
-&lt;h2 id=&quot;full-code-of-combined-react-code-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161209how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-endcombined-reactdom-code-for-both-dropdownhtml-targetblanksource-codea&quot;&gt;Full code of combined React code   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/combined-ReactDOM-code-for-both-dropdown.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;full-code-of-combined-react-code-source-code&quot;&gt;Full code of combined React code   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/combined-ReactDOM-code-for-both-dropdown.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;
@@ -905,7 +952,7 @@ Right now, if you try to select different city, the list does not change at all.
 &lt;/pre&gt;
 &lt;p&gt;Whenever there is a change of dropdown, the list of people should be changed as well. Thanks to React! Here is the code that does that.&lt;/p&gt;
 
-&lt;h2 id=&quot;full-code-for-dropdown-filter-for-location-of-the-billionaire-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161209how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-endfilter-location-in-react-wayhtml-targetblanksource-codea&quot;&gt;Full code for dropdown filter for location of the billionaire   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/filter-location-in-react-way.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;full-code-for-dropdown-filter-for-location-of-the-billionaire-source-code&quot;&gt;Full code for dropdown filter for location of the billionaire   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/filter-location-in-react-way.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;
@@ -995,7 +1042,7 @@ Right now, if you try to select different city, the list does not change at all.
 &lt;p&gt;&lt;img src=&quot;/img/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/demo on how the dropdown filter works.gif&quot; alt=&quot;A demo on how the dropdown filter works&quot; /&gt;&lt;br /&gt;
 Now, let’s try to add the filter for the net worth as well. Here is the code.&lt;/p&gt;
 
-&lt;h2 id=&quot;full-code-for-dropdown-filter-for-net-worth-and-location-of-the-billionaire-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161209how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-endfilter-in-react-way-full-codehtml-targetblanksource-codea&quot;&gt;Full code for dropdown filter for net worth and location of the billionaire   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/filter-in-react-way-full-code.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;full-code-for-dropdown-filter-for-net-worth-and-location-of-the-billionaire-source-code&quot;&gt;Full code for dropdown filter for net worth and location of the billionaire   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/filter-in-react-way-full-code.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;
@@ -1221,7 +1268,7 @@ Now, we need to add the url search into the url pattern in the Django in order f
 &lt;/pre&gt;
 &lt;p&gt;Now, let’s modify the search method a little bit to see if the method retrieve_all_get_parameters is working properly.&lt;/p&gt;
 
-&lt;h2 id=&quot;check-to-see-if-the-method-retrieveallgetparameters-is-working-properly&quot;&gt;Check to see if the method retrieve_all_get_parameters is working properly&lt;/h2&gt;
+&lt;h2 id=&quot;check-to-see-if-the-method-retrieve_all_get_parameters-is-working-properly&quot;&gt;Check to see if the method retrieve_all_get_parameters is working properly&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;python&quot;&gt;
@@ -1306,7 +1353,7 @@ Now, we need to add the url search into the url pattern in the Django in order f
 &lt;p&gt;&lt;img src=&quot;/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/sample output of all the billionaire in the database.PNG&quot; alt=&quot;Sample output of all the billionaire in the database&quot; /&gt;&lt;br /&gt;
 It seems to be working fine. Now, let’s work on the filtering part in the search page. There are few ways of doing filtering with Amazon Dynamodb, we will be using scan operation as our database is consider small. In production, you should use query instead for better performace. For more information about this, go ahead and read &lt;a href=&quot;https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html&quot;&gt;this offical document&lt;/a&gt; by Amazon. First, we need to work on the filter expression that is designed for Amazon Dynamodb. Your code should look something like this.&lt;/p&gt;
 
-&lt;h2 id=&quot;in-method-getlistofbillionaires&quot;&gt;In method get_list_of_billionaires,&lt;/h2&gt;
+&lt;h2 id=&quot;in-method-get_list_of_billionaires&quot;&gt;In method get_list_of_billionaires,&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;python&quot;&gt;
@@ -1351,7 +1398,7 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
 &lt;/pre&gt;
 &lt;p&gt;Once we have this, we can easily do the filtering part by doing this.&lt;/p&gt;
 
-&lt;h2 id=&quot;in-method-getlistofbillionaires-1&quot;&gt;In method get_list_of_billionaires,&lt;/h2&gt;
+&lt;h2 id=&quot;in-method-get_list_of_billionaires-1&quot;&gt;In method get_list_of_billionaires,&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;python&quot;&gt;
@@ -1394,7 +1441,7 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
 
 &lt;p&gt;&lt;img src=&quot;/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search for billionaire who currently lives in Medina, WA.PNG&quot; alt=&quot;Result of billionaire who currently lives in Medina, WA&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;full-code-for-urlspy-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161206how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-endurlspy-targetblanksource-codea&quot;&gt;Full code for urls.py   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/urls.py&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;full-code-for-urlspy-source-code&quot;&gt;Full code for urls.py   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/urls.py&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;python&quot;&gt;
@@ -1408,7 +1455,7 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h2 id=&quot;full-code-for-viewspy-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161206how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-endviewspy-targetblanksource-codea&quot;&gt;Full code for views.py   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/views.py&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;full-code-for-viewspy-source-code&quot;&gt;Full code for views.py   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/views.py&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;python&quot;&gt;
@@ -1506,7 +1553,7 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h2 id=&quot;full-code-for-searchhtml-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161206how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-endsearchhtml-targetblanksource-codea&quot;&gt;Full code for search.html   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;full-code-for-searchhtml-source-code&quot;&gt;Full code for search.html   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;
@@ -1585,7 +1632,7 @@ First, change directory to where you put your apache conf file.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;p&gt;Then, add the following lines to your code.&lt;/p&gt;
 
-&lt;h2 id=&quot;apache-code-for-enable-the-cors-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161120how-to-enable-cross-origin-resource-sharing-on-an-apache-server000-default-le-sslconf-targetblanksource-codea&quot;&gt;apache code for enable the CORS   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/20/how-to-enable-cross-origin-resource-sharing-on-an-apache-server/000-default-le-ssl.conf&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;apache-code-for-enable-the-cors-source-code&quot;&gt;apache code for enable the CORS   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/20/how-to-enable-cross-origin-resource-sharing-on-an-apache-server/000-default-le-ssl.conf&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;apache&quot;&gt;
@@ -1757,7 +1804,7 @@ First, change directory to where you put your apache conf file.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;p&gt;Now, even if the browser happen to not support hls, user may still be able to watch the video. If you would like to see the live demo, please visit &lt;a href=&quot;https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;full-code-for-playm3u8usinghlsjshtml-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161117how-to-play-mp4-video-using-hlsplaym3u8usinghlsjshtml-targetblanksource-codea&quot;&gt;Full code for playM3u8UsingHlsJs.html   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;full-code-for-playm3u8usinghlsjshtml-source-code&quot;&gt;Full code for playM3u8UsingHlsJs.html   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;
@@ -1873,7 +1920,7 @@ Second, go to Sketch-&amp;gt;Import Library-&amp;gt;Add Library. Then, a Contrib
 &lt;/pre&gt;
 &lt;p&gt;Now, when you run the application, you should hear your audio playing in the background. Pretty simple hul?! In the future tutorial, I will be teaching you guys how to draw simple things with Processing. Here is the full code to the solution.&lt;/p&gt;
 
-&lt;h2 id=&quot;full-processing-code-to-play-audio-in-the-background-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161115how-to-add-background-music-in-processing-30backgroundmusicpde-targetblanksource-codea&quot;&gt;Full Processing code to play audio in the background   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/15/how-to-add-background-music-in-processing-3.0/backgroundMusic.pde&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;full-processing-code-to-play-audio-in-the-background-source-code&quot;&gt;Full Processing code to play audio in the background   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/15/how-to-add-background-music-in-processing-3.0/backgroundMusic.pde&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;java&quot;&gt;
@@ -1957,7 +2004,7 @@ Second, go to Sketch-&amp;gt;Import Library-&amp;gt;Add Library. Then, a Contrib
 &lt;/pre&gt;
 &lt;p&gt;Now, the @variable should have the contents of the file when you execute like this, $ casperjs screenshots.js urls.json. Of course, the urls.json should look something like this.&lt;/p&gt;
 
-&lt;h2 id=&quot;what-the-urlsjson-looks-like-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161112how-to-take-screenshots-at-different-screen-sizes-using-casperjsurlsjson-targetblanksource-codea&quot;&gt;What the urls.json looks like   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/urls.json&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;what-the-urlsjson-looks-like-source-code&quot;&gt;What the urls.json looks like   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/urls.json&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;json&quot;&gt;
@@ -2083,7 +2130,7 @@ Now that each urls has been open, we need to set the height and width for differ
 &lt;img src=&quot;/img/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/outputFromTakingScreenshotsForEachUrl.PNG&quot; alt=&quot;Output from taking screenshots for each opened url&quot; /&gt;&lt;br /&gt;&lt;br /&gt;
 Now, when you run the code like this, $ casperjs screenshots.js urls.json, you should see screenshots has been taken for each url that we opened on different device. To be more clear, the full code for screenshots.js is as follows.&lt;/p&gt;
 
-&lt;h2 id=&quot;casperjs-code-screenshotsjs-for-taking-screenshot-for-different-device-for-each-url-that-we-opened-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161112how-to-take-screenshots-at-different-screen-sizes-using-casperjsscreenshotsjs-targetblanksource-codea&quot;&gt;CasperJS code (screenshots.js) for taking screenshot for different device for each url that we opened   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/screenshots.js&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;casperjs-code-screenshotsjs-for-taking-screenshot-for-different-device-for-each-url-that-we-opened-source-code&quot;&gt;CasperJS code (screenshots.js) for taking screenshot for different device for each url that we opened   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/screenshots.js&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;javascript&quot;&gt;
@@ -2196,7 +2243,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
       <id>https://poanchen.github.io//blog/2016/10/29/is-it-possible-to-host-two-website-with-different-domain-on-one-server</id>
       <content type="html">&lt;p&gt;If you have ever play around with server administration, you probably already knew the answer for this. The answer for this question is a BIG yes. It is totally possible to host two website on one server. And, you can easily achieve it by using Apache HTTP Server. However, there are various reason why you would do that. There are two reasons that I can come up with. One is, it is more cost-effective as having another server running will cost a bit more. Two is, both website is not consider as high traffic website. Otherwise, it is probably a good idea to separate them. Anyways, our focus in this article would be how you would do that in practice. In this post, we will be using Apache HTTP Server. Apache HTTP Server is consider to be the most used web server in the world according to &lt;a href=&quot;https://trends.builtwith.com/web-server&quot;&gt;Web Server Usage Statistics&lt;/a&gt;. In our example, say we have two website with two different domain name. One is example.com, another one is example.net. Two completely different domain name, and we are going to host them on one server with the help of Apache. Also, to make it simpler. Both website will be using HTTP protocol instead of HTTPS. So, we do not need to get their own SSL certificate. Also, to do this. All we need to do is modify some Apache config file then we will be able to host two different website on one server. Now, a sample of how the example.com conf file might look something like this.&lt;/p&gt;
 
-&lt;h2 id=&quot;apache-config-file-for-examplecom-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161029is-it-possible-to-host-two-website-with-different-domain-on-one-serverwww-example-comconf-targetblanksource-codea&quot;&gt;Apache config file for example.com   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/29/is-it-possible-to-host-two-website-with-different-domain-on-one-server/www-example-com.conf&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;apache-config-file-for-examplecom-source-code&quot;&gt;Apache config file for example.com   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/29/is-it-possible-to-host-two-website-with-different-domain-on-one-server/www-example-com.conf&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;apache&quot;&gt;
@@ -2212,7 +2259,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
 &lt;/pre&gt;
 &lt;p&gt;The file that you should be modifying is this file, /etc/apache2/sites-enabled/000-default.conf. This is the default config file for apache. The above code is basically telling apache that when a client request a webpage for www.example.com and the port was 80 or HTTP. Then, please go to the root directory, which is /var/www/example.com to find the webpage. Also, make sure to log the access activities to the file namely /var/www/example.com/log/access.log in the server, if there are any errors, then log them into this, /var/www/example.com/log/error.log.&lt;/p&gt;
 
-&lt;h2 id=&quot;apache-config-file-for-examplenet-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161029is-it-possible-to-host-two-website-with-different-domain-on-one-serverwww-example-netconf-targetblanksource-codea&quot;&gt;Apache config file for example.net   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/29/is-it-possible-to-host-two-website-with-different-domain-on-one-server/www-example-net.conf&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;apache-config-file-for-examplenet-source-code&quot;&gt;Apache config file for example.net   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/29/is-it-possible-to-host-two-website-with-different-domain-on-one-server/www-example-net.conf&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;apache&quot;&gt;
@@ -2259,7 +2306,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
       <id>https://poanchen.github.io//blog/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress</id>
       <content type="html">&lt;p&gt;Today, I am going to show you guys how to pass PHP data like an array to your JavaScript file in WordPress. However, you might be thinking why would I need to pass PHP data to the script. For example, have to ever encounter where you need to use some object or data from PHP in a JavaScript file, but you do not quite want to build a REST API for it as the data isn’t used a lot. Or, have to ever need to embedded php code in your JavaScript in WordPress? If the answer is positive, then this article is for you. This article will teach you on how to properly pass PHP data (an array) to your JavaScript file. However, in order to make this interesting, we are going to have a PHP file that contains some ielts conversation audios from &lt;a href=&quot;https://www.aehelp.com/&quot;&gt;AEHelp&lt;/a&gt;. Then, we are going to have another PHP file where learner can see and listen to all the audios. We also gonna have a JavaScript file that will get the audios from the PHP file and generate html for each audio on the fly. Now, we can begin.&lt;/p&gt;
 
-&lt;h2 id=&quot;php-code-that-contains-all-the-audios-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161028how-to-pass-php-data-to-your-script-in-wordpressaudioplaylistphp-targetblanksource-codea&quot;&gt;PHP code that contains all the audios   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/audioPlaylist.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;php-code-that-contains-all-the-audios-source-code&quot;&gt;PHP code that contains all the audios   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/audioPlaylist.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;php&quot;&gt;
@@ -2310,7 +2357,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
 &lt;/pre&gt;
 &lt;p&gt;Now that we have the @variable, we need to figure out how to pass that data to the JavaScript file. To do that, we are going to use &lt;a href=&quot;https://codex.wordpress.org/Function_Reference/wp_localize_script&quot;&gt;wp_localize_script&lt;/a&gt;. Through the use of this, it can be used to make any PHP data available to your script that you can normally only get from the server side of WordPress.&lt;/p&gt;
 
-&lt;h2 id=&quot;php-code-to-use-wplocalizescript&quot;&gt;PHP code to use wp_localize_script&lt;/h2&gt;
+&lt;h2 id=&quot;php-code-to-use-wp_localize_script&quot;&gt;PHP code to use wp_localize_script&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;php&quot;&gt;
@@ -2324,7 +2371,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
 &lt;/pre&gt;
 &lt;p&gt;This is basically telling the wp_localize_script that we are going to pass this @variable namely urlsForAllTheAudios as audio_array to the JavaScript file named createPlaylist.js. Now, since this is a WordPress site, we need to call the wp_head, so that the js file will be included in this page.&lt;/p&gt;
 
-&lt;h2 id=&quot;php-code-to-call-wphead&quot;&gt;PHP code to call wp_head&lt;/h2&gt;
+&lt;h2 id=&quot;php-code-to-call-wp_head&quot;&gt;PHP code to call wp_head&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;php&quot;&gt;
@@ -2344,7 +2391,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
 &lt;/pre&gt;
 &lt;p&gt;With this, the JavaScript can now add audio to that Div. Now it is time to create the js file that generate html for each audio on the fly. Then, we are done!&lt;/p&gt;
 
-&lt;h2 id=&quot;javascript-code-to-generate-html-for-each-audio-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161028how-to-pass-php-data-to-your-script-in-wordpresscreateplaylistjs-targetblanksource-codea&quot;&gt;JavaScript code to generate html for each audio   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/createPlaylist.js&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;javascript-code-to-generate-html-for-each-audio-source-code&quot;&gt;JavaScript code to generate html for each audio   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/createPlaylist.js&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;javascript&quot;&gt;
@@ -2384,7 +2431,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
 
 &lt;p&gt;&lt;img src=&quot;/img/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/audioPlaylist.PNG&quot; alt=&quot;example on the audio playlist look like in HTML&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;complete-code-for-php-that-show-audio-playlist-to-user-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161028how-to-pass-php-data-to-your-script-in-wordpressshowplaylisttouserphp-targetblanksource-codea&quot;&gt;Complete code for PHP that show audio playlist to user   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/showPlaylistToUser.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;complete-code-for-php-that-show-audio-playlist-to-user-source-code&quot;&gt;Complete code for PHP that show audio playlist to user   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/showPlaylistToUser.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;php&quot;&gt;
@@ -2493,7 +2540,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
 &lt;/pre&gt;
 &lt;p&gt;When this script is completed, you should see an image saved in where you put your CasperJS script.&lt;/p&gt;
 
-&lt;h2 id=&quot;complete-code-for-casperjs-script-that-signin-to-a-wordpress-site-then-take-a-screenshot-when-it-is-in-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161027how-to-login-to-wordpress-site-using-casperjslogintowordpresssitejs-targetblanksource-codea&quot;&gt;Complete code for CasperJS script that signin to a WordPress site, then take a screenshot when it is in   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/27/how-to-login-to-wordpress-site-using-casperjs/loginToWordpressSite.js&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;complete-code-for-casperjs-script-that-signin-to-a-wordpress-site-then-take-a-screenshot-when-it-is-in-source-code&quot;&gt;Complete code for CasperJS script that signin to a WordPress site, then take a screenshot when it is in   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/27/how-to-login-to-wordpress-site-using-casperjs/loginToWordpressSite.js&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;javascript&quot;&gt;
@@ -2545,7 +2592,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
       <id>https://poanchen.github.io//blog/2016/10/22/how-to-programmatically-register-an-account-in-wordpress</id>
       <content type="html">&lt;p&gt;Today, I am going to show you guys how to programmatically create an account for a user in WordPress. To help you understand clearly, we are going to write a REST API in PHP in the back-end. In the front-end, we will be using jQuery AJAX to query it. In case of error like username already exist, we will be printing out the error to the user in real-time. Lets get started!&lt;/p&gt;
 
-&lt;h2 id=&quot;php-code-to-start-with-directly-grabbed-from-herehttpspoanchengithubioblog20161016how-to-create-simple-rest-api-in-php-and-call-them-in-js-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161016how-to-create-simple-rest-api-in-php-and-call-them-in-jscheckifusernameexistphp-targetblanksource-codea&quot;&gt;PHP code to start with (directly grabbed from &lt;a href=&quot;https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js&quot;&gt;here&lt;/a&gt;)   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;php-code-to-start-with-directly-grabbed-from-here-source-code&quot;&gt;PHP code to start with (directly grabbed from &lt;a href=&quot;https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js&quot;&gt;here&lt;/a&gt;)   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;php&quot;&gt;
@@ -2577,7 +2624,7 @@ The output should look something like this.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;p&gt;The reason why the username is empty. It is because we didn’t pass in any username to the PHP file. We just simply call it.&lt;/p&gt;
 
-&lt;h2 id=&quot;html-code-to-start-with-directly-grabbed-from-herehttpspoanchengithubioblog20161016how-to-create-simple-rest-api-in-php-and-call-them-in-js-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161016how-to-create-simple-rest-api-in-php-and-call-them-in-jscheckifusernameexistjqueryhtml-targetblanksource-codea&quot;&gt;HTML Code to start with (directly grabbed from &lt;a href=&quot;https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js&quot;&gt;here&lt;/a&gt;)   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;html-code-to-start-with-directly-grabbed-from-here-source-code&quot;&gt;HTML Code to start with (directly grabbed from &lt;a href=&quot;https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js&quot;&gt;here&lt;/a&gt;)   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;
@@ -2994,7 +3041,7 @@ Now, let’s try to combine this with the front-end code, so that we can actuall
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h2 id=&quot;html-code-to-check-if-users-password-is-at-least-length-of-5-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161022how-to-programmatically-register-an-account-in-wordpresstryregisteranaccountjqueryhtml-targetblanksource-codea&quot;&gt;HTML Code to check if user’s password is at least length of 5.   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccountJquery.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;html-code-to-check-if-users-password-is-at-least-length-of-5-source-code&quot;&gt;HTML Code to check if user’s password is at least length of 5.   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccountJquery.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;
@@ -3095,7 +3142,7 @@ Now, let’s try to combine this with the front-end code, so that we can actuall
 Now, you may try to input your password, and it will alert you whenever your password length isn’t at least length of 5!&lt;br /&gt;
 Okay. Now, we have user’s username, email and password. I think it is time to create an account for them in WordPress.&lt;/p&gt;
 
-&lt;h2 id=&quot;php-code-to-create-an-account-for-user-in-wordpress-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161022how-to-programmatically-register-an-account-in-wordpresstryregisteranaccountphp-targetblanksource-codea&quot;&gt;PHP code to create an account for user in WordPress.   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;php-code-to-create-an-account-for-user-in-wordpress-source-code&quot;&gt;PHP code to create an account for user in WordPress.   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;php&quot;&gt;
@@ -3189,7 +3236,7 @@ Okay. Now, we have user’s username, email and password. I think it is time to 
       <id>https://poanchen.github.io//blog/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04</id>
       <content type="html">&lt;p&gt;You probably have heard of Node.js at some points in your life. Maybe it is at &lt;a href=&quot;http://stackoverflow.com/&quot;&gt;stack overflow&lt;/a&gt; or somewhere else. No surprise that Node.js became really popular as there are increasing interest in &lt;a href=&quot;http://githut.info/&quot;&gt;JavaScript&lt;/a&gt; on &lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt;. Normally, people use &lt;a href=&quot;https://en.wikipedia.org/wiki/HTML&quot;&gt;HTML&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Cascading_Style_Sheets&quot;&gt;CSS&lt;/a&gt;, and &lt;a href=&quot;https://www.javascript.com/&quot;&gt;JavaScript&lt;/a&gt; for front-end development. In the back-end, some popular programming languages like &lt;a href=&quot;https://secure.php.net/&quot;&gt;PHP&lt;/a&gt; on &lt;a href=&quot;https://wordpress.com/&quot;&gt;WordPress&lt;/a&gt; or &lt;a href=&quot;https://symfony.com/&quot;&gt;Symfony&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Java_(programming_language)&quot;&gt;Java&lt;/a&gt; on &lt;a href=&quot;https://spring.io/&quot;&gt;spring&lt;/a&gt; or &lt;a href=&quot;http://www.theserverside.com/definition/J2EE-Java-2-Platform-Enterprise-Edition&quot;&gt;J2EE&lt;/a&gt;, &lt;a href=&quot;https://www.python.org/&quot;&gt;Python&lt;/a&gt; on &lt;a href=&quot;https://www.djangoproject.com/&quot;&gt;django&lt;/a&gt; or &lt;a href=&quot;http://rubyonrails.org/&quot;&gt;Ruby on Rails&lt;/a&gt;. However, today we are going to talk about how to set up a Node.js application for production on Ubuntu 14.04 using &lt;a href=&quot;https://httpd.apache.org/&quot;&gt;Apache2&lt;/a&gt; server. Thanks to Chrome’s V8 JavaScript engine, as the runtime environment interprets JavaScript. It allows the developer to write JavaScript in the back-end. One benefit would be that normally a developer who came from front-end who already knew JavaScript can easily pick up and implement a back end system using JavaScript and do not need to know other languages like frameworks that we talked about above. In this tutorial, we will cover setting up a production-ready Node.js environment that is composed of two Ubuntu 14.04 servers; one server will run Node.js applications managed by &lt;a href=&quot;http://pm2.keymetrics.io/&quot;&gt;PM2&lt;/a&gt;, while the other will provide users with access to the application through an Apache2 reverse proxy to the application server. This guide uses two Ubuntu 14.04 servers with private networking in the same server. For simplicity, we also assume that you already have a domain name that points to your web server, so that you may access your web server via a domain name instead of its public IP address. Once you have those set up, then we may continue on this tutorial. We all know that in the local development for Node.js, we usually make a few changes along the way and simply uses the localhost IP address, i.e. 127.0.0.1, wherever the app server’s private IP address is used. Here, is the simplest hello world version of Node.js with &lt;a href=&quot;http://expressjs.com/&quot;&gt;Express&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;hello-world-version-of-nodejs-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161019how-to-set-up-a-nodejs-application-for-production-on-ubuntu-1404serverjs-targetblanksource-codea&quot;&gt;Hello world version of Node.js   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/server.js&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;hello-world-version-of-nodejs-source-code&quot;&gt;Hello world version of Node.js   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/server.js&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;javascript&quot;&gt;
@@ -3291,7 +3338,7 @@ Okay. Now, we have user’s username, email and password. I think it is time to 
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h2 id=&quot;add-the-following-configuration-in-the-000-defaultconf-file-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161019how-to-set-up-a-nodejs-application-for-production-on-ubuntu-1404000-defaultconf-targetblanksource-codea&quot;&gt;add the following configuration in the 000-default.conf file   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/000-default.conf&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;add-the-following-configuration-in-the-000-defaultconf-file-source-code&quot;&gt;add the following configuration in the 000-default.conf file   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/000-default.conf&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;apache&quot;&gt;
@@ -3397,7 +3444,7 @@ Okay, now before we begin. I would like to introduce an amazing REST API that we
 &lt;/pre&gt;
 &lt;p&gt;Now, with this REST API. We can easily build a Hubot that allow the user to ask them if a given first name is a male or a female.&lt;/p&gt;
 
-&lt;h2 id=&quot;example-on-calling-a-get-request-in-hubot-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161018how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-namechatbotthatdeterminegenderbasedonnamecoffee-targetblanksource-codea&quot;&gt;Example on calling a GET request in Hubot   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/chatbotThatDetermineGenderBasedOnName.coffee&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;example-on-calling-a-get-request-in-hubot-source-code&quot;&gt;Example on calling a GET request in Hubot   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name/chatbotThatDetermineGenderBasedOnName.coffee&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;coffeescript&quot;&gt;
@@ -3481,7 +3528,7 @@ Okay, now before we begin. I would like to introduce an amazing REST API that we
 &lt;/pre&gt;
 &lt;p&gt;The above code should be fairly simple. We are using WordPress built-in function to send an email. For more information about it, please go to this &lt;a href=&quot;https://developer.wordpress.org/reference/functions/wp_mail/&quot;&gt;site&lt;/a&gt;. Another thing that I would like to add is, in order to see the error message. You must set your WP_DEBUG_LOG to true in your wp-config.php file. On instruction on how to turn it on, please go to this &lt;a href=&quot;https://premium.wpmudev.org/blog/debugging-wordpress-how-to-use-wp_debug&quot;&gt;site&lt;/a&gt; by &lt;a href=&quot;https://premium.wpmudev.org/&quot;&gt;WPMU DEV&lt;/a&gt;. &lt;strong&gt;Don’t forget that WP_DEBUG is for local development use and should not be used on production.&lt;/strong&gt; The following example that I would like to show is hook this function up with an action provided by WordPress. In this way, whenever there is a new user sign up, this function will get called automatically.&lt;/p&gt;
 
-&lt;h2 id=&quot;full-php-code-for-sending-a-welcome-email-to-user-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161017how-to-automatically-send-welcome-email-to-user-when-they-sign-up-in-wpfunctionsphp-targetblanksource-codea&quot;&gt;Full PHP code for sending a welcome email to user   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/17/how-to-automatically-send-welcome-email-to-user-when-they-sign-up-in-wp/functions.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;full-php-code-for-sending-a-welcome-email-to-user-source-code&quot;&gt;Full PHP code for sending a welcome email to user   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/17/how-to-automatically-send-welcome-email-to-user-when-they-sign-up-in-wp/functions.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;php&quot;&gt;
@@ -3542,7 +3589,7 @@ Okay, now before we begin. I would like to introduce an amazing REST API that we
       <content type="html">&lt;p&gt;In this post, we are going to talk about how we can create a simple REST API in PHP and call them in JavaScript using various technologies. For example, using &lt;strong&gt;XMLHttpRequest&lt;/strong&gt;, &lt;strong&gt;jQuery AJAX&lt;/strong&gt; and &lt;strong&gt;AngularJS AJAX&lt;/strong&gt;. In order to create a simple REST API that might actually be used in practice, we are going to use WordPress API namely the &lt;a href=&quot;https://codex.wordpress.org/Function_Reference/username_exists&quot;&gt;username_exists()&lt;/a&gt; function that allow us to check if the username exist in a WordPress database and return true if the username exists or false otherwise. For simplicity, we are going to skip on how to build a WordPress site, and go straight to writing the PHP code for the simple REST API.
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;php-code-for-simple-rest-api-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161016how-to-create-simple-rest-api-in-php-and-call-them-in-jscheckifusernameexistphp-targetblanksource-codea&quot;&gt;PHP code for simple REST API   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;php-code-for-simple-rest-api-source-code&quot;&gt;PHP code for simple REST API   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;php&quot;&gt;
@@ -3574,7 +3621,7 @@ An example of a response from this simple REST API is as follows, or you may cli
 &lt;/pre&gt;
 &lt;p&gt;In this way, now we have a really simple REST API that allow us to check if the username exist or not. This is especially useful in registration form where we allow the user to know if the username exist or not before they submit the form. This can be done using JavaScript. First example that I would like to show is using &lt;strong&gt;XMLHttpRequest&lt;/strong&gt;. Here is a sample code that does the job.&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;code-for-using-xmlhttprequest-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161016how-to-create-simple-rest-api-in-php-and-call-them-in-jscheckifusernameexistxmlhtml-targetblanksource-codea&quot;&gt;Code for using XMLHttpRequest   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistXML.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;code-for-using-xmlhttprequest-source-code&quot;&gt;Code for using XMLHttpRequest   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistXML.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;
@@ -3618,7 +3665,7 @@ An example of a response from this simple REST API is as follows, or you may cli
 As the user type, they may immediately see if the username is taken or not. An example of taken username is ‘test’!&lt;br /&gt;
 Another example that I would like to show is using &lt;strong&gt;jQuery AJAX&lt;/strong&gt;. Here is a sample code that does the job.&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;code-for-using-jquery-ajax-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161016how-to-create-simple-rest-api-in-php-and-call-them-in-jscheckifusernameexistjqueryhtml-targetblanksource-codea&quot;&gt;Code for using jQuery AJAX   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;code-for-using-jquery-ajax-source-code&quot;&gt;Code for using jQuery AJAX   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;
@@ -3668,7 +3715,7 @@ Another example that I would like to show is using &lt;strong&gt;jQuery AJAX&lt;
 As the user type, they may immediately see if the username is taken or not. An example of taken username is ‘test’!&lt;br /&gt;
 Another example that I would like to show is using &lt;strong&gt;AngularJS AJAX&lt;/strong&gt;. Here is a sample code that does the job.&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;code-for-using-angularjs-ajax-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161016how-to-create-simple-rest-api-in-php-and-call-them-in-jscheckifusernameexistangularhtml-targetblanksource-codea&quot;&gt;Code for using AngularJS AJAX   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistAngular.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;code-for-using-angularjs-ajax-source-code&quot;&gt;Code for using AngularJS AJAX   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistAngular.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;html&quot;&gt;

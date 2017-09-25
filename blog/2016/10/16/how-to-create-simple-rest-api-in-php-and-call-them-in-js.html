@@ -45,7 +45,7 @@
   <p>In this post, we are going to talk about how we can create a simple REST API in PHP and call them in JavaScript using various technologies. For example, using <strong>XMLHttpRequest</strong>, <strong>jQuery AJAX</strong> and <strong>AngularJS AJAX</strong>. In order to create a simple REST API that might actually be used in practice, we are going to use WordPress API namely the <a href="https://codex.wordpress.org/Function_Reference/username_exists">username_exists()</a> function that allow us to check if the username exist in a WordPress database and return true if the username exists or false otherwise. For simplicity, we are going to skip on how to build a WordPress site, and go straight to writing the PHP code for the simple REST API.
 <br /></p>
 
-<h2 id="php-code-for-simple-rest-api-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161016how-to-create-simple-rest-api-in-php-and-call-them-in-jscheckifusernameexistphp-targetblanksource-codea">PHP code for simple REST API   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">source code</a></h2>
+<h2 id="php-code-for-simple-rest-api-source-code">PHP code for simple REST API   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">source code</a></h2>
 
 <pre>
   <code class="php">
@@ -77,7 +77,7 @@ An example of a response from this simple REST API is as follows, or you may cli
 </pre>
 <p>In this way, now we have a really simple REST API that allow us to check if the username exist or not. This is especially useful in registration form where we allow the user to know if the username exist or not before they submit the form. This can be done using JavaScript. First example that I would like to show is using <strong>XMLHttpRequest</strong>. Here is a sample code that does the job.<br /></p>
 
-<h2 id="code-for-using-xmlhttprequest-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161016how-to-create-simple-rest-api-in-php-and-call-them-in-jscheckifusernameexistxmlhtml-targetblanksource-codea">Code for using XMLHttpRequest   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistXML.html" target="_blank">source code</a></h2>
+<h2 id="code-for-using-xmlhttprequest-source-code">Code for using XMLHttpRequest   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistXML.html" target="_blank">source code</a></h2>
 
 <pre>
   <code class="html">
@@ -121,7 +121,7 @@ An example of a response from this simple REST API is as follows, or you may cli
 As the user type, they may immediately see if the username is taken or not. An example of taken username is ‘test’!<br />
 Another example that I would like to show is using <strong>jQuery AJAX</strong>. Here is a sample code that does the job.<br /></p>
 
-<h2 id="code-for-using-jquery-ajax-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161016how-to-create-simple-rest-api-in-php-and-call-them-in-jscheckifusernameexistjqueryhtml-targetblanksource-codea">Code for using jQuery AJAX   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html" target="_blank">source code</a></h2>
+<h2 id="code-for-using-jquery-ajax-source-code">Code for using jQuery AJAX   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html" target="_blank">source code</a></h2>
 
 <pre>
   <code class="html">
@@ -171,7 +171,7 @@ Another example that I would like to show is using <strong>jQuery AJAX</strong>.
 As the user type, they may immediately see if the username is taken or not. An example of taken username is ‘test’!<br />
 Another example that I would like to show is using <strong>AngularJS AJAX</strong>. Here is a sample code that does the job.<br /></p>
 
-<h2 id="code-for-using-angularjs-ajax-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161016how-to-create-simple-rest-api-in-php-and-call-them-in-jscheckifusernameexistangularhtml-targetblanksource-codea">Code for using AngularJS AJAX   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistAngular.html" target="_blank">source code</a></h2>
+<h2 id="code-for-using-angularjs-ajax-source-code">Code for using AngularJS AJAX   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistAngular.html" target="_blank">source code</a></h2>
 
 <pre>
   <code class="html">

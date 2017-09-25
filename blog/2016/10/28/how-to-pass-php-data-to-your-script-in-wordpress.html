@@ -44,7 +44,7 @@
 <div class="post">
   <p>Today, I am going to show you guys how to pass PHP data like an array to your JavaScript file in WordPress. However, you might be thinking why would I need to pass PHP data to the script. For example, have to ever encounter where you need to use some object or data from PHP in a JavaScript file, but you do not quite want to build a REST API for it as the data isn’t used a lot. Or, have to ever need to embedded php code in your JavaScript in WordPress? If the answer is positive, then this article is for you. This article will teach you on how to properly pass PHP data (an array) to your JavaScript file. However, in order to make this interesting, we are going to have a PHP file that contains some ielts conversation audios from <a href="https://www.aehelp.com/">AEHelp</a>. Then, we are going to have another PHP file where learner can see and listen to all the audios. We also gonna have a JavaScript file that will get the audios from the PHP file and generate html for each audio on the fly. Now, we can begin.</p>
 
-<h2 id="php-code-that-contains-all-the-audios-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161028how-to-pass-php-data-to-your-script-in-wordpressaudioplaylistphp-targetblanksource-codea">PHP code that contains all the audios   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/audioPlaylist.php" target="_blank">source code</a></h2>
+<h2 id="php-code-that-contains-all-the-audios-source-code">PHP code that contains all the audios   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/audioPlaylist.php" target="_blank">source code</a></h2>
 
 <pre>
   <code class="php">
@@ -95,7 +95,7 @@
 </pre>
 <p>Now that we have the @variable, we need to figure out how to pass that data to the JavaScript file. To do that, we are going to use <a href="https://codex.wordpress.org/Function_Reference/wp_localize_script">wp_localize_script</a>. Through the use of this, it can be used to make any PHP data available to your script that you can normally only get from the server side of WordPress.</p>
 
-<h2 id="php-code-to-use-wplocalizescript">PHP code to use wp_localize_script</h2>
+<h2 id="php-code-to-use-wp_localize_script">PHP code to use wp_localize_script</h2>
 
 <pre>
   <code class="php">
@@ -109,7 +109,7 @@
 </pre>
 <p>This is basically telling the wp_localize_script that we are going to pass this @variable namely urlsForAllTheAudios as audio_array to the JavaScript file named createPlaylist.js. Now, since this is a WordPress site, we need to call the wp_head, so that the js file will be included in this page.</p>
 
-<h2 id="php-code-to-call-wphead">PHP code to call wp_head</h2>
+<h2 id="php-code-to-call-wp_head">PHP code to call wp_head</h2>
 
 <pre>
   <code class="php">
@@ -129,7 +129,7 @@
 </pre>
 <p>With this, the JavaScript can now add audio to that Div. Now it is time to create the js file that generate html for each audio on the fly. Then, we are done!</p>
 
-<h2 id="javascript-code-to-generate-html-for-each-audio-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161028how-to-pass-php-data-to-your-script-in-wordpresscreateplaylistjs-targetblanksource-codea">JavaScript code to generate html for each audio   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/createPlaylist.js" target="_blank">source code</a></h2>
+<h2 id="javascript-code-to-generate-html-for-each-audio-source-code">JavaScript code to generate html for each audio   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/createPlaylist.js" target="_blank">source code</a></h2>
 
 <pre>
   <code class="javascript">
@@ -169,7 +169,7 @@
 
 <p><img src="/img/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/audioPlaylist.PNG" alt="example on the audio playlist look like in HTML" /><br /></p>
 
-<h2 id="complete-code-for-php-that-show-audio-playlist-to-user-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161028how-to-pass-php-data-to-your-script-in-wordpressshowplaylisttouserphp-targetblanksource-codea">Complete code for PHP that show audio playlist to user   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/showPlaylistToUser.php" target="_blank">source code</a></h2>
+<h2 id="complete-code-for-php-that-show-audio-playlist-to-user-source-code">Complete code for PHP that show audio playlist to user   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/showPlaylistToUser.php" target="_blank">source code</a></h2>
 
 <pre>
   <code class="php">

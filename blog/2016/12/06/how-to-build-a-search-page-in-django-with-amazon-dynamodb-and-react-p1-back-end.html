@@ -111,7 +111,7 @@ Now, we need to add the url search into the url pattern in the Django in order f
 </pre>
 <p>Now, let’s modify the search method a little bit to see if the method retrieve_all_get_parameters is working properly.</p>
 
-<h2 id="check-to-see-if-the-method-retrieveallgetparameters-is-working-properly">Check to see if the method retrieve_all_get_parameters is working properly</h2>
+<h2 id="check-to-see-if-the-method-retrieve_all_get_parameters-is-working-properly">Check to see if the method retrieve_all_get_parameters is working properly</h2>
 
 <pre>
   <code class="python">
@@ -196,7 +196,7 @@ Now, we need to add the url search into the url pattern in the Django in order f
 <p><img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/sample output of all the billionaire in the database.PNG" alt="Sample output of all the billionaire in the database" /><br />
 It seems to be working fine. Now, let’s work on the filtering part in the search page. There are few ways of doing filtering with Amazon Dynamodb, we will be using scan operation as our database is consider small. In production, you should use query instead for better performace. For more information about this, go ahead and read <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">this offical document</a> by Amazon. First, we need to work on the filter expression that is designed for Amazon Dynamodb. Your code should look something like this.</p>
 
-<h2 id="in-method-getlistofbillionaires">In method get_list_of_billionaires,</h2>
+<h2 id="in-method-get_list_of_billionaires">In method get_list_of_billionaires,</h2>
 
 <pre>
   <code class="python">
@@ -241,7 +241,7 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
 </pre>
 <p>Once we have this, we can easily do the filtering part by doing this.</p>
 
-<h2 id="in-method-getlistofbillionaires-1">In method get_list_of_billionaires,</h2>
+<h2 id="in-method-get_list_of_billionaires-1">In method get_list_of_billionaires,</h2>
 
 <pre>
   <code class="python">
@@ -284,7 +284,7 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
 
 <p><img src="/img/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search for billionaire who currently lives in Medina, WA.PNG" alt="Result of billionaire who currently lives in Medina, WA" /><br /></p>
 
-<h2 id="full-code-for-urlspy-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161206how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-endurlspy-targetblanksource-codea">Full code for urls.py   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/urls.py" target="_blank">source code</a></h2>
+<h2 id="full-code-for-urlspy-source-code">Full code for urls.py   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/urls.py" target="_blank">source code</a></h2>
 
 <pre>
   <code class="python">
@@ -298,7 +298,7 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
   </code>
 </pre>
 
-<h2 id="full-code-for-viewspy-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161206how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-endviewspy-targetblanksource-codea">Full code for views.py   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/views.py" target="_blank">source code</a></h2>
+<h2 id="full-code-for-viewspy-source-code">Full code for views.py   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/views.py" target="_blank">source code</a></h2>
 
 <pre>
   <code class="python">
@@ -396,7 +396,7 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
   </code>
 </pre>
 
-<h2 id="full-code-for-searchhtml-nbspnbspa-hrefhttpsgithubcompoanchencode-for-blogblobmaster20161206how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-endsearchhtml-targetblanksource-codea">Full code for search.html   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search.html" target="_blank">source code</a></h2>
+<h2 id="full-code-for-searchhtml-source-code">Full code for search.html   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/search.html" target="_blank">source code</a></h2>
 
 <pre>
   <code class="html">
