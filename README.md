@@ -6,9 +6,7 @@ Dependencies (that you might need to install it globally)
 - Gulp (you might need to install it globally through npm, check out their [site](https://gulpjs.com/))
 - npm
 
-
-Development Usage
-----------------------
+## Development Usage
 
 ```
 1. git clone https://github.com/poanchen/poanchen.github.io.git
@@ -22,8 +20,7 @@ the src folder as well as watching any css/js files changes and minimized automa
 ```
 
 
-Steps to deploy the site to live
-----------------------
+## Steps to deploy the site to live
 
 ```
 1. git add .
@@ -38,19 +35,19 @@ branch, then Github will automatically roll the site to live
 index your new blog
 8. You are done!!!
 ```
-Troubleshooting
-----------------------
-1. In case you ran into problem like `/usr/bin/env: node: No such file or directory` when you try to run gulp, this was due to the misnaming convention between nodejs and node. You simply need to run this command to make this error goes away,
 
-```
+## Troubleshooting
+
+In case you ran into problem like `/usr/bin/env: node: No such file or directory` when you try to run gulp, this was due to the misnaming convention between nodejs and node. You simply need to run this command to make this error goes away,
+
+```bash
 ln -s /usr/bin/nodejs /usr/bin/node
 ```
+according to https://github.com/nodejs/node-v0.x-archive/issues/3911
 
-Thanks to https://github.com/nodejs/node-v0.x-archive/issues/3911
-
-2. In case you ran into problem like `require': cannot load such file -- jekyll-sitemap (LoadError)` when you try to run jekyll server, this was due to the missing jekyll-sitemap in gem. You simply need to run this command to make this error goes away,
+In case you ran into problem like `require': cannot load such file -- jekyll-sitemap (LoadError)` when you try to run jekyll server, this was due to the missing jekyll-sitemap in gem. You simply need to run this command to make this error goes away,
 
 ```
 gem install jekyll-sitemap
 ```
-Thanks to https://github.com/holman/left/issues/34
+according to https://github.com/holman/left/issues/34
