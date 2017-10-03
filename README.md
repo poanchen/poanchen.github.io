@@ -51,3 +51,28 @@ In case you ran into problem like `require': cannot load such file -- jekyll-sit
 gem install jekyll-sitemap
 ```
 according to https://github.com/holman/left/issues/34
+
+## List of post topic that I have written for my blog
+- How to fix 'error This file requires compiler and library support for the ISO C++ 2011 standard'?
+- How to add Disqus to your Jekyll site?
+- How to convert a large PDF to HTML?
+- How to use Gulp.js to deploy your site to live through Github?
+- How to recover all your deleted cron jobs?
+- Mutable vs Immutable object in JavaScript
+- How to set up password authentication with Apache on Ubuntu 14.04
+- How to check if an image already existed in wp-content/upload directory?
+- How to set up pretty url in WordPress?
+- How to build a search page in Django with Amazon Dynamodb and React? Part 2 (Front-end)
+- How to build a search page in Django with Amazon Dynamodb and React? Part 1 (Back-end)
+- How to enable cross-origin resource sharing on an apache server?
+- How to play mp4 video using hls.js?
+- How to add background music in Processing 3.0?
+- How to take screenshots at different screen sizes using CasperJS?
+- Is it possible to host two website with different domain name on one sever how would you do that?
+- How to pass PHP data to your script in WordPress?
+- How to login to a WordPress site using CasperJS?
+- How to programmatically register an account for a user in WordPress?
+- How to set up a Node.js application for production on Ubuntu 14.04?
+- How to build a simple chat bot using Hubot that determine gender based on their first name?
+- How to automatically send a welcome email to new user when they sign up for their account in WordPress programmatically?
+- How to create a simple REST API in PHP and call them in JavaScript
