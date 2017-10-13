@@ -5,7 +5,7 @@ author: PoAn (Baron) Chen
 author_url: https://github.com/poanchen
 date: 2017-04-10
 ---
-If you have never play with WordPress, your first thought might be using file_exists(path) in PHP, which is perfectly fine. However, the way how WordPress organize their uploaded pictures is by their month of upload time. For example, say today is April, 10, 2017 and you just uploaded a picture named example.png. In WordPress, it will be stored in /wp-content/upload/2017/04/example.png with three other different sizes for thumbnail, medium and large size. If you were to use file_exists(path) in PHP, you would need to look for it recursively. And, here is how WordPress would really help you to solve this problem quickly. Every time, when an user upload an image through the WordPress back-end system. The image info will be stored in the database. So, to check if an image is already uploaded in wp-content/upload directory, we can simply make a database query.
+If you have never play with WordPress, your first thought might be using file_exists(path) in PHP, which is perfectly fine. However, the way how WordPress store the images is different than one might thought. WordPress comes with a default of organizing the upload images into month- and year- based folders, however, user could unchecked this option by following this [tutorial](http://www.wpbeginner.com/beginners-guide/where-does-wordpress-store-images-on-your-site/) by [WPBeginner](http://www.wpbeginner.com/). Let's assume that you have checked that option. Then, how does WordPress store your upload images? I will give you an example. Say today is April, 10, 2017 and you just uploaded a picture named example.png. In WordPress, it will be stored in /wp-content/upload/2017/04/example.png with three other different sizes for thumbnail, medium and large size. If you were to use file_exists(path) in PHP, you would need to look for it recursively. And, here is how WordPress would really help you to solve this problem quickly. Every time, when an user upload an image through the WordPress back-end system. The image info will be stored in the database. So, to check if an image is already uploaded in wp-content/upload directory, we can simply make a database query.
 
 Here is the function that will try to find the image, if it does exist then it will return the image post id. Otherwise, a null will be return.&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory/does-file-exists-sample.php" target="_blank">source code</a>
 
@@ -43,5 +43,6 @@ I'll try to keep this list current and up to date. If you know of a great resour
 
 ### Getting started
 
-* [file_exists()](https://www.w3schools.com/php/func_filesystem_file_exists.asp)
-* [Using Images](https://codex.wordpress.org/Using_Images)
+* [file_exists()](https://www.w3schools.com/php/func_filesystem_file_exists.asp) by [W3Schools](https://www.w3schools.com/)
+* [Using Images](https://codex.wordpress.org/Using_Images) by [WordPress](https://www.wordpress.org)
+* [More info on Organize my uploads into month- and year-based folders ](https://codex.wordpress.org/Settings_Media_Screen#Uploading_Files) by [WordPress](https://www.wordpress.org)
