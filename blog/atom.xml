@@ -3,7 +3,7 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-09-24T17:12:07-07:00</updated>
+  <updated>2017-10-13T15:15:34-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
@@ -522,7 +522,7 @@ Immutable object - The object cannot be changed once created.&lt;/p&gt;
       <link href="https://poanchen.github.io/blog/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory"/>
       <updated>2017-04-10T00:00:00-07:00</updated>
       <id>https://poanchen.github.io//blog/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory</id>
-      <content type="html">&lt;p&gt;If you have never play with WordPress, your first thought might be using file_exists(path) in PHP, which is perfectly fine. However, the way how WordPress organize their uploaded pictures is by their month of upload time. For example, say today is April, 10, 2017 and you just uploaded a picture named example.png. In WordPress, it will be stored in /wp-content/upload/2017/04/example.png with three other different sizes for thumbnail, medium and large size. If you were to use file_exists(path) in PHP, you would need to look for it recursively. And, here is how WordPress would really help you to solve this problem quickly. Every time, when an user upload an image through the WordPress back-end system. The image info will be stored in the database. So, to check if an image is already uploaded in wp-content/upload directory, we can simply make a database query.&lt;/p&gt;
+      <content type="html">&lt;p&gt;If you have never play with WordPress, your first thought might be using file_exists(path) in PHP, which is perfectly fine. However, the way how WordPress store the images is different than one might thought. WordPress comes with a default of organizing the upload images into month- and year- based folders, however, user could unchecked this option by following this &lt;a href=&quot;http://www.wpbeginner.com/beginners-guide/where-does-wordpress-store-images-on-your-site/&quot;&gt;tutorial&lt;/a&gt; by &lt;a href=&quot;http://www.wpbeginner.com/&quot;&gt;WPBeginner&lt;/a&gt;. Let’s assume that you have checked that option. Then, how does WordPress store your upload images? I will give you an example. Say today is April, 10, 2017 and you just uploaded a picture named example.png. In WordPress, it will be stored in /wp-content/upload/2017/04/example.png with three other different sizes for thumbnail, medium and large size. If you were to use file_exists(path) in PHP, you would need to look for it recursively. And, here is how WordPress would really help you to solve this problem quickly. Every time, when an user upload an image through the WordPress back-end system. The image info will be stored in the database. So, to check if an image is already uploaded in wp-content/upload directory, we can simply make a database query.&lt;/p&gt;
 
 &lt;p&gt;Here is the function that will try to find the image, if it does exist then it will return the image post id. Otherwise, a null will be return.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory/does-file-exists-sample.php&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 
@@ -561,8 +561,9 @@ Immutable object - The object cannot be changed once created.&lt;/p&gt;
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.w3schools.com/php/func_filesystem_file_exists.asp&quot;&gt;file_exists()&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://codex.wordpress.org/Using_Images&quot;&gt;Using Images&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.w3schools.com/php/func_filesystem_file_exists.asp&quot;&gt;file_exists()&lt;/a&gt; by &lt;a href=&quot;https://www.w3schools.com/&quot;&gt;W3Schools&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://codex.wordpress.org/Using_Images&quot;&gt;Using Images&lt;/a&gt; by &lt;a href=&quot;https://www.wordpress.org&quot;&gt;WordPress&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://codex.wordpress.org/Settings_Media_Screen#Uploading_Files&quot;&gt;More info on Organize my uploads into month- and year-based folders &lt;/a&gt; by &lt;a href=&quot;https://www.wordpress.org&quot;&gt;WordPress&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     </entry>
