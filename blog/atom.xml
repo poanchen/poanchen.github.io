@@ -3,12 +3,76 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-10-13T15:15:34-07:00</updated>
+  <updated>2017-10-15T16:18:55-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>One Year after PoAn (Baron) Chen's Blog Launch</title>
+      <link href="https://poanchen.github.io/blog/2017/10/15/one-year-after-poan-baron-chen-blog-launch"/>
+      <updated>2017-10-15T00:00:00-07:00</updated>
+      <id>https://poanchen.github.io//blog/2017/10/15/one-year-after-poan-baron-chen-blog-launch</id>
+      <content type="html">&lt;p&gt;Hello everyone,&lt;/p&gt;
+
+&lt;p&gt;Time really flies. It has been a full year since I blogged on my site. It has been an amazing year so far. Hopefully you have learned a thing or two from the blog that I wrote when you visit the site. In the past year, I put a lot of efforts writing those post in hope that I will spread my knowledge to people around the world. As well as allowing me to document things that I learned all in one place. For people who,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;comment on my blog to ask questions.&lt;/li&gt;
+  &lt;li&gt;comment on my blog to correct things that I said that was not entirely true.&lt;/li&gt;
+  &lt;li&gt;fork my site GitHub repo in order to create their own blog.&lt;/li&gt;
+  &lt;li&gt;use my blog as a reference for their project.&lt;/li&gt;
+  &lt;li&gt;read my blogs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I would like to personally thank you guys. THANK YOU!!!&lt;/p&gt;
+
+&lt;p&gt;I would also like to share some of the statistics that I gathered for my blog.&lt;/p&gt;
+
+&lt;p&gt;This is the Google Search Analytics graph for the past 3 months.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/10/15/one-year-after-poan-baron-chen-blog-launch/PoAnBaronChenBlog Google Search Analytics Graph past 3 months.png&quot; alt=&quot;Google Search Analytics graph for the past 3 months&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the Google Search Analytics, in case you do not know what clicks and impressions mean. Here is the definition that I got from them.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Clicks - Count of clicks from a Google search results page that landed the user on your property. &lt;a href=&quot;https://support.google.com/webmasters/answer/7042828#click&quot;&gt;Learn more&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Impressions - How many links to your site a user saw on Google search results, even if the link was not scrolled into view. However, if a user views only page 1 and the link is on page 2, the impression is not counted. The count is &lt;a href=&quot;https://support.google.com/webmasters/answer/6155685#urlorsite&quot;&gt;aggregated by site or page&lt;/a&gt;. With infinitely scrolling pages, such as image search, the impression might require the item to be scrolled into view. &lt;a href=&quot;https://support.google.com/webmasters/answer/7042828#impressions&quot;&gt;Learn more&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It is sad that I did not gather the search results from the beginning, that is why I only have the past 3 months.&lt;/p&gt;
+
+&lt;p&gt;This means that there are more than 1025 clicks to my site through Google Search and more than 16962 results from my blog are shown in Google Search page per MONTH.&lt;/p&gt;
+
+&lt;p&gt;According to &lt;a href=&quot;https://www.similarweb.com/&quot;&gt;SimilarWeb&lt;/a&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/10/15/one-year-after-poan-baron-chen-blog-launch/Traffic sources from SimilarWeb for past 3 months.png&quot; alt=&quot;Traffic sources from SimilarWeb for the past 3 months&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Roughly 94% of traffic sources are from search with 5% are from direct and less than 1% are from links.&lt;/p&gt;
+
+&lt;p&gt;According to &lt;a href=&quot;https://www.alexa.com/&quot;&gt;Alexa&lt;/a&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/10/15/one-year-after-poan-baron-chen-blog-launch/current Alexa rank.png&quot; alt=&quot;Current Alexa rank&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The site currently ranked at 2,303,736 in global rank and 395,541 in India.&lt;/p&gt;
+
+&lt;p&gt;According to &lt;a href=&quot;https://www.similarweb.com/&quot;&gt;SimilarWeb&lt;/a&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/10/15/one-year-after-poan-baron-chen-blog-launch/Page visit from SimilarWeb for past 6 months.png&quot; alt=&quot;Page visit from SimilarWeb for the past 3 months&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Roughly 2k - 3k visits per month for the past 3 months.&lt;/p&gt;
+
+&lt;p&gt;Hope you found these statistics to be interesting and PLEASE leave any comment if you have any questions.&lt;/p&gt;
+
+&lt;p&gt;Enjoy the rest of your day!&lt;/p&gt;
+
+&lt;p&gt;Cheers,&lt;/p&gt;
+
+&lt;p&gt;Baron&lt;/p&gt;
+</content>
+    </entry>
   
     <entry>
       <title>How to fix 'error This file requires compiler and library support for the ISO C++ 2011 standard'?</title>
