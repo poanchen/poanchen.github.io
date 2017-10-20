@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<!--
+=======================================================================================================================
+  ____         _           ______                      __   ____ _               _  __        __   _         _ _       
+ |  _ \ ___   / \   _ __  / | __ )  __ _ _ __ ___  _ __\ \ / ___| |__   ___ _ __( )_\ \      / ___| |__  ___(_| |_ ___ 
+ | |_) / _ \ / _ \ | '_ \| ||  _ \ / _` | '__/ _ \| '_ \| | |   | '_ \ / _ | '_ |/ __\ \ /\ / / _ | '_ \/ __| | __/ _ \
+ |  __| (_) / ___ \| | | | || |_) | (_| | | | (_) | | | | | |___| | | |  __| | | \__ \\ V  V |  __| |_) \__ | | ||  __/
+ |_|   \___/_/   \_|_| |_| ||____/ \__,_|_|  \___/|_| |_| |\____|_| |_|\___|_| |_|___/ \_/\_/ \___|_.__/|___|_|\__\___|
+                          \_\                          /_/                      
+=======================================================================================================================
+==========================================https://poanchen.github.io/contact===========================================
+==========================================Brought to you by PoAn (Baron) Chen==========================================
+-->
+
+<html>
+
+<head>
+  <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
+  <title>How to replace a git submodules in a repository?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/app/css/index.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to replace a git submodules in a repository?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 19 Oct 2017
+  
+</p>
+
+<div class="post">
+  <p>Have you ever wanted to replace a git submodules in a repository but don’t know where to start? You are in luck. In this tutorial, I am going to show you how I would do it.</p>
+
+<p>It is actually pretty simple as long as you have added the submodules correctly in the first place.</p>
+
+<p>This means that you added your submodules like this,</p>
+
+<pre>
+  <code class="bash">
+    git submodule add https://www.github.com/poanchen/your-submodules-name path/to/your-submodules
+  </code>
+</pre>
+
+<p>One might think that you could do something like this,</p>
+
+<pre>
+  <code class="bash">
+    git submodule replace https://www.github.com/poanchen/your-new-submodules-name path/to/your-new-submodules
+  </code>
+</pre>
+
+<p>However, it does not work like that as the list of available git submodule commands does not include replace except these,</p>
+
+<pre>
+  <code class="bash">
+     git submodule [--quiet] add [-b &lt;branch&gt;] [-f|--force] [--name &lt;name&gt;]
+                     [--reference &lt;repository&gt;] [--depth &lt;depth&gt;] [--] &lt;repository&gt; [&lt;path&gt;]
+     git submodule [--quiet] status [--cached] [--recursive] [--] [&lt;path&gt;...]
+     git submodule [--quiet] init [--] [&lt;path&gt;...]
+     git submodule [--quiet] deinit [-f|--force] [--] &lt;path&gt;...
+     git submodule [--quiet] update [--init] [--remote] [-N|--no-fetch]
+                     [-f|--force] [--rebase|--merge] [--reference &lt;repository&gt;]
+                     [--depth &lt;depth&gt;] [--recursive] [--] [&lt;path&gt;...]
+     git submodule [--quiet] summary [--cached|--files] [(-n|--summary-limit) &lt;n&gt;]
+                     [commit] [--] [&lt;path&gt;...]
+     git submodule [--quiet] foreach [--recursive] &lt;command&gt;
+     git submodule [--quiet] sync [--recursive] [--] [&lt;path&gt;...]
+  </code>
+</pre>
+
+<p>Then, how would one replace it?</p>
+
+<p>You simply need to modify one file, then you are done.</p>
+
+<p>Take a look at your file .gitmodules in the root of your repository, it will probably look something similar to this,</p>
+
+<pre>
+  <code class="bash">
+    [submodule "path/to/your-submodules"]
+        path = path/to/your-submodules
+        url = https://www.github.com/poanchen/your-submodules-name
+  </code>
+</pre>
+
+<p>Now, all you need to do is to change the repository url to the one you want. Also, you might need to change the path to your submodules in case of any submodules name changes.</p>
+
+<p>That is it! All that is left with was commiting your changes.</p>
+
+<p>Tada. Your project should now have a new submodules =)</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully this guide has help you to replace a git submodules in a repository. Thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen">get in touch</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="https://chrisjean.com/git-submodules-adding-using-removing-and-updating/">Git Submodules: Adding, Using, Removing, Updating</a> by <a href="https://twitter.com/chrisjean">Chris Jean</a>.</li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script src="/app/js/disqus.min.js"></script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+    <li><a href="https://www.quora.com/profile/PoAn-Baron-Chen-1">quora.com/profile/PoAn-Baron-Chen-1</a></li>
+    <li><a href="https://opencollective.com/poanchen">opencollective.com/poanchen</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.min.js"></script>
+</body>
+
+</html>

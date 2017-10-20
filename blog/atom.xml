@@ -3,12 +3,92 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-10-15T16:18:55-07:00</updated>
+  <updated>2017-10-19T22:44:42-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to replace a git submodules in a repository?</title>
+      <link href="https://poanchen.github.io/blog/2017/10/19/How-to-replace-a-git-submodules-in-a-repository"/>
+      <updated>2017-10-19T00:00:00-07:00</updated>
+      <id>https://poanchen.github.io//blog/2017/10/19/How-to-replace-a-git-submodules-in-a-repository</id>
+      <content type="html">&lt;p&gt;Have you ever wanted to replace a git submodules in a repository but don’t know where to start? You are in luck. In this tutorial, I am going to show you how I would do it.&lt;/p&gt;
+
+&lt;p&gt;It is actually pretty simple as long as you have added the submodules correctly in the first place.&lt;/p&gt;
+
+&lt;p&gt;This means that you added your submodules like this,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    git submodule add https://www.github.com/poanchen/your-submodules-name path/to/your-submodules
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;One might think that you could do something like this,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    git submodule replace https://www.github.com/poanchen/your-new-submodules-name path/to/your-new-submodules
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;However, it does not work like that as the list of available git submodule commands does not include replace except these,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+     git submodule [--quiet] add [-b &amp;lt;branch&amp;gt;] [-f|--force] [--name &amp;lt;name&amp;gt;]
+                     [--reference &amp;lt;repository&amp;gt;] [--depth &amp;lt;depth&amp;gt;] [--] &amp;lt;repository&amp;gt; [&amp;lt;path&amp;gt;]
+     git submodule [--quiet] status [--cached] [--recursive] [--] [&amp;lt;path&amp;gt;...]
+     git submodule [--quiet] init [--] [&amp;lt;path&amp;gt;...]
+     git submodule [--quiet] deinit [-f|--force] [--] &amp;lt;path&amp;gt;...
+     git submodule [--quiet] update [--init] [--remote] [-N|--no-fetch]
+                     [-f|--force] [--rebase|--merge] [--reference &amp;lt;repository&amp;gt;]
+                     [--depth &amp;lt;depth&amp;gt;] [--recursive] [--] [&amp;lt;path&amp;gt;...]
+     git submodule [--quiet] summary [--cached|--files] [(-n|--summary-limit) &amp;lt;n&amp;gt;]
+                     [commit] [--] [&amp;lt;path&amp;gt;...]
+     git submodule [--quiet] foreach [--recursive] &amp;lt;command&amp;gt;
+     git submodule [--quiet] sync [--recursive] [--] [&amp;lt;path&amp;gt;...]
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Then, how would one replace it?&lt;/p&gt;
+
+&lt;p&gt;You simply need to modify one file, then you are done.&lt;/p&gt;
+
+&lt;p&gt;Take a look at your file .gitmodules in the root of your repository, it will probably look something similar to this,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    [submodule &quot;path/to/your-submodules&quot;]
+        path = path/to/your-submodules
+        url = https://www.github.com/poanchen/your-submodules-name
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now, all you need to do is to change the repository url to the one you want. Also, you might need to change the path to your submodules in case of any submodules name changes.&lt;/p&gt;
+
+&lt;p&gt;That is it! All that is left with was commiting your changes.&lt;/p&gt;
+
+&lt;p&gt;Tada. Your project should now have a new submodules =)&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has help you to replace a git submodules in a repository. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://chrisjean.com/git-submodules-adding-using-removing-and-updating/&quot;&gt;Git Submodules: Adding, Using, Removing, Updating&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/chrisjean&quot;&gt;Chris Jean&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>One Year after PoAn (Baron) Chen's Blog Launch</title>
