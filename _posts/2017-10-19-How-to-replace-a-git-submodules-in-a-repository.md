@@ -70,7 +70,7 @@ Hopefully this guide has help you to replace a git submodules in a repository. T
 
 ## Resources
 
-I'll try to keep this list current and up to date. If you know of a great resource you'd like to share or notice a broken link, please [get in touch](https://github.com/poanchen).
+I'll try to keep this list current and up to date. If you know of a great resource you'd like to share or notice a broken link, please [let us know](https://github.com/poanchen/poanchen.github.io/issues).
 
 ### Getting started
 
