@@ -17,7 +17,7 @@
 
 <head>
   <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
-  <title>How to replace a git submodules in a repository?</title>
+  <title>How to run a single test or all tests in a class with gradlew?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="/app/css/index.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css" />
@@ -34,76 +34,52 @@
     </ul>
   </nav>
   <div class="container">
-    <h1>How to replace a git submodules in a repository?</h1>
+    <h1>How to run a single test or all tests in a class with gradlew?</h1>
 <p class="meta">
    
-    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 19 Oct 2017
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 20 Oct 2017
   
 </p>
 
 <div class="post">
-  <p>Have you ever wanted to replace a git submodules in a repository but don’t know where to start? You are in luck. In this tutorial, I am going to show you how I would do it.</p>
+  <p>Ever wonder how you can run one single test with gradlew? Ever get tried of waiting all the tests to be finished? You have came to the right place. Running tests can be a time consuming tasks. Ability to run one single test or all the tests in a test class is very powerful. And, it will save TONS of time. Here is how you can do it.</p>
 
-<p>It is actually pretty simple as long as you have added the submodules correctly in the first place.</p>
-
-<p>This means that you added your submodules like this,</p>
-
+<p>Let’s assume that this is your testClass,</p>
 <pre>
-  <code class="bash">
-    git submodule add https://www.github.com/poanchen/your-submodules-name path/to/your-submodules
+  <code class="java">
+    package io.github.poanchen.projectName.api
+    class BlogControllerTests {
+      void testCreate_BlogWithoutTitle() {
+        // some test code
+      }
+      void testUpdate_BlogWithInvalidAuthorEmail() {
+        // some test code
+      }
+    }
   </code>
 </pre>
 
-<p>One might think that you could do something like this,</p>
-
+<p>To run single test (testCreate_BlogWithoutTitle),</p>
 <pre>
   <code class="bash">
-    git submodule replace https://www.github.com/poanchen/your-new-submodules-name path/to/your-new-submodules
+    ./gradlew :projectName-api:unitTest --tests io.github.poanchen.projectName.api.BlogControllerTests.testCreate_BlogWithoutTitle
   </code>
 </pre>
 
-<p>However, it does not work like that as the list of available git submodule commands does not include replace except these,</p>
+<p>Note: Depends on how you write your configuration file for gradlew tasks, “:projectName-api:unitTest” might look different for you than the one that I show you here.</p>
 
+<p>To run all the tests in a test class (BlogControllerTests),</p>
 <pre>
   <code class="bash">
-     git submodule [--quiet] add [-b &lt;branch&gt;] [-f|--force] [--name &lt;name&gt;]
-                     [--reference &lt;repository&gt;] [--depth &lt;depth&gt;] [--] &lt;repository&gt; [&lt;path&gt;]
-     git submodule [--quiet] status [--cached] [--recursive] [--] [&lt;path&gt;...]
-     git submodule [--quiet] init [--] [&lt;path&gt;...]
-     git submodule [--quiet] deinit [-f|--force] [--] &lt;path&gt;...
-     git submodule [--quiet] update [--init] [--remote] [-N|--no-fetch]
-                     [-f|--force] [--rebase|--merge] [--reference &lt;repository&gt;]
-                     [--depth &lt;depth&gt;] [--recursive] [--] [&lt;path&gt;...]
-     git submodule [--quiet] summary [--cached|--files] [(-n|--summary-limit) &lt;n&gt;]
-                     [commit] [--] [&lt;path&gt;...]
-     git submodule [--quiet] foreach [--recursive] &lt;command&gt;
-     git submodule [--quiet] sync [--recursive] [--] [&lt;path&gt;...]
+    ./gradlew :projectName-api:unitTest --tests io.github.poanchen.projectName.api.BlogControllerTests
   </code>
 </pre>
 
-<p>Then, how would one replace it?</p>
-
-<p>You simply need to modify one file, then you are done.</p>
-
-<p>Take a look at your file .gitmodules in the root of your repository, it will probably look something similar to this,</p>
-
-<pre>
-  <code class="bash">
-    [submodule "path/to/your-submodules"]
-        path = path/to/your-submodules
-        url = https://www.github.com/poanchen/your-submodules-name
-  </code>
-</pre>
-
-<p>Now, all you need to do is to change the repository url to the one you want. Also, you might need to change the path to your submodules in case of any submodules name changes.</p>
-
-<p>That is it! All that is left with was commiting your changes.</p>
-
-<p>Tada. Your project should now have a new submodules =)</p>
+<p>Tada. You should now be able to run a single test or all the tests in a test class with gradlew =)</p>
 
 <h2 id="wrapping-up">Wrapping Up</h2>
 
-<p>Hopefully this guide has help you to replace a git submodules in a repository. Thank you for reading!</p>
+<p>Hopefully this guide has help you to learn how to run tests with gradlew. Thank you for reading!</p>
 
 <h2 id="resources">Resources</h2>
 
@@ -112,7 +88,11 @@
 <h3 id="getting-started">Getting started</h3>
 
 <ul>
-  <li><a href="https://chrisjean.com/git-submodules-adding-using-removing-and-updating/">Git Submodules: Adding, Using, Removing, Updating</a> by <a href="https://twitter.com/chrisjean">Chris Jean</a>.</li>
+  <li><a href="https://stackoverflow.com/questions/3680272/can-i-run-a-single-unit-test-from-the-command-line-for-a-grails-project">Can I run a single unit test from the command line for a Grails project?</a></li>
+  <li><a href="http://mrhaki.blogspot.ca/2013/05/gradle-goodness-running-single-test.html">Gradle Goodness: Running a Single Test</a></li>
+  <li><a href="https://stackoverflow.com/questions/22505533/how-to-run-only-one-test-class-on-gradle">How to run only one test class on gradle</a></li>
+  <li><a href="https://stackoverflow.com/questions/18061774/run-single-integration-test-with-gradle">run single integration test with gradle</a></li>
+  <li><a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">Chapter 6. The Gradle Wrapper</a></li>
 </ul>
 
 </div>

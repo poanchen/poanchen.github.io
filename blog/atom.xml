@@ -3,12 +3,72 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-10-19T22:44:42-07:00</updated>
+  <updated>2017-10-20T11:47:22-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to run a single test or all tests in a class with gradlew?</title>
+      <link href="https://poanchen.github.io/blog/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew"/>
+      <updated>2017-10-20T00:00:00-07:00</updated>
+      <id>https://poanchen.github.io//blog/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew</id>
+      <content type="html">&lt;p&gt;Ever wonder how you can run one single test with gradlew? Ever get tried of waiting all the tests to be finished? You have came to the right place. Running tests can be a time consuming tasks. Ability to run one single test or all the tests in a test class is very powerful. And, it will save TONS of time. Here is how you can do it.&lt;/p&gt;
+
+&lt;p&gt;Let’s assume that this is your testClass,&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;java&quot;&gt;
+    package io.github.poanchen.projectName.api
+    class BlogControllerTests {
+      void testCreate_BlogWithoutTitle() {
+        // some test code
+      }
+      void testUpdate_BlogWithInvalidAuthorEmail() {
+        // some test code
+      }
+    }
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;To run single test (testCreate_BlogWithoutTitle),&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    ./gradlew :projectName-api:unitTest --tests io.github.poanchen.projectName.api.BlogControllerTests.testCreate_BlogWithoutTitle
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Note: Depends on how you write your configuration file for gradlew tasks, “:projectName-api:unitTest” might look different for you than the one that I show you here.&lt;/p&gt;
+
+&lt;p&gt;To run all the tests in a test class (BlogControllerTests),&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    ./gradlew :projectName-api:unitTest --tests io.github.poanchen.projectName.api.BlogControllerTests
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Tada. You should now be able to run a single test or all the tests in a test class with gradlew =)&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has help you to learn how to run tests with gradlew. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/3680272/can-i-run-a-single-unit-test-from-the-command-line-for-a-grails-project&quot;&gt;Can I run a single unit test from the command line for a Grails project?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mrhaki.blogspot.ca/2013/05/gradle-goodness-running-single-test.html&quot;&gt;Gradle Goodness: Running a Single Test&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/22505533/how-to-run-only-one-test-class-on-gradle&quot;&gt;How to run only one test class on gradle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/18061774/run-single-integration-test-with-gradle&quot;&gt;run single integration test with gradle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.gradle.org/current/userguide/gradle_wrapper.html&quot;&gt;Chapter 6. The Gradle Wrapper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>How to replace a git submodules in a repository?</title>
@@ -80,7 +140,7 @@
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -191,7 +251,7 @@
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -303,7 +363,7 @@ It is that simple.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -343,7 +403,7 @@ It is that simple.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -440,7 +500,7 @@ It is that simple.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -501,7 +561,7 @@ It is that simple.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -569,7 +629,7 @@ Immutable object - The object cannot be changed once created.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -651,7 +711,7 @@ Immutable object - The object cannot be changed once created.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -700,7 +760,7 @@ Immutable object - The object cannot be changed once created.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -764,7 +824,7 @@ Immutable object - The object cannot be changed once created.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -1319,7 +1379,7 @@ Now, let’s try to add the filter for the net worth as well. Here is the code.&
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -1718,7 +1778,7 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -1815,7 +1875,7 @@ First, change directory to where you put your apache conf file.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -1989,7 +2049,7 @@ First, change directory to where you put your apache conf file.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -2096,7 +2156,7 @@ Second, go to Sketch-&amp;gt;Import Library-&amp;gt;Add Library. Then, a Contrib
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -2369,7 +2429,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -2434,7 +2494,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -2608,7 +2668,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -2719,7 +2779,7 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -3364,7 +3424,7 @@ Okay. Now, we have user’s username, email and password. I think it is time to 
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -3522,7 +3582,7 @@ Okay. Now, we have user’s username, email and password. I think it is time to 
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -3621,7 +3681,7 @@ Okay, now before we begin. I would like to introduce an amazing REST API that we
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
@@ -3716,7 +3776,7 @@ Okay, now before we begin. I would like to introduce an amazing REST API that we
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;wordpress-official-site-for-developer&quot;&gt;WordPress official site for developer&lt;/h3&gt;
 
@@ -3910,7 +3970,7 @@ As the user type, they may immediately see if the username is taken or not. An e
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;wordpress-apis&quot;&gt;WordPress APIs&lt;/h3&gt;
 &lt;ul&gt;
