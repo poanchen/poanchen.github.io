@@ -53,6 +53,7 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- How to run a single test or all tests in a class with gradlew?
 - How to replace a git submodules in a repository?
 - How to fix 'error This file requires compiler and library support for the ISO C++ 2011 standard'?
 - How to add Disqus to your Jekyll site?
