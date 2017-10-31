@@ -3,12 +3,156 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-10-25T23:55:46-07:00</updated>
+  <updated>2017-10-31T02:22:39-07:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>Installing Marsyas with Python bindings on Ubuntu 14.04.3 LTS - 64 bits</title>
+      <link href="https://poanchen.github.io/blog/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits"/>
+      <updated>2017-10-31T00:00:00-07:00</updated>
+      <id>https://poanchen.github.io//blog/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits</id>
+      <content type="html">&lt;p&gt;Just like this great &lt;a href=&quot;http://marsology.blogspot.ca/2011/09/installing-marsyas-with-python-bindings.html&quot;&gt;article&lt;/a&gt; stated that “Combining the Marsyas python bindings with the matplotlib library for plotting in Python creates a great environment for prototyping. In the past few months I have done a lot of Marsyas work using this approach and really enjoy it. It gives a lot of the expressive power and prototyping of MATLAB while retaining the data-flow model and efficient processing of Marsyas. Unfortunately getting everything installed and setup for the first time takes some effort.”&lt;/p&gt;
+
+&lt;p&gt;The article was really helpful as it gave a lot of pointer on how one can set up the environment to work with Python binding along with Marsyas. However, the article was written in 2011 which is pretty outdated. Many things have changed since then. For example, the project used to use Subversion to host their code. Now, they have moved to GitHub with git. File structure has changed, some of the paths would no longer work. In order to make it work, I had to do some research and hacks to make the build pass. I thought that I will be sharing the steps on how I did it that will probably help some of you guys out in the future. As making this build pass can be tricky and frustrated. Please follow the steps carefully and do let me know in the comment if you have any questions. It will be my pleasure to help you guys out.&lt;/p&gt;
+
+&lt;p&gt;The first step is to get git and cmake installed. I did all the package installation directly using apt because why not right?&lt;/p&gt;
+
+&lt;p&gt;Please download and install these packages using these commands if you have not done so already.&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    sudo apt install git
+    sudo apt install cmake
+    sudo apt install cmake-curses-gui
+    sudo apt install libasound2-dev
+  &lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Note: We encourage users to use apt instead of apt-get according to this &lt;a href=&quot;https://itsfoss.com/apt-vs-apt-get-difference/&quot;&gt;article&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next, we are ready to get the latest released version of Marsyas from GitHub, configure and compile.&lt;/p&gt;
+
+&lt;p&gt;Note: the hack that I was talking about was that the latest released version 0.5.0 from github.com/marsyas/marsyas did not really work for me when I did it. I had to fork the repository and make some adjustments in order for it to work.&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    wget https://github.com/poanchen/marsyas/archive/version-0.5.1.tar.gz
+    tar xvzf version-0.5.1.tar.gz
+    cd marsyas-version-0.5.1/
+    mkdir build
+    cd build
+    ccmake ../ (First, select c to configure. And then, select g to generate and exit.)
+    make -j 3 (or higher if you have more cores) (This will take quite a bit of time to build it)
+  &lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Note: the ccmake ../ used to be ccmake ../src, however, because “the top-level CMake file has now been moved to the root of the repository tree, so you should point cmake to the top-level dir instead of the src directory.” according to &lt;a href=&quot;https://sourceforge.net/p/marsyas/mailman/message/31374418/?#msg31375866&quot;&gt;this answer&lt;/a&gt; from Jakob.&lt;/p&gt;
+
+&lt;p&gt;When the compilation is finished, you can check out the Marsyas command-line tools.&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    cd bin
+    ./HelloWorld (Ctrl+C to force shut down or similar)
+    cd ..
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;If everything worked, you will hear a sine wave playing in your speakers.&lt;/p&gt;
+
+&lt;p&gt;Now, we are ready to get the Python/SWIG bindings going. Please download and install these packages using these commands if you have not done so already.&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    sudo apt install swig 
+    sudo apt install python-dev (the python headers) 
+    sudo apt install python-matplotlib 
+    sudo apt install ipython
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Next, you need to reconfigure/compile Marsyas to use Python/SWIG to create the python bindings.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    ccmake ../ (First, press enter with up and down arrow to enable the WITH_SWIG and WITH_PNG option to be ON. And then, select g to generate and exit.)
+    make -j 3 (or higher if you have more cores) (This will take quite a bit of time to build it)
+    sudo make install (Install the Marsyas python bindings so that Python can find them globally)
+    sudo ldconfig /usr/local/lib (Add /usr/local/lib to the path searched for libraries) 
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;If everything worked, you can now combine Marsyas and Matplotlib. To check, try:&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    cd src/marsyas_python 
+    python windowing.py 
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;After running these commands, you should be able to see a nice generated figure looking like the image below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/windowing.svg&quot; alt=&quot;Figure of windowing&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you look at the code in windowing.py, you will see that the computation of the figure data is done through Marsyas. All you need to do is import marsyas at the top of your Python source code. For example, say you need to input a wav file with window of 2048 samples, and you need to plot its power spectrum. Here is how you would do it using the combination of Marsyas and Matplotlib.&lt;/p&gt;
+
+&lt;p&gt;sample.mrs&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;marsyas&quot;&gt;
+    Series {
+      inSamples = 2048
+      -&amp;gt; input: SoundFileSource { filename = &quot;sample.wav&quot; }
+      -&amp;gt; Windowing { size = 2048 }
+      -&amp;gt; Spectrum
+      -&amp;gt; PowerSpectrum { spectrumType = &quot;magnitude&quot; }
+      -&amp;gt; selection: Selector { disable = 0 }
+      -&amp;gt; sink: CsvSink { filename = &quot;output.csv&quot; }
+      + done = (input/hasData == false)
+    }
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;sample.py&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;marsyas&quot;&gt;
+    from pylab import *
+    import sys
+    from matplotlib import pyplot
+    from marsyas import *
+    from marsyas_util import *
+    y_data = []
+    system = marsyas.system_from_script_file(&quot;sample.mrs&quot;)
+    while (system.getControl(&quot;SoundFileSource/input/mrs_bool/hasData&quot;).to_bool()):
+        system.tick()
+        y_data.extend(system.getControl(&quot;Selector/selection/mrs_realvec/processedData&quot;).to_realvec())
+        y_data[-1] &amp;#42;=  44100 / 1025 # Sampling Rate / FFT Size
+    plot(range(0, len(y_data)), y_data)
+    savefig('sample.png')
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;After running the python sample.py commmand, you should be able to see a nice generated figure like this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/sample.png&quot; alt=&quot;Figure of sample&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tada. You should now be able to combine the Marsyas python bindings with the matplotlib library for plotting in Python =)&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has help you to set up the environment to work with Python binding along with Marsyas. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://marsology.blogspot.ca/2011/09/installing-marsyas-with-python-bindings.html&quot;&gt;Installing Marsyas with Python bindings on Ubuntu 11.04 Natty Narwhal - 32 bits&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sourceforge.net/p/marsyas/mailman/message/31374418/&quot;&gt;[Marsyas-developers] CMake problems&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/marsyas/marsyas&quot;&gt;Marsyas official GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>How to run a single test or all tests in a class with gradlew?</title>
