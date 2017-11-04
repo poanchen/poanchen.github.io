@@ -56,6 +56,7 @@ Now, we are ready to get the Python/SWIG bindings going. Please download and ins
     sudo apt install python-dev (the python headers) 
     sudo apt install python-matplotlib 
     sudo apt install ipython
+    sudo apt install libfreetype6-dev
   </code>
 </pre>
 
@@ -81,7 +82,7 @@ If everything worked, you can now combine Marsyas and Matplotlib. To check, try:
 
 After running these commands, you should be able to see a nice generated figure looking like the image below. 
 
-<img src="/img/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/windowing.svg" alt="Figure of windowing">
+<img src="/img/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/windowing.png" alt="Figure of windowing">
 
 If you look at the code in windowing.py, you will see that the computation of the figure data is done through Marsyas. All you need to do is import marsyas at the top of your Python source code. For example, say you need to input a wav file with window of 2048 samples, and you need to plot its power spectrum. Here is how you would do it using the combination of Marsyas and Matplotlib.
 
