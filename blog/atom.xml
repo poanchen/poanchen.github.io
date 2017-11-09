@@ -3,12 +3,45 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-11-05T11:22:37-08:00</updated>
+  <updated>2017-11-08T16:22:31-08:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>Connecting to UVic wifi with Ubuntu 16.04 LTS</title>
+      <link href="https://poanchen.github.io/blog/2017/11/08/Connecting-to-UVic-wifi-with-Ubuntu-16.04-LTS"/>
+      <updated>2017-11-08T00:00:00-08:00</updated>
+      <id>https://poanchen.github.io//blog/2017/11/08/Connecting-to-UVic-wifi-with-Ubuntu-16.04-LTS</id>
+      <content type="html">&lt;p&gt;Connecting to UVic wifi with Linux for the first time can be a pain in the ass. I literally spent hours trying to figure out how to connect my Linux based laptop to UVic wifi. I thought that it would be helpful to share how I did it that will probably save you some struggles. Here is the set up that I did that worked. Please let me know in the comment if this does not work for you. I will try to reply and help you out.&lt;/p&gt;
+
+&lt;p&gt;First step, connect to the Uvic network and not the UvicStart. A Wi-Fi Network Authentication Required dialog should come up. Change the &lt;strong&gt;Authentication&lt;/strong&gt; method from Tunneled TLS to &lt;strong&gt;Protected EAP (PEAP)&lt;/strong&gt;. Next, browse your &lt;strong&gt;CA certificate&lt;/strong&gt; in the path &lt;strong&gt;/etc/ssl/certs&lt;/strong&gt; to select &lt;strong&gt;thawte_Primary_Root_CA.pem&lt;/strong&gt;. Later, put in your UVic Netlink ID as your Username (Make sure to put &lt;strong&gt;@uvic.ca&lt;/strong&gt; as well) and UVic Netlink ID password as your Password. All together, it should look something similar to this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/11/08/Connecting to UVic wifi with Ubuntu 16.04 LTS/connect to uvic wifi set up screenshot.png&quot; alt=&quot;Set up to connect to uvic wifi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Simply click the connect button and it should work!&lt;/p&gt;
+
+&lt;p&gt;Tada. You should now be able to connect to UVic wifi using your Linux laptop =)&lt;/p&gt;
+
+&lt;p&gt;Note: you should only need to configure this once unless you delete or forget the UVic network setting.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has help you to set up the wifi connection at UVic with Ubuntu. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://hcmc.uvic.ca/blogs/index.php?blog=11&amp;amp;p=7078&quot;&gt;Connecting to UVic wireless with Ubuntu 10.04&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>PoAn (Baron) Chen's Blog global Alexa rank has gone up roughly half a million in 20 days</title>
