@@ -54,6 +54,7 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- How to create a GitHub pull request with a specific commits?
 - Connecting to UVic wifi with Ubuntu 16.04 LTS
 - Installing Marsyas with Python bindings on Ubuntu 14.04.3 LTS - 64 bits
 - How to run a single test or all tests in a class with gradlew?
