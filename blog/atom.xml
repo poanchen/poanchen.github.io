@@ -3,12 +3,77 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-11-11T01:08:25-08:00</updated>
+  <updated>2017-11-12T20:33:40-08:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to create a GitHub pull request with a specific commits?</title>
+      <link href="https://poanchen.github.io/blog/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits"/>
+      <updated>2017-11-12T00:00:00-08:00</updated>
+      <id>https://poanchen.github.io//blog/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits</id>
+      <content type="html">&lt;p&gt;Ever wanted to create a pull request in GitHub but only wished to commit changes that is relevant? You are in luck. In this tutorial, I am going to show you how I would do it. Recently, I tried to create a pull request in GitHub and this is what I see.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits/create pull request with other changes.png&quot; alt=&quot;creating a pull request along with other changes&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem that I have here is that I only wanted to create a pull request with only the &lt;strong&gt;a51afa6&lt;/strong&gt; and &lt;strong&gt;07f39f7&lt;/strong&gt;. But, it seems like you cannot really do anything on the GitHub UI to remove it. You know why? Because you are not suppose to. You are suppose to create a branch with the latest changes and cherry-pick the ones that you want. And then compare that branch with the repository that you would like to contribute. The differences will only be the ones that you cherry-picked. Then, you are done. This is how you would create a GitHub pull request with a specific commits. Let me show you in action.&lt;/p&gt;
+
+&lt;p&gt;First, you need to create a branch with the latest changes (that is the same with the upstream remote branch)&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    git fetch --all
+    git checkout -b new-branch-name upstream/master
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Note: The above assumes you’ve set up upstream as a remote. If not, do this first:&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    git remote add upstream https://github.com/upstream_github_username/upstream_github_repo_name.git
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Next, you would need to cherry-pick the changes that you would like to include in the pull request.&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    git cherry-pick a51afa6
+    git cherry-pick 07f39f7
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now, all you need to do is to push your changes to your GitHub repository&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    git push -u origin new-branch-name
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Head over to your GitHub repository, and you should see this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits/recently pushed branch.png&quot; alt=&quot;Recently pushed branch&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Simply click &lt;strong&gt;Compare &amp;amp; pull request&lt;/strong&gt; to create a pull request in the repository that you would like to contribute with only the changes you picked.&lt;/p&gt;
+
+&lt;p&gt;Tada. You have done it=)&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has help you to create a GitHub pull request with a specific commits. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/34027850/how-to-pull-request-a-specific-commit&quot;&gt;How to “pull request” a specific commit&lt;/a&gt; by &lt;a href=&quot;https://stackoverflow.com/users/825568/joseph-silber&quot;&gt;Joseph Silber&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>Connecting to UVic wifi with Ubuntu 16.04 LTS</title>
