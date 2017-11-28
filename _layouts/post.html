@@ -10,6 +10,7 @@ layout: default
   {% else %}
     {{ page.date | date_to_string }}
   {% endif %}
+  | <a href="{{ site.url }}{{ page.url }}#disqus_thread">0 Comments</a>
 </p>
 
 <div class="post">
