@@ -3,12 +3,837 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2017-11-27T19:28:46-08:00</updated>
+  <updated>2017-12-04T01:11:21-08:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>Build a scalable, reliable, and inexpensive RESTful API using AWS Lambda that will do the Roman Numerals Conversion</title>
+      <link href="https://poanchen.github.io/blog/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion"/>
+      <updated>2017-12-03T00:00:00-08:00</updated>
+      <id>https://poanchen.github.io//blog/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion</id>
+      <content type="html">&lt;h2 id=&quot;prerequisite-concepts-skills-andor-values&quot;&gt;Prerequisite Concepts, Skills and/or Values&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Experienced with at least one of the programming language ranging from Node.js/Java/C#/Python.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Worked with RESTful API.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Familiar with Algebra.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Understand how HTTP(s)/web request works.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS account with admin privilege.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Building a scalable and reliable RESTful API from scratch can be challenging with hardware and software in mind. Using &lt;a href=&quot;https://docs.aws.amazon.com/lambda/latest/dg/welcome.html&quot;&gt;AWS Lambda&lt;/a&gt; allows the developer to build a RESTful API that are scalable, reliable and inexpensive without worrying too much about the compute resources, server and operating system maintenance, capacity provisioning and automatic scaling, code and security path deployment, code monitoring and logging. All you need to do is supply the code and that is it. It does sound very appearling as the developers get to focus on the business logics and shipping their product for their client. In addition, many software developer job requirements require some knowledge of RESTful API. Learning what a RESTful API is and build one from scratch can really help the learner to stands out in a pile of applicants. As there are more and more technology companies started to adapt AWS ecosystem, knowing how to use AWS is also a big plus on their resume.&lt;/p&gt;
+
+&lt;h2 id=&quot;audience-needs--motivation&quot;&gt;Audience Needs &amp;amp; Motivation&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Learning how to build a RESTful API with AWS Lambda can be a very useful skill to put on the resume which in turn improves your chances of getting a Computer Science-related job in the future.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Learning how Roman Numerals Conversion works is a fun thing to do and I encourage everyone to try it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;This blog will motivate the learners into wanted to learn more about the topic because it is very interesting and its expandability is unbelievable. (people can potentially build so MANY things after they have read this educational blog)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;learning-objectives&quot;&gt;Learning Objectives&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Learn to build a RESTful API using AWS Lambda&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Build a Hello World version of RESTful API using AWS Lambda&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;In this topic, the learner will learn in-depth what a AWS Lambda and API Gateway is and at the end, they will get to know how to build a Hello World version of it.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Learn to do a Roman Numerals Conversion in hand&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Ability to convert Roman Numerals to digital numbers in hand&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;In this topic, the learner will learn to do a Roman Numerals Conversion in hand.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Implementing the Roman Numerals Conversion RESTful API&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Build a RESTful API that will do the Roman Numerals Conversion.&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;In this topic, the learner will simply use the roman library to do the Roman Numerals Conversion.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;learn-to-build-a-restful-api-using-aws-lambda&quot;&gt;Learn to build a RESTful API using AWS Lambda&lt;/h2&gt;
+
+&lt;p&gt;In this section, I am going to show you guys how to build a RESTful API using AWS Lambda.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;AWS Lambda is a compute service that lets you run code without provisioning or managing servers. AWS Lambda executes your code only when needed and scales automatically, from a few requests per day to thousands per second. You pay only for the compute time you consume - there is no charge when your code is not running. With AWS Lambda, you can run code for virtually any type of application or backend service - all with zero administration. AWS Lambda runs your code on a high-availability compute infrastructure and performs all of the administration of the compute resources, including server and operating system maintenance, capacity provisioning and automatic scaling, code monitoring and logging. All you need to do is supply your code in one of the languages that AWS Lambda supports (currently Node.js, Java, C# and Python).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To simplify the problem, we are simply going to build a Hello World version of RESTful API using AWS Lambda. The code for doing the Roman Numerals Conversion will come later in the blog. Also, as I am more familiar with Python. The example here is going to be in Python. Okay, let’s head over to your AWS account Dashboard and search “Lambda”. Select the first one and you should see a page that briefly teaches you how it works. Click the “Create a function” button and it should take you to this page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion/create a function.png&quot; alt=&quot;Create a Lambda function&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, you can simply set it up exactly as I suggested in the figure above. Next, you would need to write a Lambda function that will print the “Hello World” message. Here is a quick example of what it might look like.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;python&quot;&gt;
+    def lambda_handler(event, context):
+      return {
+        &quot;message&quot;: &quot;Hello World&quot;
+      }
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Since we are building a RESTful API, we need to use &lt;a href=&quot;https://aws.amazon.com/api-gateway/&quot;&gt;API Gateway&lt;/a&gt; to trigger the Lambda function.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. With a few clicks in the AWS Management Console, you can create an API that acts as a “front door” for applications to access data, business logic, or functionality from your back-end services, such as workloads running on Amazon Elastic Compute Cloud (Amazon EC2), code running on AWS Lambda, or any Web application. Amazon API Gateway handles all the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls, including traffic management, authorization and access control, monitoring, and API version management. Amazon API Gateway has no minimum fees or startup costs. You pay only for the API calls you receive and the amount of data transferred out.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Thanks to Amazon. API Gateway is fairly easy to set up and configure. However, its compatibility could be the problem but still fairly easy to solve. We know that the API Gateway expects Lambda functions to return certain output. You must code your function accordingly. This is the structure it expects:&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;json&quot;&gt;
+    {
+      &quot;statusCode&quot;: 200, 
+      &quot;headers&quot;: {&quot;Content-Type&quot;: &quot;application/json&quot;},
+      &quot;body&quot;: &quot;body_text_goes_here&quot;
+    }
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;In the case of the Eratosthenes function, we actually return json as the body so we have to use backslashes to escape our json-within-json:&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;json&quot;&gt;
+    {
+      &quot;statusCode&quot;: 200,
+      &quot;headers&quot;: {&quot;Content-Type&quot;: &quot;application/json&quot;},
+      &quot;body&quot;: &quot;{\&quot;message\&quot;: \&quot;Hello World\&quot;}&quot;
+    }
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;API Gateway will read the “body” element and return it as the body of the response:&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;json&quot;&gt;
+    {
+      &quot;message&quot;: &quot;Hello World&quot;
+    }
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now, to accommodate that (for Lambda to work with API Gateway). Here is what the Lambda function might look like.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;python&quot;&gt;
+    def lambda_handler(event, context):
+      return {
+        &quot;statusCode&quot;: 200,
+        &quot;headers&quot;: {&quot;Content-Type&quot;: &quot;application/json&quot;},
+        &quot;body&quot;: &quot;{\&quot;message\&quot;: \&quot;Hello World\&quot;}&quot;
+      }
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Simply copy that and paste it into the Function code like this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion/sample function code.png&quot; alt=&quot;Sample function code&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, you should head over to the top and add the API Gateway as your Lambda triggers. Just like what I did here.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion/add trigger.png&quot; alt=&quot;add trigger&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Make sure you hit the save button to save all your works. Next, find out what your Invoke URL is for your API Gateway for Lambda. Open up &lt;a href=&quot;https://www.getpostman.com/&quot;&gt;Postman&lt;/a&gt; or &lt;a href=&quot;https://restlet.com/modules/client/&quot;&gt;Restlet Client&lt;/a&gt; to check out the Hello World version RESTful API that you just did using API Gateway and Lambda. You should get something like this in return response.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion/return response.png&quot; alt=&quot;return response&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tada! You just built yourself a Hello World version of RESTful API using API Gateway and Lambda.&lt;/p&gt;
+
+&lt;h2 id=&quot;learn-to-do-a-roman-numerals-conversion-in-hand&quot;&gt;Learn to do a Roman Numerals Conversion in hand&lt;/h2&gt;
+
+&lt;p&gt;Roman Numerals Conversion is actually pretty simple to learn. All you have to do is to get familiar with the table below.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Number&lt;/th&gt;
+    &lt;th&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Roman_numerals&quot;&gt;Roman numeral&lt;/a&gt;&lt;/th&gt;
+    &lt;th&gt;Calculation&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;0&lt;/td&gt;
+    &lt;td&gt;not defined&lt;/td&gt;
+    &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;background:#f8f8f0&quot;&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;I&lt;/td&gt;
+    &lt;td&gt;1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;2&lt;/td&gt;
+    &lt;td&gt;II&lt;/td&gt;
+    &lt;td&gt;1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;3&lt;/td&gt;
+    &lt;td&gt;III&lt;/td&gt;
+    &lt;td&gt;1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;4&lt;/td&gt;
+    &lt;td&gt;IV&lt;/td&gt;
+    &lt;td&gt;5-1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;background:#f8f8f0&quot;&gt;
+    &lt;td&gt;5&lt;/td&gt;
+    &lt;td&gt;V&lt;/td&gt;
+    &lt;td&gt;5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;6&lt;/td&gt;
+    &lt;td&gt;VI&lt;/td&gt;
+    &lt;td&gt;5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;7&lt;/td&gt;
+    &lt;td&gt;VII&lt;/td&gt;
+    &lt;td&gt;5+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;8&lt;/td&gt;
+    &lt;td&gt;VIII&lt;/td&gt;
+    &lt;td&gt;5+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;9&lt;/td&gt;
+    &lt;td&gt;IX&lt;/td&gt;
+    &lt;td&gt;10-1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;background:#f8f8f0&quot;&gt;
+    &lt;td&gt;10&lt;/td&gt;
+    &lt;td&gt;X&lt;/td&gt;
+    &lt;td&gt;10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;11&lt;/td&gt;
+    &lt;td&gt;XI&lt;/td&gt;
+    &lt;td&gt;10+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;12&lt;/td&gt;
+    &lt;td&gt;XII&lt;/td&gt;
+    &lt;td&gt;10+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;13&lt;/td&gt;
+    &lt;td&gt;XIII&lt;/td&gt;
+    &lt;td&gt;10+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;14&lt;/td&gt;
+    &lt;td&gt;XIV&lt;/td&gt;
+    &lt;td&gt;10-1+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;15&lt;/td&gt;
+    &lt;td&gt;XV&lt;/td&gt;
+    &lt;td&gt;10+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;16&lt;/td&gt;
+    &lt;td&gt;XVI&lt;/td&gt;
+    &lt;td&gt;10+5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;17&lt;/td&gt;
+    &lt;td&gt;XVII&lt;/td&gt;
+    &lt;td&gt;10+5+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;18&lt;/td&gt;
+    &lt;td&gt;XVIII&lt;/td&gt;
+    &lt;td&gt;10+5+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;19&lt;/td&gt;
+    &lt;td&gt;XIX&lt;/td&gt;
+    &lt;td&gt;10-1+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;20&lt;/td&gt;
+    &lt;td&gt;XX&lt;/td&gt;
+    &lt;td&gt;10+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;21&lt;/td&gt;
+    &lt;td&gt;XXI&lt;/td&gt;
+    &lt;td&gt;10+10+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;22&lt;/td&gt;
+    &lt;td&gt;XXII&lt;/td&gt;
+    &lt;td&gt;10+10+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;23&lt;/td&gt;
+    &lt;td&gt;XXIII&lt;/td&gt;
+    &lt;td&gt;10+10+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;24&lt;/td&gt;
+    &lt;td&gt;XXIV&lt;/td&gt;
+    &lt;td&gt;10+10-1+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;XXV&lt;/td&gt;
+    &lt;td&gt;10+10+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;26&lt;/td&gt;
+    &lt;td&gt;XXVI&lt;/td&gt;
+    &lt;td&gt;10+10+5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;27&lt;/td&gt;
+    &lt;td&gt;XXVII&lt;/td&gt;
+    &lt;td&gt;10+10+5+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;28&lt;/td&gt;
+    &lt;td&gt;XXVIII&lt;/td&gt;
+    &lt;td&gt;10+10+5+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;29&lt;/td&gt;
+    &lt;td&gt;XXIX&lt;/td&gt;
+    &lt;td&gt;10+10-1+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;30&lt;/td&gt;
+    &lt;td&gt;XXX&lt;/td&gt;
+    &lt;td&gt;10+10+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;31&lt;/td&gt;
+    &lt;td&gt;XXXI&lt;/td&gt;
+    &lt;td&gt;10+10+10+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;32&lt;/td&gt;
+    &lt;td&gt;XXXII&lt;/td&gt;
+    &lt;td&gt;10+10+10+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;33&lt;/td&gt;
+    &lt;td&gt;XXXIII&lt;/td&gt;
+    &lt;td&gt;10+10+10+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;34&lt;/td&gt;
+    &lt;td&gt;XXXIV&lt;/td&gt;
+    &lt;td&gt;10+10+10-1+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;35&lt;/td&gt;
+    &lt;td&gt;XXXV&lt;/td&gt;
+    &lt;td&gt;10+10+10+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;36&lt;/td&gt;
+    &lt;td&gt;XXXVI&lt;/td&gt;
+    &lt;td&gt;10+10+10+5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;37&lt;/td&gt;
+    &lt;td&gt;XXXVII&lt;/td&gt;
+    &lt;td&gt;10+10+10+5+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;38&lt;/td&gt;
+    &lt;td&gt;XXXVIII&lt;/td&gt;
+    &lt;td&gt;10+10+10+5+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;39&lt;/td&gt;
+    &lt;td&gt;XXXIX&lt;/td&gt;
+    &lt;td&gt;10+10+10-1+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;40&lt;/td&gt;
+    &lt;td&gt;XL&lt;/td&gt;
+    &lt;td&gt;-10+50&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;41&lt;/td&gt;
+    &lt;td&gt;XLI&lt;/td&gt;
+    &lt;td&gt;-10+50+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;42&lt;/td&gt;
+    &lt;td&gt;XLII&lt;/td&gt;
+    &lt;td&gt;-10+50+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;43&lt;/td&gt;
+    &lt;td&gt;XLIII&lt;/td&gt;
+    &lt;td&gt;-10+50+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;44&lt;/td&gt;
+    &lt;td&gt;XLIV&lt;/td&gt;
+    &lt;td&gt;-10+50-1+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;45&lt;/td&gt;
+    &lt;td&gt;XLV&lt;/td&gt;
+    &lt;td&gt;-10+50+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;46&lt;/td&gt;
+    &lt;td&gt;XLVI&lt;/td&gt;
+    &lt;td&gt;-10+50+5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;47&lt;/td&gt;
+    &lt;td&gt;XLVII&lt;/td&gt;
+    &lt;td&gt;-10+50+5+5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;48&lt;/td&gt;
+    &lt;td&gt;XLVIII&lt;/td&gt;
+    &lt;td&gt;-10+50+5+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;49&lt;/td&gt;
+    &lt;td&gt;XLIX&lt;/td&gt;
+    &lt;td&gt;-10+50-1+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;background:#f8f8f0&quot;&gt;
+    &lt;td&gt;50&lt;/td&gt;
+    &lt;td&gt;L&lt;/td&gt;
+    &lt;td&gt;50&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;51&lt;/td&gt;
+    &lt;td&gt;LI&lt;/td&gt;
+    &lt;td&gt;50+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;52&lt;/td&gt;
+    &lt;td&gt;LII&lt;/td&gt;
+    &lt;td&gt;50+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;53&lt;/td&gt;
+    &lt;td&gt;LIII&lt;/td&gt;
+    &lt;td&gt;50+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;54&lt;/td&gt;
+    &lt;td&gt;LIV&lt;/td&gt;
+    &lt;td&gt;50-1+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;55&lt;/td&gt;
+    &lt;td&gt;LV&lt;/td&gt;
+    &lt;td&gt;50+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;56&lt;/td&gt;
+    &lt;td&gt;LVI&lt;/td&gt;
+    &lt;td&gt;50+5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;57&lt;/td&gt;
+    &lt;td&gt;LVII&lt;/td&gt;
+    &lt;td&gt;50+5+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;58&lt;/td&gt;
+    &lt;td&gt;LVIII&lt;/td&gt;
+    &lt;td&gt;50+5+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;59&lt;/td&gt;
+    &lt;td&gt;LIX&lt;/td&gt;
+    &lt;td&gt;50-1+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;60&lt;/td&gt;
+    &lt;td&gt;LX&lt;/td&gt;
+    &lt;td&gt;50+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;61&lt;/td&gt;
+    &lt;td&gt;LXI&lt;/td&gt;
+    &lt;td&gt;50+10+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;62&lt;/td&gt;
+    &lt;td&gt;LXII&lt;/td&gt;
+    &lt;td&gt;50+10+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;63&lt;/td&gt;
+    &lt;td&gt;LXIII&lt;/td&gt;
+    &lt;td&gt;50+10+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;64&lt;/td&gt;
+    &lt;td&gt;LXIV&lt;/td&gt;
+    &lt;td&gt;50+10-1+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;65&lt;/td&gt;
+    &lt;td&gt;LXV&lt;/td&gt;
+    &lt;td&gt;50+10+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;66&lt;/td&gt;
+    &lt;td&gt;LXVI&lt;/td&gt;
+    &lt;td&gt;50+10+5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;67&lt;/td&gt;
+    &lt;td&gt;LXVII&lt;/td&gt;
+    &lt;td&gt;50+10+5+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;68&lt;/td&gt;
+    &lt;td&gt;LXVIII&lt;/td&gt;
+    &lt;td&gt;50+10+5+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;69&lt;/td&gt;
+    &lt;td&gt;LXIX&lt;/td&gt;
+    &lt;td&gt;50+10-1+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;70&lt;/td&gt;
+    &lt;td&gt;LXX&lt;/td&gt;
+    &lt;td&gt;50+10+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;71&lt;/td&gt;
+    &lt;td&gt;LXXI&lt;/td&gt;
+    &lt;td&gt;50+10+10+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;72&lt;/td&gt;
+    &lt;td&gt;LXXII&lt;/td&gt;
+    &lt;td&gt;50+10+10+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;73&lt;/td&gt;
+    &lt;td&gt;LXXIII&lt;/td&gt;
+    &lt;td&gt;50+10+10+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;74&lt;/td&gt;
+    &lt;td&gt;LXXIV&lt;/td&gt;
+    &lt;td&gt;50+10+10-1+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;75&lt;/td&gt;
+    &lt;td&gt;LXXV&lt;/td&gt;
+    &lt;td&gt;50+10+10+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;76&lt;/td&gt;
+    &lt;td&gt;LXXVI&lt;/td&gt;
+    &lt;td&gt;50+10+10+5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;77&lt;/td&gt;
+    &lt;td&gt;LXXVII&lt;/td&gt;
+    &lt;td&gt;50+10+10+5+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;78&lt;/td&gt;
+    &lt;td&gt;LXXVIII&lt;/td&gt;
+    &lt;td&gt;50+10+10+5+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;79&lt;/td&gt;
+    &lt;td&gt;LXXIX&lt;/td&gt;
+    &lt;td&gt;50+10+10-1+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;80&lt;/td&gt;
+    &lt;td&gt;LXXX&lt;/td&gt;
+    &lt;td&gt;50+10+10+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;81&lt;/td&gt;
+    &lt;td&gt;LXXXI&lt;/td&gt;
+    &lt;td&gt;50+10+10+10+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;82&lt;/td&gt;
+    &lt;td&gt;LXXXII&lt;/td&gt;
+    &lt;td&gt;50+10+10+10+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;83&lt;/td&gt;
+    &lt;td&gt;LXXXIII&lt;/td&gt;
+    &lt;td&gt;50+10+10+10+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;84&lt;/td&gt;
+    &lt;td&gt;LXXXIV&lt;/td&gt;
+    &lt;td&gt;50+10+10+10-1+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;85&lt;/td&gt;
+    &lt;td&gt;LXXXV&lt;/td&gt;
+    &lt;td&gt;50+10+10+10+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;86&lt;/td&gt;
+    &lt;td&gt;LXXXVI&lt;/td&gt;
+    &lt;td&gt;50+10+10+10+5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;87&lt;/td&gt;
+    &lt;td&gt;LXXXVII&lt;/td&gt;
+    &lt;td&gt;50+10+10+10+5+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;88&lt;/td&gt;
+    &lt;td&gt;LXXXVIII&lt;/td&gt;
+    &lt;td&gt;50+10+10+10+5+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;89&lt;/td&gt;
+    &lt;td&gt;LXXXIX&lt;/td&gt;
+    &lt;td&gt;50+10+10+10-1+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;90&lt;/td&gt;
+    &lt;td&gt;XC&lt;/td&gt;
+    &lt;td&gt;100-10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;91&lt;/td&gt;
+    &lt;td&gt;XCI&lt;/td&gt;
+    &lt;td&gt;100-10+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;92&lt;/td&gt;
+    &lt;td&gt;XCII&lt;/td&gt;
+    &lt;td&gt;100-10+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;93&lt;/td&gt;
+    &lt;td&gt;XCIII&lt;/td&gt;
+    &lt;td&gt;100-10+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;94&lt;/td&gt;
+    &lt;td&gt;XCIV&lt;/td&gt;
+    &lt;td&gt;100-10-1+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;95&lt;/td&gt;
+    &lt;td&gt;XCV&lt;/td&gt;
+    &lt;td&gt;100-10+5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;96&lt;/td&gt;
+    &lt;td&gt;XCVI&lt;/td&gt;
+    &lt;td&gt;100-10+5+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;97&lt;/td&gt;
+    &lt;td&gt;XCVII&lt;/td&gt;
+    &lt;td&gt;100-10+5+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;98&lt;/td&gt;
+    &lt;td&gt;XCVIII&lt;/td&gt;
+    &lt;td&gt;100-10+5+1+1+1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;99&lt;/td&gt;
+    &lt;td&gt;XCIX&lt;/td&gt;
+    &lt;td&gt;100-10-1+10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;background:#f8f8f0&quot;&gt;
+    &lt;td&gt;100&lt;/td&gt;
+    &lt;td&gt;C&lt;/td&gt;
+    &lt;td&gt;100&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;200&lt;/td&gt;
+    &lt;td&gt;CC&lt;/td&gt;
+    &lt;td&gt;100+100&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;300&lt;/td&gt;
+    &lt;td&gt;CCC&lt;/td&gt;
+    &lt;td&gt;100+100+100&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;400&lt;/td&gt;
+    &lt;td&gt;CD&lt;/td&gt;
+    &lt;td&gt;500-100&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;background:#f8f8f0&quot;&gt;
+    &lt;td&gt;500&lt;/td&gt;
+    &lt;td&gt;D&lt;/td&gt;
+    &lt;td&gt;500&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;600&lt;/td&gt;
+    &lt;td&gt;DC&lt;/td&gt;
+    &lt;td&gt;500+100&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;700&lt;/td&gt;
+    &lt;td&gt;DCC&lt;/td&gt;
+    &lt;td&gt;500+100+100&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;800&lt;/td&gt;
+    &lt;td&gt;DCCC&lt;/td&gt;
+    &lt;td&gt;500+100+100+100&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;900&lt;/td&gt;
+    &lt;td&gt;CM&lt;/td&gt;
+    &lt;td&gt;1000-100&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;background:#f8f8f0&quot;&gt;
+    &lt;td&gt;1000&lt;/td&gt;
+    &lt;td&gt;M&lt;/td&gt;
+    &lt;td&gt;1000&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;For simplicity, we are going to ignore number that is larger than 1000. By following the table, you should be able to do the Roman Numerals Conversion.&lt;/p&gt;
+
+&lt;h2 id=&quot;implementing-the-roman-numerals-conversion-restful-api&quot;&gt;Implementing the Roman Numerals Conversion RESTful API&lt;/h2&gt;
+
+&lt;p&gt;Thanks to Roman library. It allows us to easily convert digital numbers to Roman Numerals with two lines of code. For example,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;python&quot;&gt;
+    import roman
+    print(roman.toRoman(10)) # you should get 'X'
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now, we simply need to make sure we can pass in data so that we can do the conversion. Here is how you can do it with Lambda.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;python&quot;&gt;
+    def handler(event, context):
+      e = event.get('e')
+      pi = event.get('pi')
+      return {
+          &quot;statusCode&quot;: 200,
+          &quot;headers&quot;: { &quot;Content-Type&quot;: &quot;application/json&quot;},
+          &quot;body&quot;: e + pi
+      }
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Let’s use that in our Lambda functions.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;python&quot;&gt;
+    def lambda_handler(event, context):
+      import roman
+      return {
+        &quot;statusCode&quot;: 200,
+        &quot;headers&quot;: {&quot;Content-Type&quot;: &quot;application/json&quot;},
+        &quot;body&quot;: &quot;{\&quot;result\&quot;: %d}&quot; % (roman.fromRoman(event.get('d')))
+      }
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Simply update your Lambda function to the one above. The Roman Numerals Conversion should now works. Here is what it might looks like,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion/sample roman numerals conversion response.png&quot; alt=&quot;sample roman numerals conversion response&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tada! You now have a fully functional Roman Numerals Conversion RESTful API that will convert any digital number to Roman Numerals.&lt;/p&gt;
+
+&lt;h2 id=&quot;extensions&quot;&gt;Extensions&lt;/h2&gt;
+
+&lt;p&gt;In case you found the tutorial too easy, here are some of the pointers that will make this more challenging.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Instead of using the roman library to do the Roman Numerals Conversion. I would suggest you to implement your own conversion. On top of this, make sure your conversion works for number that is larger than 1000.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Instead of doing the conversion from the number to the Roman Numerals. Convert the Roman Numerals to the number instead without using the roman library. (implementing your own conversion)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Roman Numerals Conversion might not perform well for a much larger number. Use some kind of caching technic so that the number the conversion has seen before will not get computed again.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this guide has help you to build a scalable, reliable, and inexpensive RESTful API using AWS Lambda that will do the Roman Numerals Conversion for you. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jconning/tutorial-aws-lambda-with-api-gateway-36a8513ec8e3&quot;&gt;Tutorial: AWS Lambda with API Gateway&lt;/a&gt; by &lt;a href=&quot;https://medium.com/@jconning&quot;&gt;Jim Conning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hackernoon.com/create-a-serverless-rest-api-with-node-js-aws-lambda-dynamodb-api-gateway-f08e7111fd16&quot;&gt;Create a Serverless REST API with Node.JS, AWS Lambda, DynamoDB &amp;amp; API Gateway&lt;/a&gt; by &lt;a href=&quot;https://hackernoon.com/@mlabouardy&quot;&gt;Mohamed Labouardy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/19308177/converting-roman-numerals-to-integers-in-python/22802368&quot;&gt;Converting Roman Numerals to integers in python&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/45179452/aws-lambda-building-external-dependency-libraries-in-python&quot;&gt;AWS lambda building external dependency libraries in python&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/nficano/python-lambda&quot;&gt;python-lambda&lt;/a&gt; by &lt;a href=&quot;https://github.com/nficano&quot;&gt;Nick Ficano&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.aws.amazon.com/lambda/latest/dg/lambda-python-how-to-create-deployment-package.html&quot;&gt;Creating a Deployment Package (Python)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pypi.python.org/pypi/roman&quot;&gt;roman 2.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>How to create a GitHub pull request with a specific commits?</title>
