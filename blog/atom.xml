@@ -3,7 +3,7 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2018-02-08T19:09:45-08:00</updated>
+  <updated>2018-02-09T16:17:50-08:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
@@ -12,56 +12,169 @@
   
     <entry>
       <title>Solving the Fibonacci problem using Dynamic Programming in Java</title>
-      <link href="https://poanchen.github.io/blog/2018/01/06/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java"/>
-      <updated>2018-01-06T00:00:00-08:00</updated>
-      <id>https://poanchen.github.io//blog/2018/01/06/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java</id>
-      <content type="html">&lt;p&gt;Ever wanted to create a pull request in GitHub but only wished to commit changes that is relevant? You are in luck. In this tutorial, I am going to show you how I would do it. Recently, I tried to create a pull request in GitHub and this is what I see.&lt;/p&gt;
+      <link href="https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java"/>
+      <updated>2018-02-09T00:00:00-08:00</updated>
+      <id>https://poanchen.github.io//blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java</id>
+      <content type="html">&lt;p&gt;Today, I am going to give a tutorial on how to solve the Fibonacci problem using Dynamic Programming in Java. Before we start to talk about Dynamic Programming. I would like to start briefly on what the Fibonacci problem is. If you already know the problem. Feel free to skip to the next section.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits/create pull request with other changes.png&quot; alt=&quot;creating a pull request along with other changes&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;fibonacci-problem&quot;&gt;Fibonacci problem&lt;/h2&gt;
 
-&lt;p&gt;The problem that I have here is that I only wanted to create a pull request with only the &lt;strong&gt;a51afa6&lt;/strong&gt; and &lt;strong&gt;07f39f7&lt;/strong&gt;. But, it seems like you cannot really do anything on the GitHub UI to remove it. You know why? Because you are not suppose to. You are suppose to create a branch with the latest changes and cherry-pick the ones that you want. And then compare that branch with the repository that you would like to contribute. The differences will only be the ones that you cherry-picked. Then, you are done. This is how you would create a GitHub pull request with a specific commits. Let me show you in action.&lt;/p&gt;
+&lt;p&gt;According to &lt;a href=&quot;https://en.wikipedia.org/wiki/Fibonacci_number&quot;&gt;Wikipedia&lt;/a&gt;, “&lt;em&gt;Fibonacci number&lt;/em&gt; are the numbers in the following integer sequence, called the &lt;em&gt;Fibonacci sequence&lt;/em&gt;, and characterized by the fact that every number after the first two is the sum of the two preceding ones”&lt;/p&gt;
 
-&lt;p&gt;First, you need to create a branch with the latest changes (that is the same with the upstream remote branch)&lt;/p&gt;
+&lt;p&gt;For example: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55&lt;/p&gt;
+
+&lt;p&gt;In modern usage, the sequence is extended by one more initial item: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55&lt;/p&gt;
+
+&lt;p&gt;In any given sequence of Fn, it often represent as,&lt;br /&gt;
+Fn = Fn-1 + Fn-2,
+with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.&lt;/p&gt;
+
+&lt;p&gt;These are the values at the nth of the Fibonacci sequence.&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;th&gt;10&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;21&lt;/td&gt;
+      &lt;td&gt;34&lt;/td&gt;
+      &lt;td&gt;55&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;For example, at the 8th of Fibonacci sequence is 21.&lt;/p&gt;
+
+&lt;p&gt;Okay, now that we have Fibonacci problem covered. Let’s talk about Dynamic Programming and how it can be useful to us to solve this problem.&lt;/p&gt;
+
+&lt;h2 id=&quot;dynamic-programming&quot;&gt;Dynamic Programming&lt;/h2&gt;
+
+&lt;p&gt;The basic idea of Dynamic Programming is to save the result of the subproblem so that if we see it again in the future. We can simply use it instead of recomputing the value again. In the long run, it should save some or a lot of time which reduces the running time complexity of the problem. (which is what you should always try to do when doing competitive programming questions)&lt;/p&gt;
+
+&lt;p&gt;Let’s take the simple example of the Fibonacci numbers: finding the nth Fibonacci number defined by Fn = Fn-1 + Fn-2 and F0=0, F1=1&lt;/p&gt;
+
+&lt;p&gt;The easiest and obvious way of doing this is to use the recursion:&lt;/p&gt;
+
+&lt;h3 id=&quot;recursion&quot;&gt;Recursion&lt;/h3&gt;
+
 &lt;pre&gt;
-  &lt;code class=&quot;bash&quot;&gt;
-    git fetch --all
-    git checkout -b new-branch-name upstream/master
+  &lt;code class=&quot;java&quot;&gt;
+    public int getFibonacciNumberRecursively(int n) {
+      if(n == 0) return 0;
+      if(n == 1) return 1;
+      return getFibonacciNumberRecursively(n - 1) + getFibonacciNumberRecursively(n - 2);
+    }
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Note: The above assumes you’ve set up upstream as a remote. If not, do this first:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/fibonacci number recursive tree diagram for 8.jpg&quot; alt=&quot;fibonacci number recursive tree diagram for 8&quot; style=&quot;width:500px;height:509.984px;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see in the tree diagram, number 7 has been computed &lt;em&gt;1&lt;/em&gt; time. Number 6 has been repeatly computed &lt;em&gt;2&lt;/em&gt; times. Number 5 has been repeatly computed &lt;em&gt;3&lt;/em&gt; times. Number 4 has been repeatly computed &lt;em&gt;5&lt;/em&gt; times. Number 3 has been repeatly computed &lt;em&gt;8&lt;/em&gt; times. The times grow as the number n gets larger. How can we stop doing that? (trying to recompute a fib(n) that we already did before)&lt;/p&gt;
+
+&lt;p&gt;Here is where the Dynamic Programming comes into play that will save us all.&lt;/p&gt;
+
+&lt;h3 id=&quot;top-down---memoization&quot;&gt;Top Down - Memoization&lt;/h3&gt;
+
+&lt;p&gt;When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.&lt;/p&gt;
+
 &lt;pre&gt;
-  &lt;code class=&quot;bash&quot;&gt;
-    git remote add upstream https://github.com/upstream_github_username/upstream_github_repo_name.git
+  &lt;code class=&quot;java&quot;&gt;
+    public HashMap&amp;lt;Integer, Integer&amp;gt; hm = new HashMap&amp;lt;Integer, Integer&amp;gt;();
+    public int getFibonacciNumberTopDown(int n) {
+      if(hm.containsKey(n)) return hm.get(n);
+      if(n == 0) return 0;
+      if(n == 1) return 1;
+      int nthValue = getFibonacciNumberTopDown(n - 1) + getFibonacciNumberTopDown(n - 2);
+      hm.put(n, nthValue);
+      return nthValue;
+    }
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Next, you would need to cherry-pick the changes that you would like to include in the pull request.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/fibonacci number top down tree diagram for 8.jpg&quot; alt=&quot;fibonacci number top down tree diagram for 8&quot; style=&quot;width:500px;height:509.984px;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By using the caching technique or Memoization, we have eliminate the needed to recomputed a lot of numbers as you can see in the tree diagram above. Hence, the running time should be improved tons. However, the space complexity of the problem just got increased to O(N) as we created a &lt;em&gt;HashMap&lt;/em&gt; to store the results of the value. (acting as cache) However, this is still not perfect. As you can see, number 7 has been asked &lt;em&gt;1&lt;/em&gt; time. Number 6 has been asked &lt;em&gt;2&lt;/em&gt; times. Number 5 has been asked &lt;em&gt;2&lt;/em&gt; times. Number 4 has been asked &lt;em&gt;2&lt;/em&gt; times. Rest of the number got asked twice except 0. The next question is, is it possible that all the number will get computed/asked once and we get what we want at the end?&lt;/p&gt;
+
+&lt;p&gt;Yes, it is totally possible. Let’s try it.&lt;/p&gt;
+
+&lt;h3 id=&quot;bottom-up&quot;&gt;Bottom Up&lt;/h3&gt;
+
+&lt;p&gt;A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.&lt;/p&gt;
+
 &lt;pre&gt;
-  &lt;code class=&quot;bash&quot;&gt;
-    git cherry-pick a51afa6
-    git cherry-pick 07f39f7
+  &lt;code class=&quot;java&quot;&gt;
+    public HashMap&amp;lt;Integer, Integer&amp;gt; hm = new HashMap&amp;lt;Integer, Integer&amp;gt;();
+    public int getFibonacciNumberBottomUpWithCache(int n) {
+      hm.put(0, 0);
+      hm.put(1, 1);
+      for(int i = 2; i &amp;lt;= n; i++) {
+        hm.put(i, hm.get(i - 1) + hm.get(i - 2));
+      }
+      return hm.get(n);
+    }
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Now, all you need to do is to push your changes to your GitHub repository&lt;/p&gt;
+&lt;p&gt;Now that we are going with the right direction. Each number in the sequence &lt;em&gt;ONLY&lt;/em&gt; gets touch once.
+Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:&lt;/p&gt;
+
 &lt;pre&gt;
-  &lt;code class=&quot;bash&quot;&gt;
-    git push -u origin new-branch-name
+  &lt;code class=&quot;java&quot;&gt;
+    public int getFibonacciNumberBottomUpWithoutCache(int n) {
+      int fnMin2 = 0;
+      int fnMin1 = 1;
+      int sum = 0;
+      for(int i = 2; i &amp;lt;= n; i++) {
+        sum = fnMin1 + fnMin2;
+        fnMin2 = fnMin1;
+        fnMin1 = sum;
+      }
+      return sum;
+    }
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Head over to your GitHub repository, and you should see this.&lt;/p&gt;
+&lt;p&gt;Here, the runnning time for this approach should stay O(N) like above using the cache. However, we greatly reduced the space complexity from O(N) to O(1) constant space. Both running time and space complexity optimized.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits/recently pushed branch.png&quot; alt=&quot;Recently pushed branch&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Simply click &lt;strong&gt;Compare &amp;amp; pull request&lt;/strong&gt; to create a pull request in the repository that you would like to contribute with only the changes you picked.&lt;/p&gt;
-
-&lt;p&gt;Tada. You have done it=)&lt;/p&gt;
+&lt;p&gt;Tada. You have done it using the Dynamic Programming way=)&lt;/p&gt;
 
 &lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
 
-&lt;p&gt;Hopefully this guide has help you to create a GitHub pull request with a specific commits. Thank you for reading!&lt;/p&gt;
+&lt;p&gt;This tutorial is largely based on a &lt;a href=&quot;https://stackoverflow.com/questions/1065433/what-is-dynamic-programming&quot;&gt;StackOverflow&lt;/a&gt; post by &lt;a href=&quot;https://stackoverflow.com/users/1259222/tristan&quot;&gt;Tristan&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;His idea of applying the Dynamic Programming is as follows:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Find the recursion in the problem.&lt;/li&gt;
+  &lt;li&gt;Top-down: store the answer for each subproblem in a table to avoid having to recompute them.&lt;/li&gt;
+  &lt;li&gt;Bottom-up: Find the right order to evaluate the results so that partial results are available when needed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Notes from his as well: Dynamic programming generally works for problems that have an inherent left to right order such as strings, trees or integer sequences. If the naive recursive algorithm does not compute the same subproblem multiple time, dynamic programming won’t help.&lt;/p&gt;
+
+&lt;p&gt;In case you want to run the &lt;em&gt;live example&lt;/em&gt;, click the link &lt;a href=&quot;https://repl.it/repls/GiftedMintcreamXenopus&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hopefully this guide has help you to solve the Fibonacci problem using the Dynamic Programming. Thank you for reading!&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
@@ -70,7 +183,8 @@
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/34027850/how-to-pull-request-a-specific-commit&quot;&gt;How to “pull request” a specific commit&lt;/a&gt; by &lt;a href=&quot;https://stackoverflow.com/users/825568/joseph-silber&quot;&gt;Joseph Silber&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/1065433/what-is-dynamic-programming&quot;&gt;What is dynamic programming?&lt;/a&gt; by &lt;a href=&quot;https://stackoverflow.com/users/1259222/tristan&quot;&gt;Tristan&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tristanguigue/dynamic-programming&quot;&gt;A Collection of Dynamic Programming Problems&lt;/a&gt; by &lt;a href=&quot;https://github.com/tristanguigue&quot;&gt;tristanguigue&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     </entry>
