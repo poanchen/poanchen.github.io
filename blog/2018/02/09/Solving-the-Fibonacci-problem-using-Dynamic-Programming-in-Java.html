@@ -104,7 +104,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 
 <p>The easiest and obvious way of doing this is to use the recursion:</p>
 
-<h3 id="recursion">Recursion</h3>
+<h3 id="recursionsource-code">Recursion  <a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a></h3>
 
 <pre>
   <code class="java">
@@ -124,7 +124,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 
 <h3 id="top-down---memoization">Top Down - Memoization</h3>
 
-<p>When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.</p>
+<p>When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.  <a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a></p>
 
 <pre>
   <code class="java">
@@ -148,7 +148,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 
 <h3 id="bottom-up">Bottom Up</h3>
 
-<p>A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.</p>
+<p>A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.  <a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a></p>
 
 <pre>
   <code class="java">
@@ -165,7 +165,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 </pre>
 
 <p>Now that we are going with the right direction. Each number in the sequence <em>ONLY</em> gets touch once.
-Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:</p>
+Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:  <a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a></p>
 
 <pre>
   <code class="java">

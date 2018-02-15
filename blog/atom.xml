@@ -3,7 +3,7 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2018-02-09T16:17:50-08:00</updated>
+  <updated>2018-02-15T00:43:34-08:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
@@ -76,7 +76,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 
 &lt;p&gt;The easiest and obvious way of doing this is to use the recursion:&lt;/p&gt;
 
-&lt;h3 id=&quot;recursion&quot;&gt;Recursion&lt;/h3&gt;
+&lt;h3 id=&quot;recursionsource-code&quot;&gt;Recursion  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h3&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;java&quot;&gt;
@@ -96,7 +96,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 
 &lt;h3 id=&quot;top-down---memoization&quot;&gt;Top Down - Memoization&lt;/h3&gt;
 
-&lt;p&gt;When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.&lt;/p&gt;
+&lt;p&gt;When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;java&quot;&gt;
@@ -120,7 +120,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 
 &lt;h3 id=&quot;bottom-up&quot;&gt;Bottom Up&lt;/h3&gt;
 
-&lt;p&gt;A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.&lt;/p&gt;
+&lt;p&gt;A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;java&quot;&gt;
@@ -137,7 +137,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 &lt;/pre&gt;
 
 &lt;p&gt;Now that we are going with the right direction. Each number in the sequence &lt;em&gt;ONLY&lt;/em&gt; gets touch once.
-Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:&lt;/p&gt;
+Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;java&quot;&gt;
@@ -1192,7 +1192,7 @@ Hence, the running time should get further improved here compared with the top d
 
 &lt;p&gt;The first step is to get git and cmake installed. I did all the package installation directly using apt because why not right?&lt;/p&gt;
 
-&lt;p&gt;Please download and install these packages using these commands if you have not done so already.&lt;/p&gt;
+&lt;p&gt;Please download and install these packages using these commands if you have not done so already.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;
   &lt;code class=&quot;bash&quot;&gt;
     sudo apt install git
@@ -1205,7 +1205,7 @@ Hence, the running time should get further improved here compared with the top d
 
 &lt;p&gt;Next, we are ready to get the latest released version of Marsyas from GitHub, configure and compile.&lt;/p&gt;
 
-&lt;p&gt;Note: the hack that I was talking about was that the latest released version 0.5.0 from github.com/marsyas/marsyas did not really work for me when I did it. I had to fork the repository and make some adjustments in order for it to work.&lt;/p&gt;
+&lt;p&gt;Note: the hack that I was talking about was that the latest released version 0.5.0 from github.com/marsyas/marsyas did not really work for me when I did it. I had to fork the repository and make some adjustments in order for it to work.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;
   &lt;code class=&quot;bash&quot;&gt;
     wget https://github.com/poanchen/marsyas/archive/version-0.5.1.tar.gz
@@ -1219,7 +1219,7 @@ Hence, the running time should get further improved here compared with the top d
 &lt;/pre&gt;
 &lt;p&gt;Note: the ccmake ../ used to be ccmake ../src, however, because “the top-level CMake file has now been moved to the root of the repository tree, so you should point cmake to the top-level dir instead of the src directory.” according to &lt;a href=&quot;https://sourceforge.net/p/marsyas/mailman/message/31374418/?#msg31375866&quot;&gt;this answer&lt;/a&gt; from Jakob.&lt;/p&gt;
 
-&lt;p&gt;When the compilation is finished, you can check out the Marsyas command-line tools.&lt;/p&gt;
+&lt;p&gt;When the compilation is finished, you can check out the Marsyas command-line tools.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;
   &lt;code class=&quot;bash&quot;&gt;
     cd bin
@@ -1230,7 +1230,7 @@ Hence, the running time should get further improved here compared with the top d
 
 &lt;p&gt;If everything worked, you will hear a sine wave playing in your speakers.&lt;/p&gt;
 
-&lt;p&gt;Now, we are ready to get the Python/SWIG bindings going. Please download and install these packages using these commands if you have not done so already.&lt;/p&gt;
+&lt;p&gt;Now, we are ready to get the Python/SWIG bindings going. Please download and install these packages using these commands if you have not done so already.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;
   &lt;code class=&quot;bash&quot;&gt;
     sudo apt install swig 
@@ -1241,7 +1241,7 @@ Hence, the running time should get further improved here compared with the top d
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Next, you need to reconfigure/compile Marsyas to use Python/SWIG to create the python bindings.&lt;/p&gt;
+&lt;p&gt;Next, you need to reconfigure/compile Marsyas to use Python/SWIG to create the python bindings.  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;bash&quot;&gt;
@@ -1252,7 +1252,7 @@ Hence, the running time should get further improved here compared with the top d
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;If everything worked, you can now combine Marsyas and Matplotlib. To check, try:&lt;/p&gt;
+&lt;p&gt;If everything worked, you can now combine Marsyas and Matplotlib. To check, try:  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;bash&quot;&gt;
@@ -1267,7 +1267,7 @@ Hence, the running time should get further improved here compared with the top d
 
 &lt;p&gt;If you look at the code in windowing.py, you will see that the computation of the figure data is done through Marsyas. All you need to do is import marsyas at the top of your Python source code. For example, say you need to input a wav file with window of 2048 samples, and you need to plot its power spectrum. Here is how you would do it using the combination of Marsyas and Matplotlib.&lt;/p&gt;
 
-&lt;p&gt;sample.mrs&lt;/p&gt;
+&lt;p&gt;sample.mrs  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/sample.mrs&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;
   &lt;code class=&quot;marsyas&quot;&gt;
     Series {
@@ -1283,7 +1283,7 @@ Hence, the running time should get further improved here compared with the top d
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;sample.py&lt;/p&gt;
+&lt;p&gt;sample.py  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/sample.py&quot; target=&quot;_blank&quot;&gt;source&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;
   &lt;code class=&quot;marsyas&quot;&gt;
     from pylab import *
@@ -1333,7 +1333,7 @@ Hence, the running time should get further improved here compared with the top d
       <id>https://poanchen.github.io//blog/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew</id>
       <content type="html">&lt;p&gt;Ever wonder how you can run one single test with gradlew? Ever get tried of waiting all the tests to be finished? You have came to the right place. Running tests can be a time consuming tasks. Ability to run one single test or all the tests in a test class is very powerful. And, it will save TONS of time. Here is how you can do it.&lt;/p&gt;
 
-&lt;p&gt;Let’s assume that this is your testClass,&lt;/p&gt;
+&lt;p&gt;Let’s assume that this is your testClass,  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew/BlogControllerTests.groovy&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;
   &lt;code class=&quot;java&quot;&gt;
     package io.github.poanchen.projectName.api
@@ -1348,7 +1348,7 @@ Hence, the running time should get further improved here compared with the top d
   &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;To run single test (testCreate_BlogWithoutTitle),&lt;/p&gt;
+&lt;p&gt;To run single test (testCreate_BlogWithoutTitle),  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;
   &lt;code class=&quot;bash&quot;&gt;
     ./gradlew :projectName-api:unitTest --tests io.github.poanchen.projectName.api.BlogControllerTests.testCreate_BlogWithoutTitle
@@ -1357,7 +1357,7 @@ Hence, the running time should get further improved here compared with the top d
 
 &lt;p&gt;Note: Depends on how you write your configuration file for gradlew tasks, “:projectName-api:unitTest” might look different for you than the one that I show you here.&lt;/p&gt;
 
-&lt;p&gt;To run all the tests in a test class (BlogControllerTests),&lt;/p&gt;
+&lt;p&gt;To run all the tests in a test class (BlogControllerTests),  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;
   &lt;code class=&quot;bash&quot;&gt;
     ./gradlew :projectName-api:unitTest --tests io.github.poanchen.projectName.api.BlogControllerTests
@@ -1434,7 +1434,7 @@ Hence, the running time should get further improved here compared with the top d
 
 &lt;p&gt;You simply need to modify one file, then you are done.&lt;/p&gt;
 
-&lt;p&gt;Take a look at your file .gitmodules in the root of your repository, it will probably look something similar to this,&lt;/p&gt;
+&lt;p&gt;Take a look at your file .gitmodules in the root of your repository, it will probably look something similar to this,  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/10/19/How-to-replace-a-git-submodules-in-a-repository/.gitmodules&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;bash&quot;&gt;
@@ -1883,6 +1883,7 @@ It is that simple.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/poanchen/recover-crontab&quot;&gt;recover-crontab&lt;/a&gt; by &lt;a href=&quot;https://www.github.com/poanchen&quot;&gt;PoAn (Baron) Chen&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2017/07/01/how-to-recover-all-your-deleted-cron-jobs/commands.sh&quot;&gt;Commands used in this blog&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     </entry>
@@ -3208,7 +3209,7 @@ First, change directory to where you put your apache conf file.&lt;/p&gt;
       <id>https://poanchen.github.io//blog/2016/11/17/how-to-play-mp4-video-using-hls</id>
       <content type="html">&lt;p&gt;Today, I am going to show you guys how to play mp4 video using &lt;a href=&quot;https://github.com/dailymotion/hls.js/tree/master&quot;&gt;hls.js&lt;/a&gt;. hls.js is a JavaScript library which implements a HTTP Live Streaming client. It relies on HTML5 video and MediaSource Extensions for playback. What is great about hls.js is that it does not need any player, it works directly on top of a standard HTML &amp;lt;video&amp;gt; element. (assuming your browser supported it, check &lt;a href=&quot;http://caniuse.com/#search=MediaSource&quot;&gt;here&lt;/a&gt;). So, how does hls.js works? It works by breaking the overall stream into a sequence of small HTTP-based file downloads, each download loading one short chunk of an overall stream. As the stream is played, it will continue on requesting more short chunk of the overall stream. And, how does it know what file name it should download? Since, initially, the video will be load from a m3u8 file where it contains the metadata of the video itself. You may think it as a playlist. By simply looking at them, hls.js would know which file should download next while playing. Couple of the advantages of using HLS is that it works faster than &lt;a href=&quot;http://www.adobe.com/ca/products/flashplayer.html&quot;&gt;Flash&lt;/a&gt;, it is supported by &lt;a href=&quot;http://caniuse.com/#search=MediaSource&quot;&gt;many browser&lt;/a&gt; these days, and it unlocks the potential to stream live in 4k and 60 fps. This is an example of how a m3u8 file would look like.&lt;/p&gt;
 
-&lt;h2 id=&quot;sample-m3u8-file-when-the-video-is-named-samplemp4&quot;&gt;sample m3u8 file when the video is named sample.mp4&lt;/h2&gt;
+&lt;h2 id=&quot;sample-m3u8-file-when-the-video-is-named-samplemp4source-code&quot;&gt;sample m3u8 file when the video is named sample.mp4  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/17/how-to-play-mp4-video-using-hls/sample.m3u8&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;java&quot;&gt;
@@ -3241,7 +3242,7 @@ First, change directory to where you put your apache conf file.&lt;/p&gt;
 &lt;/pre&gt;
 &lt;p&gt;As you can see, the first chunk of the overall stream is sample0.ts and follow by sample1.ts. In this way, hls.js would know which ts file to be played next. Now, before we dive right into the code. We first need to convert the mp4 video to m3u8 format in order to use the HLS technologies. There are many great tools that can do this. We are going to use the &lt;a href=&quot;https://linux.die.net/man/1/ffmpeg&quot;&gt;command line with ffmpeg&lt;/a&gt; by &lt;a href=&quot;https://www.ffmpeg.org/&quot;&gt;ffmpeg&lt;/a&gt;. And, I will be using ffmpeg in command line to convert the video from mp4 to m3u8. If you do not have ffmpeg installed, please go to this StackOverflow &lt;a href=&quot;http://stackoverflow.com/questions/29125229/how-to-reinstall-ffmpeg-clean-on-ubuntu-14-04&quot;&gt;thread&lt;/a&gt; for more instruction on how to install on Ubuntu. Say, I have a mp4 video file named sample.mp4 and I would like to name my m3u8 file as sample.m3u8. Then, I may simply do this command to convert the mp4 video to m3u8 format.&lt;/p&gt;
 
-&lt;h2 id=&quot;command-on-how-to-convert-mp4-video-to-m3u8-format-using-ffmpeg&quot;&gt;command on how to convert mp4 video to m3u8 format using ffmpeg&lt;/h2&gt;
+&lt;h2 id=&quot;command-on-how-to-convert-mp4-video-to-m3u8-format-using-ffmpegsource-code&quot;&gt;command on how to convert mp4 video to m3u8 format using ffmpeg  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/17/how-to-play-mp4-video-using-hls/commands.sh&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;pre&gt;
   &lt;code class=&quot;bash&quot;&gt;
@@ -3323,7 +3324,7 @@ First, change directory to where you put your apache conf file.&lt;/p&gt;
     &amp;lt;/script&amp;gt;
   &lt;/code&gt;
 &lt;/pre&gt;
-&lt;p&gt;Now, even if the browser happen to not support hls, user may still be able to watch the video. If you would like to see the live demo, please visit &lt;a href=&quot;https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now, even if the browser happen to not support hls, user may still be able to watch the video. If you would like to see the live demo, please visit &lt;a href=&quot;https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html&quot;&gt;here&lt;/a&gt;. If you would like to download the audio files, please visit &lt;a href=&quot;https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;full-code-for-playm3u8usinghlsjshtml-source-code&quot;&gt;Full code for playM3u8UsingHlsJs.html   &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/h2&gt;
 
@@ -3375,6 +3376,7 @@ First, change directory to where you put your apache conf file.&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/30912542/mp4-to-hls-using-ffmpeg&quot;&gt;ffmpeg command help&lt;/a&gt; by &lt;a href=&quot;http://stackoverflow.com/users/2489973/budthapa&quot;&gt;budthapa&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP_Live_Streaming&quot;&gt;HTTP Live Streaming&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://blog.peer5.com/http-live-streaming-in-javascript/&quot;&gt;HTTP Live Streaming In Javascript&lt;/a&gt; by &lt;a href=&quot;http://blog.peer5.com/author/shachar-zohar/&quot;&gt;Shachar Zohar&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/&quot;&gt;Download Sample audio files&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     </entry>
@@ -4913,7 +4915,7 @@ Okay. Now, we have user’s username, email and password. I think it is time to 
       <link href="https://poanchen.github.io/blog/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name"/>
       <updated>2016-10-18T00:00:00-07:00</updated>
       <id>https://poanchen.github.io//blog/2016/10/18/how-to-build-a-simple-chat-bot-using-hubot-that-determine-gender-based-on-name</id>
-      <content type="html">&lt;p&gt;Today, I am going to teach you guys how to build a chat bot using Hubot. So, what is a Hubot? Hubot is a chat bot, modeled after GitHub’s Campfire bot. He is really cool. He can do a lot of things. For example, sending a message to someone as soon as they enter the chat room, or queries for the status of AWS services, or automate your deployment process, or display app performace status from New Relic, or warn the developer whenever a build failed in git, and many more! He is &lt;a href=&quot;https://hubot.github.com/docs/#scripts&quot;&gt;extendable with scripts&lt;/a&gt; and can work on &lt;a href=&quot;https://hubot.github.com/docs/adapters/&quot;&gt;many different chat services&lt;/a&gt;. In order to keep this post short and simple, we are not going to cover how to install hubot on your machine. Instead, we are going straight into the implementation on how to build a simple chat bot using Hubot. For people who aren’t familar with setting up the environment for hubot, you may check out &lt;a href=&quot;https://youtu.be/A7fh6RIzGrw?t=5m15s&quot;&gt;this YouTube video&lt;/a&gt; as it gives step by step on how to install hubot from scratch. Okay, that’s get it started. The following code is the hello world version of using Hubot.&lt;/p&gt;
+      <content type="html">&lt;p&gt;Today, I am going to teach you guys how to build a chat bot using Hubot. So, what is a Hubot? Hubot is a chat bot, modeled after GitHub’s Campfire bot. He is really cool. He can do a lot of things. For example, sending a message to someone as soon as they enter the chat room, or queries for the status of AWS services, or automate your deployment process, or display app performace status from New Relic, or warn the developer whenever a build failed in git, and many more! He is &lt;a href=&quot;https://hubot.github.com/docs/#scripts&quot;&gt;extendable with scripts&lt;/a&gt; and can work on &lt;a href=&quot;https://hubot.github.com/docs/adapters/&quot;&gt;many different chat services&lt;/a&gt;. In order to keep this post short and simple, we are not going to cover how to install hubot on your machine. Instead, we are going straight into the implementation on how to build a simple chat bot using Hubot. For people who aren’t familar with setting up the environment for hubot, you may check out &lt;a href=&quot;https://youtu.be/A7fh6RIzGrw?t=5m15s&quot;&gt;this&lt;/a&gt; YouTube video as it gives step by step on how to install hubot from scratch. Okay, that’s get it started. The following code is the hello world version of using Hubot.&lt;/p&gt;
 
 &lt;h2 id=&quot;hello-world-version-of-hubot&quot;&gt;Hello world version of Hubot&lt;/h2&gt;
 
@@ -5321,7 +5323,7 @@ As the user type, they may immediately see if the username is taken or not. An e
       <link href="https://poanchen.github.io/blog/2016/10/15/poan-baron-chen-site-launched"/>
       <updated>2016-10-15T00:00:00-07:00</updated>
       <id>https://poanchen.github.io//blog/2016/10/15/poan-baron-chen-site-launched</id>
-      <content type="html">&lt;p&gt;Well. Finally got around to putting this website together. Neat thing about it - powered by &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; and I can use Markdown to author my posts. It actually is a lot easier than I thought it was going to be.&lt;/p&gt;
+      <content type="html">&lt;p&gt;Well. Finally got around to putting this website together. Neat thing about it - powered by &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; and I can use Markdown to author my posts. It actually is a lot easier than I thought it was going to be.&lt;/p&gt;
 </content>
     </entry>
   
