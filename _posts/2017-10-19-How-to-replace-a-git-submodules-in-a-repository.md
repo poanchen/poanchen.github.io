@@ -48,7 +48,7 @@ Then, how would one replace it?
 
 You simply need to modify one file, then you are done.
 
-Take a look at your file .gitmodules in the root of your repository, it will probably look something similar to this,
+Take a look at your file .gitmodules in the root of your repository, it will probably look something similar to this,&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/19/How-to-replace-a-git-submodules-in-a-repository/.gitmodules" target="_blank">source code</a>
 
 <pre>
   <code class="bash">

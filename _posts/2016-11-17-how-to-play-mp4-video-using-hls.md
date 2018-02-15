@@ -7,7 +7,7 @@ date: 2016-11-17
 ---
 Today, I am going to show you guys how to play mp4 video using [hls.js](https://github.com/dailymotion/hls.js/tree/master). hls.js is a JavaScript library which implements a HTTP Live Streaming client. It relies on HTML5 video and MediaSource Extensions for playback. What is great about hls.js is that it does not need any player, it works directly on top of a standard HTML &lt;video&gt; element. (assuming your browser supported it, check [here](http://caniuse.com/#search=MediaSource)). So, how does hls.js works? It works by breaking the overall stream into a sequence of small HTTP-based file downloads, each download loading one short chunk of an overall stream. As the stream is played, it will continue on requesting more short chunk of the overall stream. And, how does it know what file name it should download? Since, initially, the video will be load from a m3u8 file where it contains the metadata of the video itself. You may think it as a playlist. By simply looking at them, hls.js would know which file should download next while playing. Couple of the advantages of using HLS is that it works faster than [Flash](http://www.adobe.com/ca/products/flashplayer.html), it is supported by [many browser](http://caniuse.com/#search=MediaSource) these days, and it unlocks the potential to stream live in 4k and 60 fps. This is an example of how a m3u8 file would look like.
 
-## sample m3u8 file when the video is named sample.mp4
+## sample m3u8 file when the video is named sample.mp4&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/17/how-to-play-mp4-video-using-hls/sample.m3u8" target="_blank">source code</a>
 
 <pre>
   <code class="java">
@@ -40,7 +40,7 @@ Today, I am going to show you guys how to play mp4 video using [hls.js](https://
 </pre>
 As you can see, the first chunk of the overall stream is sample0.ts and follow by sample1.ts. In this way, hls.js would know which ts file to be played next. Now, before we dive right into the code. We first need to convert the mp4 video to m3u8 format in order to use the HLS technologies. There are many great tools that can do this. We are going to use the [command line with ffmpeg](https://linux.die.net/man/1/ffmpeg) by [ffmpeg](https://www.ffmpeg.org/). And, I will be using ffmpeg in command line to convert the video from mp4 to m3u8. If you do not have ffmpeg installed, please go to this StackOverflow [thread](http://stackoverflow.com/questions/29125229/how-to-reinstall-ffmpeg-clean-on-ubuntu-14-04) for more instruction on how to install on Ubuntu. Say, I have a mp4 video file named sample.mp4 and I would like to name my m3u8 file as sample.m3u8. Then, I may simply do this command to convert the mp4 video to m3u8 format.
 
-## command on how to convert mp4 video to m3u8 format using ffmpeg
+## command on how to convert mp4 video to m3u8 format using ffmpeg&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/17/how-to-play-mp4-video-using-hls/commands.sh" target="_blank">source code</a>
 
 <pre>
   <code class="bash">
@@ -122,7 +122,7 @@ In the code, we first check if the browser is HLS supported, then we initialize 
     &lt;/script&gt;
   </code>
 </pre>
-Now, even if the browser happen to not support hls, user may still be able to watch the video. If you would like to see the live demo, please visit [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html).
+Now, even if the browser happen to not support hls, user may still be able to watch the video. If you would like to see the live demo, please visit [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html). If you would like to download the audio files, please visit [here](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/).
 
 ## Full code for playM3u8UsingHlsJs.html &nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/17/how-to-play-mp4-video-using-hls/playM3u8UsingHlsJs.html" target="_blank">source code</a>
 
@@ -173,3 +173,4 @@ I'll try to keep this list current and up to date. If you know of a great resour
 * [ffmpeg command help](http://stackoverflow.com/questions/30912542/mp4-to-hls-using-ffmpeg) by [budthapa](http://stackoverflow.com/users/2489973/budthapa).
 * [HTTP Live Streaming](https://en.wikipedia.org/wiki/HTTP_Live_Streaming).
 * [HTTP Live Streaming In Javascript](http://blog.peer5.com/http-live-streaming-in-javascript/) by [Shachar Zohar](http://blog.peer5.com/author/shachar-zohar/).
+* [Download Sample audio files](https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/).

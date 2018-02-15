@@ -37,7 +37,7 @@ Let's take the simple example of the Fibonacci numbers: finding the nth Fibonacc
 
 The easiest and obvious way of doing this is to use the recursion:
 
-### Recursion
+### Recursion&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a>
 
 <pre>
   <code class="java">
@@ -57,7 +57,7 @@ Here is where the Dynamic Programming comes into play that will save us all.
 
 ### Top Down - Memoization
 
-When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.
+When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a>
 
 <pre>
   <code class="java">
@@ -81,7 +81,7 @@ Yes, it is totally possible. Let's try it.
 
 ### Bottom Up
 
-A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.
+A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a>
 
 <pre>
   <code class="java">
@@ -98,7 +98,7 @@ A better way to do this is to get rid of the recursion all-together by evaluatin
 </pre>
 
 Now that we are going with the right direction. Each number in the sequence *ONLY* gets touch once.
-Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:
+Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a>
 
 <pre>
   <code class="java">

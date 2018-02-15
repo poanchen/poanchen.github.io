@@ -52,3 +52,4 @@ I'll try to keep this list current and up to date. If you know of a great resour
 ### Getting started
 
 * [recover-crontab](https://github.com/poanchen/recover-crontab) by [PoAn (Baron) Chen](https://www.github.com/poanchen)
+* [Commands used in this blog](https://github.com/poanchen/code-for-blog/blob/master/2017/07/01/how-to-recover-all-your-deleted-cron-jobs/commands.sh).
