@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<!--
+=======================================================================================================================
+  ____         _           ______                      __   ____ _               _  __        __   _         _ _       
+ |  _ \ ___   / \   _ __  / | __ )  __ _ _ __ ___  _ __\ \ / ___| |__   ___ _ __( )_\ \      / ___| |__  ___(_| |_ ___ 
+ | |_) / _ \ / _ \ | '_ \| ||  _ \ / _` | '__/ _ \| '_ \| | |   | '_ \ / _ | '_ |/ __\ \ /\ / / _ | '_ \/ __| | __/ _ \
+ |  __| (_) / ___ \| | | | || |_) | (_| | | | (_) | | | | | |___| | | |  __| | | \__ \\ V  V |  __| |_) \__ | | ||  __/
+ |_|   \___/_/   \_|_| |_| ||____/ \__,_|_|  \___/|_| |_| |\____|_| |_|\___|_| |_|___/ \_/\_/ \___|_.__/|___|_|\__\___|
+                          \_\                          /_/                      
+=======================================================================================================================
+==========================================https://poanchen.github.io/contact===========================================
+==========================================Brought to you by PoAn (Baron) Chen==========================================
+-->
+
+<html>
+
+<head>
+  <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
+  <title>How to delete a commit completely in GitHub?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/app/css/index.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>How to delete a commit completely in GitHub?</h1>
+<p class="meta">
+   
+    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 24 Feb 2018
+  
+  | <a href="https://poanchen.github.io/blog/2018/02/24/How-to-delete-a-commit-completely-in-GitHub#disqus_thread">0 Comments</a>
+</p>
+
+<div class="post">
+  <p>Ever needed to delete a commit completely in GitHub but tried hundred of thousands of tutorials and still does not work? You are in luck! In this tutorial, I am going to teach you guys how to make a GitHub commit disappear forever. Note: before you carry on with this tutorial, make sure you do not have any local changes or stash all your local changes to be safe.</p>
+
+<p>Follow this tutorial in order to delete one or more commits in GitHub. First, you use the following command to list all or some of your latest GitHub commits.</p>
+
+<pre>
+  <code class="bash">
+    git log -n 3 # 3 means to list the latest 3 commits
+  </code>
+</pre>
+
+<p>It should look something similar to this,</p>
+
+<p><img src="/img/2018/02/24/How-to-delete-a-commit-completely-in GitHub/git log top 3 commits.PNG" alt="git log top 3 commits" /></p>
+
+<p>Say you want to delete the first latest commit, you would need to type in this command.</p>
+
+<pre>
+  <code class="bash">
+    git rebase -i 77d55bd72c63d43cc83f9c0fea4990c33427c2a6
+  </code>
+</pre>
+
+<p>As you can see, instead of putting the deleted commit hash, we put the next next one. We will explain why in the next step.</p>
+
+<p>Once the <code class="highlighter-rouge">git bash</code> command is entered, you should see something similar to this.</p>
+
+<p><img src="/img/2018/02/24/How-to-delete-a-commit-completely-in GitHub/git bash command.PNG" alt="git bash command" /></p>
+
+<p>Simply move your cursor to the line or commit that you would like to delete, and press <code class="highlighter-rouge">d</code> to delete that line/commit. Just like any other <code class="highlighter-rouge">vim</code>, Shift + colon with <code class="highlighter-rouge">wq</code> + enter to leave the text editor. You should see the response like “Successfully rebased and updated refs/heads/master.”</p>
+
+<p>Okay, the reason why we did not put the commit hash for the <code class="highlighter-rouge">git rebase</code> command to the one we wanted to delete is that the text editor or rebase does not allow us to “remove everything, as the rebase will be aborted.” (this means that at least one needs to stay)</p>
+
+<p>Now, you can simply commit your changes to GitHub to make your commit goes away by doing this command,</p>
+
+<pre>
+  <code class="bash">
+    git push -f origin master
+  </code>
+</pre>
+
+<p>As you can see, we need that <code class="highlighter-rouge">-f</code> option to force the Git to commit the changes, otherwise, it will not allow you to do that.</p>
+
+<p>Tada. You have done it! You should head over to your GitHub repo, and the commit you deleted in that text editor should be gone now.</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>As this is a fairly short tutorial. Hopefully you have learned how to delete a commit completely in GitHub.</p>
+
+<p>Thanks for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues">let us know</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=B5Ss4xNYWDY">How To GitHub delete a commit</a> by <a href="https://www.youtube.com/channel/UC46XhaCEaPAuSrM_LPm7Ruw">Saju M</a>.</li>
+</ul>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script src="/app/js/disqus.min.js"></script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  </div>
+  <footer>
+  <ul>
+    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
+    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
+    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
+    <li><a href="https://www.quora.com/profile/PoAn-Baron-Chen-1">quora.com/profile/PoAn-Baron-Chen-1</a></li>
+    <li><a href="https://opencollective.com/poanchen">opencollective.com/poanchen</a></li>
+  </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/app/js/googleAnalytics.min.js"></script>
+  <script id="dsq-count-scr" src="https://poanchen.disqus.com/count.js" async></script>
+</body>
+
+</html>

@@ -3,12 +3,79 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2018-02-15T00:43:34-08:00</updated>
+  <updated>2018-02-24T18:27:44-08:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to delete a commit completely in GitHub?</title>
+      <link href="https://poanchen.github.io/blog/2018/02/24/How-to-delete-a-commit-completely-in-GitHub"/>
+      <updated>2018-02-24T00:00:00-08:00</updated>
+      <id>https://poanchen.github.io//blog/2018/02/24/How-to-delete-a-commit-completely-in GitHub</id>
+      <content type="html">&lt;p&gt;Ever needed to delete a commit completely in GitHub but tried hundred of thousands of tutorials and still does not work? You are in luck! In this tutorial, I am going to teach you guys how to make a GitHub commit disappear forever. Note: before you carry on with this tutorial, make sure you do not have any local changes or stash all your local changes to be safe.&lt;/p&gt;
+
+&lt;p&gt;Follow this tutorial in order to delete one or more commits in GitHub. First, you use the following command to list all or some of your latest GitHub commits.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    git log -n 3 # 3 means to list the latest 3 commits
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;It should look something similar to this,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2018/02/24/How-to-delete-a-commit-completely-in GitHub/git log top 3 commits.PNG&quot; alt=&quot;git log top 3 commits&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Say you want to delete the first latest commit, you would need to type in this command.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    git rebase -i 77d55bd72c63d43cc83f9c0fea4990c33427c2a6
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;As you can see, instead of putting the deleted commit hash, we put the next next one. We will explain why in the next step.&lt;/p&gt;
+
+&lt;p&gt;Once the &lt;code class=&quot;highlighter-rouge&quot;&gt;git bash&lt;/code&gt; command is entered, you should see something similar to this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2018/02/24/How-to-delete-a-commit-completely-in GitHub/git bash command.PNG&quot; alt=&quot;git bash command&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Simply move your cursor to the line or commit that you would like to delete, and press &lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt; to delete that line/commit. Just like any other &lt;code class=&quot;highlighter-rouge&quot;&gt;vim&lt;/code&gt;, Shift + colon with &lt;code class=&quot;highlighter-rouge&quot;&gt;wq&lt;/code&gt; + enter to leave the text editor. You should see the response like “Successfully rebased and updated refs/heads/master.”&lt;/p&gt;
+
+&lt;p&gt;Okay, the reason why we did not put the commit hash for the &lt;code class=&quot;highlighter-rouge&quot;&gt;git rebase&lt;/code&gt; command to the one we wanted to delete is that the text editor or rebase does not allow us to “remove everything, as the rebase will be aborted.” (this means that at least one needs to stay)&lt;/p&gt;
+
+&lt;p&gt;Now, you can simply commit your changes to GitHub to make your commit goes away by doing this command,&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;bash&quot;&gt;
+    git push -f origin master
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we need that &lt;code class=&quot;highlighter-rouge&quot;&gt;-f&lt;/code&gt; option to force the Git to commit the changes, otherwise, it will not allow you to do that.&lt;/p&gt;
+
+&lt;p&gt;Tada. You have done it! You should head over to your GitHub repo, and the commit you deleted in that text editor should be gone now.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;As this is a fairly short tutorial. Hopefully you have learned how to delete a commit completely in GitHub.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=B5Ss4xNYWDY&quot;&gt;How To GitHub delete a commit&lt;/a&gt; by &lt;a href=&quot;https://www.youtube.com/channel/UC46XhaCEaPAuSrM_LPm7Ruw&quot;&gt;Saju M&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>Solving the Fibonacci problem using Dynamic Programming in Java</title>
