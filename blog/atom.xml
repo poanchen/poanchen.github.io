@@ -3,12 +3,73 @@
   <title>Poan (Baron) Chen's Blog</title>
   <link href="https://poanchen.github.io/blog/atom.xml" rel="self"/>
   <link href="https://poanchen.github.io/blog"/>
-  <updated>2018-02-24T18:27:44-08:00</updated>
+  <updated>2018-03-07T14:09:22-08:00</updated>
   <id>https://poanchen.github.io/blog</id>
   <author>
     <name>Poan (Baron) Chen</name>
     <email>chen.baron@hotmail.com</email>
   </author>
+  
+    <entry>
+      <title>How to fix 'permission denied for relation some_table_name' in PostgreSQL?</title>
+      <link href="https://poanchen.github.io/blog/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL"/>
+      <updated>2018-03-07T00:00:00-08:00</updated>
+      <id>https://poanchen.github.io//blog/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL</id>
+      <content type="html">&lt;p&gt;Ever needed to create a bunch of tables for a newly created user to access in PostgreSQL and see the following error message pop up, ‘&lt;strong&gt;permission denied for relation some_table_name&lt;/strong&gt;’? You are in luck, in this tutorial, I am going to guide you guys through it to make the error message goes away.&lt;/p&gt;
+
+&lt;p&gt;Let me give you guys an example on how this error message might occur (at least this is how I found out),&lt;/p&gt;
+
+&lt;p&gt;Check out this following sql file,  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL/userUnableToAccess.sql&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;sql&quot;&gt;
+    CREATE DATABASE &quot;database&quot;;
+    CREATE USER someuser WITH PASSWORD 'securepassword';
+    GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO someuser;
+    CREATE TABLE &quot;some_table_name&quot;(
+      &quot;id&quot; int NOT NULL,
+      &quot;data&quot; text NOT NULL
+    );
+    INSERT INTO &quot;some_table_name&quot; values(0, &quot;some text&quot;);
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;As one can imagine, when you login as ‘someuser’ and try to access the table with the &lt;strong&gt;SELECT&lt;/strong&gt; query, you will likely see the error message pop up. This is because you granted all privileges to the someuser on all tables but no table has been created yet which means that the query has no effect at all. To fix this, you can simply move that &lt;strong&gt;GRANT ALL..&lt;/strong&gt; query all the way down to the bottom (the point where you created all the necessary table for your database). It should look something similar to the following.&lt;/p&gt;
+
+&lt;p&gt;Your someuser should now have access to the table,  &lt;a href=&quot;https://github.com/poanchen/code-for-blog/blob/master/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL/userableToAccess.sql&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;sql&quot;&gt;
+    CREATE DATABASE &quot;database&quot;;
+    CREATE USER someuser WITH PASSWORD 'securepassword';
+    CREATE TABLE &quot;some_table_name&quot;(
+      &quot;id&quot; int NOT NULL,
+      &quot;data&quot; text NOT NULL
+    );
+    INSERT INTO &quot;some_table_name&quot; values(0, &quot;some text&quot;);
+    GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO someuser;
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;As a result, the order is very important. Just remember to do that next time haha!&lt;/p&gt;
+
+&lt;p&gt;Tada. This is a fairly short tutorial. Hope that solve your problem. Let me know if it didn’t. I will be happy to help as always.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Hopefully you enjoyed this short tutorial. Let me know if this helps you. Thank you for reading!&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please &lt;a href=&quot;https://github.com/poanchen/poanchen.github.io/issues&quot;&gt;let us know&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.postgresql-archive.org/permission-denied-for-relation-td5789674.html&quot;&gt;permission denied for relation&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
   
     <entry>
       <title>How to delete a commit completely in GitHub?</title>
