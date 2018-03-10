@@ -1,9 +1,13 @@
 ---
 layout: post
 title: "Connecting to UVic wifi with Ubuntu 16.04 LTS"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-11-08
+author: poanchen
+date: 2017-11-08 08:30:30
+tags:
+- PoAn (Baron) Chen
+- Ubuntu 16.04
+- Uvic
+- Wifi
 ---
 Connecting to UVic wifi with Linux for the first time can be a pain in the ass. I literally spent hours trying to figure out how to connect my Linux based laptop to UVic wifi. I thought that it would be helpful to share how I did it that will probably save you some struggles. Here is the set up that I did that worked. Please let me know in the comment if this does not work for you. I will try to reply and help you out.
 

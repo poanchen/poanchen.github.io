@@ -1,67 +1,20 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
-{% if page.url == "/blog/" %}
-<!--
-==========================================================================================================
-  ____         _           ______                      __   ____ _               _    ____  _             
- |  _ \ ___   / \   _ __  / | __ )  __ _ _ __ ___  _ __\ \ / ___| |__   ___ _ __( )__| __ )| | ___   __ _ 
- | |_) / _ \ / _ \ | '_ \| ||  _ \ / _` | '__/ _ \| '_ \| | |   | '_ \ / _ | '_ |/ __|  _ \| |/ _ \ / _` |
- |  __| (_) / ___ \| | | | || |_) | (_| | | | (_) | | | | | |___| | | |  __| | |  __ | |_) | | (_) | (_| |
- |_|   \___/_/   \_|_| |_| ||____/ \__,_|_|  \___/|_| |_| |\____|_| |_|\___|_| |_|___|____/|_|\___/ \__, |
-                          \_\                          /_/                                          |___/ 
-==========================================================================================================
-====================================https://poanchen.github.io/contact====================================
-===================================Brought to you by: PoAn (Baron) Chen===================================
--->
-{% else %}
-<!--
-=======================================================================================================================
-  ____         _           ______                      __   ____ _               _  __        __   _         _ _       
- |  _ \ ___   / \   _ __  / | __ )  __ _ _ __ ___  _ __\ \ / ___| |__   ___ _ __( )_\ \      / ___| |__  ___(_| |_ ___ 
- | |_) / _ \ / _ \ | '_ \| ||  _ \ / _` | '__/ _ \| '_ \| | |   | '_ \ / _ | '_ |/ __\ \ /\ / / _ | '_ \/ __| | __/ _ \
- |  __| (_) / ___ \| | | | || |_) | (_| | | | (_) | | | | | |___| | | |  __| | | \__ \\ V  V |  __| |_) \__ | | ||  __/
- |_|   \___/_/   \_|_| |_| ||____/ \__,_|_|  \___/|_| |_| |\____|_| |_|\___|_| |_|___/ \_/\_/ \___|_.__/|___|_|\__\___|
-                          \_\                          /_/                      
-=======================================================================================================================
-==========================================https://poanchen.github.io/contact===========================================
-==========================================Brought to you by PoAn (Baron) Chen==========================================
--->
-{% endif %}
-<html>
+<html lang="pt-br">
+    {% include head.html %}
+    <body>
+        {% include svg-icons.html %}
+        {% include header-default.html %}
+        <section class="post" itemscope itemtype="http://schema.org/WebPage">
 
-<head>
-  <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="/app/css/index.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css" />
-</head>
+            <article role="article" id="scroll" class="post-content" role="main" itemprop="mainContentOfPage">
+                {{ content }}
+            </article>
 
-<body>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/blog">Blog</a></li>
-    </ul>
-  </nav>
-  <div class="container">
-    {{ content }}
-  </div>
-  <footer>
-  <ul>
-    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
-    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
-    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
-    <li><a href="https://www.quora.com/profile/PoAn-Baron-Chen-1">quora.com/profile/PoAn-Baron-Chen-1</a></li>
-    <li><a href="https://opencollective.com/poanchen">opencollective.com/poanchen</a></li>
-  </ul>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <script src="/app/js/googleAnalytics.min.js"></script>
-  <script id="dsq-count-scr" src="https://poanchen.disqus.com/count.js" async></script>
-</body>
-
+            {% include footer.html %}
+        </section>
+    </body>
 </html>

@@ -1,11 +1,18 @@
 ---
 layout: post
 title: "One Year after PoAn (Baron) Chen's Blog Launch"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-10-15
+author: poanchen
+date: 2017-10-15 08:30:30
+tags:
+- Alexa
+- Clicks
+- Google Search
+- Google Search Analytics
+- Impression
+- One year launch
+- PoAn (Baron) Chen
+- SimilarWeb
 ---
-
 Hello everyone,
 
 Time really flies. It has been a full year since I blogged on my site. It has been an amazing year so far. Hopefully you have learned a thing or two from the blog that I wrote when you visit the site. In the past year, I put a lot of efforts writing those post in hope that I will spread my knowledge to people around the world. As well as allowing me to document things that I learned all in one place. For people who,

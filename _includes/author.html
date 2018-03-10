@@ -1,0 +1,31 @@
+<section class="author" itemprop="author">
+  <div class="details" itemscope itemtype="http://schema.org/Person">
+    {% assign pathToUserImage = site.baseurl | append: '/img/authors/blog-author.jpg' %}
+    {% assign name = 'Anonymous' %}
+    {% assign description = 'Not provided' %}
+    {% if site.data.authors[page.author] %}
+      {% assign user = site.data.authors[page.author] %}
+      {% assign pathToUserImage = site.baseurl | append: '/img/authors/' | append: user.profile_picture %}
+      {% assign name = user.name %}
+      {% assign description = user.description %}
+      {% assign main_website = user.main_website %}
+    {% endif %}
+    <img itemprop="image" class="img-rounded" src="{{pathToUserImage}}" alt="{{name}}">
+    <p class="def">
+      Author
+    </p>
+    <h3 class="name">
+      {% if site.data.authors[page.author] and 
+        main_website != "" %}
+        <a itemprop="name" href="{{main_website}}">
+          {{ name }}
+        </a>
+      {% else %}
+        <a itemprop="name">{{name}}</a>
+      {% endif %}
+    </h3>
+    <p class="desc">
+      {{description}}
+    </p>
+  </div>
+</section>

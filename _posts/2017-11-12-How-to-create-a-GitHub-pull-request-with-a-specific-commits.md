@@ -1,9 +1,14 @@
 ---
 layout: post
 title: "How to create a GitHub pull request with a specific commits?"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-11-12
+author: poanchen
+date: 2017-11-12 08:30:30
+tags:
+- Git
+- Git cherry-pick
+- GitHub
+- GitHub pull request
+- PoAn (Baron) Chen
 ---
 Ever wanted to create a pull request in GitHub but only wished to commit changes that is relevant? You are in luck. In this tutorial, I am going to show you how I would do it. Recently, I tried to create a pull request in GitHub and this is what I see.
 
@@ -12,34 +17,26 @@ Ever wanted to create a pull request in GitHub but only wished to commit changes
 The problem that I have here is that I only wanted to create a pull request with only the **a51afa6** and **07f39f7**. But, it seems like you cannot really do anything on the GitHub UI to remove it. You know why? Because you are not suppose to. You are suppose to create a branch with the latest changes and cherry-pick the ones that you want. And then compare that branch with the repository that you would like to contribute. The differences will only be the ones that you cherry-picked. Then, you are done. This is how you would create a GitHub pull request with a specific commits. Let me show you in action.
 
 First, you need to create a branch with the latest changes (that is the same with the upstream remote branch)
-<pre>
-  <code class="bash">
-    git fetch --all
-    git checkout -b new-branch-name upstream/master
-  </code>
-</pre>
+{% highlight bash %}
+  git fetch --all
+  git checkout -b new-branch-name upstream/master
+{% endhighlight %}
 
 Note: The above assumes you've set up upstream as a remote. If not, do this first:
-<pre>
-  <code class="bash">
-    git remote add upstream https://github.com/upstream_github_username/upstream_github_repo_name.git
-  </code>
-</pre>
+{% highlight bash %}
+  git remote add upstream https://github.com/upstream_github_username/upstream_github_repo_name.git
+{% endhighlight %}
 
 Next, you would need to cherry-pick the changes that you would like to include in the pull request.
-<pre>
-  <code class="bash">
-    git cherry-pick a51afa6
-    git cherry-pick 07f39f7
-  </code>
-</pre>
+{% highlight bash %}
+  git cherry-pick a51afa6
+  git cherry-pick 07f39f7
+{% endhighlight %}
 
 Now, all you need to do is to push your changes to your GitHub repository
-<pre>
-  <code class="bash">
-    git push -u origin new-branch-name
-  </code>
-</pre>
+{% highlight bash %}
+  git push -u origin new-branch-name
+{% endhighlight %}
 
 Head over to your GitHub repository, and you should see this.
 

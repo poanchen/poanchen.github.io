@@ -1,35 +1,38 @@
 ---
 layout: post
 title: "How to check if an image already existed in wp-content/upload directory?"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-04-10
+author: poanchen
+date: 2017-04-10 08:30:30
+tags:
+- Database
+- Image
+- MySQL
+- PHP
+- PoAn (Baron) Chen
+- Wordpress
+- Wp-content/upload
 ---
 If you have never play with WordPress, your first thought might be using file_exists(path) in PHP, which is perfectly fine. However, the way how WordPress store the images is different than one might thought. WordPress comes with a default of organizing the upload images into month- and year- based folders, however, user could unchecked this option by following this [tutorial](http://www.wpbeginner.com/beginners-guide/where-does-wordpress-store-images-on-your-site/) by [WPBeginner](http://www.wpbeginner.com/). Let's assume that you have checked that option. Then, how does WordPress store your upload images? I will give you an example. Say today is April, 10, 2017 and you just uploaded a picture named example.png. In WordPress, it will be stored in /wp-content/upload/2017/04/example.png with three other different sizes for thumbnail, medium and large size. If you were to use file_exists(path) in PHP, you would need to look for it recursively. And, here is how WordPress would really help you to solve this problem quickly. Every time, when an user upload an image through the WordPress back-end system. The image info will be stored in the database. So, to check if an image is already uploaded in wp-content/upload directory, we can simply make a database query.
 
-Here is the function that will try to find the image, if it does exist then it will return the image post id. Otherwise, a null will be return.&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory/does-file-exists-sample.php" target="_blank">source code</a>
+Here is the function that will try to find the image, if it does exist then it will return the image post id. Otherwise, a null will be return.
+{% highlight php %}
+  function does_file_exists($filename) {
+    global $wpdb;
+    
+    return intval( $wpdb->get_var( "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_value LIKE '%/$filename'" ) );
+  }
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory/does-file-exists-sample.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
-<pre>
-  <code class="php">
-    function does_file_exists($filename) {
-      global $wpdb;
-      
-      return intval( $wpdb->get_var( "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_value LIKE '%/$filename'" ) );
-    }
-  </code>
-</pre>
-
-We can now use this function to check if an image exist in the server.&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory/does-file-exists-sample.php" target="_blank">source code</a>
-
-<pre>
-  <code class="php">
-    if ( null == ( $thumb_id = does_file_exists( 'example.png' ) ) ) {
-      // hummm....seems like we have never seen this file name before, let's do an upload
-    } else {
-      // nice...the image already exist!!!
-    }
-  </code>
-</pre>
+We can now use this function to check if an image exist in the server.
+{% highlight php %}
+  if ( null == ( $thumb_id = does_file_exists( 'example.png' ) ) ) {
+    // hummm....seems like we have never seen this file name before, let's do an upload
+  } else {
+    // nice...the image already exist!!!
+  }
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/04/10/how-to-check-if-an-image-already-existed-in-wp-content-upload-directory/does-file-exists-sample.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 Now, with this function, you may check if an image exist in the server or not.
 

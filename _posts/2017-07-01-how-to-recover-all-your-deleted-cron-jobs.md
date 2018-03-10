@@ -1,39 +1,34 @@
 ---
 layout: post
 title: "How to recover all your deleted cron jobs?"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-07-01
+author: poanchen
+date: 2017-07-01 08:30:30
+tags:
+- Bash
+- Cron
+- PoAn (Baron) Chen
+- Ubuntu 14.04
 ---
 Cron jobs can be easily removed simply by providing a wrong options. I usually use the command 'crontab -e' to add/modify all my scheduled cron jobs. (In fact, I just mistyped e as r haha) Sometimes, I mistyped to option 'r' instead of 'e' which in fact will removed all my cron jobs according to [this](https://www.computerhope.com/unix/ucrontab.htm). When the moment I first did it, I panicked. Searched online and was trying to figure out how to recover this. Then, I got this idea of creating a bash script/command line tool that will help others to recover from disaster. And, here is what I [did](https://github.com/poanchen/recover-crontab).
 
 Say, one day you accidentally did this. You do not need to panicked because you got me. I will walk you through how to use this script to recover all your deleted cron jobs.
 
 First step, you need to download the latest released version of the bash script from my [GitHub repo](https://github.com/poanchen/recover-crontab/releases).
-
-<pre>
-  <code class="bash">
-    wget https://github.com/poanchen/recover-crontab/archive/x.x.x.zip
-    wget https://github.com/poanchen/recover-crontab/archive/x.x.x.tar.gz
-  </code>
-</pre>
+{% highlight bash %}
+  wget https://github.com/poanchen/recover-crontab/archive/x.x.x.zip
+  wget https://github.com/poanchen/recover-crontab/archive/x.x.x.tar.gz
+{% endhighlight %}
 
 Unzip them,
-
-<pre>
-  <code class="bash">
-    unzip x.x.x.zip
-    tar xvzf x.x.x.tar.gz
-  </code>
-</pre>
+{% highlight bash %}
+  unzip x.x.x.zip
+  tar xvzf x.x.x.tar.gz
+{% endhighlight %}
 
 Go to the directory and run the script like this,
-
-<pre>
-  <code class="bash">
-    ./recover-crontab.sh -u [PUT YOUR USERNAME HERE]
-  </code>
-</pre>
+{% highlight bash %}
+  ./recover-crontab.sh -u [PUT YOUR USERNAME HERE]
+{% endhighlight %}
 
 You will be promoted to input your scheduled time like this,
 

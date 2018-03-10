@@ -1,62 +1,54 @@
 ---
 layout: post
 title: "How to replace a git submodules in a repository?"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-10-19
+author: poanchen
+date: 2017-10-19 08:30:30
+tags:
+- Git
+- GitHub
+- PoAn (Baron) Chen
 ---
 Have you ever wanted to replace a git submodules in a repository but don't know where to start? You are in luck. In this tutorial, I am going to show you how I would do it.
 
 It is actually pretty simple as long as you have added the submodules correctly in the first place.
 
 This means that you added your submodules like this,
- 
-<pre>
-  <code class="bash">
-    git submodule add https://www.github.com/poanchen/your-submodules-name path/to/your-submodules
-  </code>
-</pre>
+{% highlight bash %}
+  git submodule add https://www.github.com/poanchen/your-submodules-name path/to/your-submodules
+{% endhighlight %}
 
 One might think that you could do something like this,
-
-<pre>
-  <code class="bash">
-    git submodule replace https://www.github.com/poanchen/your-new-submodules-name path/to/your-new-submodules
-  </code>
-</pre>
+{% highlight bash %}
+  git submodule replace https://www.github.com/poanchen/your-new-submodules-name path/to/your-new-submodules
+{% endhighlight %}
 
 However, it does not work like that as the list of available git submodule commands does not include replace except these,
-
-<pre>
-  <code class="bash">
-     git submodule [--quiet] add [-b &lt;branch>] [-f|--force] [--name &lt;name&gt;]
-                     [--reference &lt;repository&gt;] [--depth &lt;depth&gt;] [--] &lt;repository&gt; [&lt;path&gt;]
-     git submodule [--quiet] status [--cached] [--recursive] [--] [&lt;path&gt;...]
-     git submodule [--quiet] init [--] [&lt;path&gt;...]
-     git submodule [--quiet] deinit [-f|--force] [--] &lt;path&gt;...
-     git submodule [--quiet] update [--init] [--remote] [-N|--no-fetch]
-                     [-f|--force] [--rebase|--merge] [--reference &lt;repository&gt;]
-                     [--depth &lt;depth&gt;] [--recursive] [--] [&lt;path&gt;...]
-     git submodule [--quiet] summary [--cached|--files] [(-n|--summary-limit) &lt;n&gt;]
-                     [commit] [--] [&lt;path&gt;...]
-     git submodule [--quiet] foreach [--recursive] &lt;command&gt;
-     git submodule [--quiet] sync [--recursive] [--] [&lt;path&gt;...]
-  </code>
-</pre>
+{% highlight bash %}
+   git submodule [--quiet] add [-b <branch>] [-f|--force] [--name <name>]
+                   [--reference <repository>] [--depth <depth>] [--] <repository> [<path>]
+   git submodule [--quiet] status [--cached] [--recursive] [--] [<path>...]
+   git submodule [--quiet] init [--] [<path>...]
+   git submodule [--quiet] deinit [-f|--force] [--] <path>...
+   git submodule [--quiet] update [--init] [--remote] [-N|--no-fetch]
+                   [-f|--force] [--rebase|--merge] [--reference <repository>]
+                   [--depth <depth>] [--recursive] [--] [<path>...]
+   git submodule [--quiet] summary [--cached|--files] [(-n|--summary-limit) <n>]
+                   [commit] [--] [<path>...]
+   git submodule [--quiet] foreach [--recursive] <command>
+   git submodule [--quiet] sync [--recursive] [--] [<path>...]
+{% endhighlight %}
 
 Then, how would one replace it?
 
 You simply need to modify one file, then you are done.
 
-Take a look at your file .gitmodules in the root of your repository, it will probably look something similar to this,&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/19/How-to-replace-a-git-submodules-in-a-repository/.gitmodules" target="_blank">source code</a>
-
-<pre>
-  <code class="bash">
-    [submodule "path/to/your-submodules"]
-        path = path/to/your-submodules
-        url = https://www.github.com/poanchen/your-submodules-name
-  </code>
-</pre>
+Take a look at your file .gitmodules in the root of your repository, it will probably look something similar to this,
+{% highlight bash %}
+  [submodule "path/to/your-submodules"]
+      path = path/to/your-submodules
+      url = https://www.github.com/poanchen/your-submodules-name
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/19/How-to-replace-a-git-submodules-in-a-repository/.gitmodules" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 Now, all you need to do is to change the repository url to the one you want. Also, you might need to change the path to your submodules in case of any submodules name changes.
 

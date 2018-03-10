@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "PoAn (Baron) Chen's Blog global Alexa rank has gone up roughly half a million in 20 days"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-11-05
+author: poanchen
+date: 2017-11-05 08:30:30
+tags:
+- Alexa
+- PoAn (Baron) Chen
 ---
 It has been roughly 20 days since the day of a year launch of this blog site. I have been paying attention on the Alexa rank for my site and it has been improved a lot since. The day of a year launch of this blog site which is roughly 20 days ago, the site was rank at
 

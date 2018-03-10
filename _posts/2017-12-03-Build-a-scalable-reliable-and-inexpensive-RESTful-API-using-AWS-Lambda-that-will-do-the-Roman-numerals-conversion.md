@@ -1,21 +1,22 @@
 ---
 layout: post
 title: "Build a scalable, reliable, and inexpensive RESTful API using AWS Lambda that will do the Roman Numerals Conversion"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-12-03
+author: poanchen
+date: 2017-12-03 08:30:30
+tags:
+- AWS
+- AWS Lambda
+- JSON
+- PoAn (Baron) Chen
+- Restful API
+- Roman Numerals Conversion
 ---
-
 ## Prerequisite Concepts, Skills and/or Values
 
 - Experienced with at least one of the programming language ranging from Node.js/Java/C#/Python.
-
 - Worked with RESTful API.
-
 - Familiar with Algebra.
-
 - Understand how HTTP(s)/web request works.
-
 - AWS account with admin privilege.
 
 ## Introduction
@@ -25,29 +26,19 @@ Building a scalable and reliable RESTful API from scratch can be challenging wit
 ## Audience Needs & Motivation
 
 - Learning how to build a RESTful API with AWS Lambda can be a very useful skill to put on the resume which in turn improves your chances of getting a Computer Science-related job in the future.
-
 - Learning how Roman Numerals Conversion works is a fun thing to do and I encourage everyone to try it.
-
 - This blog will motivate the learners into wanted to learn more about the topic because it is very interesting and its expandability is unbelievable. (people can potentially build so MANY things after they have read this educational blog)
 
 ## Learning Objectives
 
 * Learn to build a RESTful API using AWS Lambda
-	
   * Build a Hello World version of RESTful API using AWS Lambda
-		
     * In this topic, the learner will learn in-depth what a AWS Lambda and API Gateway is and at the end, they will get to know how to build a Hello World version of it.
-
 * Learn to do a Roman Numerals Conversion in hand
-	
   * Ability to convert Roman Numerals to digital numbers in hand
-		
     * In this topic, the learner will learn to do a Roman Numerals Conversion in hand.
-
 * Implementing the Roman Numerals Conversion RESTful API
-	
   * Build a RESTful API that will do the Roman Numerals Conversion.
-		
     * In this topic, the learner will simply use the roman library to do the Roman Numerals Conversion.
 
 ## Learn to build a RESTful API using AWS Lambda
@@ -61,66 +52,52 @@ To simplify the problem, we are simply going to build a Hello World version of R
 <img src="/img/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion/create a function.png" alt="Create a Lambda function">
 
 Here, you can simply set it up exactly as I suggested in the figure above. Next, you would need to write a Lambda function that will print the "Hello World" message. Here is a quick example of what it might look like.
-
-<pre>
-  <code class="python">
-    def lambda_handler(event, context):
-      return {
-        "message": "Hello World"
-      }
-  </code>
-</pre>
+{% highlight python %}
+  def lambda_handler(event, context):
+    return {
+      "message": "Hello World"
+    }
+{% endhighlight %}
 
 Since we are building a RESTful API, we need to use [API Gateway](https://aws.amazon.com/api-gateway/) to trigger the Lambda function.
 
 > API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. With a few clicks in the AWS Management Console, you can create an API that acts as a “front door” for applications to access data, business logic, or functionality from your back-end services, such as workloads running on Amazon Elastic Compute Cloud (Amazon EC2), code running on AWS Lambda, or any Web application. Amazon API Gateway handles all the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls, including traffic management, authorization and access control, monitoring, and API version management. Amazon API Gateway has no minimum fees or startup costs. You pay only for the API calls you receive and the amount of data transferred out.
 
 Thanks to Amazon. API Gateway is fairly easy to set up and configure. However, its compatibility could be the problem but still fairly easy to solve. We know that the API Gateway expects Lambda functions to return certain output. You must code your function accordingly. This is the structure it expects:
-
-<pre>
-  <code class="json">
-    {
-      "statusCode": 200, 
-      "headers": {"Content-Type": "application/json"},
-      "body": "body_text_goes_here"
-    }
-  </code>
-</pre>
+{% highlight json %}
+  {
+    "statusCode": 200, 
+    "headers": {"Content-Type": "application/json"},
+    "body": "body_text_goes_here"
+  }
+{% endhighlight %}
 
 In the case of the Eratosthenes function, we actually return json as the body so we have to use backslashes to escape our json-within-json:
+{% highlight json %}
+  {
+    "statusCode": 200,
+    "headers": {"Content-Type": "application/json"},
+    "body": "{\"message\": \"Hello World\"}"
+  }
+{% endhighlight %}
 
-<pre>
-  <code class="json">
-    {
+API Gateway will read the “body” element and return it as the body of the response:
+backslashes to escape our json-within-json:
+{% highlight json %}
+  {
+    "message": "Hello World"
+  }
+{% endhighlight %}
+
+Now, to accommodate that (for Lambda to work with API Gateway). Here is what the Lambda function might look like.
+{% highlight python %}
+  def lambda_handler(event, context):
+    return {
       "statusCode": 200,
       "headers": {"Content-Type": "application/json"},
       "body": "{\"message\": \"Hello World\"}"
     }
-  </code>
-</pre>
-
-API Gateway will read the “body” element and return it as the body of the response:
-
-<pre>
-  <code class="json">
-    {
-      "message": "Hello World"
-    }
-  </code>
-</pre>
-
-Now, to accommodate that (for Lambda to work with API Gateway). Here is what the Lambda function might look like.
-
-<pre>
-  <code class="python">
-    def lambda_handler(event, context):
-      return {
-        "statusCode": 200,
-        "headers": {"Content-Type": "application/json"},
-        "body": "{\"message\": \"Hello World\"}"
-      }
-  </code>
-</pre>
+{% endhighlight %}
 
 Simply copy that and paste it into the Function code like this.
 
@@ -703,42 +680,33 @@ For simplicity, we are going to ignore number that is larger than 1000. By follo
 ## Implementing the Roman Numerals Conversion RESTful API
 
 Thanks to Roman library. It allows us to easily convert digital numbers to Roman Numerals with two lines of code. For example,
-
-<pre>
-  <code class="python">
-    import roman
-    print(roman.toRoman(10)) # you should get 'X'
-  </code>
-</pre>
+{% highlight python %}
+  import roman
+  print(roman.toRoman(10)) # you should get 'X'
+{% endhighlight %}
 
 Now, we simply need to make sure we can pass in data so that we can do the conversion. Here is how you can do it with Lambda.
-
-<pre>
-  <code class="python">
-    def handler(event, context):
-      e = event.get('e')
-      pi = event.get('pi')
-      return {
-          "statusCode": 200,
-          "headers": { "Content-Type": "application/json"},
-          "body": e + pi
-      }
-  </code>
-</pre>
+{% highlight python %}
+  def handler(event, context):
+    e = event.get('e')
+    pi = event.get('pi')
+    return {
+        "statusCode": 200,
+        "headers": { "Content-Type": "application/json"},
+        "body": e + pi
+    }
+{% endhighlight %}
 
 Let's use that in our Lambda functions.
-
-<pre>
-  <code class="python">
-    def lambda_handler(event, context):
-      import roman
-      return {
-        "statusCode": 200,
-        "headers": {"Content-Type": "application/json"},
-        "body": "{\"result\": %d}" % (roman.fromRoman(event.get('d')))
-      }
-  </code>
-</pre>
+{% highlight python %}
+  def lambda_handler(event, context):
+    import roman
+    return {
+      "statusCode": 200,
+      "headers": {"Content-Type": "application/json"},
+      "body": "{\"result\": %d}" % (roman.fromRoman(event.get('d')))
+    }
+{% endhighlight %}
 
 Simply update your Lambda function to the one above. The Roman Numerals Conversion should now works. Here is what it might looks like,
 
@@ -751,9 +719,7 @@ Tada! You now have a fully functional Roman Numerals Conversion RESTful API that
 In case you found the tutorial too easy, here are some of the pointers that will make this more challenging.
 
 * Instead of using the roman library to do the Roman Numerals Conversion. I would suggest you to implement your own conversion. On top of this, make sure your conversion works for number that is larger than 1000.
-
 * Instead of doing the conversion from the number to the Roman Numerals. Convert the Roman Numerals to the number instead without using the roman library. (implementing your own conversion)
-
 * Roman Numerals Conversion might not perform well for a much larger number. Use some kind of caching technic so that the number the conversion has seen before will not get computed again.
 
 ## Wrapping Up

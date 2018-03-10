@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "I have answered 99 questions on Quora so far"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-11-04
+author: poanchen
+date: 2017-11-04 08:30:30
+tags:
+- PoAn (Baron) Chen
+- Quora
 ---
 I started my journey in answering people's questions on Quora for about half a year now. Quora allows me to learn valuable things from other quorans. The plateform also gives me a place to share my technical knowledges to others. So far, I have answered [99 questions](https://www.quora.com/profile/PoAn-Baron-Chen-1) on Quora. Most questions are technical with [wide variety of topics](https://www.quora.com/profile/PoAn-Baron-Chen-1/topics), such as Web Development, JavaScript, Software Engineering, Computer Science, Java, Algorithms, and Technology. In the future, I am planning on answering more questions on Quora in order to help others as well as reading other amazing answers from other quorans. Today, I would like to share some of my stats in Quora.
 

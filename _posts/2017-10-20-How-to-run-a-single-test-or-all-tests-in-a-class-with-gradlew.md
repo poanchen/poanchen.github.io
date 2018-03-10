@@ -1,42 +1,45 @@
 ---
 layout: post
 title: "How to run a single test or all tests in a class with gradlew?"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-10-20
+author: poanchen
+date: 2017-10-20 08:30:30
+tags:
+- Gradle
+- gradlew
+- Groovy
+- Integration test
+- PoAn (Baron) Chen
+- Unit test
 ---
 Ever wonder how you can run one single test with gradlew? Ever get tried of waiting all the tests to be finished? You have came to the right place. Running tests can be a time consuming tasks. Ability to run one single test or all the tests in a test class is very powerful. And, it will save TONS of time. Here is how you can do it.
 
-Let's assume that this is your testClass,&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew/BlogControllerTests.groovy" target="_blank">source code</a>
-<pre>
-  <code class="java">
-    package io.github.poanchen.projectName.api
-    class BlogControllerTests {
-      void testCreate_BlogWithoutTitle() {
-        // some test code
-      }
-      void testUpdate_BlogWithInvalidAuthorEmail() {
-        // some test code
-      }
+Let's assume that this is your testClass,
+{% highlight groovy %}
+  package io.github.poanchen.projectName.api
+  class BlogControllerTests {
+    void testCreate_BlogWithoutTitle() {
+      // some test code
     }
-  </code>
-</pre>
+    void testUpdate_BlogWithInvalidAuthorEmail() {
+      // some test code
+    }
+  }
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew/BlogControllerTests.groovy" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
-To run single test (testCreate_BlogWithoutTitle),&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew/commands.sh" target="_blank">source code</a>
-<pre>
-  <code class="bash">
-    ./gradlew :projectName-api:unitTest --tests io.github.poanchen.projectName.api.BlogControllerTests.testCreate_BlogWithoutTitle
-  </code>
-</pre>
+To run single test (testCreate_BlogWithoutTitle),
+{% highlight bash %}
+  ./gradlew :projectName-api:unitTest --tests io.github.poanchen.projectName.api.BlogControllerTests.testCreate_BlogWithoutTitle
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew/commands.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 Note: Depends on how you write your configuration file for gradlew tasks, ":projectName-api:unitTest" might look different for you than the one that I show you here.
 
-To run all the tests in a test class (BlogControllerTests),&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew/commands.sh" target="_blank">source code</a>
-<pre>
-  <code class="bash">
-    ./gradlew :projectName-api:unitTest --tests io.github.poanchen.projectName.api.BlogControllerTests
-  </code>
-</pre>
+To run all the tests in a test class (BlogControllerTests),
+{% highlight html %}
+  ./gradlew :projectName-api:unitTest --tests io.github.poanchen.projectName.api.BlogControllerTests
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew/commands.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 Tada. You should now be able to run a single test or all the tests in a test class with gradlew =)
 

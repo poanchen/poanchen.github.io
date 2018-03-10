@@ -1,52 +1,54 @@
 ---
 layout: post
 title: "Mutable vs Immutable object in JavaScript"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2017-06-13
+author: poanchen
+date: 2017-06-13 08:30:30
+tags:
+- ES6
+- ES6 spread
+- Immutable
+- JavaScript
+- Mutable
+- PoAn (Baron) Chen
 ---
-Definition:<br>
+### Definition:<br>
 Mutable object - The object is subject to be changed/altered.<br>
 Immutable object - The object cannot be changed once created.
 
 In some cases, it can be neat to have immutable object as it often leads to a much simpler application development. Often times you need root cause analysis to figure out what went wrong in your program, having mutable objects passed as parameters between functions/methods can be a real pain in the ass when you are debugging your program. Like myself, I ran into problems where I thought it was passed by value but in reality, it was passed by reference. Sometimes, it can be tricky just to find that out (I did spent lots of time just to find that out). However, if we were to design the application in a way that instead of mutating the original data, we simply always make a new one. So that we will never have to worry about passed by value or passed by reference issues. Having said that, sometimes mutating original object in video game development is somewhat preferable as making copy of the object can be very expensive. Especially, when the game character is spawned for every little change.
 
-Here is an example of mutating your original object in JavaScript,&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/06/13/mutable-vs-Immutable-object-in-JavaScript/mutation-sample.js" target="_blank">source code</a>
+Here is an example of mutating your original object in JavaScript,
+{% highlight javascript %}
+  function mutation(originalArray) {
+    // directly mutating/modifying the original array
+    originalArray[0] = "new value";
+    return originalArray;
+  }
 
-<pre>
-  <code class="javascript">
-    function mutation(originalArray) {
-      // directly mutating/modifying the original array
-      originalArray[0] = "new value";
-      return originalArray;
-    }
- 
-    var array = ["some value", "another value"];
-    alert("Return from mutation " + mutation(array));
-    alert("Array: " + array + " (original array has been altered).");
-  </code>
-</pre>
+  var array = ["some value", "another value"];
+  alert("Return from mutation " + mutation(array));
+  alert("Array: " + array + " (original array has been altered).");
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/06/13/mutable-vs-Immutable-object-in-JavaScript/mutation-sample.js" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 In this example, the original array got changed in the function (the object has been mutated).
 
-Here is an example of immutable-object-style coding in JavaScript,&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/06/13/mutable-vs-Immutable-object-in-JavaScript/immutable-sample.js" target="_blank">source code</a>
+Here is an example of immutable-object-style coding in JavaScript,
+{% highlight javascript %}
+  function immutable(originalArray) {
+    // Instead of mutating/modifying the original array,
+    // we first make a copy of the original array
+    // In this way, the original array stay unchanged.
+    var newArray = [...originalArray];
+    newArray[0] = "new value";
+    return newArray;
+  }
 
-<pre>
-  <code class="javascript">
-    function immutable(originalArray) {
-      // Instead of mutating/modifying the original array,
-      // we first make a copy of the original array
-      // In this way, the original array stay unchanged.
-      var newArray = [...originalArray];
-      newArray[0] = "new value";
-      return newArray;
-    }
-
-    var array = ["some value", "another value"];
-    alert("Return from immutable " + immutable(array));
-    alert("Array: " + array + " (original array stay unchanged).");
-  </code>
-</pre>
+  var array = ["some value", "another value"];
+  alert("Return from immutable " + immutable(array));
+  alert("Array: " + array + " (original array stay unchanged).");
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2017/06/13/mutable-vs-Immutable-object-in-JavaScript/immutable-sample.js" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 In this example, the original array stay unchanged even though it was used in the function (a new copied/created array has been return with the new changes).
 

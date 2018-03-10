@@ -1,9 +1,14 @@
 ---
 layout: post
 title: "Solving the Fibonacci problem using Dynamic Programming in Java"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2018-02-09
+author: poanchen
+date: 2018-02-09 08:30:30
+tags:
+- Competitive programming
+- Dynamic programming
+- Fibonacci problem
+- Java
+- PoAn (Baron) Chen
 ---
 Today, I am going to give a tutorial on how to solve the Fibonacci problem using Dynamic Programming in Java. Before we start to talk about Dynamic Programming. I would like to start briefly on what the Fibonacci problem is. If you already know the problem. Feel free to skip to the next section.
 
@@ -37,17 +42,15 @@ Let's take the simple example of the Fibonacci numbers: finding the nth Fibonacc
 
 The easiest and obvious way of doing this is to use the recursion:
 
-### Recursion&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a>
-
-<pre>
-  <code class="java">
-    public int getFibonacciNumberRecursively(int n) {
-      if(n == 0) return 0;
-      if(n == 1) return 1;
-      return getFibonacciNumberRecursively(n - 1) + getFibonacciNumberRecursively(n - 2);
-    }
-  </code>
-</pre>
+### Recursion
+{% highlight java %}
+  public int getFibonacciNumberRecursively(int n) {
+    if(n == 0) return 0;
+    if(n == 1) return 1;
+    return getFibonacciNumberRecursively(n - 1) + getFibonacciNumberRecursively(n - 2);
+  }
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 <img src="/img/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/fibonacci number recursive tree diagram for 8.jpg" alt="fibonacci number recursive tree diagram for 8" style="width:500px;height:509.984px;">
 
@@ -57,21 +60,19 @@ Here is where the Dynamic Programming comes into play that will save us all.
 
 ### Top Down - Memoization
 
-When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a>
-
-<pre>
-  <code class="java">
-    public HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
-    public int getFibonacciNumberTopDown(int n) {
-      if(hm.containsKey(n)) return hm.get(n);
-      if(n == 0) return 0;
-      if(n == 1) return 1;
-      int nthValue = getFibonacciNumberTopDown(n - 1) + getFibonacciNumberTopDown(n - 2);
-      hm.put(n, nthValue);
-      return nthValue;
-    }
-  </code>
-</pre>
+When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.
+{% highlight java %}
+  public HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
+  public int getFibonacciNumberTopDown(int n) {
+    if(hm.containsKey(n)) return hm.get(n);
+    if(n == 0) return 0;
+    if(n == 1) return 1;
+    int nthValue = getFibonacciNumberTopDown(n - 1) + getFibonacciNumberTopDown(n - 2);
+    hm.put(n, nthValue);
+    return nthValue;
+  }
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 <img src="/img/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/fibonacci number top down tree diagram for 8.jpg" alt="fibonacci number top down tree diagram for 8" style="width:500px;height:509.984px;">
 
@@ -81,40 +82,36 @@ Yes, it is totally possible. Let's try it.
 
 ### Bottom Up
 
-A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a>
-
-<pre>
-  <code class="java">
-    public HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
-    public int getFibonacciNumberBottomUpWithCache(int n) {
-      hm.put(0, 0);
-      hm.put(1, 1);
-      for(int i = 2; i <= n; i++) {
-        hm.put(i, hm.get(i - 1) + hm.get(i - 2));
-      }
-      return hm.get(n);
+A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.
+{% highlight java %}
+  public HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
+  public int getFibonacciNumberBottomUpWithCache(int n) {
+    hm.put(0, 0);
+    hm.put(1, 1);
+    for(int i = 2; i <= n; i++) {
+      hm.put(i, hm.get(i - 1) + hm.get(i - 2));
     }
-  </code>
-</pre>
+    return hm.get(n);
+  }
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 Now that we are going with the right direction. Each number in the sequence *ONLY* gets touch once.
-Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:&nbsp;&nbsp;<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a>
-
-<pre>
-  <code class="java">
-    public int getFibonacciNumberBottomUpWithoutCache(int n) {
-      int fnMin2 = 0;
-      int fnMin1 = 1;
-      int sum = 0;
-      for(int i = 2; i <= n; i++) {
-        sum = fnMin1 + fnMin2;
-        fnMin2 = fnMin1;
-        fnMin1 = sum;
-      }
-      return sum;
+Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:
+{% highlight java %}
+  public int getFibonacciNumberBottomUpWithoutCache(int n) {
+    int fnMin2 = 0;
+    int fnMin1 = 1;
+    int sum = 0;
+    for(int i = 2; i <= n; i++) {
+      sum = fnMin1 + fnMin2;
+      fnMin2 = fnMin1;
+      fnMin1 = sum;
     }
-  </code>
-</pre>
+    return sum;
+  }
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 Here, the runnning time for this approach should stay O(N) like above using the cache. However, we greatly reduced the space complexity from O(N) to O(1) constant space. Both running time and space complexity optimized.
 

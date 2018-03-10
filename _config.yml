@@ -1,11 +1,51 @@
-name: "Poan (Baron) Chen, a happy developer"
+# Site settings
+title: PoAn (Baron) Chen's site
+description: A blog written by PoAn (Baron) Chen.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://poanchen.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+
+# User settings
+username: PoAn (Baron) Chen
+user_description: Software Developer
+user_title: Happy Developer
+email: chen.baron@hotmail.com
+twitter_username: poanbaronchen
+github_username: poanchen
+disqus_username: poanchen
+google_site_verification: NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M
+
+# Build settings
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
-url: https://poanchen.github.io
-gems:
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title # trailing slash for now
+incremental: true # regenerate _site pages when changes detected
+livereload: true # refresh pages when new changes detected
+
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+plugins:
   - jekyll-sitemap
-exclude:
+  - wdm # to avoid polling for changes
+
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+  - title: About this site
+    url: /about
+  - title: Blog
+    url: /blog
+  - title: Tags
+    url: /tags
+
+# exclude node related stuff
+exclude: 
   - package.json
   - node_modules
-  - gulpfile.js
   - src

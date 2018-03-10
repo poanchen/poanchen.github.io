@@ -1,31 +1,29 @@
 ---
 layout: post
 title: "How to delete a commit completely in GitHub?"
-author: PoAn (Baron) Chen
-author_url: https://github.com/poanchen
-date: 2018-02-24
+author: poanchen
+date: 2018-02-24 08:30:30
+tags:
+- Git
+- GitHub
+- GitHub commit
+- PoAn (Baron) Chen
 ---
 Ever needed to delete a commit completely in GitHub but tried hundred of thousands of tutorials and still does not work? You are in luck! In this tutorial, I am going to teach you guys how to make a GitHub commit disappear forever. Note: before you carry on with this tutorial, make sure you do not have any local changes or stash all your local changes to be safe.
 
 Follow this tutorial in order to delete one or more commits in GitHub. First, you use the following command to list all or some of your latest GitHub commits.
-
-<pre>
-  <code class="bash">
-    git log -n 3 # 3 means to list the latest 3 commits
-  </code>
-</pre>
+{% highlight bash %}
+  git log -n 3 # 3 means to list the latest 3 commits
+{% endhighlight %}
 
 It should look something similar to this,
 
 <img src="/img/2018/02/24/How-to-delete-a-commit-completely-in GitHub/git log top 3 commits.PNG" alt="git log top 3 commits">
 
 Say you want to delete the first latest commit, you would need to type in this command.
-
-<pre>
-  <code class="bash">
-    git rebase -i 77d55bd72c63d43cc83f9c0fea4990c33427c2a6
-  </code>
-</pre>
+{% highlight bash %}
+  git rebase -i 77d55bd72c63d43cc83f9c0fea4990c33427c2a6
+{% endhighlight %}
 
 As you can see, instead of putting the deleted commit hash, we put the next next one. We will explain why in the next step.
 
@@ -38,12 +36,9 @@ Simply move your cursor to the line or commit that you would like to delete, and
 Okay, the reason why we did not put the commit hash for the `git rebase` command to the one we wanted to delete is that the text editor or rebase does not allow us to "remove everything, as the rebase will be aborted." (this means that at least one needs to stay)
 
 Now, you can simply commit your changes to GitHub to make your commit goes away by doing this command,
-
-<pre>
-  <code class="bash">
-    git push -f origin master
-  </code>
-</pre>
+{% highlight bash %}
+  git push -f origin master
+{% endhighlight %}
 
 As you can see, we need that `-f` option to force the Git to commit the changes, otherwise, it will not allow you to do that.
 
