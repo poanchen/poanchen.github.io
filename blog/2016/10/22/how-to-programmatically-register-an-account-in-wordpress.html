@@ -1,669 +1,727 @@
 <!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--
-=======================================================================================================================
-  ____         _           ______                      __   ____ _               _  __        __   _         _ _       
- |  _ \ ___   / \   _ __  / | __ )  __ _ _ __ ___  _ __\ \ / ___| |__   ___ _ __( )_\ \      / ___| |__  ___(_| |_ ___ 
- | |_) / _ \ / _ \ | '_ \| ||  _ \ / _` | '__/ _ \| '_ \| | |   | '_ \ / _ | '_ |/ __\ \ /\ / / _ | '_ \/ __| | __/ _ \
- |  __| (_) / ___ \| | | | || |_) | (_| | | | (_) | | | | | |___| | | |  __| | | \__ \\ V  V |  __| |_) \__ | | ||  __/
- |_|   \___/_/   \_|_| |_| ||____/ \__,_|_|  \___/|_| |_| |\____|_| |_|\___|_| |_|___/ \_/\_/ \___|_.__/|___|_|\__\___|
-                          \_\                          /_/                      
-=======================================================================================================================
-==========================================https://poanchen.github.io/contact===========================================
-==========================================Brought to you by PoAn (Baron) Chen==========================================
--->
-
-<html>
-
-<head>
-  <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
   <title>How to programmatically register an account for a user in WordPress?</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="/app/css/index.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css" />
-</head>
+  <meta name="description" content="A blog written by PoAn (Baron) Chen.">
 
-<body>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655" target="_blank">CV</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/blog">Blog</a></li>
-    </ul>
-  </nav>
-  <div class="container">
-    <h1>How to programmatically register an account for a user in WordPress?</h1>
-<p class="meta">
-   
-    Posted by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a> on 22 Oct 2016
+  <!-- Google Authorship Markup -->
+  <link rel="author" href="https://plus.google.com/?rel=author">
+
+  <!-- Google Site Verification -->
   
-  | <a href="https://poanchen.github.io/blog/2016/10/22/how-to-programmatically-register-an-account-in-wordpress#disqus_thread">0 Comments</a>
-</p>
+      <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
+  
 
-<div class="post">
-  <p>Today, I am going to show you guys how to programmatically create an account for a user in WordPress. To help you understand clearly, we are going to write a REST API in PHP in the back-end. In the front-end, we will be using jQuery AJAX to query it. In case of error like username already exist, we will be printing out the error to the user in real-time. Lets get started!</p>
+  <!-- Social: Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@poanbaronchen">
+  <meta name="twitter:title" content="How to programmatically register an account for a user in WordPress?">
+  <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
+  
+  <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
+  
 
-<h2 id="php-code-to-start-with-directly-grabbed-from-here-source-code">PHP code to start with (directly grabbed from <a href="https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js">here</a>)   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">source code</a></h2>
+  <!-- Social: Facebook / Open Graph -->
+  <meta property="og:url" content="https://poanchen.github.io/blog/2016/10/22/how-to-programmatically-register-an-account-in-wordpress">
+  <meta property="og:title" content="How to programmatically register an account for a user in WordPress?">
+  
+  <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
+  
+  <meta property="og:description" content="A blog written by PoAn (Baron) Chen.">
+  <meta property="og:site_name" content="PoAn (Baron) Chen's site">
 
-<pre>
-  <code class="php">
-    // Include the wp-load.php so that we can use WordPress API
-    $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
-    require_once( $parse_uri[0] . 'wp-load.php' );
+  <!-- Social: Google+ / Schema.org  -->
+  <meta itemprop="name" content="How to programmatically register an account for a user in WordPress?"/>
+  <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
+  <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
-    $data = array();
-    $username = sanitize_text_field($_POST['username']);
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png" />
+  <!-- Windows 8 Tile Icons -->
+  <meta name="application-name" content="PoAn (Baron) Chen Blog">
+  <meta name="msapplication-TileColor" content="#0562DC">
+  <meta name="msapplication-square70x70logo" content="smalltile.png" />
+  <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+  <meta name="msapplication-wide310x150logo" content="widetile.png" />
+  <meta name="msapplication-square310x310logo" content="largetile.png" />
+  <!-- Android Lolipop Theme Color -->
+  <meta name="theme-color" content="#0562DC">
 
-    if (username_exists($username)) {
-      $data["username"] = $username;
-      $data["result"] = true;
-    }else {
-      $data["username"] = $username;
-      $data["result"] = false;
-    }
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="https://poanchen.github.io/blog/2016/10/22/how-to-programmatically-register-an-account-in-wordpress">
+  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
+</head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-email" viewBox="0 0 1024 1024"><path class="path1" d="M950.857 859.429v-438.857q-18.286 20.571-39.429 37.714-153.143 117.714-243.429 193.143-29.143 24.571-47.429 38.286t-49.429 27.714-58.571 14h-1.143q-27.429 0-58.571-14t-49.429-27.714-47.429-38.286q-90.286-75.429-243.429-193.143-21.143-17.143-39.429-37.714v438.857q0 7.429 5.429 12.857t12.857 5.429h841.143q7.429 0 12.857-5.429t5.429-12.857zM950.857 258.857v-14t-0.286-7.429-1.714-7.143-3.143-5.143-5.143-4.286-8-1.429h-841.143q-7.429 0-12.857 5.429t-5.429 12.857q0 96 84 162.286 110.286 86.857 229.143 181.143 3.429 2.857 20 16.857t26.286 21.429 25.429 18 28.857 15.714 24.571 5.143h1.143q11.429 0 24.571-5.143t28.857-15.714 25.429-18 26.286-21.429 20-16.857q118.857-94.286 229.143-181.143 30.857-24.571 57.429-66t26.571-75.143zM1024 237.714v621.714q0 37.714-26.857 64.571t-64.571 26.857h-841.143q-37.714 0-64.571-26.857t-26.857-64.571v-621.714q0-37.714 26.857-64.571t64.571-26.857h841.143q37.714 0 64.571 26.857t26.857 64.571z"/></symbol><symbol id="icon-close" viewBox="0 0 805 1024"><path class="path1" d="M741.714 755.429q0 22.857-16 38.857l-77.714 77.714q-16 16-38.857 16t-38.857-16l-168-168-168 168q-16 16-38.857 16t-38.857-16l-77.714-77.714q-16-16-16-38.857t16-38.857l168-168-168-168q-16-16-16-38.857t16-38.857l77.714-77.714q16-16 38.857-16t38.857 16l168 168 168-168q16-16 38.857-16t38.857 16l77.714 77.714q16 16 16 38.857t-16 38.857l-168 168 168 168q16 16 16 38.857z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-rss" viewBox="0 0 805 1024"><path class="path1" d="M219.429 768q0 45.714-32 77.714t-77.714 32-77.714-32-32-77.714 32-77.714 77.714-32 77.714 32 32 77.714zM512 838.286q1.143 16-9.714 27.429-10.286 12-26.857 12h-77.143q-14.286 0-24.571-9.429t-11.429-23.714q-12.571-130.857-105.429-223.714t-223.714-105.429q-14.286-1.143-23.714-11.429t-9.429-24.571v-77.143q0-16.571 12-26.857 9.714-9.714 24.571-9.714h2.857q91.429 7.429 174.857 46t148 103.714q65.143 64.571 103.714 148t46 174.857zM804.571 839.429q1.143 15.429-10.286 26.857-10.286 11.429-26.286 11.429h-81.714q-14.857 0-25.429-10t-11.143-24.286q-6.857-122.857-57.714-233.429t-132.286-192-192-132.286-233.429-58.286q-14.286-0.571-24.286-11.143t-10-24.857v-81.714q0-16 11.429-26.286 10.286-10.286 25.143-10.286h1.714q149.714 7.429 286.571 68.571t243.143 168q106.857 106.286 168 243.143t68.571 286.571z"/></symbol><symbol id="icon-google-plus" viewBox="0 0 951 1024"><path class="path1" d="M420 454.857q0 20.571 18.286 40.286t44.286 38.857 51.714 42 44 59.429 18.286 81.143q0 51.429-27.429 98.857-41.143 69.714-120.571 102.571t-170.286 32.857q-75.429 0-140.857-23.714t-98-78.571q-21.143-34.286-21.143-74.857 0-46.286 25.429-85.714t67.714-65.714q74.857-46.857 230.857-57.143-18.286-24-27.143-42.286t-8.857-41.714q0-20.571 12-48.571-26.286 2.286-38.857 2.286-84.571 0-142.571-55.143t-58-139.714q0-46.857 20.571-90.857t56.571-74.857q44-37.714 104.286-56t124.286-18.286h238.857l-78.857 50.286h-74.857q42.286 36 64 76t21.714 91.429q0 41.143-14 74t-33.714 53.143-39.714 37.143-34 35.143-14 37.714zM336.571 400q21.714 0 44.571-9.429t37.714-24.857q30.286-32.571 30.286-90.857 0-33.143-9.714-71.429t-27.714-74-48.286-59.143-66.857-23.429q-24 0-47.143 11.143t-37.429 30q-26.857 33.714-26.857 91.429 0 26.286 5.714 55.714t18 58.857 29.714 52.857 42.857 38.286 55.143 14.857zM337.714 898.857q33.143 0 63.714-7.429t56.571-22.286 41.714-41.714 15.714-62.286q0-14.286-4-28t-8.286-24-15.429-23.714-16.857-20-22-19.714-20.857-16.571-23.714-17.143-20.857-14.857q-9.143-1.143-27.429-1.143-30.286 0-60 4t-61.429 14.286-55.429 26.286-39.143 42.571-15.429 60.286q0 40 20 70.571t52.286 47.429 68 25.143 72.857 8.286zM800.571 398.286h121.714v61.714h-121.714v125.143h-60v-125.143h-121.143v-61.714h121.143v-124h60v124z"/></symbol><symbol id="icon-angle-down" viewBox="0 0 658 1024"><path class="path1" d="M614.286 420.571q0 7.429-5.714 13.143l-266.286 266.286q-5.714 5.714-13.143 5.714t-13.143-5.714l-266.286-266.286q-5.714-5.714-5.714-13.143t5.714-13.143l28.571-28.571q5.714-5.714 13.143-5.714t13.143 5.714l224.571 224.571 224.571-224.571q5.714-5.714 13.143-5.714t13.143 5.714l28.571 28.571q5.714 5.714 5.714 13.143z"/></symbol><symbol id="icon-github-alt" viewBox="0 0 951 1024"><path class="path1" d="M365.714 694.857q0 22.857-7.143 46.857t-24.571 43.429-41.429 19.429-41.429-19.429-24.571-43.429-7.143-46.857 7.143-46.857 24.571-43.429 41.429-19.429 41.429 19.429 24.571 43.429 7.143 46.857zM731.429 694.857q0 22.857-7.143 46.857t-24.571 43.429-41.429 19.429-41.429-19.429-24.571-43.429-7.143-46.857 7.143-46.857 24.571-43.429 41.429-19.429 41.429 19.429 24.571 43.429 7.143 46.857zM822.857 694.857q0-68.571-39.429-116.571t-106.857-48q-23.429 0-111.429 12-40.571 6.286-89.714 6.286t-89.714-6.286q-86.857-12-111.429-12-67.429 0-106.857 48t-39.429 116.571q0 50.286 18.286 87.714t46.286 58.857 69.714 34.286 80 16.857 85.143 4h96q46.857 0 85.143-4t80-16.857 69.714-34.286 46.286-58.857 18.286-87.714zM950.857 594.286q0 118.286-34.857 189.143-21.714 44-60.286 76t-80.571 49.143-97.143 27.143-98 12.571-95.429 2.571q-44.571 0-81.143-1.714t-84.286-7.143-87.143-17.143-78.286-29.429-69.143-46.286-49.143-65.714q-35.429-70.286-35.429-189.143 0-135.429 77.714-226.286-15.429-46.857-15.429-97.143 0-66.286 29.143-124.571 61.714 0 108.571 22.571t108 70.571q84-20 176.571-20 84.571 0 160 18.286 60-46.857 106.857-69.143t108-22.286q29.143 58.286 29.143 124.571 0 49.714-15.429 96 77.714 91.429 77.714 227.429z"/></symbol></defs></svg>
 
-    // return all our data to an AJAX call
-    echo json_encode($data, JSON_PRETTY_PRINT);
-  </code>
-</pre>
-<p>As you can see, it is a fairly simple REST API in PHP that return a JSON to allow user to know if the username exist or not<br />
+    <header class="header-post" role="banner">
+    <div class="content">
+        
+            <time itemprop="datePublished" datetime="2016-10-22 01:30:30 -0700" class="date">22 Oct 2016</time>
+        
+        <h1 class="post-title" itemprop="name">How to programmatically register an account for a user in WordPress?</h1>
+        <p itemprop="description" class="subtitle"></p>
+    </div>
+     <a class="down" data-scroll href="#scroll"><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></a>
+     <div class="search-wrapper">
+  <div class="search-form">
+    <input type="text" class="search-field" placeholder="Search...">
+    <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+    <ul class="search-results search-list"></ul>
+  </div>
+</div>
+<div id="fade" class="overlay"></div>
+<a id="slide" class="slideButton fade">
+  <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+  <svg id="close" class="icon-menu"><use xlink:href="#icon-close"></use></svg>
+</a>
+<aside id="sidebar">
+<nav id="navigation">
+  <h2>MENU</h2>
+  <ul>
+    
+      <li>
+        <a href="/">
+          PoAn (Baron) Chen
+        </a>
+      </li>
+    
+      <li>
+        <a href="/about">
+          About this site
+        </a>
+      </li>
+    
+      <li>
+        <a href="/contact">
+          Contact me
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog">
+          Blog
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags">
+          Tags
+        </a>
+      </li>
+    
+    <li><a class="feed" href="/feed.xml" title="Atom/RSS feed">Feed</a></li>
+  </ul>
+</nav>
+</aside>
+<a id="search" class="dosearch">
+  <svg class="icon-menu icon-search"><use xlink:href="#icon-search"></use></svg>
+</a>
+</header>
+
+    <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <article role="article" id="scroll" class="post-content" itemprop="articleBody">
+          <p>Today, I am going to show you guys how to programmatically create an account for a user in WordPress. To help you understand clearly, we are going to write a REST API in PHP in the back-end. In the front-end, we will be using jQuery AJAX to query it. In case of error like username already exist, we will be printing out the error to the user in real-time. Lets get started!</p>
+
+<h2 id="php-code-to-start-with-directly-grabbed-from-here">PHP code to start with (directly grabbed from <a href="https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js">here</a>)</h2>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  // Include the wp-load.php so that we can use WordPress API
+  $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
+  require_once( $parse_uri[0] . 'wp-load.php' );
+
+  $data = array();
+  $username = sanitize_text_field($_POST['username']);
+
+  if (username_exists($username)) {
+    $data["username"] = $username;
+    $data["result"] = true;
+  }else {
+    $data["username"] = $username;
+    $data["result"] = false;
+  }
+
+  // return all our data to an AJAX call
+  echo json_encode($data, JSON_PRETTY_PRINT);</code></pre></figure>
+
+<p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<p>As you can see, it is a fairly simple REST API in PHP that return a JSON to allow user to know if the username exist or not.<br />
 The output should look something like this.</p>
-<pre>
-  <code class="json">
-    { "username": "", "result": false }
-  </code>
-</pre>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span></code></pre></figure>
+
 <p>The reason why the username is empty. It is because we didn’t pass in any username to the PHP file. We just simply call it.</p>
 
-<h2 id="html-code-to-start-with-directly-grabbed-from-here-source-code">HTML Code to start with (directly grabbed from <a href="https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js">here</a>)   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html" target="_blank">source code</a></h2>
+<h2 id="html-code-to-start-with-directly-grabbed-from-here">HTML Code to start with (directly grabbed from <a href="https://poanchen.github.io/blog/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js">here</a>)</h2>
 
-<pre>
-  <code class="html">
-    &lt;input type="text" id="username" name="username" placeholder="username"&gt;
-    &lt;p id="usernameResult"&gt;&lt;/p&gt;
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"username"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">placeholder=</span><span class="s">"username"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"usernameResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
 
-    &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript"&gt;
-      $(document).ready(function () {
-        var usernameSelected = $('#username');
-        var usernameWarning = $('#usernameResult');
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">usernameSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#username'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">usernameWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#usernameResult'</span><span class="p">);</span>
 
-        usernameSelected.keyup(function() {
-          var url = "https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php";
-          var formData = {
-            'username' : usernameSelected.val()
-          };
+      <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php"</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="s1">'username'</span> <span class="p">:</span> <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span>
+        <span class="p">};</span>
 
-          $.ajax({
-            type : 'POST',
-            url : url,
-            data : formData,
-            dataType : 'JSON',
-            encode : true,
-            success: function (response, status, xhr) {
-              if (response.result) {
-                usernameWarning.html("The username you typed has been used!");
-              }else{
-                usernameWarning.html("You may freely use this username!");
-              }
-            },
-            error: function (xhr, status, error) {
-              usernameWarning.html("Something went wrong!");
-            }
-          });
-        });
-     });
-    &lt;/script&gt;
-  </code>
-</pre>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+          <span class="na">type</span> <span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+          <span class="na">url</span> <span class="p">:</span> <span class="nx">url</span><span class="p">,</span>
+          <span class="na">data</span> <span class="p">:</span> <span class="nx">formData</span><span class="p">,</span>
+          <span class="na">dataType</span> <span class="p">:</span> <span class="s1">'JSON'</span><span class="p">,</span>
+          <span class="na">encode</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"The username you typed has been used!"</span><span class="p">);</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"You may freely use this username!"</span><span class="p">);</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Something went wrong!"</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">});</span>
+   <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExistJquery.html" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
 <p>Okay, now when we have these two files to start with. We can now try to tweak it so that it allows us to create an account for a user in WordPress. First, we need to add the input in the front-end so that user have place to input their email address and their password for their account. We simply add the following lines below the HTML input for username.</p>
 
 <h2 id="html-code-for-adding-html-input-for-email-and-password">HTML Code for adding HTML input for email and password</h2>
 
-<pre>
-  <code class="html">
-    &lt;input type="text" id="email" name="email" placeholder="email"&gt;
-    &lt;p id="emailResult"&gt;&lt;/p&gt;
-    &lt;input type="password" id="password" name="password" placeholder="password"&gt;
-    &lt;p id="passwordResult"&gt;&lt;/p&gt;
-  </code>
-</pre>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"emailResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">id=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">placeholder=</span><span class="s">"password"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"passwordResult"</span><span class="nt">&gt;&lt;/p&gt;</span></code></pre></figure>
+
 <p>Now, when you open up your page in the web browser, you should see something like <a href="https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccountJquery.html">this</a>.<br />
 At this point, we may try to add some error code so that we know what is actually going on.</p>
 
 <h2 id="php-code-with-some-pre-defined-error-code">PHP Code with some pre-defined error code</h2>
 
-<pre>
-  <code class="php">
-    // Include the wp-load.php so that we can use WordPress API
-    $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
-    require_once( $parse_uri[0] . 'wp-load.php' );
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  // Include the wp-load.php so that we can use WordPress API
+  $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
+  require_once( $parse_uri[0] . 'wp-load.php' );
 
-    define("USERNAME_ALREADY_EXIST", 1);
-    define("EMAIL_ADDRESS_ALREADY_EXIST", 2);
-    define("NOT_A_VALID_EMAIL_ADDRESS", 3);
-    define("PASSWORD_LENGTH_IS_TOO_SHORT", 4);
-    define("SUCCESS", true);
-    define("FAIL", false);
+  define("USERNAME_ALREADY_EXIST", 1);
+  define("EMAIL_ADDRESS_ALREADY_EXIST", 2);
+  define("NOT_A_VALID_EMAIL_ADDRESS", 3);
+  define("PASSWORD_LENGTH_IS_TOO_SHORT", 4);
+  define("SUCCESS", true);
+  define("FAIL", false);
 
-    $data = array();
-    $username = sanitize_text_field($_POST['username']);
-    $email = sanitize_text_field($_POST['email']);
-    $password = sanitize_text_field($_POST['password']);
+  $data = array();
+  $username = sanitize_text_field($_POST['username']);
+  $email = sanitize_text_field($_POST['email']);
+  $password = sanitize_text_field($_POST['password']);
 
-    $data["username"] = $username;
-    $data["email"] = $email;
-    $data["password"] = $password;
+  $data["username"] = $username;
+  $data["email"] = $email;
+  $data["password"] = $password;
 
-    if (username_exists($username)) {
-      $data["result"] = USERNAME_ALREADY_EXIST;
-    }else {
-      $data["result"] = FAIL;
-    }
+  if (username_exists($username)) {
+    $data["result"] = USERNAME_ALREADY_EXIST;
+  }else {
+    $data["result"] = FAIL;
+  }
 
-    // return all our data to an AJAX call
-    echo json_encode($data, JSON_PRETTY_PRINT);
-  </code>
-</pre>
+  // return all our data to an AJAX call
+  echo json_encode($data, JSON_PRETTY_PRINT);</code></pre></figure>
+
 <p>We have added some error code, so that in the front-end, when we receive the result of 2, then we know that the email address is already exist. Let’s try to add some validation to check if the username exist or not. If it is true, then return the error code that we pre-defined.</p>
 
 <h2 id="php-code-to-check-if-username-exist-or-not">PHP Code to check if username exist or not.</h2>
 
-<pre>
-  <code class="php">
-    // Include the wp-load.php so that we can use WordPress API
-    $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
-    require_once( $parse_uri[0] . 'wp-load.php' );
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  // Include the wp-load.php so that we can use WordPress API
+  $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
+  require_once( $parse_uri[0] . 'wp-load.php' );
 
-    define("USERNAME_ALREADY_EXIST", 1);
-    define("EMAIL_ADDRESS_ALREADY_EXIST", 2);
-    define("NOT_A_VALID_EMAIL_ADDRESS", 3);
-    define("PASSWORD_LENGTH_IS_TOO_SHORT", 4);
-    define("SUCCESS", true);
-    define("FAIL", false);
+  define("USERNAME_ALREADY_EXIST", 1);
+  define("EMAIL_ADDRESS_ALREADY_EXIST", 2);
+  define("NOT_A_VALID_EMAIL_ADDRESS", 3);
+  define("PASSWORD_LENGTH_IS_TOO_SHORT", 4);
+  define("SUCCESS", true);
+  define("FAIL", false);
 
-    $data = array();
-    $errors = array();
-    $username = sanitize_text_field($_POST['username']);
-    $email = sanitize_text_field($_POST['email']);
-    $password = sanitize_text_field($_POST['password']);
+  $data = array();
+  $errors = array();
+  $username = sanitize_text_field($_POST['username']);
+  $email = sanitize_text_field($_POST['email']);
+  $password = sanitize_text_field($_POST['password']);
 
-    $data["username"] = $username;
-    $data["email"] = $email;
-    $data["password"] = $password;
+  $data["username"] = $username;
+  $data["email"] = $email;
+  $data["password"] = $password;
 
-    if (!empty($username)) {
-      if (username_exists($username)) {
-        $errors[] = USERNAME_ALREADY_EXIST;
-      }
+  if (!empty($username)) {
+    if (username_exists($username)) {
+      $errors[] = USERNAME_ALREADY_EXIST;
     }
+  }
 
-    if (count($errors)) {
-      $data["errors"] = $errors;
-      $data["result"] = FAIL;
-    }else{
-      $data["result"] = SUCCESS;
-    }
+  if (count($errors)) {
+    $data["errors"] = $errors;
+    $data["result"] = FAIL;
+  }else{
+    $data["result"] = SUCCESS;
+  }
 
-    // return all our data to an AJAX call
-    echo json_encode($data, JSON_PRETTY_PRINT);
-  </code>
-</pre>
+  // return all our data to an AJAX call
+  echo json_encode($data, JSON_PRETTY_PRINT);</code></pre></figure>
+
 <p>Now, when we query the PHP code, we should see something like this.</p>
-<pre>
-  <code class="json">
-    { "username": "test", "email": "", "password": "", "errors": [ 1 ], "result": false }
-  </code>
-</pre>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w"> </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nt">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span></code></pre></figure>
+
 <p>Whenever, we see the errors array, we know that something went wrong. Like, in this example, 1 means that username existed. Also, by checking the result, we know that it was a false. Which tells us that it was a failure to create an account for user.<br />
 Now, let’s try to combine this with the front-end code, so that we can actually see how it works in the user’s point of view.</p>
 
 <h2 id="html-code-to-check-if-username-exist-or-not">HTML Code to check if username exist or not.</h2>
 
-<pre>
-  <code class="html">
-    &lt;input type="text" id="username" name="username" placeholder="username"&gt;
-    &lt;p id="usernameResult"&gt;&lt;/p&gt;
-    &lt;input type="text" id="email" name="email" placeholder="email"&gt;
-    &lt;p id="emailResult"&gt;&lt;/p&gt;
-    &lt;input type="password" id="password" name="password" placeholder="password"&gt;
-    &lt;p id="passwordResult"&gt;&lt;/p&gt;
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"username"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">placeholder=</span><span class="s">"username"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"usernameResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"emailResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">id=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">placeholder=</span><span class="s">"password"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"passwordResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
 
-    &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript"&gt;
-      $(document).ready(function () {
-        // username
-        var usernameSelected = $('#username');
-        var usernameWarning = $('#usernameResult');
-        // email
-        var emailSelected = $('#email');
-        var emailWarning = $('#emailResult');
-        // password
-        var passwordSelected = $('#password');
-        var passwordWarning = $('#passwordResult');
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// username</span>
+      <span class="kd">var</span> <span class="nx">usernameSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#username'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">usernameWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#usernameResult'</span><span class="p">);</span>
+      <span class="c1">// email</span>
+      <span class="kd">var</span> <span class="nx">emailSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#email'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">emailWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#emailResult'</span><span class="p">);</span>
+      <span class="c1">// password</span>
+      <span class="kd">var</span> <span class="nx">passwordSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#password'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">passwordWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#passwordResult'</span><span class="p">);</span>
 
-        usernameSelected.keyup(function() {
-          createAnAccountForUserInWordPress();
-        });
+      <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">createAnAccountForUserInWordPress</span><span class="p">();</span>
+      <span class="p">});</span>
 
-        function createAnAccountForUserInWordPress () {
-          var url = "https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php";
-          var formData = {
-            'username' : usernameSelected.val()
-          };
+      <span class="kd">function</span> <span class="nx">createAnAccountForUserInWordPress</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php"</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="s1">'username'</span> <span class="p">:</span> <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span>
+        <span class="p">};</span>
 
-          $.ajax({
-            type : 'POST',
-            url : url,
-            data : formData,
-            dataType : 'JSON',
-            encode : true,
-            success: function (response, status, xhr) {
-              if (!response.result) {
-                outpurErrorMessages(response.errors);
-              }else{
-                clearErrorMessages();
-              }
-            },
-            error: function (xhr, status, error) {
-              usernameWarning.html("Something went wrong!");
-            }
-          });
-        }
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+          <span class="na">type</span> <span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+          <span class="na">url</span> <span class="p">:</span> <span class="nx">url</span><span class="p">,</span>
+          <span class="na">data</span> <span class="p">:</span> <span class="nx">formData</span><span class="p">,</span>
+          <span class="na">dataType</span> <span class="p">:</span> <span class="s1">'JSON'</span><span class="p">,</span>
+          <span class="na">encode</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">outpurErrorMessages</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">errors</span><span class="p">);</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+              <span class="nx">clearErrorMessages</span><span class="p">();</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Something went wrong!"</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
 
-        function outpurErrorMessages (errorCodes) {
-          errorCodes.forEach(function (element, index, array) {
-            switch(element) {
-              case 1:
-                usernameWarning.html("The username you typed has been used!");
-                break;
-              default:
-                console.log("test");
-            }
-          });
-        }
+      <span class="kd">function</span> <span class="nx">outpurErrorMessages</span> <span class="p">(</span><span class="nx">errorCodes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errorCodes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">switch</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"The username you typed has been used!"</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="nl">default</span><span class="p">:</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"test"</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
 
-        function clearErrorMessages () {
-          usernameWarning.html("");
-          emailWarning.html("");
-          passwordWarning.html("");
-        }
-     });
-    &lt;/script&gt;
-  </code>
-</pre>
+      <span class="kd">function</span> <span class="nx">clearErrorMessages</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+        <span class="nx">emailWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+        <span class="nx">passwordWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
 <p>Now, when you start typing, if the username you input exist then it will tells you that. Otherwise, it will not print anything.<br />Now, let’s try to check if the user’s email is valid or not!</p>
 
 <h2 id="php-code-to-check-if-users-email-is-valid-or-not">PHP Code to check if user’s email is valid or not.</h2>
 
-<pre>
-  <code class="php">
-    // Include the wp-load.php so that we can use WordPress API
-    $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
-    require_once( $parse_uri[0] . 'wp-load.php' );
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  // Include the wp-load.php so that we can use WordPress API
+  $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
+  require_once( $parse_uri[0] . 'wp-load.php' );
 
-    define("USERNAME_ALREADY_EXIST", 1);
-    define("EMAIL_ADDRESS_ALREADY_EXIST", 2);
-    define("NOT_A_VALID_EMAIL_ADDRESS", 3);
-    define("PASSWORD_LENGTH_IS_TOO_SHORT", 4);
-    define("SUCCESS", true);
-    define("FAIL", false);
+  define("USERNAME_ALREADY_EXIST", 1);
+  define("EMAIL_ADDRESS_ALREADY_EXIST", 2);
+  define("NOT_A_VALID_EMAIL_ADDRESS", 3);
+  define("PASSWORD_LENGTH_IS_TOO_SHORT", 4);
+  define("SUCCESS", true);
+  define("FAIL", false);
 
-    $data = array();
-    $errors = array();
-    $username = sanitize_text_field($_POST['username']);
-    $email = sanitize_text_field($_POST['email']);
-    $password = sanitize_text_field($_POST['password']);
+  $data = array();
+  $errors = array();
+  $username = sanitize_text_field($_POST['username']);
+  $email = sanitize_text_field($_POST['email']);
+  $password = sanitize_text_field($_POST['password']);
 
-    $data["username"] = $username;
-    $data["email"] = $email;
-    $data["password"] = $password;
+  $data["username"] = $username;
+  $data["email"] = $email;
+  $data["password"] = $password;
 
-    if (!empty($username)) {
-      if (username_exists($username)) {
-        $errors[] = USERNAME_ALREADY_EXIST;
-      }
+  if (!empty($username)) {
+    if (username_exists($username)) {
+      $errors[] = USERNAME_ALREADY_EXIST;
     }
+  }
 
-    if (!empty($email)) {
-      if (!is_email($email)) {
-        $errors[] = NOT_A_VALID_EMAIL_ADDRESS;
-      }else{
-        if (email_exists($email)) {
-          $errors[] = EMAIL_ADDRESS_ALREADY_EXIST;
-        }
-      }
-    }
-
-    if (count($errors)) {
-      $data["errors"] = $errors;
-      $data["result"] = FAIL;
+  if (!empty($email)) {
+    if (!is_email($email)) {
+      $errors[] = NOT_A_VALID_EMAIL_ADDRESS;
     }else{
-      $data["result"] = SUCCESS;
+      if (email_exists($email)) {
+        $errors[] = EMAIL_ADDRESS_ALREADY_EXIST;
+      }
     }
+  }
 
-    // return all our data to an AJAX call
-    echo json_encode($data, JSON_PRETTY_PRINT);
-  </code>
-</pre>
+  if (count($errors)) {
+    $data["errors"] = $errors;
+    $data["result"] = FAIL;
+  }else{
+    $data["result"] = SUCCESS;
+  }
+
+  // return all our data to an AJAX call
+  echo json_encode($data, JSON_PRETTY_PRINT);</code></pre></figure>
 
 <h2 id="html-code-to-check-if-users-email-is-valid-or-not">HTML Code to check if user’s email is valid or not.</h2>
 
-<pre>
-  <code class="html">
-    &lt;input type="text" id="username" name="username" placeholder="username"&gt;
-    &lt;p id="usernameResult"&gt;&lt;/p&gt;
-    &lt;input type="text" id="email" name="email" placeholder="email"&gt;
-    &lt;p id="emailResult"&gt;&lt;/p&gt;
-    &lt;input type="password" id="password" name="password" placeholder="password"&gt;
-    &lt;p id="passwordResult"&gt;&lt;/p&gt;
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"username"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">placeholder=</span><span class="s">"username"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"usernameResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"emailResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">id=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">placeholder=</span><span class="s">"password"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"passwordResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
 
-    &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript"&gt;
-      $(document).ready(function () {
-        // username
-        var usernameSelected = $('#username');
-        var usernameWarning = $('#usernameResult');
-        // email
-        var emailSelected = $('#email');
-        var emailWarning = $('#emailResult');
-        // password
-        var passwordSelected = $('#password');
-        var passwordWarning = $('#passwordResult');
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// username</span>
+      <span class="kd">var</span> <span class="nx">usernameSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#username'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">usernameWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#usernameResult'</span><span class="p">);</span>
+      <span class="c1">// email</span>
+      <span class="kd">var</span> <span class="nx">emailSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#email'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">emailWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#emailResult'</span><span class="p">);</span>
+      <span class="c1">// password</span>
+      <span class="kd">var</span> <span class="nx">passwordSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#password'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">passwordWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#passwordResult'</span><span class="p">);</span>
 
-        usernameSelected.keyup(function() {
-          createAnAccountForUserInWordPress();
-        });
+      <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">createAnAccountForUserInWordPress</span><span class="p">();</span>
+      <span class="p">});</span>
 
-        emailSelected.keyup(function() {
-          createAnAccountForUserInWordPress();
-        });
+      <span class="nx">emailSelected</span><span class="p">.</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">createAnAccountForUserInWordPress</span><span class="p">();</span>
+      <span class="p">});</span>
 
-        function createAnAccountForUserInWordPress () {
-          var url = "https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php";
-          var formData = {
-            'username' : usernameSelected.val(),
-            'email' : emailSelected.val()
-          };
+      <span class="kd">function</span> <span class="nx">createAnAccountForUserInWordPress</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php"</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="s1">'username'</span> <span class="p">:</span> <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">val</span><span class="p">(),</span>
+          <span class="s1">'email'</span> <span class="p">:</span> <span class="nx">emailSelected</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span>
+        <span class="p">};</span>
 
-          $.ajax({
-            type : 'POST',
-            url : url,
-            data : formData,
-            dataType : 'JSON',
-            encode : true,
-            success: function (response, status, xhr) {
-              clearErrorMessages();
-              if (!response.result) {
-                outpurErrorMessages(response.errors);
-              }
-            },
-            error: function (xhr, status, error) {
-              usernameWarning.html("Something went wrong!");
-            }
-          });
-        }
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+          <span class="na">type</span> <span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+          <span class="na">url</span> <span class="p">:</span> <span class="nx">url</span><span class="p">,</span>
+          <span class="na">data</span> <span class="p">:</span> <span class="nx">formData</span><span class="p">,</span>
+          <span class="na">dataType</span> <span class="p">:</span> <span class="s1">'JSON'</span><span class="p">,</span>
+          <span class="na">encode</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">clearErrorMessages</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">outpurErrorMessages</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">errors</span><span class="p">);</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Something went wrong!"</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
 
-        function outpurErrorMessages (errorCodes) {
-          errorCodes.forEach(function (element, index, array) {
-            switch(element) {
-              case 1:
-                usernameWarning.html("The username you typed has been used!");
-                break;
-              case 2:
-                emailWarning.html("The email address you typed has been used!");
-                break;
-              case 3:
-                emailWarning.html("The email address you typed is not valid!");
-                break;
-              default:
-                console.log("test");
-            }
-          });
-        }
+      <span class="kd">function</span> <span class="nx">outpurErrorMessages</span> <span class="p">(</span><span class="nx">errorCodes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errorCodes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">switch</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"The username you typed has been used!"</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+              <span class="nx">emailWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"The email address you typed has been used!"</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+              <span class="nx">emailWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"The email address you typed is not valid!"</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="nl">default</span><span class="p">:</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"test"</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
 
-        function clearErrorMessages () {
-          usernameWarning.html("");
-          emailWarning.html("");
-          passwordWarning.html("");
-        }
-     });
-    &lt;/script&gt;
-  </code>
-</pre>
+      <span class="kd">function</span> <span class="nx">clearErrorMessages</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+        <span class="nx">emailWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+        <span class="nx">passwordWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
 <p>Now, with the PHP code and HTML code combined. You may try to email field. Try to type something that isn’t an email. You should see the warning that you inputted invalid email. Try email like ‘a@b.c’. You should see that the email address that you typed has been used. Yaa! Okay. Now, we can do the similar thing with password then we will be close in creating an account for a WordPress user!</p>
 
 <h2 id="php-code-to-check-if-users-password-is-at-least-length-of-5">PHP code to check if user’s password is at least length of 5.</h2>
 
-<pre>
-  <code class="php">
-    // Include the wp-load.php so that we can use WordPress API
-    $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
-    require_once( $parse_uri[0] . 'wp-load.php' );
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  // Include the wp-load.php so that we can use WordPress API
+  $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
+  require_once( $parse_uri[0] . 'wp-load.php' );
 
-    define("USERNAME_ALREADY_EXIST", 1);
-    define("EMAIL_ADDRESS_ALREADY_EXIST", 2);
-    define("NOT_A_VALID_EMAIL_ADDRESS", 3);
-    define("PASSWORD_LENGTH_IS_TOO_SHORT", 4);
-    define("SUCCESS", true);
-    define("FAIL", false);
+  define("USERNAME_ALREADY_EXIST", 1);
+  define("EMAIL_ADDRESS_ALREADY_EXIST", 2);
+  define("NOT_A_VALID_EMAIL_ADDRESS", 3);
+  define("PASSWORD_LENGTH_IS_TOO_SHORT", 4);
+  define("SUCCESS", true);
+  define("FAIL", false);
 
-    $data = array();
-    $errors = array();
-    $username = sanitize_text_field($_POST['username']);
-    $email = sanitize_text_field($_POST['email']);
-    $password = sanitize_text_field($_POST['password']);
+  $data = array();
+  $errors = array();
+  $username = sanitize_text_field($_POST['username']);
+  $email = sanitize_text_field($_POST['email']);
+  $password = sanitize_text_field($_POST['password']);
 
-    $data["username"] = $username;
-    $data["email"] = $email;
-    $data["password"] = $password;
+  $data["username"] = $username;
+  $data["email"] = $email;
+  $data["password"] = $password;
 
-    if (!empty($username)) {
-      if (username_exists($username)) {
-        $errors[] = USERNAME_ALREADY_EXIST;
-      }
+  if (!empty($username)) {
+    if (username_exists($username)) {
+      $errors[] = USERNAME_ALREADY_EXIST;
     }
+  }
 
-    if (!empty($email)) {
-      if (!is_email($email)) {
-        $errors[] = NOT_A_VALID_EMAIL_ADDRESS;
-      }else{
-        if (email_exists($email)) {
-          $errors[] = EMAIL_ADDRESS_ALREADY_EXIST;
-        }
-      }
-    }
-
-    if (!empty($password)) {
-      if (strlen($password) &lt; 5) {
-        $errors[] = PASSWORD_LENGTH_IS_TOO_SHORT;
-      }
-    }
-
-    if (count($errors)) {
-      $data["errors"] = $errors;
-      $data["result"] = FAIL;
+  if (!empty($email)) {
+    if (!is_email($email)) {
+      $errors[] = NOT_A_VALID_EMAIL_ADDRESS;
     }else{
-      $data["result"] = SUCCESS;
+      if (email_exists($email)) {
+        $errors[] = EMAIL_ADDRESS_ALREADY_EXIST;
+      }
     }
+  }
 
-    // return all our data to an AJAX call
-    echo json_encode($data, JSON_PRETTY_PRINT);
-  </code>
-</pre>
+  if (!empty($password)) {
+    if (strlen($password) <span class="nt">&lt; 5</span><span class="err">)</span> <span class="err">{</span>
+      <span class="err">$</span><span class="na">errors</span><span class="err">[]</span> <span class="err">=</span> <span class="na">PASSWORD_LENGTH_IS_TOO_SHORT</span><span class="err">;</span>
+    <span class="err">}</span>
+  <span class="err">}</span>
 
-<h2 id="html-code-to-check-if-users-password-is-at-least-length-of-5-source-code">HTML Code to check if user’s password is at least length of 5.   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccountJquery.html" target="_blank">source code</a></h2>
+  <span class="na">if</span> <span class="err">(</span><span class="na">count</span><span class="err">($</span><span class="na">errors</span><span class="err">))</span> <span class="err">{</span>
+    <span class="err">$</span><span class="na">data</span><span class="err">["</span><span class="na">errors</span><span class="err">"]</span> <span class="err">=</span> <span class="err">$</span><span class="na">errors</span><span class="err">;</span>
+    <span class="err">$</span><span class="na">data</span><span class="err">["</span><span class="na">result</span><span class="err">"]</span> <span class="err">=</span> <span class="na">FAIL</span><span class="err">;</span>
+  <span class="err">}</span><span class="na">else</span><span class="err">{</span>
+    <span class="err">$</span><span class="na">data</span><span class="err">["</span><span class="na">result</span><span class="err">"]</span> <span class="err">=</span> <span class="na">SUCCESS</span><span class="err">;</span>
+  <span class="err">}</span>
 
-<pre>
-  <code class="html">
-    &lt;input type="text" id="username" name="username" placeholder="username"&gt;
-    &lt;p id="usernameResult"&gt;&lt;/p&gt;
-    &lt;input type="text" id="email" name="email" placeholder="email"&gt;
-    &lt;p id="emailResult"&gt;&lt;/p&gt;
-    &lt;input type="password" id="password" name="password" placeholder="password"&gt;
-    &lt;p id="passwordResult"&gt;&lt;/p&gt;
+  <span class="err">//</span> <span class="na">return</span> <span class="na">all</span> <span class="na">our</span> <span class="na">data</span> <span class="na">to</span> <span class="na">an</span> <span class="na">AJAX</span> <span class="na">call</span>
+  <span class="na">echo</span> <span class="na">json_encode</span><span class="err">($</span><span class="na">data</span><span class="err">,</span> <span class="na">JSON_PRETTY_PRINT</span><span class="err">);</span></code></pre></figure>
 
-    &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript"&gt;
-      $(document).ready(function () {
-        // username
-        var usernameSelected = $('#username');
-        var usernameWarning = $('#usernameResult');
-        // email
-        var emailSelected = $('#email');
-        var emailWarning = $('#emailResult');
-        // password
-        var passwordSelected = $('#password');
-        var passwordWarning = $('#passwordResult');
+<h2 id="html-code-to-check-if-users-password-is-at-least-length-of-5">HTML Code to check if user’s password is at least length of 5.</h2>
 
-        usernameSelected.keyup(function() {
-          createAnAccountForUserInWordPress();
-        });
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"username"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">placeholder=</span><span class="s">"username"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"usernameResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"emailResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">id=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">placeholder=</span><span class="s">"password"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"passwordResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
 
-        emailSelected.keyup(function() {
-          createAnAccountForUserInWordPress();
-        });
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// username</span>
+      <span class="kd">var</span> <span class="nx">usernameSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#username'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">usernameWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#usernameResult'</span><span class="p">);</span>
+      <span class="c1">// email</span>
+      <span class="kd">var</span> <span class="nx">emailSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#email'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">emailWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#emailResult'</span><span class="p">);</span>
+      <span class="c1">// password</span>
+      <span class="kd">var</span> <span class="nx">passwordSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#password'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">passwordWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#passwordResult'</span><span class="p">);</span>
 
-        passwordSelected.keyup(function() {
-          createAnAccountForUserInWordPress();
-        });
+      <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">createAnAccountForUserInWordPress</span><span class="p">();</span>
+      <span class="p">});</span>
 
-        function createAnAccountForUserInWordPress () {
-          var url = "https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php";
-          var formData = {
-            'username' : usernameSelected.val(),
-            'email' : emailSelected.val(),
-            'password' : passwordSelected.val()
-          };
+      <span class="nx">emailSelected</span><span class="p">.</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">createAnAccountForUserInWordPress</span><span class="p">();</span>
+      <span class="p">});</span>
 
-          $.ajax({
-            type : 'POST',
-            url : url,
-            data : formData,
-            dataType : 'JSON',
-            encode : true,
-            success: function (response, status, xhr) {
-              clearErrorMessages();
-              if (!response.result) {
-                outpurErrorMessages(response.errors);
-              }
-            },
-            error: function (xhr, status, error) {
-              usernameWarning.html("Something went wrong!");
-            }
-          });
-        }
+      <span class="nx">passwordSelected</span><span class="p">.</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">createAnAccountForUserInWordPress</span><span class="p">();</span>
+      <span class="p">});</span>
 
-        function outpurErrorMessages (errorCodes) {
-          errorCodes.forEach(function (element, index, array) {
-            switch(element) {
-              case 1:
-                usernameWarning.html("The username you typed has been used!");
-                break;
-              case 2:
-                emailWarning.html("The email address you typed has been used!");
-                break;
-              case 3:
-                emailWarning.html("The email address you typed is not valid!");
-                break;
-              case 4:
-                passwordWarning.html("Please input a password that is at least length of 5!");
-                break;
-              default:
-                console.log("test");
-            }
-          });
-        }
+      <span class="kd">function</span> <span class="nx">createAnAccountForUserInWordPress</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php"</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="s1">'username'</span> <span class="p">:</span> <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">val</span><span class="p">(),</span>
+          <span class="s1">'email'</span> <span class="p">:</span> <span class="nx">emailSelected</span><span class="p">.</span><span class="nx">val</span><span class="p">(),</span>
+          <span class="s1">'password'</span> <span class="p">:</span> <span class="nx">passwordSelected</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span>
+        <span class="p">};</span>
 
-        function clearErrorMessages () {
-          usernameWarning.html("");
-          emailWarning.html("");
-          passwordWarning.html("");
-        }
-     });
-    &lt;/script&gt;
-  </code>
-</pre>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+          <span class="na">type</span> <span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+          <span class="na">url</span> <span class="p">:</span> <span class="nx">url</span><span class="p">,</span>
+          <span class="na">data</span> <span class="p">:</span> <span class="nx">formData</span><span class="p">,</span>
+          <span class="na">dataType</span> <span class="p">:</span> <span class="s1">'JSON'</span><span class="p">,</span>
+          <span class="na">encode</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">clearErrorMessages</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">outpurErrorMessages</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">errors</span><span class="p">);</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Something went wrong!"</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
 
-<p><a href="https://codepen.io/poanchen/pen/gLmYOB?editors=101" target="_blank">
-  <img src="https://blog.codepen.io/wp-content/uploads/2012/06/TryItOn-CodePen.svg" width="150" />
-</a></p>
+      <span class="kd">function</span> <span class="nx">outpurErrorMessages</span> <span class="p">(</span><span class="nx">errorCodes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errorCodes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">switch</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"The username you typed has been used!"</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+              <span class="nx">emailWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"The email address you typed has been used!"</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+              <span class="nx">emailWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"The email address you typed is not valid!"</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+              <span class="nx">passwordWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Please input a password that is at least length of 5!"</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="nl">default</span><span class="p">:</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"test"</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
 
-<p>Live link are <a href="https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccountJquery.html">here</a>.<br />
-Now, you may try to input your password, and it will alert you whenever your password length isn’t at least length of 5!<br />
+      <span class="kd">function</span> <span class="nx">clearErrorMessages</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+        <span class="nx">emailWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+        <span class="nx">passwordWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccountJquery.html" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a><br />
+<a href="https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccountJquery.html" target="_blank">Live link</a> hosted on <a href="https://www.jenrenalcare.com" target="_blank">JenRenalCare.com</a><br />
+<a href="https://codepen.io/poanchen/pen/gLmYOB?editors=101" target="_blank">Try it</a> on <a href="https://codepen.io" target="_blank">CodePen</a></p>
+
+<p>Now, you may try to input your password, and it will alert you whenever your password length isn’t at least length of 5!<br />
 Okay. Now, we have user’s username, email and password. I think it is time to create an account for them in WordPress.</p>
 
-<h2 id="php-code-to-create-an-account-for-user-in-wordpress-source-code">PHP code to create an account for user in WordPress.   <a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php" target="_blank">source code</a></h2>
+<h2 id="php-code-to-create-an-account-for-user-in-wordpress">PHP code to create an account for user in WordPress.</h2>
 
-<pre>
-  <code class="php">
-    // Include the wp-load.php so that we can use WordPress API
-    $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
-    require_once( $parse_uri[0] . 'wp-load.php' );
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  // Include the wp-load.php so that we can use WordPress API
+  $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
+  require_once( $parse_uri[0] . 'wp-load.php' );
 
-    define("USERNAME_ALREADY_EXIST", 1);
-    define("EMAIL_ADDRESS_ALREADY_EXIST", 2);
-    define("NOT_A_VALID_EMAIL_ADDRESS", 3);
-    define("PASSWORD_LENGTH_IS_TOO_SHORT", 4);
-    define("SUCCESS", true);
-    define("FAIL", false);
+  define("USERNAME_ALREADY_EXIST", 1);
+  define("EMAIL_ADDRESS_ALREADY_EXIST", 2);
+  define("NOT_A_VALID_EMAIL_ADDRESS", 3);
+  define("PASSWORD_LENGTH_IS_TOO_SHORT", 4);
+  define("SUCCESS", true);
+  define("FAIL", false);
 
-    $data = array();
-    $errors = array();
-    $username = sanitize_text_field($_POST['username']);
-    $email = sanitize_text_field($_POST['email']);
-    $password = sanitize_text_field($_POST['password']);
+  $data = array();
+  $errors = array();
+  $username = sanitize_text_field($_POST['username']);
+  $email = sanitize_text_field($_POST['email']);
+  $password = sanitize_text_field($_POST['password']);
 
-    $data["username"] = $username;
-    $data["email"] = $email;
-    $data["password"] = $password;
+  $data["username"] = $username;
+  $data["email"] = $email;
+  $data["password"] = $password;
 
-    if (!empty($username)) {
-      if (username_exists($username)) {
-        $errors[] = USERNAME_ALREADY_EXIST;
-      }
+  if (!empty($username)) {
+    if (username_exists($username)) {
+      $errors[] = USERNAME_ALREADY_EXIST;
     }
+  }
 
-    if (!empty($email)) {
-      if (!is_email($email)) {
-        $errors[] = NOT_A_VALID_EMAIL_ADDRESS;
-      }else{
-        if (email_exists($email)) {
-          $errors[] = EMAIL_ADDRESS_ALREADY_EXIST;
-        }
-      }
-    }
-
-    if (!empty($password)) {
-      if (strlen($password) &lt; 5) {
-        $errors[] = PASSWORD_LENGTH_IS_TOO_SHORT;
-      }
-    }
-
-    if (count($errors)) {
-      $data["errors"] = $errors;
-      $data["result"] = FAIL;
+  if (!empty($email)) {
+    if (!is_email($email)) {
+      $errors[] = NOT_A_VALID_EMAIL_ADDRESS;
     }else{
-      if (!empty($username) &amp;&amp; !empty($email) &amp;&amp; !empty($password)) {
-        $random_password = wp_generate_password($length=12, $include_standard_special_chars=false);
-        $userID = wp_create_user($username, $random_password, $email);
-        if (!is_wp_error($user_id)) {
-          wp_set_password($password, $userID);
-          $data["result"] = SUCCESS;
-        }else{
-          $data["result"] = FAIL;
-        }
-      }else{
-        $data["result"] = FAIL;
+      if (email_exists($email)) {
+        $errors[] = EMAIL_ADDRESS_ALREADY_EXIST;
       }
     }
+  }
 
-    // return all our data to an AJAX call
-    echo json_encode($data, JSON_PRETTY_PRINT);
-  </code>
-</pre>
+  if (!empty($password)) {
+    if (strlen($password) <span class="nt">&lt; 5</span><span class="err">)</span> <span class="err">{</span>
+      <span class="err">$</span><span class="na">errors</span><span class="err">[]</span> <span class="err">=</span> <span class="na">PASSWORD_LENGTH_IS_TOO_SHORT</span><span class="err">;</span>
+    <span class="err">}</span>
+  <span class="err">}</span>
+
+  <span class="na">if</span> <span class="err">(</span><span class="na">count</span><span class="err">($</span><span class="na">errors</span><span class="err">))</span> <span class="err">{</span>
+    <span class="err">$</span><span class="na">data</span><span class="err">["</span><span class="na">errors</span><span class="err">"]</span> <span class="err">=</span> <span class="err">$</span><span class="na">errors</span><span class="err">;</span>
+    <span class="err">$</span><span class="na">data</span><span class="err">["</span><span class="na">result</span><span class="err">"]</span> <span class="err">=</span> <span class="na">FAIL</span><span class="err">;</span>
+  <span class="err">}</span><span class="na">else</span><span class="err">{</span>
+    <span class="na">if</span> <span class="err">(!</span><span class="na">empty</span><span class="err">($</span><span class="na">username</span><span class="err">)</span> <span class="err">&amp;&amp;</span> <span class="err">!</span><span class="na">empty</span><span class="err">($</span><span class="na">email</span><span class="err">)</span> <span class="err">&amp;&amp;</span> <span class="err">!</span><span class="na">empty</span><span class="err">($</span><span class="na">password</span><span class="err">))</span> <span class="err">{</span>
+      <span class="err">$</span><span class="na">random_password =</span><span class="err"> </span><span class="s">wp_generate_password($length=12,</span> <span class="err">$</span><span class="na">include_standard_special_chars=</span><span class="s">false);</span>
+      <span class="err">$</span><span class="na">userID =</span><span class="err"> </span><span class="s">wp_create_user($username,</span> <span class="err">$</span><span class="na">random_password</span><span class="err">,</span> <span class="err">$</span><span class="na">email</span><span class="err">);</span>
+      <span class="na">if</span> <span class="err">(!</span><span class="na">is_wp_error</span><span class="err">($</span><span class="na">user_id</span><span class="err">))</span> <span class="err">{</span>
+        <span class="na">wp_set_password</span><span class="err">($</span><span class="na">password</span><span class="err">,</span> <span class="err">$</span><span class="na">userID</span><span class="err">);</span>
+        <span class="err">$</span><span class="na">data</span><span class="err">["</span><span class="na">result</span><span class="err">"]</span> <span class="err">=</span> <span class="na">SUCCESS</span><span class="err">;</span>
+      <span class="err">}</span><span class="na">else</span><span class="err">{</span>
+        <span class="err">$</span><span class="na">data</span><span class="err">["</span><span class="na">result</span><span class="err">"]</span> <span class="err">=</span> <span class="na">FAIL</span><span class="err">;</span>
+      <span class="err">}</span>
+    <span class="err">}</span><span class="na">else</span><span class="err">{</span>
+      <span class="err">$</span><span class="na">data</span><span class="err">["</span><span class="na">result</span><span class="err">"]</span> <span class="err">=</span> <span class="na">FAIL</span><span class="err">;</span>
+    <span class="err">}</span>
+  <span class="err">}</span>
+
+  <span class="err">//</span> <span class="na">return</span> <span class="na">all</span> <span class="na">our</span> <span class="na">data</span> <span class="na">to</span> <span class="na">an</span> <span class="na">AJAX</span> <span class="na">call</span>
+  <span class="na">echo</span> <span class="na">json_encode</span><span class="err">($</span><span class="na">data</span><span class="err">,</span> <span class="na">JSON_PRETTY_PRINT</span><span class="err">);</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a><br />
+<a href="https://codepen.io/poanchen/pen/gLmYOB?editors=101" target="_blank">Try it</a> on <a href="https://codepen.io" target="_blank">CodePen</a></p>
+
 <p>One of the flaw that I would like to mention is. There wasn’t any validation to check if the user is a robot or not. User may type random things and create hundreds of account in WordPress which should not be use in production. Probably next time, I will have a tutorial about how to prevent robot register hundreds of account on your site.</p>
 
 <h2 id="wrapping-up">Wrapping Up</h2>
@@ -680,27 +738,95 @@ Okay. Now, we have user’s username, email and password. I think it is time to 
   <li><a href="https://developer.wordpress.org/reference/functions/wp_create_user/">wp_create_user() code reference</a> by <a href="https://www.wordpress.org">WordPress</a>.</li>
 </ul>
 
-</div>
-
-<div id="disqus_thread"></div>
-<script src="/app/js/disqus.min.js"></script>
-<noscript>
-  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
+      </article>
+      <section class="share">
+  <h3>Share</h3>
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to programmatically register an account for a user in WordPress?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2016/10/22/how-to-programmatically-register-an-account-in-wordpress"
+  onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+    <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2016/10/22/how-to-programmatically-register-an-account-in-wordpress" target="_blank">
+    <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+  </a>
+  <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=https://poanchen.github.io/blog/2016/10/22/how-to-programmatically-register-an-account-in-wordpress"
+  onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+    <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
+  </a>
+  <a href="mailto:?subject=Check out this great article, How to programmatically register an account for a user in WordPress?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2016/10/22/how-to-programmatically-register-an-account-in-wordpress">
+    <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
+  </a>
+</section>
+      <section class="author" itemprop="author">
+  <div class="details" itemscope itemtype="http://schema.org/Person">
+    
+    
+    
+    
+    <img itemprop="image" class="img-rounded" src="/img/authors/poanchen.jpg" alt="PoAn (Baron) Chen">
+    <p class="def">
+      Author
+    </p>
+    <h3 class="name">
+      
+        <a itemprop="name" href="https://github.com/poanchen" target="_blank">
+          PoAn (Baron) Chen
+        </a>
+      
+    </h3>
+    <p class="desc">
+      4th year Computer Science student studies at the @uvic. Previously worked at @illumina, @ACDSee, @AEHelp and @AcePersonnel1.
+    </p>
   </div>
-  <footer>
-  <ul>
-    <li><a href="mailto:chen.baron@hotmail.com">email</a></li>
-    <li><a href="https://github.com/poanchen">github.com/poanchen</a></li>
-    <li><a href="https://www.linkedin.com/in/poan-baron-chen-a00aa655">linkedin.com/in/poan-baron-chen-a00aa655</a></li>
-    <li><a href="https://www.quora.com/profile/PoAn-Baron-Chen-1">quora.com/profile/PoAn-Baron-Chen-1</a></li>
-    <li><a href="https://opencollective.com/poanchen">opencollective.com/poanchen</a></li>
-  </ul>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <script src="/app/js/googleAnalytics.min.js"></script>
-  <script id="dsq-count-scr" src="https://poanchen.disqus.com/count.js" async></script>
-</body>
+</section>
+      
+  <section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+  </section>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = document.location.href;
+      // this will make sure
+      // when url became /blog/2016/11/15/how-to-add-background-music-in-processing-3.0
+      // or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0/
+      // or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0.html
+      // will all back to /blog/2016/11/15/how-to-add-background-music-in-processing-3.0
+      // for disqus to recongize the post
+      var pathname = document.location.pathname;
+      var dividerList = pathname.split("/");
+      if(dividerList[dividerList.length - 1] == "") {
+        // there exist trailing "/", we should remove them
+        pathname = pathname.slice(0, -1)
+      }
+      // remove .html if any
+      pathname = pathname.replace(".html", "");
+      this.page.identifier = pathname;
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '//poanchen.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
 
+      <footer>
+  <p>Disclaimer: the theme of the site is largely based on <a href="https://github.com/willianjusten/will-jekyll-template">will-jekyll-template</a> by <a href="https://willianjusten.com.br">Willian Justen</a></p><br>
+  <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and <span class="love">❤</span> by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85924009-1', 'auto');
+  ga('send', 'pageview');
+</script>
+    </section>
+  </body>
 </html>
