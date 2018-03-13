@@ -13,6 +13,7 @@ twitter_username: poanbaronchen
 github_username: poanchen
 disqus_username: poanchen
 google_site_verification: NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M
+google_analytics_username: UA-85924009-1
 
 # Build settings
 markdown: kramdown
@@ -35,7 +36,7 @@ plugins:
 # Links to include in menu navigation
 # For external links add external: true
 links:
-  - title: Home
+  - title: PoAn (Baron) Chen
     url: /
   - title: About this site
     url: /about
