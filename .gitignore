@@ -4,3 +4,5 @@ node_modules
 _drafts
 .jekyll-metadata
 assets
+app
+.publish
