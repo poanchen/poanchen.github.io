@@ -74,8 +74,6 @@ Now the @variable urls should have all the urls from the input file. Now, we nee
 
   casper.run();
 {% endhighlight %}
-<a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/server.js" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
-
 A sample of the output of this would look something like this.
 
 <img src="/img/2016/11/12/how-to-take-screenshots-at-different-screen-sizes-using-casperjs/outputFromOpenedUrls.PNG" alt="Output from the opened urls">

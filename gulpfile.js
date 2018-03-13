@@ -9,7 +9,8 @@ var gulp        = require('gulp'),
 	koutoSwiss  = require('kouto-swiss'),
 	prefixer    = require('autoprefixer-stylus'),
 	imagemin    = require('gulp-imagemin'),
-	cp          = require('child_process');
+	cp          = require('child_process'),
+	deploy      = require('gulp-gh-pages');
 
 var messages = {
 	jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -89,6 +90,17 @@ gulp.task('watch', function () {
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/img/**/*.{jpg,png,gif,PNG,JPG}', ['imagemin']);
 	gulp.watch(['*.html', 'about/index.html', 'blog/index.html', '_includes/*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+});
+
+/**
+ * Deploy generated html along with other necessary files to the live GitHub repo
+ */
+gulp.task('deploy', function () {
+  return gulp.src('./_site/**/*')
+    .pipe(deploy({ 
+      remoteUrl: 'https://github.com/poanchen/poanchen.github.io.git',
+      branch: 'will-jekyll-template-master'
+    }))
 });
 
 /**
