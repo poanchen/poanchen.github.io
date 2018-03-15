@@ -52,3 +52,8 @@ exclude:
   - package.json
   - node_modules
   - src
+  - gulpfile.js
+  - initpost.sh
+  - LICENSE
+  - package-lock.json
+  - README.md

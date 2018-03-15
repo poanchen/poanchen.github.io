@@ -39,7 +39,7 @@ Your someuser should now have access to the table,
   INSERT INTO "some_table_name" values(0, "some text");
   GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO someuser;
 {% endhighlight %}
-<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL/userableToAccess.sql" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL/userAbleToAccess.sql" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
 As a result, the order is very important. Just remember to do that next time haha!
 
