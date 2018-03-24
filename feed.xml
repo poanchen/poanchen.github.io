@@ -5,9 +5,31 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Mar 2018 15:51:14 -0700</pubDate>
-    <lastBuildDate>Tue, 13 Mar 2018 15:51:14 -0700</lastBuildDate>
+    <pubDate>Sat, 24 Mar 2018 13:01:21 -0700</pubDate>
+    <lastBuildDate>Sat, 24 Mar 2018 13:01:21 -0700</lastBuildDate>
     <generator>Jekyll v3.6.0</generator>
+    
+      <item>
+        <title>How to set up GPG key on GitHub?</title>
+        <description>&lt;p&gt;Setting up GPG keys on GitHub is important because it allows other to know that you made the commit and not someone else. You, the person with your GitHub profile picture along with your GitHub username and name. Here is an example of a signing commit looks like on GitHub.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/2018/03/23/how-to-set-up-gpg-key-in-github/signing commit sample.png&quot; alt=&quot;signing commit sample&quot; /&gt;&lt;/p&gt; &lt;p&gt;Just like the &lt;a href=&quot;https://blog.github.com/2016-04-05-gpg-signature-verification/&quot;&gt;blog&lt;/a&gt; from GitHub mentioned, unlike any other unsigned commit. The signed commit will come with the green word &lt;em&gt;Verified&lt;/em&gt; with it (a badge) to indicate that the commit was indeed came from the user. In example,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/2018/03/23/how-to-set-up-gpg-key-in-github/commits...</description>
+        <pubDate>Fri, 23 Mar 2018 16:59:14 -0700</pubDate>
+        <link>https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github</guid>
+        
+        <category>GitHub</category>
+        
+        <category>GPG key</category>
+        
+        <category>PoAn (Baron) Chen</category>
+        
+        <category>Security</category>
+        
+        <category>Signing git commit</category>
+        
+        <category>Windows 10</category>
+        
+        
+      </item>
     
       <item>
         <title>How to fix 'permission denied for relation some_table_name' in PostgreSQL?</title>
@@ -171,28 +193,6 @@
         <category>PoAn (Baron) Chen</category>
         
         <category>Ubuntu 14.04</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to run a single test or all tests in a class with gradlew?</title>
-        <description>&lt;p&gt;Ever wonder how you can run one single test with gradlew? Ever get tried of waiting all the tests to be finished? You have came to the right place. Running tests can be a time consuming tasks. Ability to run one single test or all the tests in a test class is very powerful. And, it will save TONS of time. Here is how you can do it.&lt;/p&gt; &lt;p&gt;Let’s assume that this is your testClass,&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-groovy&quot; data-lang=&quot;groovy&quot;&gt; &lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.github.poanchen.projectName.api&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BlogControllerTests&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testCreate_BlogWithoutTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// some test...</description>
-        <pubDate>Fri, 20 Oct 2017 01:30:30 -0700</pubDate>
-        <link>https://poanchen.github.io/blog/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2017/10/20/How-to-run-a-single-test-or-all-tests-in-a-class-with-gradlew</guid>
-        
-        <category>Gradle</category>
-        
-        <category>gradlew</category>
-        
-        <category>Groovy</category>
-        
-        <category>Integration test</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Unit test</category>
         
         
       </item>

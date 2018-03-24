@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>How to use Gulp.js to deploy your site to live through Github?</title>
+  <title>How to set up GPG key on GitHub?</title>
   <meta name="description" content="A blog written by PoAn (Baron) Chen.">
 
   <!-- Google Authorship Markup -->
@@ -19,15 +19,15 @@
   <!-- Social: Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@poanbaronchen">
-  <meta name="twitter:title" content="How to use Gulp.js to deploy your site to live through Github?">
+  <meta name="twitter:title" content="How to set up GPG key on GitHub?">
   <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
   
   <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
   
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="og:url" content="https://poanchen.github.io/blog/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github">
-  <meta property="og:title" content="How to use Gulp.js to deploy your site to live through Github?">
+  <meta property="og:url" content="https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github">
+  <meta property="og:title" content="How to set up GPG key on GitHub?">
   
   <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
   
@@ -35,7 +35,7 @@
   <meta property="og:site_name" content="PoAn (Baron) Chen's site">
 
   <!-- Social: Google+ / Schema.org  -->
-  <meta itemprop="name" content="How to use Gulp.js to deploy your site to live through Github?"/>
+  <meta itemprop="name" content="How to set up GPG key on GitHub?"/>
   <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
   <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
@@ -62,7 +62,7 @@
   <meta name="theme-color" content="#0562DC">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="https://poanchen.github.io/blog/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github">
+  <link rel="canonical" href="https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github">
   <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
 </head>
   <body>
@@ -71,9 +71,9 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2017-07-24 01:30:30 -0700" class="date">24 Jul 2017</time>
+            <time itemprop="datePublished" datetime="2018-03-23 16:59:14 -0700" class="date">23 Mar 2018</time>
         
-        <h1 class="post-title" itemprop="name">How to use Gulp.js to deploy your site to live through Github?</h1>
+        <h1 class="post-title" itemprop="name">How to set up GPG key on GitHub?</h1>
         <p itemprop="description" class="subtitle"></p>
     </div>
      <a class="down" data-scroll href="#scroll"><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></a>
@@ -135,69 +135,48 @@
 
     <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
       <article role="article" id="scroll" class="post-content" itemprop="articleBody">
-          <p>Today, I am going to show you guys how to use <a href="http://gulpjs.com/">Gulp.js</a> to deploy your site to live through <a href="https://www.github.com">Github</a>. Before we start, I would like to clarify couple of things. In this tutorial, we are making the following assumptions, (it works best when you set up your site the same way we did)</p>
+          <p>Setting up GPG keys on GitHub is important because it allows other to know that you made the commit and not someone else. You, the person with your GitHub profile picture along with your GitHub username and name. Here is an example of a signing commit looks like on GitHub.</p>
 
-<ul>
-  <li>You are using Github to host your website (that means your website’s code is also on Github).</li>
-  <li>You have two branch in your repo, one named dev and another named master. (the idea of having two branch is that all your development code will be push to the dev branch, and once everything looks good, then you simply push it to master branch, which will get roll out to production automatically, thanks to Github)</li>
-  <li>Your production-ready code will be saved in the directory named prod.</li>
-  <li>Assuming you have <a href="http://gulpjs.com/">Gulp.js</a> and <a href="https://www.npmjs.com/package/gulp-gh-pages">gulp-gh-pages</a> installed.</li>
-</ul>
+<p><img src="/img/2018/03/23/how-to-set-up-gpg-key-in-github/signing commit sample.png" alt="signing commit sample" /></p>
 
-<p>Okay, let’s get it started. Here is an example of what your production code might looks like,</p>
+<p>Just like the <a href="https://blog.github.com/2016-04-05-gpg-signature-verification/">blog</a> from GitHub mentioned, unlike any other unsigned commit. The signed commit will come with the green word <em>Verified</em> with it (a badge) to indicate that the commit was indeed came from the user. In example,</p>
 
-<p>index.html (it should be stored in a directory called prod)</p>
+<p><img src="/img/2018/03/23/how-to-set-up-gpg-key-in-github/commits sample.png" alt="commits sample" /></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="cp">&lt;!DOCTYPE html&gt;</span>
-  <span class="nt">&lt;html&gt;</span>
-    <span class="nt">&lt;head&gt;</span>
-      <span class="nt">&lt;title&gt;</span>Page Title<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;/head&gt;</span>
-    <span class="nt">&lt;body&gt;</span>
-      <span class="nt">&lt;h1&gt;</span>Hello world<span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;/body&gt;</span>
-  <span class="nt">&lt;/html&gt;</span></code></pre></figure>
+<p>In this tutorial, I am going to guide you through into setting up the GPG key on your local machine for GitHub.</p>
 
-<p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github/prod/index.html" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+<p><strong>Note</strong>: In case you do not have GPG command line tool installed on your local machine, please head over to <a href="https://www.gnupg.org/download/">here</a> to download its latest binary releases. (I downloaded the <em>Gpg4win</em> from the site since I am currently using <em>Windows 10</em>) Once it is downloaded and installed, make sure to set up your GPG command line tool PATH in your environment variables. So that, when you type <em>gpg</em> on command line or Git Bash, it will work!</p>
 
-<p>Next, we need to create the gulpfile.js to describe what our gulp task would be,</p>
+<p>The first step is to check if there exist any GPG keys on your machine, if not, <a href="#generate-a-new-gpg-keys">skip</a> these steps, and get straight to generating a new GPG keys.</p>
 
-<p>gulpfile.js</p>
+<h2 id="check-if-there-exist-any-gpg-keys-on-your-machine">Check if there exist any GPG keys on your machine</h2>
+<p>Run the following command to check all existing public and private GPG key in your machine.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">gulp</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">);</span>
-  <span class="kd">var</span> <span class="nx">deploy</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-gh-pages'</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  gpg --list-secret-keys --keyid-format LONG</code></pre></figure>
 
-  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'deploy'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">"./prod/**/*"</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">deploy</span><span class="p">({</span> 
-        <span class="na">remoteUrl</span><span class="p">:</span> <span class="s2">"https://github.com/your_github_username_here/your_github_username_here.github.io.git"</span><span class="p">,</span>
-        <span class="na">branch</span><span class="p">:</span> <span class="s2">"master"</span>
-      <span class="p">}))</span>
-  <span class="p">});</span></code></pre></figure>
+<p>If there were no output or you didn’t wish to use any of these available key for signing the commit, carry on to the tutorial.</p>
 
-<p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github/gulpfile.js" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+<p>If there were existing GPG key pair and you want to use them as you sign your commit, then simply <a href="#add-gpg-key-to-your-github-account">skip</a> generate a new GPG keys and get straight to adding GPG key to your GitHub account.</p>
 
-<p>In this way, you can deploy your site to live through the following command whenever you are ready,</p>
+<h2 id="generate-a-new-gpg-keys">Generate a new GPG keys</h2>
+<p>Follow the GitHub official blog about <a href="https://help.github.com/articles/generating-a-new-gpg-key">generating a new GPG key</a>.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  gulp deploy</code></pre></figure>
+<h2 id="add-gpg-key-to-your-github-account">Add GPG key to your GitHub account</h2>
+<p>Follow the GitHub official blog about <a href="https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account">adding a new GPG key to your GitHub account</a>.</p>
 
-<p>During the development, you should always push your code to dev branch in order to keep the production/master branch clean. (you should never directly push it to master branch except through the gulp deploy command)</p>
+<h2 id="git-client-configuration-for-the-gpg-key">Git client configuration for the GPG key</h2>
+<p>In order to use the GPG key that you just created, you need to let the Git client know that from now on, you will be using this GPG key to sign your commit on GitHub. Here is what you needed to do,</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git add .
-  git commit -m <span class="s2">"your commit message"</span>
-  git push origin dev</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git config --global user.signingKey <span class="o">{</span>REPLACE_THIS_WITH_YOUR_KEY_ID<span class="o">}</span>
+  git config --global commit.gpgSign <span class="nb">true</span></code></pre></figure>
 
-<p>Now, your file structure should looks something like this,</p>
+<p>In case you do not know what your key id is, run the following command to find out, <em>gpg –list-public-keys</em></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  | gulpfile.js
-  |-&gt; prod
-  |-&gt;-&gt; index.html</code></pre></figure>
-
-<p>Note: For simplicity, I do not minimized my html code. However, in the real world, I would normally create a directory called src and put all my development code here. And then I will create bunch of gulp task that will minimized all my html/js/css files and port it to prod directory. Then, I will have my .gitignore to ignore my prod directory. So that I do not accidentally commit my production-ready/minimized code to my dev branch. In this way, when I deploy my site through ‘gulp deploy’, all my code will be minimized in production. And, all my development code will stay readable/not minimized. This is consider best practice in terms of how you would organize your project/web app. Here is an example of what the <a href="https://github.com/poanchen/pwa-to-do-list/blob/dev/gulpfile.js">gulpfile.js</a> would look like in case you need an example.</p>
+<p>Now, you should be able to git commit with -S and the verified badge should now appear on your GitHub commit!</p>
 
 <h2 id="wrapping-up">Wrapping Up</h2>
 
-<p>Hopefully this guide has teach you how to use Gulp.js to deploy your site to live through Github. Thank you for reading!</p>
+<p>Hopefully you enjoyed this short tutorial. Let me know if this helps you. Thank you for reading!</p>
 
 <h2 id="resources">Resources</h2>
 
@@ -206,28 +185,28 @@
 <h3 id="getting-started">Getting started</h3>
 
 <ul>
-  <li><a href="https://github.com/gulpjs/gulp">Gulp.js Github</a>.</li>
-  <li><a href="https://pages.github.com/">Github Pages</a>.</li>
-  <li><a href="https://github.com/shinnn/gulp-gh-pages">gulp-gh-pages Github</a>.</li>
-  <li><a href="https://github.com/poanchen/pwa-to-do-list">Example of a repo that uses the best practice that I mentioned earlier</a> by <a href="https://www.github.com/poanchen">PoAn (Baron) Chen</a>.</li>
-  <li><a href="https://github.com/poanchen/poanchen.github.io">Example of a site that uses Gulp.js to deploy</a> by <a href="https://www.github.com/poanchen">PoAn (Baron) Chen</a>.</li>
+  <li><a href="https://help.github.com/articles/checking-for-existing-gpg-keys">Checking for existing GPG keys</a> by <a href="https://github.com">GitHub</a></li>
+  <li><a href="https://help.github.com/articles/generating-a-new-gpg-key">Generating a new GPG key</a> by <a href="https://github.com">GitHub</a></li>
+  <li><a href="https://stackoverflow.com/questions/10161198/is-there-a-way-to-autosign-commits-in-git-with-a-gpg-key">Is there a way to “autosign” commits in Git with a GPG key?</a></li>
+  <li><a href="https://help.github.com/articles/telling-git-about-your-gpg-key/#platform-windows">Telling git about your GPG key</a> by <a href="https://github.com">GitHub</a></li>
+  <li><a href="https://gist.github.com/ankurk91/c4f0e23d76ef868b139f3c28bde057fc">Github : Signing commits using GPG (Ubuntu/Mac)</a> by <a href="https://github.com/ankurk91">Ankur Kumar</a></li>
 </ul>
 
       </article>
       <section class="share">
   <h3>Share</h3>
-  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to use Gulp.js to deploy your site to live through Github?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github"
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to set up GPG key on GitHub?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github"
   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
     <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github" target="_blank">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github" target="_blank">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
   </a>
-  <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=https://poanchen.github.io/blog/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github"
+  <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github"
   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
     <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
   </a>
-  <a href="mailto:?subject=Check out this great article, How to use Gulp.js to deploy your site to live through Github?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2017/07/24/how-to-use-gulp.js-to-deploy-your-site-to-live-through-github">
+  <a href="mailto:?subject=Check out this great article, How to set up GPG key on GitHub?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github">
     <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
   </a>
 </section>
