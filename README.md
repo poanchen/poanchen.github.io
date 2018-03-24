@@ -13,7 +13,8 @@ Dev tool to be installed before run
 2. cd poanchen.github.io/
 3. npm install
 4. gulp // this will run the default gulp task that will minimized all the css/js/img files in
-the src folder as well as watching any css/js/img files changes and minimized automatically. In addition, it will also run the server and automatically open up the website.
+the src folder as well as watching any css/js/img files changes and minimized automatically. In addition, 
+it will also run the server and automatically open up the website.
 5. Site should be running now!!!
 ```
 
