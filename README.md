@@ -48,6 +48,7 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- How to set up GPG key on GitHub?
 - How to fix 'permission denied for relation some_table_name' in PostgreSQL?
 - How to delete a commit completely in GitHub?
 - Solving the Fibonacci problem using Dynamic Programming in Java.
