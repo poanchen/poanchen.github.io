@@ -99,7 +99,7 @@ gulp.task('deploy', function () {
   return gulp.src('./_site/**/*')
     .pipe(deploy({ 
       remoteUrl: 'https://github.com/poanchen/poanchen.github.io.git',
-      branch: 'will-jekyll-template-master'
+      branch: 'master'
     }))
 });
 
