@@ -5,9 +5,23 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Aug 2018 12:03:12 -0700</pubDate>
-    <lastBuildDate>Wed, 08 Aug 2018 12:03:12 -0700</lastBuildDate>
+    <pubDate>Mon, 27 Aug 2018 12:35:29 -0700</pubDate>
+    <lastBuildDate>Mon, 27 Aug 2018 12:35:29 -0700</lastBuildDate>
     <generator>Jekyll v3.6.0</generator>
+    
+      <item>
+        <title>How to fix 'login must use security token' in Salesforce?</title>
+        <description>&lt;p&gt;Recently, I ran into this error message in Salesforce where it stated that &lt;strong&gt;“LOGIN_MUST_USE_SECURITY_TOKEN: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce–either via a desktop client or the API–from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.”&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;According to the official Salesforce documentation about &lt;a href=&quot;https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm&quot;&gt;User Authentication&lt;/a&gt;, there are two...</description>
+        <pubDate>Mon, 27 Aug 2018 01:30:30 -0700</pubDate>
+        <link>https://poanchen.github.io/blog/2018/08/27/how-to-fix-login-must-use-security-token-in-Salesforce</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/08/27/how-to-fix-login-must-use-security-token-in-Salesforce</guid>
+        
+        <category>PoAn (Baron) Chen</category>
+        
+        <category>Salesforce</category>
+        
+        
+      </item>
     
       <item>
         <title>How to set up GPG key on GitHub?</title>
@@ -171,28 +185,6 @@
         <category>PoAn (Baron) Chen</category>
         
         <category>Quora</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Installing Marsyas with Python bindings on Ubuntu 14.04.3 LTS - 64 bits</title>
-        <description>&lt;p&gt;Just like this great &lt;a href=&quot;http://marsology.blogspot.ca/2011/09/installing-marsyas-with-python-bindings.html&quot;&gt;article&lt;/a&gt; stated that “Combining the Marsyas python bindings with the matplotlib library for plotting in Python creates a great environment for prototyping. In the past few months I have done a lot of Marsyas work using this approach and really enjoy it. It gives a lot of the expressive power and prototyping of MATLAB while retaining the data-flow model and efficient processing of Marsyas. Unfortunately getting everything installed and setup for the first time takes some effort.”&lt;/p&gt; &lt;p&gt;The article was really helpful as it gave a lot of pointer on how one can set up...</description>
-        <pubDate>Tue, 31 Oct 2017 01:30:30 -0700</pubDate>
-        <link>https://poanchen.github.io/blog/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits</guid>
-        
-        <category>Marsyas</category>
-        
-        <category>matplotlib</category>
-        
-        <category>PyLab</category>
-        
-        <category>Python</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Ubuntu 14.04</category>
         
         
       </item>

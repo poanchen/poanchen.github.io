@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "How to fix &#39;login must use security token&#39; in Salesforce?",
+      "category" : "",
+      "tags"     : "PoAn (Baron) Chen and Salesforce",
+      "url"      : "/blog/2018/08/27/how-to-fix-login-must-use-security-token-in-Salesforce",
+      "date"     : "27 Aug 2018"
+    } ,
+  
+    {
       "title"    : "How to set up GPG key on GitHub?",
       "category" : "",
       "tags"     : "GitHub, GPG key, PoAn (Baron) Chen, Security, Signing git commit, and Windows 10",
