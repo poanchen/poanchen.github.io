@@ -5,9 +5,23 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Aug 2018 12:35:29 -0700</pubDate>
-    <lastBuildDate>Mon, 27 Aug 2018 12:35:29 -0700</lastBuildDate>
+    <pubDate>Sat, 24 Nov 2018 02:15:31 -0800</pubDate>
+    <lastBuildDate>Sat, 24 Nov 2018 02:15:31 -0800</lastBuildDate>
     <generator>Jekyll v3.6.0</generator>
+    
+      <item>
+        <title>How to calculate time complexity of an algorithm?</title>
+        <description>&lt;p&gt;Knowing how fast your algorithm runs is extremely important. Often times, you will get asked to determine your algorithm performance in a big-O sense during interview. You will be expected to know how to calculate the time and space complexity of your code, sometimes you even need to explain how you get there. In some cases, it can be pretty tricky to get it right. In this article, I am going to show you guys how to do things right.&lt;/p&gt; &lt;p&gt;In most of the cases, you are going to see these kind of Big-O running time in your code.&lt;/p&gt; &lt;p&gt;&lt;img...</description>
+        <pubDate>Fri, 23 Nov 2018 00:30:30 -0800</pubDate>
+        <link>https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm</guid>
+        
+        <category>PoAn (Baron) Chen</category>
+        
+        <category>Algorithm</category>
+        
+        
+      </item>
     
       <item>
         <title>How to fix 'login must use security token' in Salesforce?</title>
@@ -171,20 +185,6 @@
         <category>Alexa</category>
         
         <category>PoAn (Baron) Chen</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>I have answered 99 questions on Quora so far</title>
-        <description>&lt;p&gt;I started my journey in answering people’s questions on Quora for about half a year now. Quora allows me to learn valuable things from other quorans. The plateform also gives me a place to share my technical knowledges to others. So far, I have answered &lt;a href=&quot;https://www.quora.com/profile/PoAn-Baron-Chen-1&quot;&gt;99 questions&lt;/a&gt; on Quora. Most questions are technical with &lt;a href=&quot;https://www.quora.com/profile/PoAn-Baron-Chen-1/topics&quot;&gt;wide variety of topics&lt;/a&gt;, such as Web Development, JavaScript, Software Engineering, Computer Science, Java, Algorithms, and Technology. In the future, I am planning on answering more questions on Quora in order to help others as well as reading other amazing answers from other quorans....</description>
-        <pubDate>Sat, 04 Nov 2017 01:30:30 -0700</pubDate>
-        <link>https://poanchen.github.io/blog/2017/11/04/I-have-answered-99-questions-on-Quora-so-far</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2017/11/04/I-have-answered-99-questions-on-Quora-so-far</guid>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Quora</category>
         
         
       </item>
