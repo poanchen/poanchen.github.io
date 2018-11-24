@@ -49,6 +49,7 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- How to calculate time and space complexity of an algorithm?
 - How to fix 'login must use security token' in Salesforce?
 - How to set up GPG key on GitHub?
 - How to fix 'permission denied for relation some_table_name' in PostgreSQL?
