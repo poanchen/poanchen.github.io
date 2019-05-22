@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2018-11-23 00:30:30 -0800" class="date">23 Nov 2018</time>
+            <time itemprop="datePublished" datetime="2018-11-23 08:30:30 +0000" class="date">23 Nov 2018</time>
         
         <h1 class="post-title" itemprop="name">How to calculate time complexity of an algorithm?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -159,7 +159,7 @@
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Time complexity: O(log(n))</span>
   <span class="c1">// Space complexity: O(1)</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">binarySearch</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">binarySearch</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">high</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
     <span class="k">while</span><span class="o">(</span><span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="o">)</span> <span class="o">{</span>
       <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="o">((</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">);</span>
@@ -169,7 +169,7 @@
     <span class="o">}</span>
     <span class="k">return</span> <span class="o">-(</span><span class="n">low</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">19</span><span class="o">,</span> <span class="mi">25</span><span class="o">};</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">2</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">);</span> <span class="c1">// true</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">19</span><span class="o">)</span> <span class="o">==</span> <span class="mi">5</span><span class="o">);</span> <span class="c1">// true</span>
@@ -186,14 +186,14 @@
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Time complexity: O(sqrt(n))</span>
   <span class="c1">// Space complexity: O(1)</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="n">isPrime</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPrime</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">boolean</span> <span class="n">isPrime</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">i</span> <span class="o">&amp;&amp;</span> <span class="n">isPrime</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="n">isPrime</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="k">return</span> <span class="n">isPrime</span><span class="o">;</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">);</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">);</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">7</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">);</span>
@@ -217,12 +217,12 @@ If both a and b were greater than the square root of n, a * b would be greater t
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Time complexity: O(n)</span>
   <span class="c1">// Space complexity: O(1)</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">printArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
     <span class="n">printArray</span><span class="o">(</span><span class="n">arr</span><span class="o">);</span>
   <span class="o">}</span></code></pre></figure>
@@ -235,12 +235,12 @@ If both a and b were greater than the square root of n, a * b would be greater t
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Time complexity: O(n)</span>
   <span class="c1">// Space complexity: O(1)</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">printArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
     <span class="n">printArray</span><span class="o">(</span><span class="n">arr</span><span class="o">);</span>
     <span class="n">printArray</span><span class="o">(</span><span class="n">arr</span><span class="o">);</span>
@@ -255,7 +255,7 @@ If both a and b were greater than the square root of n, a * b would be greater t
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Time complexity: O(n^2)</span>
   <span class="c1">// Space complexity: O(1)</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">print2DArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print2DArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">m</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">","</span><span class="o">);</span>
@@ -263,7 +263,7 @@ If both a and b were greater than the square root of n, a * b would be greater t
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">];</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
@@ -285,7 +285,7 @@ If both a and b were greater than the square root of n, a * b would be greater t
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Time complexity: O(n^2)</span>
   <span class="c1">// Space complexity: O(1)</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">print2DArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print2DArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
         <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span> <span class="o">{</span>
@@ -295,7 +295,7 @@ If both a and b were greater than the square root of n, a * b would be greater t
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">];</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
@@ -317,7 +317,7 @@ If both a and b were greater than the square root of n, a * b would be greater t
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Time complexity: O(n^3)</span>
   <span class="c1">// Space complexity: O(1)</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">print2DArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print2DArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
         <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span> <span class="o">{</span>
@@ -327,7 +327,7 @@ If both a and b were greater than the square root of n, a * b would be greater t
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">];</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
@@ -363,7 +363,7 @@ Given a list of number, [1, 12, 3], the maximum value you can get is 39 if you d
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Time complexity: O(4^n)</span>
   <span class="c1">// Space complexity: O(1)</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">getMaxAnswer</span><span class="o">(</span><span class="kt">double</span> <span class="n">res</span><span class="o">,</span> <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">getMaxAnswer</span><span class="o">(</span><span class="kt">double</span> <span class="n">res</span><span class="o">,</span> <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span><span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>
     <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
@@ -373,7 +373,7 @@ Given a list of number, [1, 12, 3], the maximum value you can get is 39 if you d
       <span class="n">getMaxAnswer</span><span class="o">(</span><span class="n">res</span> <span class="o">/</span> <span class="n">arr</span><span class="o">[</span><span class="n">index</span><span class="o">],</span> <span class="n">arr</span><span class="o">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span>
     <span class="n">getMaxAnswer</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">*</span> <span class="mf">1.0</span><span class="o">,</span> <span class="n">arr</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
   <span class="o">}</span></code></pre></figure>

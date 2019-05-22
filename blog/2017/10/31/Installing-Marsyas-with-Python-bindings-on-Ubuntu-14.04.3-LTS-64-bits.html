@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2017-10-31 01:30:30 -0700" class="date">31 Oct 2017</time>
+            <time itemprop="datePublished" datetime="2017-10-31 08:30:30 +0000" class="date">31 Oct 2017</time>
         
         <h1 class="post-title" itemprop="name">Installing Marsyas with Python bindings on Ubuntu 14.04.3 LTS - 64 bits</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -143,10 +143,10 @@
 
 <p>Please download and install these packages using these commands if you have not done so already.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  sudo apt install git
-  sudo apt install cmake
-  sudo apt install cmake-curses-gui
-  sudo apt install libasound2-dev</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>apt install git
+  <span class="nb">sudo </span>apt install cmake
+  <span class="nb">sudo </span>apt install cmake-curses-gui
+  <span class="nb">sudo </span>apt install libasound2-dev</code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -157,12 +157,12 @@
 <p>Note: the hack that I was talking about was that the latest released version 0.5.0 from github.com/marsyas/marsyas did not really work for me when I did it. I had to fork the repository and make some adjustments in order for it to work.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  wget https://github.com/poanchen/marsyas/archive/version-0.5.1.tar.gz
-  tar xvzf version-0.5.1.tar.gz
+  <span class="nb">tar </span>xvzf version-0.5.1.tar.gz
   <span class="nb">cd </span>marsyas-version-0.5.1/
   mkdir build
   <span class="nb">cd </span>build
   ccmake ../ <span class="o">(</span>First, <span class="k">select </span>c to configure. And <span class="k">then</span>, <span class="k">select </span>g to generate and exit.<span class="o">)</span>
-  make -j 3 <span class="o">(</span>or higher <span class="k">if </span>you have more cores<span class="o">)</span> <span class="o">(</span>This will take quite a bit of <span class="nb">time </span>to build it<span class="o">)</span></code></pre></figure>
+  make <span class="nt">-j</span> 3 <span class="o">(</span>or higher <span class="k">if </span>you have more cores<span class="o">)</span> <span class="o">(</span>This will take quite a bit of <span class="nb">time </span>to build it<span class="o">)</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -179,20 +179,20 @@
 
 <p>Now, we are ready to get the Python/SWIG bindings going. Please download and install these packages using these commands if you have not done so already.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  sudo apt install swig 
-  sudo apt install python-dev <span class="o">(</span>the python headers<span class="o">)</span> 
-  sudo apt install python-matplotlib 
-  sudo apt install ipython
-  sudo apt install libfreetype6-dev</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>apt install swig 
+  <span class="nb">sudo </span>apt install python-dev <span class="o">(</span>the python headers<span class="o">)</span> 
+  <span class="nb">sudo </span>apt install python-matplotlib 
+  <span class="nb">sudo </span>apt install ipython
+  <span class="nb">sudo </span>apt install libfreetype6-dev</code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
 <p>Next, you need to reconfigure/compile Marsyas to use Python/SWIG to create the python bindings.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  ccmake ../ <span class="o">(</span>First, press enter with up and down arrow to <span class="nb">enable </span>the WITH_SWIG and WITH_PNG option to be ON. And <span class="k">then</span>, <span class="k">select </span>g to generate and exit.<span class="o">)</span>
-  make -j 3 <span class="o">(</span>or higher <span class="k">if </span>you have more cores<span class="o">)</span> <span class="o">(</span>This will take quite a bit of <span class="nb">time </span>to build it<span class="o">)</span>
-  sudo make install <span class="o">(</span>Install the Marsyas python bindings so that Python can find them globally<span class="o">)</span>
-  sudo ldconfig /usr/local/lib <span class="o">(</span>Add /usr/local/lib to the path searched <span class="k">for </span>libraries<span class="o">)</span> </code></pre></figure>
+  make <span class="nt">-j</span> 3 <span class="o">(</span>or higher <span class="k">if </span>you have more cores<span class="o">)</span> <span class="o">(</span>This will take quite a bit of <span class="nb">time </span>to build it<span class="o">)</span>
+  <span class="nb">sudo </span>make install <span class="o">(</span>Install the Marsyas python bindings so that Python can find them globally<span class="o">)</span>
+  <span class="nb">sudo </span>ldconfig /usr/local/lib <span class="o">(</span>Add /usr/local/lib to the path searched <span class="k">for </span>libraries<span class="o">)</span> </code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 

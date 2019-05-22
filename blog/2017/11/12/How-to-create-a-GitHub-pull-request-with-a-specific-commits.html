@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2017-11-12 00:30:30 -0800" class="date">12 Nov 2017</time>
+            <time itemprop="datePublished" datetime="2017-11-12 08:30:30 +0000" class="date">12 Nov 2017</time>
         
         <h1 class="post-title" itemprop="name">How to create a GitHub pull request with a specific commits?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -143,8 +143,8 @@
 
 <p>First, you need to create a branch with the latest changes (that is the same with the upstream remote branch)</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git fetch --all
-  git checkout -b new-branch-name upstream/master</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git fetch <span class="nt">--all</span>
+  git checkout <span class="nt">-b</span> new-branch-name upstream/master</code></pre></figure>
 
 <p>Note: The above assumes you’ve set up upstream as a remote. If not, do this first:</p>
 
@@ -157,7 +157,7 @@
 
 <p>Now, all you need to do is to push your changes to your GitHub repository</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git push -u origin new-branch-name</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git push <span class="nt">-u</span> origin new-branch-name</code></pre></figure>
 
 <p>Head over to your GitHub repository, and you should see this.</p>
 

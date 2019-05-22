@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2016-11-17 00:30:30 -0800" class="date">17 Nov 2016</time>
+            <time itemprop="datePublished" datetime="2016-11-17 08:30:30 +0000" class="date">17 Nov 2016</time>
         
         <h1 class="post-title" itemprop="name">How to play mp4 video using hls.js?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -171,7 +171,7 @@
 
 <h2 id="command-on-how-to-convert-mp4-video-to-m3u8-format-using-ffmpeg">command on how to convert mp4 video to m3u8 format using ffmpeg</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    ffmpeg -i sample.mp4 -profile:v baseline -level 3.0 -s 840x560 -start_number 0 -hls_list_size 0 -f hls sample.m3u8</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    ffmpeg <span class="nt">-i</span> sample.mp4 <span class="nt">-profile</span>:v baseline <span class="nt">-level</span> 3.0 <span class="nt">-s</span> 840x560 <span class="nt">-start_number</span> 0 <span class="nt">-hls_list_size</span> 0 <span class="nt">-f</span> hls sample.m3u8</code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/17/how-to-play-mp4-video-using-hls/commands.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 

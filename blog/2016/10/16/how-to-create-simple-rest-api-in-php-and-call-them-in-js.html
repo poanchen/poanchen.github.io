@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2016-10-16 01:30:30 -0700" class="date">16 Oct 2016</time>
+            <time itemprop="datePublished" datetime="2016-10-16 08:30:30 +0000" class="date">16 Oct 2016</time>
         
         <h1 class="post-title" itemprop="name">How to create a simple REST API in PHP and call them in JavaScript</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -139,30 +139,30 @@
 
 <h2 id="php-code-for-simple-rest-api">PHP code for simple REST API</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  // Include the wp-load.php so that we can use username_exists() function in WordPress API
-  $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
-  require_once( $parse_uri[0] . 'wp-load.php' );
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include the wp-load.php so that we can use username_exists() function in WordPress API
+</span>  <span class="nv">$parse_uri</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span> <span class="s1">'wp-content'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">]</span> <span class="p">);</span>
+  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
 
-  $data = array();
-  $username = sanitize_text_field($_POST['username']);
+  <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+  <span class="nv">$username</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
 
-  if (username_exists($username)) {
-    $data["username"] = $username;
-    $data["result"] = true;
-  }else {
-    $data["username"] = $username;
-    $data["result"] = false;
-  }
+  <span class="k">if</span> <span class="p">(</span><span class="nx">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  // return all our data to an AJAX call
-  echo json_encode($data, JSON_PRETTY_PRINT);</code></pre></figure>
+  <span class="c1">// return all our data to an AJAX call
+</span>  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a><br />
 <a href="https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">Live link</a> hosted on <a href="https://www.jenrenalcare.com" target="_blank">JenRenalCare.com</a></p>
 
 <p>An example of a response from this simple REST API is as follows, or you may click the link above. (Notice that the request would have to be POST, you may test it out using <a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en">Postman</a>)</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"poanchen"</span><span class="p">,</span><span class="w"> </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"poanchen"</span><span class="p">,</span><span class="w"> </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span></code></pre></figure>
 
 <p>Now we have a really simple REST API that allows us to check if the username exist or not. This is especially useful in registration form where we allow the user to know if the username exist or not before they submit the form. This can be done using JavaScript. First example that I would like to show is using <strong>XMLHttpRequest</strong>. Here is a sample code that does the job.<br /></p>
 

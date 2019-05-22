@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2016-10-18 01:30:30 -0700" class="date">18 Oct 2016</time>
+            <time itemprop="datePublished" datetime="2016-10-18 08:30:30 +0000" class="date">18 Oct 2016</time>
         
         <h1 class="post-title" itemprop="name">How to build a simple chat bot using Hubot that determine gender based on their first name?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -170,7 +170,7 @@ Okay, now before we begin. I would like to introduce an amazing REST API that we
 
 <h2 id="example-on-the-response-for-httpsapigenderizeionamepeter">Example on the response for https://api.genderize.io/?name=peter</h2>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"peter"</span><span class="p">,</span><span class="nt">"gender"</span><span class="p">:</span><span class="s2">"male"</span><span class="p">,</span><span class="nt">"probability"</span><span class="p">:</span><span class="s2">"1.00"</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">796</span><span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"peter"</span><span class="p">,</span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"male"</span><span class="p">,</span><span class="s2">"probability"</span><span class="p">:</span><span class="s2">"1.00"</span><span class="p">,</span><span class="s2">"count"</span><span class="p">:</span><span class="mi">796</span><span class="p">}</span></code></pre></figure>
 
 <p>Now, with this REST API. We can easily build a Hubot that allow the user to ask them if a given first name is a male or a female.</p>
 

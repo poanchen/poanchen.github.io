@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2016-11-12 00:30:30 -0800" class="date">12 Nov 2016</time>
+            <time itemprop="datePublished" datetime="2016-11-12 08:30:30 +0000" class="date">12 Nov 2016</time>
         
         <h1 class="post-title" itemprop="name">How to take screenshots at different screen sizes using CasperJS?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -147,7 +147,7 @@
   <span class="kd">var</span> <span class="nx">contentsToJSON</span><span class="p">;</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="nx">casper</span><span class="p">.</span><span class="nx">cli</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nx">inputFile</span> <span class="o">=</span> <span class="nx">casper</span><span class="p">.</span><span class="nx">cli</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
+    <span class="nx">inputFile</span> <span class="o">=</span> <span class="nx">casper</span><span class="p">.</span><span class="nx">cli</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
   <span class="p">}</span><span class="k">else</span><span class="p">{</span>
     <span class="nx">casper</span><span class="p">.</span><span class="nx">echo</span><span class="p">(</span><span class="s2">"No file passed, aborting..."</span><span class="p">).</span><span class="nx">exit</span><span class="p">();</span>
   <span class="p">}</span></code></pre></figure>
@@ -163,12 +163,12 @@
 <h2 id="what-the-urlsjson-looks-like">What the urls.json looks like</h2>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.example.com"</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.example.com"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.example.net"</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.example.net"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span></code></pre></figure>
@@ -190,8 +190,8 @@
 
 <h2 id="casperjs-code-screenshotsjs-to-open-each-url">CasperJS code (screenshots.js) to open each url</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">start</span><span class="p">().</span><span class="nx">each</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">link</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">self</span><span class="p">.</span><span class="nx">thenOpen</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">start</span><span class="p">().</span><span class="nx">each</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nx">link</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nx">thenOpen</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">echo</span><span class="p">(</span><span class="s2">"url: "</span> <span class="o">+</span> <span class="nx">link</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s2">" has been opened!"</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">});</span>
@@ -209,43 +209,43 @@
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">viewports</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-4s-portrait'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">480</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">480</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-4s-landscape'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">480</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">320</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">480</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">320</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-5-portrait'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">568</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">568</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-5-landscape'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">568</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">320</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">568</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">320</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-6-portrait'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">540</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">960</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">540</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">960</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-6-landscape'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">960</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">540</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">960</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">540</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPad-mini-4-portrait'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">768</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1024</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">768</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1024</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPad-mini-4-landscape'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">768</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">768</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Desktop-720p-HD'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">1280</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">720</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">1280</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">720</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Desktop-1080p-HD'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">1920</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">1920</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">}</span>
     <span class="p">}</span>
   <span class="p">];</span></code></pre></figure>
 
@@ -253,14 +253,14 @@
 
 <h2 id="casperjs-code-screenshotsjs-for-taking-screenshot-for-different-device-for-each-url-that-we-opened">CasperJS code (screenshots.js) for taking screenshot for different device for each url that we opened</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">start</span><span class="p">().</span><span class="nx">each</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">link</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">self</span><span class="p">.</span><span class="nx">thenOpen</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">start</span><span class="p">().</span><span class="nx">each</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nx">link</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nx">thenOpen</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">folderPath</span> <span class="o">=</span> <span class="s1">'screenshots/'</span> <span class="o">+</span> <span class="nx">link</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'//'</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">;</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Taking screenshot for the url "</span> <span class="o">+</span> <span class="nx">link</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s2">"..."</span><span class="p">)</span>
       <span class="nx">viewports</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">currentValue</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Screenshot for '</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' ('</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="s1">'x'</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">height</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">,</span> <span class="s1">'info'</span><span class="p">);</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">viewport</span><span class="p">(</span><span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="nx">folderPath</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'-'</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="s1">'x'</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">height</span> <span class="o">+</span> <span class="s1">'.png'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nx">viewport</span><span class="p">(</span><span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="nx">folderPath</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'-'</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="s1">'x'</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">height</span> <span class="o">+</span> <span class="s1">'.png'</span><span class="p">,</span> <span class="p">{</span>
           <span class="na">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
           <span class="na">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
           <span class="na">width</span><span class="p">:</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span>
@@ -285,48 +285,48 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
   <span class="kd">var</span> <span class="nx">viewports</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-4s-portrait'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">480</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">480</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-4s-landscape'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">480</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">320</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">480</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">320</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-5-portrait'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">568</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">568</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-5-landscape'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">568</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">320</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">568</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">320</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-6-portrait'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">540</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">960</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">540</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">960</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPhone-6-landscape'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">960</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">540</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">960</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">540</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPad-mini-4-portrait'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">768</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1024</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">768</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1024</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Apple-iPad-mini-4-landscape'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">768</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">768</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Desktop-720p-HD'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">1280</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">720</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">1280</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">720</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Desktop-1080p-HD'</span><span class="p">,</span>
-      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="mi">1920</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">}</span>
+      <span class="s1">'viewport'</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">1920</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">}</span>
     <span class="p">}</span>
   <span class="p">];</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="nx">casper</span><span class="p">.</span><span class="nx">cli</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nx">inputFile</span> <span class="o">=</span> <span class="nx">casper</span><span class="p">.</span><span class="nx">cli</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
+    <span class="nx">inputFile</span> <span class="o">=</span> <span class="nx">casper</span><span class="p">.</span><span class="nx">cli</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
   <span class="p">}</span><span class="k">else</span><span class="p">{</span>
     <span class="nx">casper</span><span class="p">.</span><span class="nx">echo</span><span class="p">(</span><span class="s2">"No file passed, aborting..."</span><span class="p">).</span><span class="nx">exit</span><span class="p">();</span>
   <span class="p">}</span>
@@ -339,14 +339,14 @@ Now, when you run the code like this, $ casperjs screenshots.js urls.json, you s
     <span class="nx">urls</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="na">url</span><span class="p">:</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">url</span><span class="p">});</span>
   <span class="p">});</span>
 
-  <span class="nx">casper</span><span class="p">.</span><span class="nx">start</span><span class="p">().</span><span class="nx">each</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">link</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">self</span><span class="p">.</span><span class="nx">thenOpen</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">casper</span><span class="p">.</span><span class="nx">start</span><span class="p">().</span><span class="nx">each</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nx">link</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nx">thenOpen</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">folderPath</span> <span class="o">=</span> <span class="s1">'screenshots/'</span> <span class="o">+</span> <span class="nx">link</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'//'</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">;</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Taking screenshot for the url "</span> <span class="o">+</span> <span class="nx">link</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s2">"..."</span><span class="p">)</span>
       <span class="nx">viewports</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">currentValue</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Screenshot for '</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' ('</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="s1">'x'</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">height</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">,</span> <span class="s1">'info'</span><span class="p">);</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">viewport</span><span class="p">(</span><span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="nx">folderPath</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'-'</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="s1">'x'</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">height</span> <span class="o">+</span> <span class="s1">'.png'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nx">viewport</span><span class="p">(</span><span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="nx">folderPath</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'-'</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="s1">'x'</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">height</span> <span class="o">+</span> <span class="s1">'.png'</span><span class="p">,</span> <span class="p">{</span>
           <span class="na">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
           <span class="na">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
           <span class="na">width</span><span class="p">:</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">viewport</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span>

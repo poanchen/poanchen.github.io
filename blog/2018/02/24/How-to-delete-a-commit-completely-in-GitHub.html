@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2018-02-24 00:30:30 -0800" class="date">24 Feb 2018</time>
+            <time itemprop="datePublished" datetime="2018-02-24 08:30:30 +0000" class="date">24 Feb 2018</time>
         
         <h1 class="post-title" itemprop="name">How to delete a commit completely in GitHub?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -139,7 +139,7 @@
 
 <p>Follow this tutorial in order to delete one or more commits in GitHub. First, you use the following command to list all or some of your latest GitHub commits.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git log -n 3 <span class="c"># 3 means to list the latest 3 commits</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git log <span class="nt">-n</span> 3 <span class="c"># 3 means to list the latest 3 commits</span></code></pre></figure>
 
 <p>It should look something similar to this,</p>
 
@@ -147,7 +147,7 @@
 
 <p>Say you want to delete the first latest commit, you would need to type in this command.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git rebase -i 77d55bd72c63d43cc83f9c0fea4990c33427c2a6</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git rebase <span class="nt">-i</span> 77d55bd72c63d43cc83f9c0fea4990c33427c2a6</code></pre></figure>
 
 <p>As you can see, instead of putting the deleted commit hash, we put the next next one. We will explain why in the next step.</p>
 
@@ -161,7 +161,7 @@
 
 <p>Now, you can simply commit your changes to GitHub to make your commit goes away by doing this command,</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git push -f origin master</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git push <span class="nt">-f</span> origin master</code></pre></figure>
 
 <p>As you can see, we need that <code class="highlighter-rouge">-f</code> option to force the Git to commit the changes, otherwise, it will not allow you to do that.</p>
 

@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2017-07-25 01:30:30 -0700" class="date">25 Jul 2017</time>
+            <time itemprop="datePublished" datetime="2017-07-25 08:30:30 +0000" class="date">25 Jul 2017</time>
         
         <h1 class="post-title" itemprop="name">How to convert a large PDF to HTML?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -137,11 +137,11 @@
       <article role="article" id="scroll" class="post-content" itemprop="articleBody">
           <p>PDF is an awesome format that allows people to view the document easily across different platform while staying consistent (it will look the same). However, viewing a large PDF on a website could be an issue when the size is too large. On top of that, web browser usually needs to download the whole PDF off before the user can actually sees it. It can be very inefficient and waste of time as the PDF gets larger and larger. A 20MB size of PDF with slower internet connection could take a min to download. Nowadays, people are impatient. User would not likes the idea of having to wait for a min or more before viewing a PDF. Here is where the <a href="https://en.wikipedia.org/wiki/Lazy_loading">lazy load</a> comes into play. Lazy load is where it only trigger to load the contents that the user is requesting/got to. Contents that user never request/got to will not get load. This means two things. One is that it will help us to save some bandwidth for the server-side. Two is user will be able to view the PDF ALMOST immediately. The concept of Lazy load is wildly used on the internet. Because it allows the website to load faster (only load necessary contents) and performance is very important for high traffic website. So now,  back to the topic, how can we leverage the benefit of lazy load with the PDF? We simply turn it into a HTML. It sounds simple. But turning a PDF into a HTML is a lot of work programmically. So today, I am going to show you guys a tool that will do the job. It is called <a href="https://www.idrsolutions.com/jpdf2html5/">JPDF2HTML5</a>. This is one of the simplest tool that I can find online that will convert a large PDF to HTML. Please head over to their site to download the trial version of the tool, <a href="https://www.idrsolutions.com/jpdf2html5/downloads/trial/" target="_blank">https://www.idrsolutions.com/jpdf2html5/downloads/trial/</a>. You should be able to see a JAR file when you downloaded off from their site. The next thing you want to do is to run the following command,</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  java -jar jpdf2html-trial.jar <span class="o">[</span>the PDF you want to convert from] <span class="o">[</span>the destination/path you want it to go] <span class="o">[</span>password <span class="k">for </span>PDF <span class="k">if </span>any]</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  java <span class="nt">-jar</span> jpdf2html-trial.jar <span class="o">[</span>the PDF you want to convert from] <span class="o">[</span>the destination/path you want it to go] <span class="o">[</span>password <span class="k">for </span>PDF <span class="k">if </span>any]</code></pre></figure>
 
 <p>For example, this is an example command that will convert a test.pdf and save the HTML to my desktop.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  java -jar jpdf2html-trial.jar test.pdf C:<span class="se">\U</span>sers<span class="se">\m</span>yUserName<span class="se">\D</span>esktop</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  java <span class="nt">-jar</span> jpdf2html-trial.jar test.pdf C:<span class="se">\U</span>sers<span class="se">\m</span>yUserName<span class="se">\D</span>esktop</code></pre></figure>
 
 <p>It is that simple.</p>
 

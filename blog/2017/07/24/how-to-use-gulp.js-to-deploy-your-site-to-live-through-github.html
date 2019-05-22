@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2017-07-24 01:30:30 -0700" class="date">24 Jul 2017</time>
+            <time itemprop="datePublished" datetime="2017-07-24 08:30:30 +0000" class="date">24 Jul 2017</time>
         
         <h1 class="post-title" itemprop="name">How to use Gulp.js to deploy your site to live through Github?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -183,8 +183,8 @@
 
 <p>During the development, you should always push your code to dev branch in order to keep the production/master branch clean. (you should never directly push it to master branch except through the gulp deploy command)</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git add .
-  git commit -m <span class="s2">"your commit message"</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git add <span class="nb">.</span>
+  git commit <span class="nt">-m</span> <span class="s2">"your commit message"</span>
   git push origin dev</code></pre></figure>
 
 <p>Now, your file structure should looks something like this,</p>

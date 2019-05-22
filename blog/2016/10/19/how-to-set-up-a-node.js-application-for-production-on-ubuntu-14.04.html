@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2016-10-19 01:30:30 -0700" class="date">19 Oct 2016</time>
+            <time itemprop="datePublished" datetime="2016-10-19 08:30:30 +0000" class="date">19 Oct 2016</time>
         
         <h1 class="post-title" itemprop="name">How to set up a Node.js application for production on Ubuntu 14.04?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -142,7 +142,7 @@
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
   <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 
-  <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">response</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">);</span>
   <span class="p">});</span>
 
@@ -212,22 +212,22 @@
 
 <h2 id="add-the-following-configuration-in-the-000-defaultconf-file">add the following configuration in the 000-default.conf file</h2>
 
-<figure class="highlight"><pre><code class="language-apache" data-lang="apache">  <span class="p">&lt;</span><span class="nc">VirtualHost</span> <span class="sr">*:80</span><span class="p">&gt;
-</span>    <span class="nl">ServerAdmin</span> webmaster@localhost
-    <span class="nl">ServerName</span> THIS_IS_WHERE_YOU_PUT_YOUR_DOMAIN_NAME_HERE
+<figure class="highlight"><pre><code class="language-apache" data-lang="apache">  <span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *:80</span><span class="p">&gt;
+</span>    <span class="nc">ServerAdmin</span> webmaster@localhost
+    <span class="nc">ServerName</span> THIS_IS_WHERE_YOU_PUT_YOUR_DOMAIN_NAME_HERE
 
-    <span class="nl">ProxyRequests</span> off
+    <span class="nc">ProxyRequests</span> <span class="ss">off</span>
 
-    <span class="p">&lt;</span><span class="nc">Proxy</span> <span class="sr">*</span><span class="p">&gt;
-</span>      <span class="nl">Order</span> deny,allow
-      <span class="nl">Allow</span> from all
-    <span class="p">&lt;/</span><span class="nc">Proxy</span><span class="p">&gt;
+    <span class="p">&lt;</span><span class="nl">Proxy</span><span class="sr"> *</span><span class="p">&gt;
+</span>      <span class="nc">Order</span> deny,allow
+      <span class="nc">Allow</span> <span class="ss">from</span> all
+    <span class="p">&lt;/</span><span class="nl">Proxy</span><span class="p">&gt;
 </span>
-    <span class="p">&lt;</span><span class="nc">Location</span> <span class="sr">/</span><span class="p">&gt;
-</span>      <span class="nl">ProxyPass</span> http://PRIVATE_IP_ADDRESS:PORT_THAT_Node_JS_APP_LISTEN/
-      <span class="nl">ProxyPassReverse</span> http://PRIVATE_IP_ADDRESS:PORT_THAT_Node_JS_APP_LISTEN/
-    <span class="p">&lt;/</span><span class="nc">Location</span><span class="p">&gt;
-</span>  <span class="p">&lt;/</span><span class="nc">VirtualHost</span><span class="err">&gt;</span></code></pre></figure>
+    <span class="p">&lt;</span><span class="nl">Location</span><span class="sr"> /</span><span class="p">&gt;
+</span>      <span class="nc">ProxyPass</span> http://PRIVATE_IP_ADDRESS:PORT_THAT_Node_JS_APP_LISTEN/
+      <span class="nc">ProxyPassReverse</span> http://PRIVATE_IP_ADDRESS:PORT_THAT_Node_JS_APP_LISTEN/
+    <span class="p">&lt;/</span><span class="nl">Location</span><span class="p">&gt;
+</span>  <span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/19/how-to-set-up-a-node.js-application-for-production-on-ubuntu-14.04/000-default.conf" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 

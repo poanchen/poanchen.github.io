@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2017-10-19 01:30:30 -0700" class="date">19 Oct 2017</time>
+            <time itemprop="datePublished" datetime="2017-10-19 08:30:30 +0000" class="date">19 Oct 2017</time>
         
         <h1 class="post-title" itemprop="name">How to replace a git submodules in a repository?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -149,18 +149,18 @@
 
 <p>However, it does not work like that as the list of available git submodule commands does not include replace except these,</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   git submodule <span class="o">[</span>--quiet] add <span class="o">[</span>-b &lt;branch&gt;] <span class="o">[</span>-f|--force] <span class="o">[</span>--name &lt;name&gt;]
-                   <span class="o">[</span>--reference &lt;repository&gt;] <span class="o">[</span>--depth &lt;depth&gt;] <span class="o">[</span>--] &lt;repository&gt; <span class="o">[</span>&lt;path&gt;]
-   git submodule <span class="o">[</span>--quiet] status <span class="o">[</span>--cached] <span class="o">[</span>--recursive] <span class="o">[</span>--] <span class="o">[</span>&lt;path&gt;...]
-   git submodule <span class="o">[</span>--quiet] init <span class="o">[</span>--] <span class="o">[</span>&lt;path&gt;...]
-   git submodule <span class="o">[</span>--quiet] deinit <span class="o">[</span>-f|--force] <span class="o">[</span>--] &lt;path&gt;...
-   git submodule <span class="o">[</span>--quiet] update <span class="o">[</span>--init] <span class="o">[</span>--remote] <span class="o">[</span>-N|--no-fetch]
-                   <span class="o">[</span>-f|--force] <span class="o">[</span>--rebase|--merge] <span class="o">[</span>--reference &lt;repository&gt;]
-                   <span class="o">[</span>--depth &lt;depth&gt;] <span class="o">[</span>--recursive] <span class="o">[</span>--] <span class="o">[</span>&lt;path&gt;...]
-   git submodule <span class="o">[</span>--quiet] summary <span class="o">[</span>--cached|--files] <span class="o">[(</span>-n|--summary-limit<span class="o">)</span> &lt;n&gt;]
-                   <span class="o">[</span>commit] <span class="o">[</span>--] <span class="o">[</span>&lt;path&gt;...]
-   git submodule <span class="o">[</span>--quiet] foreach <span class="o">[</span>--recursive] &lt;<span class="nb">command</span>&gt;
-   git submodule <span class="o">[</span>--quiet] sync <span class="o">[</span>--recursive] <span class="o">[</span>--] <span class="o">[</span>&lt;path&gt;...]</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   git submodule <span class="o">[</span><span class="nt">--quiet</span><span class="o">]</span> add <span class="o">[</span><span class="nt">-b</span> &lt;branch&gt;] <span class="o">[</span><span class="nt">-f</span>|--force] <span class="o">[</span><span class="nt">--name</span> &lt;name&gt;]
+                   <span class="o">[</span><span class="nt">--reference</span> &lt;repository&gt;] <span class="o">[</span><span class="nt">--depth</span> &lt;depth&gt;] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> &lt;repository&gt; <span class="o">[</span>&lt;path&gt;]
+   git submodule <span class="o">[</span><span class="nt">--quiet</span><span class="o">]</span> status <span class="o">[</span><span class="nt">--cached</span><span class="o">]</span> <span class="o">[</span><span class="nt">--recursive</span><span class="o">]</span> <span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>&lt;path&gt;...]
+   git submodule <span class="o">[</span><span class="nt">--quiet</span><span class="o">]</span> init <span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>&lt;path&gt;...]
+   git submodule <span class="o">[</span><span class="nt">--quiet</span><span class="o">]</span> deinit <span class="o">[</span><span class="nt">-f</span>|--force] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> &lt;path&gt;...
+   git submodule <span class="o">[</span><span class="nt">--quiet</span><span class="o">]</span> update <span class="o">[</span><span class="nt">--init</span><span class="o">]</span> <span class="o">[</span><span class="nt">--remote</span><span class="o">]</span> <span class="o">[</span><span class="nt">-N</span>|--no-fetch]
+                   <span class="o">[</span><span class="nt">-f</span>|--force] <span class="o">[</span><span class="nt">--rebase</span>|--merge] <span class="o">[</span><span class="nt">--reference</span> &lt;repository&gt;]
+                   <span class="o">[</span><span class="nt">--depth</span> &lt;depth&gt;] <span class="o">[</span><span class="nt">--recursive</span><span class="o">]</span> <span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>&lt;path&gt;...]
+   git submodule <span class="o">[</span><span class="nt">--quiet</span><span class="o">]</span> summary <span class="o">[</span><span class="nt">--cached</span>|--files] <span class="o">[(</span><span class="nt">-n</span>|--summary-limit<span class="o">)</span> &lt;n&gt;]
+                   <span class="o">[</span>commit] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>&lt;path&gt;...]
+   git submodule <span class="o">[</span><span class="nt">--quiet</span><span class="o">]</span> foreach <span class="o">[</span><span class="nt">--recursive</span><span class="o">]</span> &lt;<span class="nb">command</span><span class="o">&gt;</span>
+   git submodule <span class="o">[</span><span class="nt">--quiet</span><span class="o">]</span> sync <span class="o">[</span><span class="nt">--recursive</span><span class="o">]</span> <span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>&lt;path&gt;...]</code></pre></figure>
 
 <p>Then, how would one replace it?</p>
 

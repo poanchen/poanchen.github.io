@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2016-10-28 01:30:30 -0700" class="date">28 Oct 2016</time>
+            <time itemprop="datePublished" datetime="2016-10-28 08:30:30 +0000" class="date">28 Oct 2016</time>
         
         <h1 class="post-title" itemprop="name">How to pass PHP data to your script in WordPress?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -139,39 +139,39 @@
 
 <h2 id="php-code-that-contains-all-the-audios">PHP code that contains all the audios</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  // Audios are from https://www.aehelp.com
-  // if you are interested in learning ielts, please go to their site!
-  // they have amazing online course for ielts that will
-  // help you improve your score!
-  $basePath = 'https://d5s5h26eyrr5q.cloudfront.net/';
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Audios are from https://www.aehelp.com
+</span>  <span class="c1">// if you are interested in learning ielts, please go to their site!
+</span>  <span class="c1">// they have amazing online course for ielts that will
+</span>  <span class="c1">// help you improve your score!
+</span>  <span class="nv">$basePath</span> <span class="o">=</span> <span class="s1">'https://d5s5h26eyrr5q.cloudfront.net/'</span><span class="p">;</span>
 
-  $urlsForAllTheAudios = array(
-    array(
-      'artist' =&gt; 'AEHelp',
-      'title'  =&gt; 'CD1-T-1: Listening Section 1 (Demo)',
-      'mp3'    =&gt; $basePath . 'ielts-sample-audio/CD1-Track-01.mp3'
-    ),
-    array(
-      'artist' =&gt; 'AEHelp',
-      'title'  =&gt; 'CD1-T-1: Listening Section 3 (Demo)',
-      'mp3'    =&gt; $basePath . 'ielts-sample-audio/CD1-Track-03.mp3'
-    ),
-    array(
-      'artist' =&gt; 'AEHelp',
-      'title'  =&gt; 'CD1-T-5: Reading Passage 1 (Demo)',
-      'mp3'    =&gt; $basePath . 'ielts-sample-audio/CD1-Track-05.mp3'
-    ),
-    array(
-      'artist' =&gt; 'AEHelp',
-      'title'  =&gt; 'CD1-T-7: Reading Passage 3 (Demo)',
-      'mp3'    =&gt; $basePath . 'ielts-sample-audio/CD1-Track-07.mp3'
-    ),
-    array(
-      'artist' =&gt; 'AEHelp',
-      'title'  =&gt; 'CD1-T-8: Speaking Part 1 (Demo)',
-      'mp3'    =&gt; $basePath . 'ielts-sample-audio/CD1-Track-08.mp3'
-    )
-  );</code></pre></figure>
+  <span class="nv">$urlsForAllTheAudios</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span>
+      <span class="s1">'artist'</span> <span class="o">=&gt;</span> <span class="s1">'AEHelp'</span><span class="p">,</span>
+      <span class="s1">'title'</span>  <span class="o">=&gt;</span> <span class="s1">'CD1-T-1: Listening Section 1 (Demo)'</span><span class="p">,</span>
+      <span class="s1">'mp3'</span>    <span class="o">=&gt;</span> <span class="nv">$basePath</span> <span class="o">.</span> <span class="s1">'ielts-sample-audio/CD1-Track-01.mp3'</span>
+    <span class="p">),</span>
+    <span class="k">array</span><span class="p">(</span>
+      <span class="s1">'artist'</span> <span class="o">=&gt;</span> <span class="s1">'AEHelp'</span><span class="p">,</span>
+      <span class="s1">'title'</span>  <span class="o">=&gt;</span> <span class="s1">'CD1-T-1: Listening Section 3 (Demo)'</span><span class="p">,</span>
+      <span class="s1">'mp3'</span>    <span class="o">=&gt;</span> <span class="nv">$basePath</span> <span class="o">.</span> <span class="s1">'ielts-sample-audio/CD1-Track-03.mp3'</span>
+    <span class="p">),</span>
+    <span class="k">array</span><span class="p">(</span>
+      <span class="s1">'artist'</span> <span class="o">=&gt;</span> <span class="s1">'AEHelp'</span><span class="p">,</span>
+      <span class="s1">'title'</span>  <span class="o">=&gt;</span> <span class="s1">'CD1-T-5: Reading Passage 1 (Demo)'</span><span class="p">,</span>
+      <span class="s1">'mp3'</span>    <span class="o">=&gt;</span> <span class="nv">$basePath</span> <span class="o">.</span> <span class="s1">'ielts-sample-audio/CD1-Track-05.mp3'</span>
+    <span class="p">),</span>
+    <span class="k">array</span><span class="p">(</span>
+      <span class="s1">'artist'</span> <span class="o">=&gt;</span> <span class="s1">'AEHelp'</span><span class="p">,</span>
+      <span class="s1">'title'</span>  <span class="o">=&gt;</span> <span class="s1">'CD1-T-7: Reading Passage 3 (Demo)'</span><span class="p">,</span>
+      <span class="s1">'mp3'</span>    <span class="o">=&gt;</span> <span class="nv">$basePath</span> <span class="o">.</span> <span class="s1">'ielts-sample-audio/CD1-Track-07.mp3'</span>
+    <span class="p">),</span>
+    <span class="k">array</span><span class="p">(</span>
+      <span class="s1">'artist'</span> <span class="o">=&gt;</span> <span class="s1">'AEHelp'</span><span class="p">,</span>
+      <span class="s1">'title'</span>  <span class="o">=&gt;</span> <span class="s1">'CD1-T-8: Speaking Part 1 (Demo)'</span><span class="p">,</span>
+      <span class="s1">'mp3'</span>    <span class="o">=&gt;</span> <span class="nv">$basePath</span> <span class="o">.</span> <span class="s1">'ielts-sample-audio/CD1-Track-08.mp3'</span>
+    <span class="p">)</span>
+  <span class="p">);</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/28/how-to-pass-php-data-to-your-script-in-wordpress/audioPlaylist.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -179,27 +179,27 @@
 
 <h2 id="php-code-to-start-with">PHP code to start with</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  // Include this php file, so that we have all the information for the audio that we will be playing later
-  require_once("audioPlaylist.php");</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include this php file, so that we have all the information for the audio that we will be playing later
+</span>  <span class="k">require_once</span><span class="p">(</span><span class="s2">"audioPlaylist.php"</span><span class="p">);</span></code></pre></figure>
 
 <p>Now that we have the @variable, we need to figure out how to pass that data to the JavaScript file. To do that, we are going to use <a href="https://codex.wordpress.org/Function_Reference/wp_localize_script">wp_localize_script</a>. Through the use of this, it can be used to make any PHP data available to your script that you can normally only get from the server side of WordPress.</p>
 
 <h2 id="php-code-to-use-wp_localize_script">PHP code to use wp_localize_script</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  // Enqueue this js file, so that WordPress knows that we will be using this js file in this page
-  wp_enqueue_script('audio-demo-player', get_template_directory_uri() . '/createPlaylist.js');
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Enqueue this js file, so that WordPress knows that we will be using this js file in this page
+</span>  <span class="nx">wp_enqueue_script</span><span class="p">(</span><span class="s1">'audio-demo-player'</span><span class="p">,</span> <span class="nx">get_template_directory_uri</span><span class="p">()</span> <span class="o">.</span> <span class="s1">'/createPlaylist.js'</span><span class="p">);</span>
 
-  // now we need to set the array name to be audio_array, so that later in the js file we can call them with that name
-  // we also pass in the array that we have in the require_once
-  wp_localize_script('audio-demo-player', 'audio_array', $urlsForAllTheAudios);</code></pre></figure>
+  <span class="c1">// now we need to set the array name to be audio_array, so that later in the js file we can call them with that name
+</span>  <span class="c1">// we also pass in the array that we have in the require_once
+</span>  <span class="nx">wp_localize_script</span><span class="p">(</span><span class="s1">'audio-demo-player'</span><span class="p">,</span> <span class="s1">'audio_array'</span><span class="p">,</span> <span class="nv">$urlsForAllTheAudios</span><span class="p">);</span></code></pre></figure>
 
 <p>This is basically telling the wp_localize_script that we are going to pass this @variable namely urlsForAllTheAudios as audio_array to the JavaScript file named createPlaylist.js. Now, since this is a WordPress site, we need to call the wp_head, so that the js file will be included in this page.</p>
 
 <h2 id="php-code-to-call-wp_head">PHP code to call wp_head</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  // this trigger the <span class="ni">&amp;lt;</span>head<span class="ni">&amp;gt;&amp;lt;</span>/head<span class="ni">&amp;gt;</span> section, which will enqueue the js file. Without this, the js file will not be
-  // included in this specific page
-  wp_head();</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// this trigger the &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; section, which will enqueue the js file. Without this, the js file will not be
+</span>  <span class="c1">// included in this specific page
+</span>  <span class="nx">wp_head</span><span class="p">();</span></code></pre></figure>
 
 <p>Now that we have enqueue the js file in the WordPress head. Now, we simply need to add a Div element in the PHP file, so that the JavaScript know where to put all the audios. For more information about wp_head, please go to <a href="https://codex.wordpress.org/Plugin_API/Action_Reference/wp_head">here</a>.</p>
 

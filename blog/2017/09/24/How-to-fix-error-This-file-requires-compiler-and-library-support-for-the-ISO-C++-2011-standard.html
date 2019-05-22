@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2017-09-24 01:30:30 -0700" class="date">24 Sep 2017</time>
+            <time itemprop="datePublished" datetime="2017-09-24 08:30:30 +0000" class="date">24 Sep 2017</time>
         
         <h1 class="post-title" itemprop="name">How to fix 'error This file requires compiler and library support for the ISO C++ 2011 standard'?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -137,7 +137,7 @@
       <article role="article" id="scroll" class="post-content" itemprop="articleBody">
           <p>Have you ever seen this error message</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  error This file requires compiler and library support <span class="k">for </span>the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std<span class="o">=</span>c++11 or -std<span class="o">=</span>gnu++11 compiler options.</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  error This file requires compiler and library support <span class="k">for </span>the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the <span class="nt">-std</span><span class="o">=</span>c++11 or <span class="nt">-std</span><span class="o">=</span>gnu++11 compiler options.</code></pre></figure>
 
 <p>before when you are running</p>
 
@@ -149,7 +149,7 @@
 
 <p>You simply need to add the following line of code into your CMakeLists.txt file and it should works now.</p>
 
-<figure class="highlight"><pre><code class="language-cmake" data-lang="cmake">  SET(CMAKE_CXX_FLAGS "-std=c++11 -O3")</code></pre></figure>
+<figure class="highlight"><pre><code class="language-cmake" data-lang="cmake">  <span class="nf">SET</span><span class="p">(</span>CMAKE_CXX_FLAGS <span class="s2">"-std=c++11 -O3"</span><span class="p">)</span></code></pre></figure>
 
 <p>Tada. Your project should build successfully now =)</p>
 

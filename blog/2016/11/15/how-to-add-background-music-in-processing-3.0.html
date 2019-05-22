@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2016-11-15 00:30:30 -0800" class="date">15 Nov 2016</time>
+            <time itemprop="datePublished" datetime="2016-11-15 08:30:30 +0000" class="date">15 Nov 2016</time>
         
         <h1 class="post-title" itemprop="name">How to add background music in Processing 3.0?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -140,11 +140,11 @@
 <h2 id="processing-code-to-start-with">Processing code to start with</h2>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">//runs once when the app first starts</span>
-  <span class="kt">void</span> <span class="n">setup</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
   <span class="o">}</span>
 
   <span class="c1">//runs all the time, this is the main app loop</span>
-  <span class="kt">void</span> <span class="n">draw</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kt">void</span> <span class="nf">draw</span><span class="o">()</span> <span class="o">{</span>
   <span class="o">}</span></code></pre></figure>
 
 <p>If you are new to Processing, there are two functions that are very important in Processing. One is setup and another one is draw. Think of setup as an one-time pad. It will only be called/runned once unless you restart the application. Draw is a function that will be consistently called/runned during the application and will continually to be running unless you terminate your program. Think of it as a while loop that does not break. Now, in order to add audio in Processing 3.0. We need to use a library called Sound by <a href="https://processingfoundation.org/">The Processing Foundation</a>. Here are the steps to get it up and running.<br /><br />
@@ -174,7 +174,7 @@ Second, go to Sketch-&gt;Import Library-&gt;Add Library. Then, a Contribution Ma
 <h2 id="processing-code-to-add-the-audio">Processing code to add the audio</h2>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">//runs once when the app first starts</span>
-  <span class="kt">void</span> <span class="n">setup</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// for more info about sketchPath, go to https://processing.org/discourse/beta/num_1229443269.html</span>
     <span class="n">path</span> <span class="o">=</span> <span class="n">sketchPath</span><span class="o">(</span><span class="n">audioName</span><span class="o">);</span>
     <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SoundFile</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">path</span><span class="o">);</span>
@@ -193,7 +193,7 @@ Second, go to Sketch-&gt;Import Library-&gt;Add Library. Then, a Contribution Ma
   <span class="n">String</span> <span class="n">path</span><span class="o">;</span>
 
   <span class="c1">//runs once when the app first starts</span>
-  <span class="kt">void</span> <span class="n">setup</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// for more info about sketchPath, go to https://processing.org/discourse/beta/num_1229443269.html</span>
     <span class="n">path</span> <span class="o">=</span> <span class="n">sketchPath</span><span class="o">(</span><span class="n">audioName</span><span class="o">);</span>
     <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SoundFile</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">path</span><span class="o">);</span>
@@ -201,7 +201,7 @@ Second, go to Sketch-&gt;Import Library-&gt;Add Library. Then, a Contribution Ma
   <span class="o">}</span>
 
   <span class="c1">//runs all the time, this is the main app loop</span>
-  <span class="kt">void</span> <span class="n">draw</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kt">void</span> <span class="nf">draw</span><span class="o">()</span> <span class="o">{</span>
   <span class="o">}</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/11/15/how-to-add-background-music-in-processing-3.0/backgroundMusic.pde" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>

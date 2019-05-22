@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2018-02-09 00:30:30 -0800" class="date">09 Feb 2018</time>
+            <time itemprop="datePublished" datetime="2018-02-09 08:30:30 +0000" class="date">09 Feb 2018</time>
         
         <h1 class="post-title" itemprop="name">Solving the Fibonacci problem using Dynamic Programming in Java</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -198,10 +198,10 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 
 <h3 id="recursion">Recursion</h3>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFibonacciNumberRecursively</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFibonacciNumberRecursively</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
     <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
-    <span class="k">return</span> <span class="n">getFibonacciNumberRecursively</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">getFibonacciNumberRecursively</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">);</span>
+    <span class="k">return</span> <span class="nf">getFibonacciNumberRecursively</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">getFibonacciNumberRecursively</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">);</span>
   <span class="o">}</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java/FibonacciNumber.java" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
@@ -217,7 +217,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 <p>When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">getFibonacciNumberTopDown</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFibonacciNumberTopDown</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span><span class="o">(</span><span class="n">hm</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="k">return</span> <span class="n">hm</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
     <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
     <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
@@ -239,7 +239,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 <p>A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">getFibonacciNumberBottomUpWithCache</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFibonacciNumberBottomUpWithCache</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">hm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
     <span class="n">hm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
@@ -253,7 +253,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 <p>Now that we are going with the right direction. Each number in the sequence <em>ONLY</em> gets touch once.
 Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFibonacciNumberBottomUpWithoutCache</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFibonacciNumberBottomUpWithoutCache</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">fnMin2</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
     <span class="kt">int</span> <span class="n">fnMin1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
     <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>

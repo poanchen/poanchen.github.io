@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2016-10-29 01:30:30 -0700" class="date">29 Oct 2016</time>
+            <time itemprop="datePublished" datetime="2016-10-29 08:30:30 +0000" class="date">29 Oct 2016</time>
         
         <h1 class="post-title" itemprop="name">Is it possible to host two website with different domain name on one server? If yes, how would you do that?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -139,14 +139,14 @@
 
 <h2 id="apache-config-file-for-examplecom">Apache config file for example.com</h2>
 
-<figure class="highlight"><pre><code class="language-apache" data-lang="apache"> <span class="p">&lt;</span><span class="nc">VirtualHost</span> <span class="sr">*:80</span><span class="p">&gt;
-</span>    <span class="nl">ServerName</span> www.example.com
-    <span class="nl">ServerAdmin</span> webmaster@localhost
-    <span class="nl">DocumentRoot</span> /var/www/example.com
+<figure class="highlight"><pre><code class="language-apache" data-lang="apache"> <span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *:80</span><span class="p">&gt;
+</span>    <span class="nc">ServerName</span> www.example.com
+    <span class="nc">ServerAdmin</span> webmaster@localhost
+    <span class="nc">DocumentRoot</span> /var/www/example.com
 
-    <span class="nl">ErrorLog</span> /var/www/example.com/log/error.log
-    <span class="nl">CustomLog</span> /var/www/example.com/log/access.log combined
- <span class="p">&lt;/</span><span class="nc">VirtualHost</span><span class="err">&gt;</span></code></pre></figure>
+    <span class="nc">ErrorLog</span> /var/www/example.com/log/error.log
+    <span class="nc">CustomLog</span> /var/www/example.com/log/access.log combined
+ <span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/29/is-it-possible-to-host-two-website-with-different-domain-on-one-server/www-example-com.conf" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -154,14 +154,14 @@
 
 <h2 id="apache-config-file-for-examplenet">Apache config file for example.net</h2>
 
-<figure class="highlight"><pre><code class="language-apache" data-lang="apache"> <span class="p">&lt;</span><span class="nc">VirtualHost</span> <span class="sr">*:80</span><span class="p">&gt;
-</span>    <span class="nl">ServerName</span> www.example.net
-    <span class="nl">ServerAdmin</span> webmaster@localhost
-    <span class="nl">DocumentRoot</span> /var/www/example.net
+<figure class="highlight"><pre><code class="language-apache" data-lang="apache"> <span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *:80</span><span class="p">&gt;
+</span>    <span class="nc">ServerName</span> www.example.net
+    <span class="nc">ServerAdmin</span> webmaster@localhost
+    <span class="nc">DocumentRoot</span> /var/www/example.net
 
-    <span class="nl">ErrorLog</span> /var/www/example.net/log/error.log
-    <span class="nl">CustomLog</span> /var/www/example.net/log/access.log combined
- <span class="p">&lt;/</span><span class="nc">VirtualHost</span><span class="err">&gt;</span></code></pre></figure>
+    <span class="nc">ErrorLog</span> /var/www/example.net/log/error.log
+    <span class="nc">CustomLog</span> /var/www/example.net/log/access.log combined
+ <span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/29/is-it-possible-to-host-two-website-with-different-domain-on-one-server/www-example-net.conf" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -169,7 +169,7 @@
 
 <h2 id="apache-command-to-restart-the-server">Apache command to restart the server</h2>
 
-<figure class="highlight"><pre><code class="language-apache" data-lang="apache">   service apache2 restart</code></pre></figure>
+<figure class="highlight"><pre><code class="language-apache" data-lang="apache">  sudo service apache2 restart</code></pre></figure>
 
 <h2 id="wrapping-up">Wrapping Up</h2>
 

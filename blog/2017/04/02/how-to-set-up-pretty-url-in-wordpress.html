@@ -71,7 +71,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2017-04-02 01:30:30 -0700" class="date">02 Apr 2017</time>
+            <time itemprop="datePublished" datetime="2017-04-02 08:30:30 +0000" class="date">02 Apr 2017</time>
         
         <h1 class="post-title" itemprop="name">How to set up pretty url in WordPress?</h1>
         <p itemprop="description" class="subtitle"></p>
@@ -141,22 +141,22 @@
 
 <p>For WordPress to use pretty url in permalink, you need to enable mod_rewrite. To do that, first you need to run this command to enable it.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  sudo a2enmod rewrite</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>a2enmod rewrite</code></pre></figure>
 
 <p>Next, you need to make sure your Apache conf file allow you to rewrite as well. Do these commands.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">cd</span> /etc/apache2/sites-enabled
-  sudo vi <span class="o">[</span>name of your conf file].conf</code></pre></figure>
+  <span class="nb">sudo </span>vi <span class="o">[</span>name of your conf file].conf</code></pre></figure>
 
 <p>Then, vi will open up the conf file and you may view your setting for your web server. Try adding the following line to your conf file.</p>
 
-<figure class="highlight"><pre><code class="language-apache" data-lang="apache">  <span class="p">&lt;</span><span class="nc">Directory</span> <span class="sr">/var/www</span><span class="p">&gt;
-</span>    <span class="nl">AllowOverride</span> All
-  <span class="p">&lt;/</span><span class="nc">Directory</span><span class="err">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-apache" data-lang="apache">  <span class="p">&lt;</span><span class="nl">Directory</span><span class="sr"> /var/www</span><span class="p">&gt;
+</span>    <span class="nc">AllowOverride</span> <span class="ss">All</span>
+  <span class="p">&lt;/</span><span class="nl">Directory</span><span class="p">&gt;</span></code></pre></figure>
 
 <p>Next, in order for Apache to take effect, you need to restart your Apache server.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  sudo service apache2 restart</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>service apache2 restart</code></pre></figure>
 
 <p>Now, when you head over to your WordPress site. You should be able to properly see your site without the “Not Found” error message.</p>
 
