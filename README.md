@@ -12,10 +12,12 @@ Dev tool to be installed before run
 1. git clone https://github.com/poanchen/poanchen.github.io.git
 2. cd poanchen.github.io/
 3. npm install
-4. gulp // this will run the default gulp task that will minimized all the css/js/img files in
+4. sudo apt-get install ruby ruby-dev make (Gotta install ruby in order to install Jekyll gems)
+5. gem install jekyll-sitemap wdm (So that we have sitemap.xml and wdm installed in the system)
+6. gulp // this will run the default gulp task that will minimized all the css/js/img files in
 the src folder as well as watching any css/js/img files changes and minimized automatically. In addition, 
 it will also run the server and automatically open up the website.
-5. Site should be running now!!!
+7. Site should be running now!!!
 ```
 
 ## Steps to deploy the site to live
