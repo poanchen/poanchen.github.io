@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "The right way to manage nested callbacks",
+      "category" : "",
+      "tags"     : "PoAn (Baron) Chen, JavaScript, Asynchronous Programming, Callback, Callback hell, Async/await, and Promise",
+      "url"      : "/blog/2019/06/19/The-right-way-to-manage-nested-callbacks",
+      "date"     : "19 Jun 2019"
+    } ,
+  
+    {
       "title"    : "How to get an interview with Microsoft and what is their interview process like?",
       "category" : "",
       "tags"     : "PoAn (Baron) Chen, Microsoft, and Interview Prep",
