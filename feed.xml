@@ -3,18 +3,18 @@
   <channel>
     <title>PoAn (Baron) Chen's site</title>
     <description>A blog written by PoAn (Baron) Chen.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 19 Jun 2019 15:57:37 +0000</pubDate>
-    <lastBuildDate>Wed, 19 Jun 2019 15:57:37 +0000</lastBuildDate>
+    <link>https://poanchen.github.io/</link>
+    <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 19 Jun 2019 16:02:10 +0000</pubDate>
+    <lastBuildDate>Wed, 19 Jun 2019 16:02:10 +0000</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>The right way to manage nested callbacks</title>
         <description>&lt;p&gt;In case you do not know what a callback is, please refer to &lt;a href=&quot;https://husseinfaara.com/articles/what-the-heck-is-a-callback&quot;&gt;this&lt;/a&gt; awesome article by &lt;a href=&quot;https://husseinfaara.com/&quot;&gt;Hussein Faara&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;All in all, callbacks are great. With callback, we are allowed to write code in JavaScript asynchronously and it just work. However, in real world, as a Software Engineer, we do not simply expect things to just work and be satisfied with it. We also look at other things. For example, maintainability.&lt;/p&gt; &lt;p&gt;Let’s work with a real world example here to demonstrate what we want to talk about, say, we would like to add couple of songs to a...</description>
         <pubDate>Wed, 19 Jun 2019 08:30:30 +0000</pubDate>
-        <link>http://localhost:4000/blog/2019/06/19/The-right-way-to-manage-nested-callbacks</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2019/06/19/The-right-way-to-manage-nested-callbacks</guid>
+        <link>https://poanchen.github.io/blog/2019/06/19/The-right-way-to-manage-nested-callbacks</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/06/19/The-right-way-to-manage-nested-callbacks</guid>
         
         <category>PoAn (Baron) Chen</category>
         
@@ -37,8 +37,8 @@
         <title>How to get an interview with Microsoft and what is their interview process like?</title>
         <description>&lt;p&gt;This post talks about how one could get an interview with Microsoft for a Software Engineer role as well as its process. If you already got an interview with them, simply &lt;a href=&quot;#interview-process-at-microsoft&quot;&gt;skip&lt;/a&gt; to the part where I discuss its interview process.&lt;/p&gt; &lt;h2 id=&quot;how-one-could-get-an-interview-with-microsoft-or-any-other-company-by-all-means&quot;&gt;How one could get an interview with Microsoft or any other company by all means&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;\img\2019\05\20\How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like/Microsoft visit.jpg&quot; alt=&quot;Me visiting Microsoft Redmond Campus&quot; /&gt;&lt;/p&gt; &lt;p&gt;As I have been interviewing with Microsoft for multiple times in the past three years, I feel I am somewhat qualify to talk about it. As you can imagine, some people would say...</description>
         <pubDate>Sat, 18 May 2019 08:30:30 +0000</pubDate>
-        <link>http://localhost:4000/blog/2019/05/18/How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2019/05/18/How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like</guid>
+        <link>https://poanchen.github.io/blog/2019/05/18/How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/05/18/How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like</guid>
         
         <category>PoAn (Baron) Chen</category>
         
@@ -53,8 +53,8 @@
         <title>How to calculate time complexity of an algorithm?</title>
         <description>&lt;p&gt;Knowing how fast your algorithm runs is extremely important. Often times, you will get asked to determine your algorithm performance in a big-O sense during interview. You will be expected to know how to calculate the time and space complexity of your code, sometimes you even need to explain how you get there. In some cases, it can be pretty tricky to get it right. In this article, I am going to show you guys how to do things right.&lt;/p&gt; &lt;p&gt;In most of the cases, you are going to see these kind of Big-O running time in your code.&lt;/p&gt; &lt;p&gt;&lt;img...</description>
         <pubDate>Fri, 23 Nov 2018 08:30:30 +0000</pubDate>
-        <link>http://localhost:4000/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm</guid>
+        <link>https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm</guid>
         
         <category>PoAn (Baron) Chen</category>
         
@@ -67,8 +67,8 @@
         <title>How to fix 'login must use security token' in Salesforce?</title>
         <description>&lt;p&gt;Recently, I ran into this error message in Salesforce where it stated that &lt;strong&gt;“LOGIN_MUST_USE_SECURITY_TOKEN: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce–either via a desktop client or the API–from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.”&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;According to the official Salesforce documentation about &lt;a href=&quot;https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm&quot;&gt;User Authentication&lt;/a&gt;, there are two...</description>
         <pubDate>Mon, 27 Aug 2018 08:30:30 +0000</pubDate>
-        <link>http://localhost:4000/blog/2018/08/27/how-to-fix-login-must-use-security-token-in-Salesforce</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/08/27/how-to-fix-login-must-use-security-token-in-Salesforce</guid>
+        <link>https://poanchen.github.io/blog/2018/08/27/how-to-fix-login-must-use-security-token-in-Salesforce</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/08/27/how-to-fix-login-must-use-security-token-in-Salesforce</guid>
         
         <category>PoAn (Baron) Chen</category>
         
@@ -81,8 +81,8 @@
         <title>How to set up GPG key on GitHub?</title>
         <description>&lt;p&gt;Setting up GPG keys on GitHub is important because it allows other to know that you made the commit and not someone else. You, the person with your GitHub profile picture along with your GitHub username and name. Here is an example of a signing commit looks like on GitHub.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/2018/03/23/how-to-set-up-gpg-key-in-github/signing commit sample.png&quot; alt=&quot;signing commit sample&quot; /&gt;&lt;/p&gt; &lt;p&gt;Just like the &lt;a href=&quot;https://blog.github.com/2016-04-05-gpg-signature-verification/&quot;&gt;blog&lt;/a&gt; from GitHub mentioned, unlike any other unsigned commit. The signed commit will come with the green word &lt;em&gt;Verified&lt;/em&gt; with it (a badge) to indicate that the commit was indeed came from the user. In example,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/2018/03/23/how-to-set-up-gpg-key-in-github/commits...</description>
         <pubDate>Fri, 23 Mar 2018 23:59:14 +0000</pubDate>
-        <link>http://localhost:4000/blog/2018/03/23/how-to-set-up-gpg-key-on-github</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/03/23/how-to-set-up-gpg-key-on-github</guid>
+        <link>https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github</guid>
         
         <category>GitHub</category>
         
@@ -103,8 +103,8 @@
         <title>How to fix 'permission denied for relation some_table_name' in PostgreSQL?</title>
         <description>&lt;p&gt;Ever needed to create a bunch of tables for a newly created user to access in PostgreSQL and see the following error message pop up, ‘&lt;strong&gt;permission denied for relation some_table_name&lt;/strong&gt;’? You are in luck, in this tutorial, I am going to guide you guys through it to make the error message goes away.&lt;/p&gt; &lt;p&gt;Let me give you guys an example on how this error message might occur (at least this is how I found out),&lt;/p&gt; &lt;p&gt;Check out this following sql file,&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt; &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;&quot;database&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;someuser&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt;...</description>
         <pubDate>Wed, 07 Mar 2018 08:30:30 +0000</pubDate>
-        <link>http://localhost:4000/blog/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL</guid>
+        <link>https://poanchen.github.io/blog/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL</guid>
         
         <category>Database</category>
         
@@ -121,8 +121,8 @@
         <title>How to delete a commit completely in GitHub?</title>
         <description>&lt;p&gt;Ever needed to delete a commit completely in GitHub but tried hundred of thousands of tutorials and still does not work? You are in luck! In this tutorial, I am going to teach you guys how to make a GitHub commit disappear forever. Note: before you carry on with this tutorial, make sure you do not have any local changes or stash all your local changes to be safe.&lt;/p&gt; &lt;p&gt;Follow this tutorial in order to delete one or more commits in GitHub. First, you use the following command to list all or some of your latest GitHub commits.&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code...</description>
         <pubDate>Sat, 24 Feb 2018 08:30:30 +0000</pubDate>
-        <link>http://localhost:4000/blog/2018/02/24/How-to-delete-a-commit-completely-in-GitHub</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/02/24/How-to-delete-a-commit-completely-in-GitHub</guid>
+        <link>https://poanchen.github.io/blog/2018/02/24/How-to-delete-a-commit-completely-in-GitHub</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/02/24/How-to-delete-a-commit-completely-in-GitHub</guid>
         
         <category>Git</category>
         
@@ -139,8 +139,8 @@
         <title>Solving the Fibonacci problem using Dynamic Programming in Java</title>
         <description>&lt;p&gt;Today, I am going to give a tutorial on how to solve the Fibonacci problem using Dynamic Programming in Java. Before we start to talk about Dynamic Programming. I would like to start briefly on what the Fibonacci problem is. If you already know the problem. Feel free to skip to the next section.&lt;/p&gt; &lt;h2 id=&quot;fibonacci-problem&quot;&gt;Fibonacci problem&lt;/h2&gt; &lt;p&gt;According to &lt;a href=&quot;https://en.wikipedia.org/wiki/Fibonacci_number&quot;&gt;Wikipedia&lt;/a&gt;, “&lt;em&gt;Fibonacci number&lt;/em&gt; are the numbers in the following integer sequence, called the &lt;em&gt;Fibonacci sequence&lt;/em&gt;, and characterized by the fact that every number after the first two is the sum of the two preceding ones”&lt;/p&gt; &lt;p&gt;For example: 1, 1, 2,...</description>
         <pubDate>Fri, 09 Feb 2018 08:30:30 +0000</pubDate>
-        <link>http://localhost:4000/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java</guid>
+        <link>https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java</guid>
         
         <category>Competitive programming</category>
         
@@ -159,8 +159,8 @@
         <title>Build a scalable, reliable, and inexpensive RESTful API using AWS Lambda that will do the Roman Numerals Conversion</title>
         <description>&lt;h2 id=&quot;prerequisite-concepts-skills-andor-values&quot;&gt;Prerequisite Concepts, Skills and/or Values&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Experienced with at least one of the programming language ranging from Node.js/Java/C#/Python.&lt;/li&gt; &lt;li&gt;Worked with RESTful API.&lt;/li&gt; &lt;li&gt;Familiar with Algebra.&lt;/li&gt; &lt;li&gt;Understand how HTTP(s)/web request works.&lt;/li&gt; &lt;li&gt;AWS account with admin privilege.&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt; &lt;p&gt;Building a scalable and reliable RESTful API from scratch can be challenging with hardware and software in mind. Using &lt;a href=&quot;https://docs.aws.amazon.com/lambda/latest/dg/welcome.html&quot;&gt;AWS Lambda&lt;/a&gt; allows the developer to build a RESTful API that are scalable, reliable and inexpensive without worrying too much about the compute resources, server and operating system maintenance, capacity provisioning and automatic scaling, code and security path deployment, code monitoring...</description>
         <pubDate>Sun, 03 Dec 2017 08:30:30 +0000</pubDate>
-        <link>http://localhost:4000/blog/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion</guid>
+        <link>https://poanchen.github.io/blog/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion</guid>
         
         <category>AWS</category>
         
@@ -181,8 +181,8 @@
         <title>How to create a GitHub pull request with a specific commits?</title>
         <description>&lt;p&gt;Ever wanted to create a pull request in GitHub but only wished to commit changes that is relevant? You are in luck. In this tutorial, I am going to show you how I would do it. Recently, I tried to create a pull request in GitHub and this is what I see.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits/create pull request with other changes.png&quot; alt=&quot;creating a pull request along with other changes&quot; /&gt;&lt;/p&gt; &lt;p&gt;The problem that I have here is that I only wanted to create a pull request with only the &lt;strong&gt;a51afa6&lt;/strong&gt; and &lt;strong&gt;07f39f7&lt;/strong&gt;. But, it seems like you cannot really do anything on...</description>
         <pubDate>Sun, 12 Nov 2017 08:30:30 +0000</pubDate>
-        <link>http://localhost:4000/blog/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits</guid>
+        <link>https://poanchen.github.io/blog/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits</guid>
         
         <category>Git</category>
         
