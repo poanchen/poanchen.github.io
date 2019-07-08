@@ -6,16 +6,15 @@
 trigger:
 - will-jekyll-template
 
-pool:
-  vmImage: 'ubuntu-latest'
-
 stages:
 - stage: BuildPoanchenPersonalWebsite
   jobs:
   - job: InstallDependency
     steps:
     - script: gem install jekyll-sitemap wdm
-  - job: LaunchJekyll
+  - job: BuildJekyll
+    pool:
+      vmImage: 'ubuntu-latest'
     dependsOn: InstallDependency
     steps:
     - task: Docker@0
