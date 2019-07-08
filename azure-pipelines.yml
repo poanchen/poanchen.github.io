@@ -10,16 +10,13 @@ stages:
 - stage: BuildPoanchenPersonalWebsite
   jobs:
   - job: UseRuby
+    pool:
+      vmImage: 'ubuntu-latest'
     steps:
     - task: UseRubyVersion@0
       inputs:
         addToPath: true
     - script: gem install jekyll-sitemap wdm
-  - job: BuildJekyll
-    pool:
-      vmImage: 'ubuntu-latest'
-    dependsOn: UseRuby
-    steps:
     - task: Docker@0
       displayName: 'Run Jekyll'
       inputs:
