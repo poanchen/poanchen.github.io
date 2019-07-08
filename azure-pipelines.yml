@@ -16,7 +16,7 @@ stages:
     steps:
     - script: |
       gem install jekyll-sitemap wdm
-      displayName: 'Install wdm via gem'
+      displayName: Install wdm via gem
     - task: Docker@0
       displayName: 'Run Jekyll'
       inputs:
