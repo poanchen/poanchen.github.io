@@ -6,10 +6,22 @@
 trigger:
 - will-jekyll-template
 
+
+sudo apt-get install rubygems
+
+- task: UseRubyVersion@0
+  inputs:
+    versionSpec: '>= 2.4'
+    addToPath: true
+
 stages:
 - stage: BuildPoanchenPersonalWebsite
   jobs:
+  - job: UseRuby
+    steps:
+    - task: UseRubyVersion@0
   - job: InstallDependency
+    dependsOn: UseRuby
     steps:
     - script: gem install jekyll-sitemap wdm
   - job: BuildJekyll
