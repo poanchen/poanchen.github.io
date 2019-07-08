@@ -14,9 +14,6 @@ stages:
     - task: UseRubyVersion@0
       inputs:
         addToPath: true
-  - job: InstallDependency
-    dependsOn: UseRuby
-    steps:
     - script: gem install jekyll-sitemap wdm
   - job: BuildJekyll
     pool:
