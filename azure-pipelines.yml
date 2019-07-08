@@ -14,9 +14,7 @@ stages:
   jobs:
   - job: BuildPoanchenPersonalWebsite
     steps:
-    - script: |
-      gem install jekyll-sitemap wdm
-      displayName: Install wdm via gem
+    - script: gem install jekyll-sitemap wdm
     - task: Docker@0
       displayName: 'Run Jekyll'
       inputs:
