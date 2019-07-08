@@ -18,7 +18,7 @@ stages:
   - job: BuildJekyll
     pool:
       vmImage: 'ubuntu-latest'
-    dependsOn: InstallDependency
+    dependsOn: UseRuby
     steps:
     - task: Docker@0
       displayName: 'Run Jekyll'
