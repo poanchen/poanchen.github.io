@@ -14,16 +14,13 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: UseRubyVersion@0
-      inputs:
-        addToPath: true
-    - script: gem install wdm
-      displayName: 'Run Jekyll'
-      inputs:
-        containerRegistryType: 'Container Registry'
-        action: 'Run an image'
-        imageName: 'jekyll/builder:latest'
-        volumes: |
-          $(build.sourcesDirectory):/srv/jekyll
-          $(build.binariesDirectory):/srv/jekyll/_site
-        containerCommand: 'jekyll build'
-        detached: false
+      displayName: Use Ruby >= 2.4
+    
+    - script: 'gem install jekyll'
+      displayName: Install Jekyll
+
+    - script: 'gem install wdm'
+      displayName: Install wdm
+
+    - script: 'bundle exec jekyll build'
+      displayName: Build Jekyll project
