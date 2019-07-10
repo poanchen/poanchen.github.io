@@ -16,7 +16,7 @@ stages:
     - task: UseRubyVersion@0
       inputs:
         addToPath: true
-    - script: gem install jekyll-sitemap wdm
+    - script: gem install wdm
     - task: Docker@0
       displayName: 'Run Jekyll'
       inputs:
