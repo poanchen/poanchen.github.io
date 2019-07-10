@@ -22,5 +22,5 @@ stages:
     - script: 'gem install wdm'
       displayName: Install wdm
 
-    - script: 'bundle exec jekyll build'
+    - script: 'jekyll build'
       displayName: Build Jekyll project
