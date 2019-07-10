@@ -17,7 +17,6 @@ stages:
       inputs:
         addToPath: true
     - script: gem install wdm
-    - task: Docker@0
       displayName: 'Run Jekyll'
       inputs:
         containerRegistryType: 'Container Registry'
