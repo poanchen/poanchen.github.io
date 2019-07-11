@@ -18,9 +18,6 @@ stages:
     
     - script: 'gem install jekyll'
       displayName: Install Jekyll
-
-    - script: 'gem install wdm'
-      displayName: Install wdm
       
     - script: 'gem install jekyll-sitemap'
       displayName: Install jekyll-sitemap
