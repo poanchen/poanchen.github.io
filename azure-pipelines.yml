@@ -24,3 +24,14 @@ stages:
 
     - script: 'jekyll build'
       displayName: Build Jekyll project
+      
+    - task: CopyFiles@2
+      displayName: Copy "_site" to staging directory
+      inputs:
+        SourceFolder: '_site'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: _site'
+      inputs:
+        ArtifactName: '_site'
