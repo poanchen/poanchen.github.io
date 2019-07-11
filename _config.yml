@@ -31,7 +31,7 @@ compress_html:
 
 plugins:
   - jekyll-sitemap
-  - wdm # to avoid polling for changes
+  # - wdm # to avoid polling for changes
 
 # Links to include in menu navigation
 # For external links add external: true
