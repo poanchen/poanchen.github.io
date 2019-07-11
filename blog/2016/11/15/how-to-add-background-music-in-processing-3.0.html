@@ -164,10 +164,10 @@ Second, go to Sketch-&gt;Import Library-&gt;Add Library. Then, a Contribution Ma
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">//right above the setup function, add the following code</span>
   <span class="kn">import</span> <span class="nn">processing.sound.*</span><span class="o">;</span>
   
-  <span class="n">SoundFile</span> <span class="n">file</span><span class="o">;</span>
+  <span class="nc">SoundFile</span> <span class="n">file</span><span class="o">;</span>
   <span class="c1">//replace the sample.mp3 with your audio file name here</span>
-  <span class="n">String</span> <span class="n">audioName</span> <span class="o">=</span> <span class="s">"sample.mp3"</span><span class="o">;</span>
-  <span class="n">String</span> <span class="n">path</span><span class="o">;</span></code></pre></figure>
+  <span class="nc">String</span> <span class="n">audioName</span> <span class="o">=</span> <span class="s">"sample.mp3"</span><span class="o">;</span>
+  <span class="nc">String</span> <span class="n">path</span><span class="o">;</span></code></pre></figure>
 
 <p>Just like any other programming language, you need to import the library before you can use it. Here, for simplicity, add your audio/mp3 file within the same folder as your sketch_XXXXXXXX.pde file.</p>
 
@@ -177,7 +177,7 @@ Second, go to Sketch-&gt;Import Library-&gt;Add Library. Then, a Contribution Ma
   <span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// for more info about sketchPath, go to https://processing.org/discourse/beta/num_1229443269.html</span>
     <span class="n">path</span> <span class="o">=</span> <span class="n">sketchPath</span><span class="o">(</span><span class="n">audioName</span><span class="o">);</span>
-    <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SoundFile</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">path</span><span class="o">);</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SoundFile</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">path</span><span class="o">);</span>
     <span class="n">file</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
   <span class="o">}</span></code></pre></figure>
 
@@ -187,16 +187,16 @@ Second, go to Sketch-&gt;Import Library-&gt;Add Library. Then, a Contribution Ma
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kn">import</span> <span class="nn">processing.sound.*</span><span class="o">;</span>
   
-  <span class="n">SoundFile</span> <span class="n">file</span><span class="o">;</span>
+  <span class="nc">SoundFile</span> <span class="n">file</span><span class="o">;</span>
   <span class="c1">//put your audio file name here</span>
-  <span class="n">String</span> <span class="n">audioName</span> <span class="o">=</span> <span class="s">"sample.mp3"</span><span class="o">;</span>
-  <span class="n">String</span> <span class="n">path</span><span class="o">;</span>
+  <span class="nc">String</span> <span class="n">audioName</span> <span class="o">=</span> <span class="s">"sample.mp3"</span><span class="o">;</span>
+  <span class="nc">String</span> <span class="n">path</span><span class="o">;</span>
 
   <span class="c1">//runs once when the app first starts</span>
   <span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// for more info about sketchPath, go to https://processing.org/discourse/beta/num_1229443269.html</span>
     <span class="n">path</span> <span class="o">=</span> <span class="n">sketchPath</span><span class="o">(</span><span class="n">audioName</span><span class="o">);</span>
-    <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SoundFile</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">path</span><span class="o">);</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SoundFile</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">path</span><span class="o">);</span>
     <span class="n">file</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
   <span class="o">}</span>
 

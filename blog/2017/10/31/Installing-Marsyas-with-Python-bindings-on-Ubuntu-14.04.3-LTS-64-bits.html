@@ -143,10 +143,10 @@
 
 <p>Please download and install these packages using these commands if you have not done so already.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>apt install git
-  <span class="nb">sudo </span>apt install cmake
-  <span class="nb">sudo </span>apt install cmake-curses-gui
-  <span class="nb">sudo </span>apt install libasound2-dev</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>apt <span class="nb">install </span>git
+  <span class="nb">sudo </span>apt <span class="nb">install </span>cmake
+  <span class="nb">sudo </span>apt <span class="nb">install </span>cmake-curses-gui
+  <span class="nb">sudo </span>apt <span class="nb">install </span>libasound2-dev</code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -159,7 +159,7 @@
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  wget https://github.com/poanchen/marsyas/archive/version-0.5.1.tar.gz
   <span class="nb">tar </span>xvzf version-0.5.1.tar.gz
   <span class="nb">cd </span>marsyas-version-0.5.1/
-  mkdir build
+  <span class="nb">mkdir </span>build
   <span class="nb">cd </span>build
   ccmake ../ <span class="o">(</span>First, <span class="k">select </span>c to configure. And <span class="k">then</span>, <span class="k">select </span>g to generate and exit.<span class="o">)</span>
   make <span class="nt">-j</span> 3 <span class="o">(</span>or higher <span class="k">if </span>you have more cores<span class="o">)</span> <span class="o">(</span>This will take quite a bit of <span class="nb">time </span>to build it<span class="o">)</span></code></pre></figure>
@@ -179,11 +179,11 @@
 
 <p>Now, we are ready to get the Python/SWIG bindings going. Please download and install these packages using these commands if you have not done so already.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>apt install swig 
-  <span class="nb">sudo </span>apt install python-dev <span class="o">(</span>the python headers<span class="o">)</span> 
-  <span class="nb">sudo </span>apt install python-matplotlib 
-  <span class="nb">sudo </span>apt install ipython
-  <span class="nb">sudo </span>apt install libfreetype6-dev</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>apt <span class="nb">install </span>swig 
+  <span class="nb">sudo </span>apt <span class="nb">install </span>python-dev <span class="o">(</span>the python headers<span class="o">)</span> 
+  <span class="nb">sudo </span>apt <span class="nb">install </span>python-matplotlib 
+  <span class="nb">sudo </span>apt <span class="nb">install </span>ipython
+  <span class="nb">sudo </span>apt <span class="nb">install </span>libfreetype6-dev</code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -191,7 +191,7 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  ccmake ../ <span class="o">(</span>First, press enter with up and down arrow to <span class="nb">enable </span>the WITH_SWIG and WITH_PNG option to be ON. And <span class="k">then</span>, <span class="k">select </span>g to generate and exit.<span class="o">)</span>
   make <span class="nt">-j</span> 3 <span class="o">(</span>or higher <span class="k">if </span>you have more cores<span class="o">)</span> <span class="o">(</span>This will take quite a bit of <span class="nb">time </span>to build it<span class="o">)</span>
-  <span class="nb">sudo </span>make install <span class="o">(</span>Install the Marsyas python bindings so that Python can find them globally<span class="o">)</span>
+  <span class="nb">sudo </span>make <span class="nb">install</span> <span class="o">(</span>Install the Marsyas python bindings so that Python can find them globally<span class="o">)</span>
   <span class="nb">sudo </span>ldconfig /usr/local/lib <span class="o">(</span>Add /usr/local/lib to the path searched <span class="k">for </span>libraries<span class="o">)</span> </code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/commands.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
@@ -236,8 +236,8 @@
   <span class="k">while</span> <span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">getControl</span><span class="p">(</span><span class="s">"SoundFileSource/input/mrs_bool/hasData"</span><span class="p">)</span><span class="o">.</span><span class="n">to_bool</span><span class="p">()):</span>
       <span class="n">system</span><span class="o">.</span><span class="n">tick</span><span class="p">()</span>
       <span class="n">y_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">getControl</span><span class="p">(</span><span class="s">"Selector/selection/mrs_realvec/processedData"</span><span class="p">)</span><span class="o">.</span><span class="n">to_realvec</span><span class="p">())</span>
-      <span class="n">y_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;</span><span class="c">#42;=  44100 / 1025 # Sampling Rate / FFT Size</span>
-  <span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_data</span><span class="p">)),</span> <span class="n">y_data</span><span class="p">)</span>
+      <span class="n">y_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;</span><span class="c1">#42;=  44100 / 1025 # Sampling Rate / FFT Size
+</span>  <span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_data</span><span class="p">)),</span> <span class="n">y_data</span><span class="p">)</span>
   <span class="n">savefig</span><span class="p">(</span><span class="s">'sample.png'</span><span class="p">)</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/10/31/Installing-Marsyas-with-Python-bindings-on-Ubuntu-14.04.3-LTS-64-bits/sample.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>

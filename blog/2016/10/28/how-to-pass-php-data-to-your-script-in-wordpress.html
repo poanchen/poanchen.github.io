@@ -139,11 +139,11 @@
 
 <h2 id="php-code-that-contains-all-the-audios">PHP code that contains all the audios</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Audios are from https://www.aehelp.com
-</span>  <span class="c1">// if you are interested in learning ielts, please go to their site!
-</span>  <span class="c1">// they have amazing online course for ielts that will
-</span>  <span class="c1">// help you improve your score!
-</span>  <span class="nv">$basePath</span> <span class="o">=</span> <span class="s1">'https://d5s5h26eyrr5q.cloudfront.net/'</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Audios are from https://www.aehelp.com</span>
+  <span class="c1">// if you are interested in learning ielts, please go to their site!</span>
+  <span class="c1">// they have amazing online course for ielts that will</span>
+  <span class="c1">// help you improve your score!</span>
+  <span class="nv">$basePath</span> <span class="o">=</span> <span class="s1">'https://d5s5h26eyrr5q.cloudfront.net/'</span><span class="p">;</span>
 
   <span class="nv">$urlsForAllTheAudios</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="k">array</span><span class="p">(</span>
@@ -179,27 +179,27 @@
 
 <h2 id="php-code-to-start-with">PHP code to start with</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include this php file, so that we have all the information for the audio that we will be playing later
-</span>  <span class="k">require_once</span><span class="p">(</span><span class="s2">"audioPlaylist.php"</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include this php file, so that we have all the information for the audio that we will be playing later</span>
+  <span class="k">require_once</span><span class="p">(</span><span class="s2">"audioPlaylist.php"</span><span class="p">);</span></code></pre></figure>
 
 <p>Now that we have the @variable, we need to figure out how to pass that data to the JavaScript file. To do that, we are going to use <a href="https://codex.wordpress.org/Function_Reference/wp_localize_script">wp_localize_script</a>. Through the use of this, it can be used to make any PHP data available to your script that you can normally only get from the server side of WordPress.</p>
 
 <h2 id="php-code-to-use-wp_localize_script">PHP code to use wp_localize_script</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Enqueue this js file, so that WordPress knows that we will be using this js file in this page
-</span>  <span class="nx">wp_enqueue_script</span><span class="p">(</span><span class="s1">'audio-demo-player'</span><span class="p">,</span> <span class="nx">get_template_directory_uri</span><span class="p">()</span> <span class="o">.</span> <span class="s1">'/createPlaylist.js'</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Enqueue this js file, so that WordPress knows that we will be using this js file in this page</span>
+  <span class="nx">wp_enqueue_script</span><span class="p">(</span><span class="s1">'audio-demo-player'</span><span class="p">,</span> <span class="nx">get_template_directory_uri</span><span class="p">()</span> <span class="o">.</span> <span class="s1">'/createPlaylist.js'</span><span class="p">);</span>
 
-  <span class="c1">// now we need to set the array name to be audio_array, so that later in the js file we can call them with that name
-</span>  <span class="c1">// we also pass in the array that we have in the require_once
-</span>  <span class="nx">wp_localize_script</span><span class="p">(</span><span class="s1">'audio-demo-player'</span><span class="p">,</span> <span class="s1">'audio_array'</span><span class="p">,</span> <span class="nv">$urlsForAllTheAudios</span><span class="p">);</span></code></pre></figure>
+  <span class="c1">// now we need to set the array name to be audio_array, so that later in the js file we can call them with that name</span>
+  <span class="c1">// we also pass in the array that we have in the require_once</span>
+  <span class="nx">wp_localize_script</span><span class="p">(</span><span class="s1">'audio-demo-player'</span><span class="p">,</span> <span class="s1">'audio_array'</span><span class="p">,</span> <span class="nv">$urlsForAllTheAudios</span><span class="p">);</span></code></pre></figure>
 
 <p>This is basically telling the wp_localize_script that we are going to pass this @variable namely urlsForAllTheAudios as audio_array to the JavaScript file named createPlaylist.js. Now, since this is a WordPress site, we need to call the wp_head, so that the js file will be included in this page.</p>
 
 <h2 id="php-code-to-call-wp_head">PHP code to call wp_head</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// this trigger the &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; section, which will enqueue the js file. Without this, the js file will not be
-</span>  <span class="c1">// included in this specific page
-</span>  <span class="nx">wp_head</span><span class="p">();</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// this trigger the &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; section, which will enqueue the js file. Without this, the js file will not be</span>
+  <span class="c1">// included in this specific page</span>
+  <span class="nx">wp_head</span><span class="p">();</span></code></pre></figure>
 
 <p>Now that we have enqueue the js file in the WordPress head. Now, we simply need to add a Div element in the PHP file, so that the JavaScript know where to put all the audios. For more information about wp_head, please go to <a href="https://codex.wordpress.org/Plugin_API/Action_Reference/wp_head">here</a>.</p>
 
@@ -211,21 +211,21 @@
 
 <h2 id="javascript-code-to-generate-html-for-each-audio">JavaScript code to generate html for each audio</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"DOMContentLoaded"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span> 
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">DOMContentLoaded</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span> 
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">audio_array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">addAudioToHTML</span><span class="p">(</span><span class="nx">audio_array</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">artist</span><span class="p">,</span> <span class="nx">audio_array</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">title</span><span class="p">,</span> <span class="nx">audio_array</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">mp3</span><span class="p">,</span> <span class="nx">i</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="kd">function</span> <span class="nx">addAudioToHTML</span> <span class="p">(</span><span class="nx">artist</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">source</span><span class="p">,</span> <span class="nx">position</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">parentDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
-      <span class="kd">var</span> <span class="nx">firstP</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"p"</span><span class="p">);</span>
-      <span class="kd">var</span> <span class="nx">artistForP1</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">"Artist: "</span> <span class="o">+</span> <span class="nx">artist</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">parentDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">firstP</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">p</span><span class="dl">"</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">artistForP1</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="dl">"</span><span class="s2">Artist: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">artist</span><span class="p">);</span>
 
       <span class="nx">firstP</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">artistForP1</span><span class="p">);</span>
       <span class="nx">parentDiv</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">firstP</span><span class="p">);</span>
 
-      <span class="kd">var</span> <span class="nx">secondP</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"p"</span><span class="p">);</span>
-      <span class="kd">var</span> <span class="nx">artistForP2</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">"Title: "</span> <span class="o">+</span> <span class="nx">title</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">secondP</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">p</span><span class="dl">"</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">artistForP2</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="dl">"</span><span class="s2">Title: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">title</span><span class="p">);</span>
 
       <span class="nx">secondP</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">artistForP2</span><span class="p">);</span>
       <span class="nx">parentDiv</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">secondP</span><span class="p">);</span>
@@ -233,12 +233,12 @@
       <span class="kd">var</span> <span class="nx">audio</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Audio</span><span class="p">(</span><span class="nx">source</span><span class="p">);</span>
       <span class="nx">audio</span><span class="p">.</span><span class="nx">controls</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
       <span class="c1">// add warning message for web browser that does not support audio tag</span>
-      <span class="nx">audio</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"Your browser does not support the audio element."</span><span class="p">;</span>
+      <span class="nx">audio</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Your browser does not support the audio element.</span><span class="dl">"</span><span class="p">;</span>
 
       <span class="nx">parentDiv</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">audio</span><span class="p">);</span>
 
-      <span class="kd">var</span> <span class="nx">audioDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'audio'</span><span class="p">);</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#audio'</span><span class="p">).</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">parentDiv</span><span class="p">,</span> <span class="nx">audioDiv</span><span class="p">.</span><span class="nx">childNodes</span><span class="p">[</span><span class="nx">position</span><span class="p">]);</span>
+      <span class="kd">var</span> <span class="nx">audioDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">audio</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#audio</span><span class="dl">'</span><span class="p">).</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">parentDiv</span><span class="p">,</span> <span class="nx">audioDiv</span><span class="p">.</span><span class="nx">childNodes</span><span class="p">[</span><span class="nx">position</span><span class="p">]);</span>
     <span class="p">}</span>
   <span class="p">});</span></code></pre></figure>
 
@@ -252,19 +252,19 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="cp">&lt;?php</span>
 
-  <span class="c1">// Include this php file, so that we have all the information for the audio that we will be playing later
-</span>  <span class="k">require_once</span><span class="p">(</span><span class="s2">"audioPlaylist.php"</span><span class="p">);</span>
+  <span class="c1">// Include this php file, so that we have all the information for the audio that we will be playing later</span>
+  <span class="k">require_once</span><span class="p">(</span><span class="s2">"audioPlaylist.php"</span><span class="p">);</span>
 
-  <span class="c1">// Enqueue this js file, so that WordPress knows that we will be using this js file in this page
-</span>  <span class="nx">wp_enqueue_script</span><span class="p">(</span><span class="s1">'audio-demo-player'</span><span class="p">,</span> <span class="nx">get_template_directory_uri</span><span class="p">()</span> <span class="o">.</span> <span class="s1">'/createPlaylist.js'</span><span class="p">);</span>
+  <span class="c1">// Enqueue this js file, so that WordPress knows that we will be using this js file in this page</span>
+  <span class="nx">wp_enqueue_script</span><span class="p">(</span><span class="s1">'audio-demo-player'</span><span class="p">,</span> <span class="nx">get_template_directory_uri</span><span class="p">()</span> <span class="o">.</span> <span class="s1">'/createPlaylist.js'</span><span class="p">);</span>
 
-  <span class="c1">// now we need to set the array name to be audio_array, so that later in the js file we can call them with that name
-</span>  <span class="c1">// we also pass in the array that we have in the require_once
-</span>  <span class="nx">wp_localize_script</span><span class="p">(</span><span class="s1">'audio-demo-player'</span><span class="p">,</span> <span class="s1">'audio_array'</span><span class="p">,</span> <span class="nv">$urlsForAllTheAudios</span><span class="p">);</span>
+  <span class="c1">// now we need to set the array name to be audio_array, so that later in the js file we can call them with that name</span>
+  <span class="c1">// we also pass in the array that we have in the require_once</span>
+  <span class="nx">wp_localize_script</span><span class="p">(</span><span class="s1">'audio-demo-player'</span><span class="p">,</span> <span class="s1">'audio_array'</span><span class="p">,</span> <span class="nv">$urlsForAllTheAudios</span><span class="p">);</span>
 
-  <span class="c1">// this trigger the &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; section, which will enqueue the js file. Without this, the js file will not be
-</span>  <span class="c1">// included in this specific page
-</span>  <span class="nx">wp_head</span><span class="p">();</span>
+  <span class="c1">// this trigger the &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; section, which will enqueue the js file. Without this, the js file will not be</span>
+  <span class="c1">// included in this specific page</span>
+  <span class="nx">wp_head</span><span class="p">();</span>
 
   <span class="cp">?&gt;</span>
   

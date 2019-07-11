@@ -5,9 +5,9 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 19 Jun 2019 16:24:55 +0000</pubDate>
-    <lastBuildDate>Wed, 19 Jun 2019 16:24:55 +0000</lastBuildDate>
-    <generator>Jekyll v3.8.5</generator>
+    <pubDate>Thu, 11 Jul 2019 14:53:38 +0000</pubDate>
+    <lastBuildDate>Thu, 11 Jul 2019 14:53:38 +0000</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>The right way to manage nested callbacks</title>

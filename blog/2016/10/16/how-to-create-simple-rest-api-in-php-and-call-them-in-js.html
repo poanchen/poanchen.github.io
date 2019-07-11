@@ -139,8 +139,8 @@
 
 <h2 id="php-code-for-simple-rest-api">PHP code for simple REST API</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include the wp-load.php so that we can use username_exists() function in WordPress API
-</span>  <span class="nv">$parse_uri</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span> <span class="s1">'wp-content'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">]</span> <span class="p">);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include the wp-load.php so that we can use username_exists() function in WordPress API</span>
+  <span class="nv">$parse_uri</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span> <span class="s1">'wp-content'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">]</span> <span class="p">);</span>
   <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
 
   <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
@@ -154,8 +154,8 @@
     <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="c1">// return all our data to an AJAX call
-</span>  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
+  <span class="c1">// return all our data to an AJAX call</span>
+  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a><br />
 <a href="https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">Live link</a> hosted on <a href="https://www.jenrenalcare.com" target="_blank">JenRenalCare.com</a></p>
@@ -171,24 +171,24 @@
 <figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"username"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">placeholder=</span><span class="s">"username"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"usernameResult"</span><span class="nt">&gt;&lt;/p&gt;</span>
   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-    <span class="kd">var</span> <span class="nx">usernameSelected</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'username'</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">usernameWarning</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'usernameResult'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">usernameSelected</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">username</span><span class="dl">'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">usernameWarning</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">usernameResult</span><span class="dl">'</span><span class="p">);</span>
 
-    <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'keyup'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">keyup</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-      <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php"</span><span class="p">;</span>
-      <span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="s2">"username="</span> <span class="o">+</span> <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php</span><span class="dl">"</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">username=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
 
-      <span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-      <span class="nx">request</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"Content-type"</span><span class="p">,</span> <span class="s2">"application/x-www-form-urlencoded"</span><span class="p">);</span>
+      <span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+      <span class="nx">request</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/x-www-form-urlencoded</span><span class="dl">"</span><span class="p">);</span>
       <span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
           <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">response</span><span class="p">);</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"The username you typed has been used!"</span><span class="p">;</span>
+              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">The username you typed has been used!</span><span class="dl">"</span><span class="p">;</span>
             <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"You may freely use this username!"</span><span class="p">;</span>
+              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">You may freely use this username!</span><span class="dl">"</span><span class="p">;</span>
             <span class="p">}</span>
           <span class="p">}</span>
         <span class="p">}</span>
@@ -212,30 +212,30 @@
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
       <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">usernameSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#username'</span><span class="p">);</span>
-        <span class="kd">var</span> <span class="nx">usernameWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#usernameResult'</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">usernameSelected</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#username</span><span class="dl">'</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">usernameWarning</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#usernameResult</span><span class="dl">'</span><span class="p">);</span>
 
         <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-          <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php"</span><span class="p">;</span>
+          <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php</span><span class="dl">"</span><span class="p">;</span>
           <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">'username'</span> <span class="p">:</span> <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span>
+            <span class="dl">'</span><span class="s1">username</span><span class="dl">'</span> <span class="p">:</span> <span class="nx">usernameSelected</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span>
           <span class="p">};</span>
 
           <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-            <span class="na">type</span> <span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+            <span class="na">type</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
             <span class="na">url</span> <span class="p">:</span> <span class="nx">url</span><span class="p">,</span>
             <span class="na">data</span> <span class="p">:</span> <span class="nx">formData</span><span class="p">,</span>
-            <span class="na">dataType</span> <span class="p">:</span> <span class="s1">'JSON'</span><span class="p">,</span>
+            <span class="na">dataType</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">JSON</span><span class="dl">'</span><span class="p">,</span>
             <span class="na">encode</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
               <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"The username you typed has been used!"</span><span class="p">);</span>
+                <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="dl">"</span><span class="s2">The username you typed has been used!</span><span class="dl">"</span><span class="p">);</span>
               <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-                <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"You may freely use this username!"</span><span class="p">);</span>
+                <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="dl">"</span><span class="s2">You may freely use this username!</span><span class="dl">"</span><span class="p">);</span>
               <span class="p">}</span>
             <span class="p">},</span>
             <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Something went wrong!"</span><span class="p">);</span>
+              <span class="nx">usernameWarning</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="dl">"</span><span class="s2">Something went wrong!</span><span class="dl">"</span><span class="p">);</span>
             <span class="p">}</span>
           <span class="p">});</span>
         <span class="p">});</span>
@@ -258,25 +258,25 @@
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-    <span class="kd">var</span> <span class="nx">usernameApp</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'usernameApp'</span><span class="p">,</span> <span class="p">[]);</span>
+    <span class="kd">var</span> <span class="nx">usernameApp</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">usernameApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[]);</span>
     
-    <span class="nx">usernameApp</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'usernameController'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$http</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">usernameApp</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">usernameController</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$http</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">$scope</span><span class="p">.</span><span class="nx">usernameKeyup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$http</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">post</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"application/x-www-form-urlencoded"</span><span class="p">;</span>
+        <span class="nx">$http</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">post</span><span class="p">[</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">application/x-www-form-urlencoded</span><span class="dl">"</span><span class="p">;</span>
 
-        <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php"</span><span class="p">;</span>
-        <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="s2">"username="</span> <span class="o">+</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">username</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php</span><span class="dl">"</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">username=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">username</span><span class="p">;</span>
 
         <span class="nx">$http</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">formData</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">headers</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
           <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">$scope</span><span class="p">.</span><span class="nx">return_message</span> <span class="o">=</span> <span class="s2">"The username you typed has been used!"</span><span class="p">;</span>
+            <span class="nx">$scope</span><span class="p">.</span><span class="nx">return_message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">The username you typed has been used!</span><span class="dl">"</span><span class="p">;</span>
           <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-            <span class="nx">$scope</span><span class="p">.</span><span class="nx">return_message</span> <span class="o">=</span> <span class="s2">"You may freely use this username!"</span><span class="p">;</span>
+            <span class="nx">$scope</span><span class="p">.</span><span class="nx">return_message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">You may freely use this username!</span><span class="dl">"</span><span class="p">;</span>
           <span class="p">}</span>
         <span class="p">})</span>
         <span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">header</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">$scope</span><span class="p">.</span><span class="nx">return_message</span> <span class="o">=</span> <span class="s2">"Something went wrong!"</span><span class="p">;</span>
+          <span class="nx">$scope</span><span class="p">.</span><span class="nx">return_message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Something went wrong!</span><span class="dl">"</span><span class="p">;</span>
         <span class="p">});</span>
       <span class="p">};</span>
     <span class="p">});</span>

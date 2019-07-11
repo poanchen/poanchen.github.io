@@ -158,22 +158,22 @@ code in JavaScript asynchronously and it just work. However, in real world, as a
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="c1">// function get(url, header, param, success) {...}</span>
   <span class="c1">// function post(url, header, param, success) {...}</span>
 
-  <span class="nx">post</span><span class="p">(</span><span class="s2">"https://accounts.spotify.com/api/token"</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">urlencode</span><span class="p">({</span>
-    <span class="na">grant_type</span><span class="p">:</span> <span class="s1">'authorization_code'</span><span class="p">,</span>
-    <span class="na">code</span><span class="p">:</span> <span class="nx">getParam</span><span class="p">(</span><span class="nx">tab</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="s1">'code'</span><span class="p">),</span>
-    <span class="na">redirect_uri</span><span class="p">:</span> <span class="s2">"https://www.jenrenalcare.com/upload/thank-you.html"</span><span class="p">,</span>
-    <span class="na">client_id</span><span class="p">:</span> <span class="s2">"3aa81ba3bbea466ba09fef04a5feea41"</span><span class="p">,</span>
-    <span class="na">client_secret</span><span class="p">:</span> <span class="s2">"c47f40315044462d8b52bf747e8b2e1f"</span>
+  <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://accounts.spotify.com/api/token</span><span class="dl">"</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">urlencode</span><span class="p">({</span>
+    <span class="na">grant_type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">authorization_code</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">code</span><span class="p">:</span> <span class="nx">getParam</span><span class="p">(</span><span class="nx">tab</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">),</span>
+    <span class="na">redirect_uri</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/thank-you.html</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">client_id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3aa81ba3bbea466ba09fef04a5feea41</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">client_secret</span><span class="p">:</span> <span class="dl">"</span><span class="s2">c47f40315044462d8b52bf747e8b2e1f</span><span class="dl">"</span>
   <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">tokenType</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_type</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
-    <span class="kd">get</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/me"</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span>
+    <span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/me</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span>
     <span class="p">},</span> <span class="kc">null</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
-      <span class="nx">post</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/users/"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="s2">"/playlists"</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
-        <span class="s2">"Content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+      <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/users/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/playlists</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
       <span class="p">},</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="na">name</span><span class="p">:</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">playlistTitle</span>
       <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -181,14 +181,14 @@ code in JavaScript asynchronously and it just work. However, in real world, as a
         <span class="kd">var</span> <span class="nx">songs</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">songs</span><span class="p">);</span>
         <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="k">for</span> <span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">songs</span><span class="p">)</span> <span class="p">{</span>
-          <span class="kd">get</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/search"</span><span class="p">,</span> <span class="p">{</span>
-            <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span>
-          <span class="p">},</span> <span class="s2">"q="</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">title</span> <span class="o">+</span> <span class="s2">"%20album:"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">album</span> <span class="o">+</span> <span class="s2">"%20artist:"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">artist</span> <span class="o">+</span> <span class="s2">"&amp;type=track"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/search</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span>
+          <span class="p">},</span> <span class="dl">"</span><span class="s2">q=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">title</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">%20album:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">album</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">%20artist:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">artist</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&amp;type=track</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">tracks</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
               <span class="kd">var</span> <span class="nx">uri</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">tracks</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">uri</span><span class="p">;</span>
-              <span class="nx">post</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/users/"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="s2">"/playlists/"</span> <span class="o">+</span> <span class="nx">playlistId</span> <span class="o">+</span> <span class="s2">"/tracks"</span><span class="p">,</span> <span class="p">{</span>
-                <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
-                <span class="s2">"Content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+              <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/users/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/playlists/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">playlistId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/tracks</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+                <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
               <span class="p">},</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
                 <span class="na">uris</span><span class="p">:</span> <span class="p">[</span><span class="nx">uri</span><span class="p">]</span>
               <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -220,24 +220,24 @@ a LOT cleaner,</p>
   <span class="c1">// function post(url, header, param, success) {...}</span>
 
   <span class="c1">// Retrieve temporary access token</span>
-  <span class="nx">post</span><span class="p">(</span><span class="s2">"https://accounts.spotify.com/api/token"</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">urlencode</span><span class="p">({</span>
-    <span class="na">grant_type</span><span class="p">:</span> <span class="s1">'authorization_code'</span><span class="p">,</span>
-    <span class="na">code</span><span class="p">:</span> <span class="nx">getParam</span><span class="p">(</span><span class="nx">tab</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="s1">'code'</span><span class="p">),</span>
-    <span class="na">redirect_uri</span><span class="p">:</span> <span class="s2">"https://www.jenrenalcare.com/upload/thank-you.html"</span><span class="p">,</span>
-    <span class="na">client_id</span><span class="p">:</span> <span class="s2">"3aa81ba3bbea466ba09fef04a5feea41"</span><span class="p">,</span>
-    <span class="na">client_secret</span><span class="p">:</span> <span class="s2">"c47f40315044462d8b52bf747e8b2e1f"</span>
+  <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://accounts.spotify.com/api/token</span><span class="dl">"</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">urlencode</span><span class="p">({</span>
+    <span class="na">grant_type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">authorization_code</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">code</span><span class="p">:</span> <span class="nx">getParam</span><span class="p">(</span><span class="nx">tab</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">),</span>
+    <span class="na">redirect_uri</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/thank-you.html</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">client_id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3aa81ba3bbea466ba09fef04a5feea41</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">client_secret</span><span class="p">:</span> <span class="dl">"</span><span class="s2">c47f40315044462d8b52bf747e8b2e1f</span><span class="dl">"</span>
   <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">tokenType</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_type</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
     <span class="c1">// Retrieve user’s id using the access token that we just got</span>
-    <span class="kd">get</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/me"</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span>
+    <span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/me</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span>
     <span class="p">},</span> <span class="kc">null</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
       <span class="c1">// Create a brand new empty playlist</span>
-      <span class="nx">post</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/users/"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="s2">"/playlists"</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
-        <span class="s2">"Content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+      <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/users/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/playlists</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
       <span class="p">},</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="na">name</span><span class="p">:</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">playlistTitle</span>
       <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -246,15 +246,15 @@ a LOT cleaner,</p>
         <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="c1">// Try to look for the song on Spotify for every song on the list</span>
         <span class="k">for</span> <span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">songs</span><span class="p">)</span> <span class="p">{</span>
-          <span class="kd">get</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/search"</span><span class="p">,</span> <span class="p">{</span>
-            <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span>
-          <span class="p">},</span> <span class="s2">"q="</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">title</span> <span class="o">+</span> <span class="s2">"%20album:"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">album</span> <span class="o">+</span> <span class="s2">"%20artist:"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">artist</span> <span class="o">+</span> <span class="s2">"&amp;type=track"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/search</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span>
+          <span class="p">},</span> <span class="dl">"</span><span class="s2">q=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">title</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">%20album:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">album</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">%20artist:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">artist</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&amp;type=track</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">tracks</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
               <span class="kd">var</span> <span class="nx">uri</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">tracks</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">uri</span><span class="p">;</span>
               <span class="c1">// Since we got the user’s id from step 2 as well as the playlist’s id from step 3, we should now be able to add songs to the playlist on Spotify</span>
-              <span class="nx">post</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/users/"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="s2">"/playlists/"</span> <span class="o">+</span> <span class="nx">playlistId</span> <span class="o">+</span> <span class="s2">"/tracks"</span><span class="p">,</span> <span class="p">{</span>
-                <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
-                <span class="s2">"Content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+              <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/users/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/playlists/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">playlistId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/tracks</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+                <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
               <span class="p">},</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
                 <span class="na">uris</span><span class="p">:</span> <span class="p">[</span><span class="nx">uri</span><span class="p">]</span>
               <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -284,19 +284,19 @@ a LOT cleaner,</p>
     <span class="nx">retrieveUserId</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">createANewPlaylist</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">addAllSongsToPlayList</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">total</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"There are "</span> <span class="o">+</span> <span class="nx">total</span> <span class="o">+</span> <span class="s2">" out of "</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="s2">" songs been added to the playlist!!!"</span><span class="p">);</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">There are </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">total</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> out of </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> songs been added to the playlist!!!</span><span class="dl">"</span><span class="p">);</span>
         <span class="p">});</span>
       <span class="p">});</span>
     <span class="p">});</span>
   <span class="p">});</span>
 
   <span class="kd">function</span> <span class="nx">retrieveAccessToken</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">post</span><span class="p">(</span><span class="s2">"https://accounts.spotify.com/api/token"</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">urlencode</span><span class="p">({</span>
-      <span class="na">grant_type</span><span class="p">:</span> <span class="s1">'authorization_code'</span><span class="p">,</span>
-      <span class="na">code</span><span class="p">:</span> <span class="nx">getParam</span><span class="p">(</span><span class="nx">tab</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="s1">'code'</span><span class="p">),</span>
-      <span class="na">redirect_uri</span><span class="p">:</span> <span class="s2">"https://www.jenrenalcare.com/upload/thank-you.html"</span><span class="p">,</span>
-      <span class="na">client_id</span><span class="p">:</span> <span class="s2">"3aa81ba3bbea466ba09fef04a5feea41"</span><span class="p">,</span>
-      <span class="na">client_secret</span><span class="p">:</span> <span class="s2">"c47f40315044462d8b52bf747e8b2e1f"</span>
+    <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://accounts.spotify.com/api/token</span><span class="dl">"</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">urlencode</span><span class="p">({</span>
+      <span class="na">grant_type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">authorization_code</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">code</span><span class="p">:</span> <span class="nx">getParam</span><span class="p">(</span><span class="nx">tab</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">),</span>
+      <span class="na">redirect_uri</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/thank-you.html</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">client_id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3aa81ba3bbea466ba09fef04a5feea41</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">client_secret</span><span class="p">:</span> <span class="dl">"</span><span class="s2">c47f40315044462d8b52bf747e8b2e1f</span><span class="dl">"</span>
     <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">callback</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -305,8 +305,8 @@ a LOT cleaner,</p>
   <span class="kd">function</span> <span class="nx">retrieveUserId</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">tokenType</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_type</span><span class="p">;</span>
     <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
-    <span class="kd">get</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/me"</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span>
+    <span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/me</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span>
     <span class="p">},</span> <span class="kc">null</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">callback</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -314,9 +314,9 @@ a LOT cleaner,</p>
 
   <span class="kd">function</span> <span class="nx">createANewPlaylist</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">userId</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
-    <span class="nx">post</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/users/"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="s2">"/playlists"</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
-      <span class="s2">"Content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+    <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/users/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/playlists</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
     <span class="p">},</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
       <span class="na">name</span><span class="p">:</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">playlistTitle</span>
     <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -325,17 +325,17 @@ a LOT cleaner,</p>
   <span class="p">}</span>
 
   <span class="kd">function</span> <span class="nx">searchASong</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">get</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/search"</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span>
-    <span class="p">},</span> <span class="s2">"q="</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">title</span> <span class="o">+</span> <span class="s2">"%20album:"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">album</span> <span class="o">+</span> <span class="s2">"%20artist:"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">artist</span> <span class="o">+</span> <span class="s2">"&amp;type=track"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/search</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span>
+    <span class="p">},</span> <span class="dl">"</span><span class="s2">q=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">title</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">%20album:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">album</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">%20artist:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">artist</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&amp;type=track</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">callback</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">}</span>
 
   <span class="kd">function</span> <span class="nx">addASongToThePlaylist</span><span class="p">(</span><span class="nx">uri</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">post</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/users/"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="s2">"/playlists/"</span> <span class="o">+</span> <span class="nx">playlistId</span> <span class="o">+</span> <span class="s2">"/tracks"</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
-      <span class="s2">"Content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+    <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/users/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/playlists/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">playlistId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/tracks</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
     <span class="p">},</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
       <span class="na">uris</span><span class="p">:</span> <span class="p">[</span><span class="nx">uri</span><span class="p">]</span>
     <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -376,17 +376,17 @@ a LOT cleaner,</p>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">prepareToaddAllSongsToPlaylist</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">addAllSongsToPlaylist</span><span class="p">)</span>
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">progress</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">"[WARNING] "</span> <span class="o">+</span> <span class="nx">error</span> <span class="o">+</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+      <span class="nx">progress</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">[WARNING] </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">error</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">;</span>
     <span class="p">});</span>
 
   <span class="kd">const</span> <span class="nx">retrieveAccessToken</span> <span class="o">=</span> <span class="nx">url</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">post</span><span class="p">(</span><span class="s2">"https://accounts.spotify.com/api/token"</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">urlencode</span><span class="p">({</span>
-        <span class="na">grant_type</span><span class="p">:</span> <span class="s1">'authorization_code'</span><span class="p">,</span>
-        <span class="na">code</span><span class="p">:</span> <span class="nx">getParam</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="s1">'code'</span><span class="p">),</span>
-        <span class="na">redirect_uri</span><span class="p">:</span> <span class="s2">"https://www.jenrenalcare.com/upload/thank-you.html"</span><span class="p">,</span>
-        <span class="na">client_id</span><span class="p">:</span> <span class="s2">"3aa81ba3bbea466ba09fef04a5feea41"</span><span class="p">,</span>
-        <span class="na">client_secret</span><span class="p">:</span> <span class="s2">"c47f40315044462d8b52bf747e8b2e1f"</span>
+      <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://accounts.spotify.com/api/token</span><span class="dl">"</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">urlencode</span><span class="p">({</span>
+        <span class="na">grant_type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">authorization_code</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">code</span><span class="p">:</span> <span class="nx">getParam</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">),</span>
+        <span class="na">redirect_uri</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/thank-you.html</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">client_id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3aa81ba3bbea466ba09fef04a5feea41</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">client_secret</span><span class="p">:</span> <span class="dl">"</span><span class="s2">c47f40315044462d8b52bf747e8b2e1f</span><span class="dl">"</span>
       <span class="p">}),</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
       <span class="p">});</span>
@@ -397,11 +397,11 @@ a LOT cleaner,</p>
     <span class="kd">var</span> <span class="nx">tokenType</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_type</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">get</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/me"</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span>
+      <span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/me</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span>
       <span class="p">},</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">response</span><span class="p">[</span><span class="s1">'token_type'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span>
-        <span class="nx">response</span><span class="p">[</span><span class="s1">'access_token'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
+        <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">token_type</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span>
+        <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">access_token</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
         <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
       <span class="p">});</span>
     <span class="p">});</span>
@@ -412,15 +412,15 @@ a LOT cleaner,</p>
     <span class="kd">var</span> <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">post</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/users/"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="s2">"/playlists"</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
-        <span class="s2">"Content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+      <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/users/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/playlists</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
       <span class="p">},</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="na">name</span><span class="p">:</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">playlistTitle</span>
       <span class="p">}),</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">response</span><span class="p">[</span><span class="s1">'token_type'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span>
-        <span class="nx">response</span><span class="p">[</span><span class="s1">'access_token'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
-        <span class="nx">response</span><span class="p">[</span><span class="s1">'userId'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">userId</span><span class="p">;</span>
+        <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">token_type</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span>
+        <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">access_token</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
+        <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">userId</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">userId</span><span class="p">;</span>
         <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
       <span class="p">});</span>
     <span class="p">});</span>
@@ -428,8 +428,8 @@ a LOT cleaner,</p>
 
   <span class="kd">const</span> <span class="nx">searchASong</span> <span class="o">=</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">get</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/search"</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_type</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span>
+      <span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/search</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_type</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span>
       <span class="p">},</span> <span class="nx">buildSearchQuery</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">song</span><span class="p">),</span> <span class="nx">responseFromSearch</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">resolve</span><span class="p">(</span><span class="nx">responseFromSearch</span><span class="p">.</span><span class="nx">tracks</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
       <span class="p">});</span>
@@ -445,14 +445,14 @@ a LOT cleaner,</p>
     <span class="kd">var</span> <span class="nx">songs</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">songs</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">allSearchPromises</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="k">for</span> <span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">songs</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'song'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">song</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
       <span class="nx">allSearchPromises</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">searchASong</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">allSearchPromises</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'token_type'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span><span class="p">;</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'access_token'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'playlistId'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">playlistId</span><span class="p">;</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'userId'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">userId</span><span class="p">;</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">token_type</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span><span class="p">;</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">access_token</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">playlistId</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">playlistId</span><span class="p">;</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">userId</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">userId</span><span class="p">;</span>
       <span class="k">return</span> <span class="nx">response</span><span class="p">;</span>
     <span class="p">});</span>
   <span class="p">};</span>
@@ -465,7 +465,7 @@ a LOT cleaner,</p>
       <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'songs'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">songs</span><span class="p">;</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">songs</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">songs</span><span class="p">;</span>
       <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">};</span>
@@ -477,9 +477,9 @@ a LOT cleaner,</p>
     <span class="kd">var</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">userId</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">songs</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">songs</span><span class="p">;</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">post</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/users/"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="s2">"/playlists/"</span> <span class="o">+</span> <span class="nx">playlistId</span> <span class="o">+</span> <span class="s2">"/tracks"</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
-        <span class="s2">"Content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+      <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/users/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/playlists/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">playlistId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/tracks</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
       <span class="p">},</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="na">uris</span><span class="p">:</span> <span class="nx">songs</span>
       <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -493,10 +493,10 @@ a LOT cleaner,</p>
   <span class="p">}</span>
 
   <span class="kd">function</span> <span class="nx">buildSearchQuery</span><span class="p">(</span><span class="nx">song</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s2">"q="</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">title</span> <span class="o">+</span>
-            <span class="s2">"%20album:"</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">album</span> <span class="o">+</span>
-            <span class="s2">"%20artist:"</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">artist</span> <span class="o">+</span>
-            <span class="s2">"&amp;type=track"</span><span class="p">;</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">q=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">title</span> <span class="o">+</span>
+            <span class="dl">"</span><span class="s2">%20album:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">album</span> <span class="o">+</span>
+            <span class="dl">"</span><span class="s2">%20artist:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">artist</span> <span class="o">+</span>
+            <span class="dl">"</span><span class="s2">&amp;type=track</span><span class="dl">"</span><span class="p">;</span>
   <span class="p">}</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2019/06/19/The-right-way-to-manage-nested-callbacks/thirdSolution.js" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
@@ -510,24 +510,24 @@ avoids the use of nested functions thanks to the nature of Promises.</p>
 <p>Don’t know what an Async/await is? Please read <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">this</a> awesome documentation about Async/await by <a href="https://developer.mozilla.org">Mozilla</a>.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">const</span> <span class="nx">beginToAddSongsToPlaylist</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">retrieveAccessToken</span><span class="p">(</span><span class="nx">tab</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
-    <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">retrieveUserInfo</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-    <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">createAPlaylist</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-    <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">getAllSongsInfo</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-    <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">prepareToaddAllSongsToPlaylist</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-    <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">addAllSongsToPlaylist</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">retrieveAccessToken</span><span class="p">(</span><span class="nx">tab</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+    <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">retrieveUserInfo</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">createAPlaylist</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getAllSongsInfo</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">prepareToaddAllSongsToPlaylist</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">addAllSongsToPlaylist</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
   <span class="p">};</span>
 
   <span class="nx">beginToAddSongsToPlaylist</span><span class="p">();</span>
 
   <span class="kd">const</span> <span class="nx">retrieveAccessToken</span> <span class="o">=</span> <span class="nx">url</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">post</span><span class="p">(</span><span class="s2">"https://accounts.spotify.com/api/token"</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">urlencode</span><span class="p">({</span>
-        <span class="na">grant_type</span><span class="p">:</span> <span class="s1">'authorization_code'</span><span class="p">,</span>
-        <span class="na">code</span><span class="p">:</span> <span class="nx">getParam</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="s1">'code'</span><span class="p">),</span>
-        <span class="na">redirect_uri</span><span class="p">:</span> <span class="s2">"https://www.jenrenalcare.com/upload/thank-you.html"</span><span class="p">,</span>
-        <span class="na">client_id</span><span class="p">:</span> <span class="s2">"3aa81ba3bbea466ba09fef04a5feea41"</span><span class="p">,</span>
-        <span class="na">client_secret</span><span class="p">:</span> <span class="s2">"c47f40315044462d8b52bf747e8b2e1f"</span>
+      <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://accounts.spotify.com/api/token</span><span class="dl">"</span><span class="p">,</span> <span class="p">{},</span> <span class="nx">urlencode</span><span class="p">({</span>
+        <span class="na">grant_type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">authorization_code</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">code</span><span class="p">:</span> <span class="nx">getParam</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">),</span>
+        <span class="na">redirect_uri</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/thank-you.html</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">client_id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3aa81ba3bbea466ba09fef04a5feea41</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">client_secret</span><span class="p">:</span> <span class="dl">"</span><span class="s2">c47f40315044462d8b52bf747e8b2e1f</span><span class="dl">"</span>
       <span class="p">}),</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
       <span class="p">});</span>
@@ -538,11 +538,11 @@ avoids the use of nested functions thanks to the nature of Promises.</p>
     <span class="kd">var</span> <span class="nx">tokenType</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_type</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">get</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/me"</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span>
+      <span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/me</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span>
       <span class="p">},</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">response</span><span class="p">[</span><span class="s1">'token_type'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span>
-        <span class="nx">response</span><span class="p">[</span><span class="s1">'access_token'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
+        <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">token_type</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span>
+        <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">access_token</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
         <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
       <span class="p">});</span>
     <span class="p">});</span>
@@ -553,15 +553,15 @@ avoids the use of nested functions thanks to the nature of Promises.</p>
     <span class="kd">var</span> <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">post</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/users/"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="s2">"/playlists"</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
-        <span class="s2">"Content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+      <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/users/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/playlists</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
       <span class="p">},</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="na">name</span><span class="p">:</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">playlistTitle</span>
       <span class="p">}),</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">response</span><span class="p">[</span><span class="s1">'token_type'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span>
-        <span class="nx">response</span><span class="p">[</span><span class="s1">'access_token'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
-        <span class="nx">response</span><span class="p">[</span><span class="s1">'userId'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">userId</span><span class="p">;</span>
+        <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">token_type</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span>
+        <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">access_token</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
+        <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">userId</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">userId</span><span class="p">;</span>
         <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
       <span class="p">});</span>
     <span class="p">});</span>
@@ -569,8 +569,8 @@ avoids the use of nested functions thanks to the nature of Promises.</p>
 
   <span class="kd">const</span> <span class="nx">searchASong</span> <span class="o">=</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">get</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/search"</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_type</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span>
+      <span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/search</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_type</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span>
       <span class="p">},</span> <span class="nx">buildSearchQuery</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">song</span><span class="p">),</span> <span class="nx">responseFromSearch</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">resolve</span><span class="p">(</span><span class="nx">responseFromSearch</span><span class="p">.</span><span class="nx">tracks</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
       <span class="p">});</span>
@@ -586,14 +586,14 @@ avoids the use of nested functions thanks to the nature of Promises.</p>
     <span class="kd">var</span> <span class="nx">songs</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">songs</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">allSearchPromises</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="k">for</span> <span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">songs</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'song'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">song</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
       <span class="nx">allSearchPromises</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">searchASong</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">allSearchPromises</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'token_type'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span><span class="p">;</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'access_token'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'playlistId'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">playlistId</span><span class="p">;</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'userId'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">userId</span><span class="p">;</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">token_type</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenType</span><span class="p">;</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">access_token</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">playlistId</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">playlistId</span><span class="p">;</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">userId</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">userId</span><span class="p">;</span>
       <span class="k">return</span> <span class="nx">response</span><span class="p">;</span>
     <span class="p">});</span>
   <span class="p">};</span>
@@ -606,7 +606,7 @@ avoids the use of nested functions thanks to the nature of Promises.</p>
       <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">response</span><span class="p">[</span><span class="s1">'songs'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">songs</span><span class="p">;</span>
+      <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">songs</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">songs</span><span class="p">;</span>
       <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">};</span>
@@ -618,9 +618,9 @@ avoids the use of nested functions thanks to the nature of Promises.</p>
     <span class="kd">var</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">userId</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">songs</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">songs</span><span class="p">;</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">post</span><span class="p">(</span><span class="s2">"https://api.spotify.com/v1/users/"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="s2">"/playlists/"</span> <span class="o">+</span> <span class="nx">playlistId</span> <span class="o">+</span> <span class="s2">"/tracks"</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
-        <span class="s2">"Content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+      <span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.spotify.com/v1/users/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">userId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/playlists/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">playlistId</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/tracks</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">tokenType</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">accessToken</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
       <span class="p">},</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="na">uris</span><span class="p">:</span> <span class="nx">songs</span>
       <span class="p">}),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -634,10 +634,10 @@ avoids the use of nested functions thanks to the nature of Promises.</p>
   <span class="p">}</span>
 
   <span class="kd">function</span> <span class="nx">buildSearchQuery</span><span class="p">(</span><span class="nx">song</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s2">"q="</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">title</span> <span class="o">+</span>
-            <span class="s2">"%20album:"</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">album</span> <span class="o">+</span>
-            <span class="s2">"%20artist:"</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">artist</span> <span class="o">+</span>
-            <span class="s2">"&amp;type=track"</span><span class="p">;</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">q=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">title</span> <span class="o">+</span>
+            <span class="dl">"</span><span class="s2">%20album:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">album</span> <span class="o">+</span>
+            <span class="dl">"</span><span class="s2">%20artist:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">song</span><span class="p">.</span><span class="nx">artist</span> <span class="o">+</span>
+            <span class="dl">"</span><span class="s2">&amp;type=track</span><span class="dl">"</span><span class="p">;</span>
   <span class="p">}</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2019/06/19/The-right-way-to-manage-nested-callbacks/forthSolution.js" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>

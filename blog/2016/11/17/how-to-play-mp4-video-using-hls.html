@@ -196,8 +196,8 @@
 <h2 id="play-m3u8-playlist-using-hlsjs-library">Play m3u8 playlist using hls.js library</h2>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-    <span class="kd">var</span> <span class="nx">video</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"video"</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">videoSrcHls</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/sample.m3u8"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">video</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">video</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">videoSrcHls</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/sample.m3u8</span><span class="dl">"</span><span class="p">;</span>
 
     <span class="k">if</span><span class="p">(</span><span class="nx">Hls</span><span class="p">.</span><span class="nx">isSupported</span><span class="p">())</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">hls</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hls</span><span class="p">();</span>
@@ -214,9 +214,9 @@
 <h2 id="added-the-fallback-when-users-browser-does-not-support-hls">Added the fallback when user’s browser does not support HLS</h2>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-    <span class="kd">var</span> <span class="nx">video</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"video"</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">videoSrcInHls</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/sample.m3u8"</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">videoSrcInMp4</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/sample.mp4"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">video</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">video</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">videoSrcInHls</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/sample.m3u8</span><span class="dl">"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">videoSrcInMp4</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/sample.mp4</span><span class="dl">"</span><span class="p">;</span>
 
     <span class="k">if</span><span class="p">(</span><span class="nx">Hls</span><span class="p">.</span><span class="nx">isSupported</span><span class="p">())</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">hls</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hls</span><span class="p">();</span>
@@ -226,12 +226,12 @@
         <span class="nx">video</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
       <span class="p">});</span>
     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-      <span class="nx">addSourceToVideo</span><span class="p">(</span><span class="nx">video</span><span class="p">,</span> <span class="nx">videoSrcInMp4</span><span class="p">,</span> <span class="s1">'video/mp4'</span><span class="p">);</span>
+      <span class="nx">addSourceToVideo</span><span class="p">(</span><span class="nx">video</span><span class="p">,</span> <span class="nx">videoSrcInMp4</span><span class="p">,</span> <span class="dl">'</span><span class="s1">video/mp4</span><span class="dl">'</span><span class="p">);</span>
       <span class="nx">video</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="kd">function</span> <span class="nx">addSourceToVideo</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">src</span><span class="p">,</span> <span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'source'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">source</span><span class="dl">'</span><span class="p">);</span>
       <span class="nx">source</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
       <span class="nx">source</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">type</span><span class="p">;</span>
       <span class="nx">element</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">source</span><span class="p">);</span>
@@ -246,9 +246,9 @@
   <span class="nt">&lt;video</span> <span class="na">id=</span><span class="s">"video"</span> <span class="na">controls</span><span class="nt">&gt;&lt;/video&gt;</span>
 
   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-    <span class="kd">var</span> <span class="nx">video</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"video"</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">videoSrcInHls</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/sample.m3u8"</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">videoSrcInMp4</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/sample.mp4"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">video</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">video</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">videoSrcInHls</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/sample.m3u8</span><span class="dl">"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">videoSrcInMp4</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/11/17/how-to-play-mp4-video-using-hls/sample.mp4</span><span class="dl">"</span><span class="p">;</span>
 
     <span class="k">if</span><span class="p">(</span><span class="nx">Hls</span><span class="p">.</span><span class="nx">isSupported</span><span class="p">())</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">hls</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hls</span><span class="p">();</span>
@@ -258,12 +258,12 @@
         <span class="nx">video</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
       <span class="p">});</span>
     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-      <span class="nx">addSourceToVideo</span><span class="p">(</span><span class="nx">video</span><span class="p">,</span> <span class="nx">videoSrcInMp4</span><span class="p">,</span> <span class="s1">'video/mp4'</span><span class="p">);</span>
+      <span class="nx">addSourceToVideo</span><span class="p">(</span><span class="nx">video</span><span class="p">,</span> <span class="nx">videoSrcInMp4</span><span class="p">,</span> <span class="dl">'</span><span class="s1">video/mp4</span><span class="dl">'</span><span class="p">);</span>
       <span class="nx">video</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="kd">function</span> <span class="nx">addSourceToVideo</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">src</span><span class="p">,</span> <span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'source'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">source</span><span class="dl">'</span><span class="p">);</span>
       <span class="nx">source</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
       <span class="nx">source</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">type</span><span class="p">;</span>
       <span class="nx">element</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">source</span><span class="p">);</span>

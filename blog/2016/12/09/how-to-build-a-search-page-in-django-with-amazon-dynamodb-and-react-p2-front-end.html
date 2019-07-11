@@ -166,7 +166,7 @@
       <span class="p">}</span>
     <span class="p">})</span>
     <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ListOfBillionaire</span> <span class="o">/&gt;</span><span class="p">,</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'react-container'</span><span class="p">))</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">react-container</span><span class="dl">'</span><span class="p">))</span>
   <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/hello-world-in-react-way.html" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
@@ -212,7 +212,7 @@ That is it. Then, now we may easily treat it as JSON for the @variable billionai
       <span class="p">}</span>
     <span class="p">})</span>
     <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ListOfBillionaire</span> <span class="o">/&gt;</span><span class="p">,</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'react-container'</span><span class="p">))</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">react-container</span><span class="dl">'</span><span class="p">))</span>
   <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p>You should be able to see the array print out in the console and when you look into it. The data for each billionaire should show up. Then, we simply need to pass the @variable listOfBillionaireFromDB to React. So that we can print out all the billionaire information from the database.</p>
@@ -241,7 +241,7 @@ That is it. Then, now we may easily treat it as JSON for the @variable billionai
       <span class="p">}</span>
     <span class="p">})</span>
     <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ListOfBillionaire</span> <span class="o">/&gt;</span><span class="p">,</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'react-container'</span><span class="p">))</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">react-container</span><span class="dl">'</span><span class="p">))</span>
   <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p>Now, we have stored the JSON to the @variable ListOfBillionaireFromDB. If you need to access it, you can simply do this in React, this.state.ListOfBillionaireFromDB Let’s try to print out all the billionaire information that just looked like before.</p>
@@ -280,7 +280,7 @@ That is it. Then, now we may easily treat it as JSON for the @variable billionai
       <span class="p">}</span>
     <span class="p">})</span>
     <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ListOfBillionaire</span> <span class="o">/&gt;</span><span class="p">,</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'react-container'</span><span class="p">))</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">react-container</span><span class="dl">'</span><span class="p">))</span>
   <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p>Then, we probably need to add a dropdown menu on the top so that user may easily filter to what they want. Let’s do that first.</p>
@@ -294,34 +294,34 @@ That is it. Then, now we may easily treat it as JSON for the @variable billionai
         <span class="k">return</span> <span class="p">{</span>
           <span class="na">locations</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Seattle, WA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Seattle, WA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Omaha, NE'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Omaha, NE</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Wichita, KS'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Wichita, KS</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Woodside, CA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Woodside, CA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Medina, WA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Medina, WA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'New York, NY'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">New York, NY</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'La Coruna, Spain'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">La Coruna, Spain</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Palo Alto, CA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Palo Alto, CA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Mexico City, Mexico'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Mexico City, Mexico</span><span class="dl">'</span>
             <span class="p">}</span>
           <span class="p">],</span>
-          <span class="na">selectedLocation</span> <span class="p">:</span> <span class="s1">'Seattle, WA'</span>
+          <span class="na">selectedLocation</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Seattle, WA</span><span class="dl">'</span>
         <span class="p">}</span>        
       <span class="p">},</span>
       <span class="nx">update</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
@@ -340,7 +340,7 @@ That is it. Then, now we may easily treat it as JSON for the @variable billionai
       <span class="p">}</span>
     <span class="p">})</span>
     <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">CurrentLocation</span> <span class="o">/&gt;</span><span class="p">,</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'react-container-locations-dropdown'</span><span class="p">))</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">react-container-locations-dropdown</span><span class="dl">'</span><span class="p">))</span>
   <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p>When you combine them together, you should see something like this.</p>
@@ -365,34 +365,34 @@ Right now, if you try to select different city, the list does not change at all.
           <span class="na">ListOfBillionaireFromDB</span> <span class="p">:</span> <span class="nx">listOfBillionaireFromDB</span><span class="p">,</span>
           <span class="na">locations</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Seattle, WA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Seattle, WA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Omaha, NE'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Omaha, NE</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Wichita, KS'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Wichita, KS</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Woodside, CA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Woodside, CA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Medina, WA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Medina, WA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'New York, NY'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">New York, NY</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'La Coruna, Spain'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">La Coruna, Spain</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Palo Alto, CA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Palo Alto, CA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Mexico City, Mexico'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Mexico City, Mexico</span><span class="dl">'</span>
             <span class="p">}</span>
           <span class="p">],</span>
-          <span class="na">selectedLocation</span> <span class="p">:</span> <span class="s1">'Seattle, WA'</span>
+          <span class="na">selectedLocation</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Seattle, WA</span><span class="dl">'</span>
         <span class="p">}</span>
       <span class="p">},</span>
       <span class="nx">update</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
@@ -424,7 +424,7 @@ Right now, if you try to select different city, the list does not change at all.
       <span class="p">}</span>
     <span class="p">})</span>
     <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ListOfBillionaire</span> <span class="o">/&gt;</span><span class="p">,</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'react-container'</span><span class="p">))</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">react-container</span><span class="dl">'</span><span class="p">))</span>
   <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/combined-ReactDOM-code-for-both-dropdown.html" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
@@ -446,35 +446,35 @@ Right now, if you try to select different city, the list does not change at all.
           <span class="na">ListOfBillionaireFromDB</span> <span class="p">:</span> <span class="nx">listOfBillionaireFromDB</span><span class="p">,</span>
           <span class="na">locations</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Seattle, WA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Seattle, WA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Omaha, NE'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Omaha, NE</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Wichita, KS'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Wichita, KS</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Woodside, CA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Woodside, CA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Medina, WA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Medina, WA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'New York, NY'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">New York, NY</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'La Coruna, Spain'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">La Coruna, Spain</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Palo Alto, CA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Palo Alto, CA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Mexico City, Mexico'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Mexico City, Mexico</span><span class="dl">'</span>
             <span class="p">}</span>
           <span class="p">],</span>
-          <span class="na">selectedLocation</span> <span class="p">:</span> <span class="s1">'Seattle, WA'</span><span class="p">,</span>
-          <span class="na">showedBillionaire</span> <span class="p">:</span> <span class="nx">listOfBillionaireFromDB</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">billionaire</span> <span class="o">=&gt;</span> <span class="nx">billionaire</span><span class="p">.</span><span class="nx">current_location</span> <span class="o">==</span> <span class="s1">'Seattle, WA'</span><span class="p">)</span>
+          <span class="na">selectedLocation</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Seattle, WA</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">showedBillionaire</span> <span class="p">:</span> <span class="nx">listOfBillionaireFromDB</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">billionaire</span> <span class="o">=&gt;</span> <span class="nx">billionaire</span><span class="p">.</span><span class="nx">current_location</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">Seattle, WA</span><span class="dl">'</span><span class="p">)</span>
         <span class="p">}</span>
       <span class="p">},</span>
       <span class="nx">update</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
@@ -508,7 +508,7 @@ Right now, if you try to select different city, the list does not change at all.
       <span class="p">}</span>
     <span class="p">})</span>
     <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ListOfBillionaire</span> <span class="o">/&gt;</span><span class="p">,</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'react-container'</span><span class="p">))</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">react-container</span><span class="dl">'</span><span class="p">))</span>
   <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/filter-location-in-react-way.html" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
@@ -534,69 +534,69 @@ Now, let’s try to add the filter for the net worth as well. Here is the code.<
           <span class="na">ListOfBillionaireFromDB</span> <span class="p">:</span> <span class="nx">listOfBillionaireFromDB</span><span class="p">,</span>
           <span class="na">locations</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Seattle, WA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Seattle, WA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Omaha, NE'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Omaha, NE</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Wichita, KS'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Wichita, KS</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Woodside, CA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Woodside, CA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Medina, WA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Medina, WA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'New York, NY'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">New York, NY</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'La Coruna, Spain'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">La Coruna, Spain</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Palo Alto, CA'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Palo Alto, CA</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'Mexico City, Mexico'</span>
+              <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Mexico City, Mexico</span><span class="dl">'</span>
             <span class="p">}</span>
           <span class="p">],</span>
           <span class="na">netWorth</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-              <span class="s1">'value'</span> <span class="p">:</span> <span class="mi">85</span>
+              <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">85</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'value'</span> <span class="p">:</span> <span class="mi">75</span>
+              <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">75</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'value'</span> <span class="p">:</span> <span class="mi">65</span>
+              <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">65</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'value'</span> <span class="p">:</span> <span class="mi">55</span>
+              <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">55</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'value'</span> <span class="p">:</span> <span class="mi">45</span>
+              <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">45</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'value'</span> <span class="p">:</span> <span class="mi">40</span>
+              <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">40</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="s1">'value'</span> <span class="p">:</span> <span class="mi">35</span>
+              <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">35</span>
             <span class="p">}</span>
           <span class="p">],</span>
-          <span class="na">selectedLocation</span> <span class="p">:</span> <span class="s1">'Seattle, WA'</span><span class="p">,</span>
+          <span class="na">selectedLocation</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Seattle, WA</span><span class="dl">'</span><span class="p">,</span>
           <span class="na">selectedNetWorth</span> <span class="p">:</span> <span class="mi">85</span><span class="p">,</span>
-          <span class="na">showedBillionaire</span> <span class="p">:</span> <span class="nx">listOfBillionaireFromDB</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">billionaire</span> <span class="o">=&gt;</span> <span class="nx">billionaire</span><span class="p">.</span><span class="nx">current_location</span> <span class="o">==</span> <span class="s1">'Seattle, WA'</span> <span class="o">&amp;&amp;</span> <span class="nx">billionaire</span><span class="p">.</span><span class="nx">net_worth</span> <span class="o">&lt;</span> <span class="mi">85</span><span class="p">)</span>
+          <span class="na">showedBillionaire</span> <span class="p">:</span> <span class="nx">listOfBillionaireFromDB</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">billionaire</span> <span class="o">=&gt;</span> <span class="nx">billionaire</span><span class="p">.</span><span class="nx">current_location</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">Seattle, WA</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">billionaire</span><span class="p">.</span><span class="nx">net_worth</span> <span class="o">&lt;</span> <span class="mi">85</span><span class="p">)</span>
         <span class="p">}</span>
       <span class="p">},</span>
       <span class="nx">updateForLocation</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">net_worth_in_number</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">selectedNetWorth</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)[</span><span class="mi">3</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s1">'B'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="kd">var</span> <span class="nx">net_worth_in_number</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">selectedNetWorth</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)[</span><span class="mi">3</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">selectedLocation</span> <span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">});</span>
         <span class="kd">var</span> <span class="nx">filteredBillionaire</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">ListOfBillionaireFromDB</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">billionaire</span> <span class="o">=&gt;</span> <span class="nx">billionaire</span><span class="p">.</span><span class="nx">current_location</span> <span class="o">==</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">billionaire</span><span class="p">.</span><span class="nx">net_worth</span> <span class="o">&lt;</span> <span class="nx">net_worth_in_number</span><span class="p">)</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">showedBillionaire</span> <span class="p">:</span> <span class="nx">filteredBillionaire</span> <span class="p">});</span>
       <span class="p">},</span>
       <span class="nx">updateForNetWorth</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">net_worth_in_number</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)[</span><span class="mi">3</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s1">'B'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="kd">var</span> <span class="nx">net_worth_in_number</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)[</span><span class="mi">3</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">selectedNetWorth</span> <span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">});</span>
         <span class="kd">var</span> <span class="nx">filteredBillionaire</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">ListOfBillionaireFromDB</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">billionaire</span> <span class="o">=&gt;</span> <span class="nx">billionaire</span><span class="p">.</span><span class="nx">net_worth</span> <span class="o">&lt;</span> <span class="nx">net_worth_in_number</span> <span class="o">&amp;&amp;</span> <span class="nx">billionaire</span><span class="p">.</span><span class="nx">current_location</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">selectedLocation</span><span class="p">)</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">showedBillionaire</span> <span class="p">:</span> <span class="nx">filteredBillionaire</span> <span class="p">});</span>
@@ -634,7 +634,7 @@ Now, let’s try to add the filter for the net worth as well. Here is the code.<
       <span class="p">}</span>
     <span class="p">})</span>
     <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ListOfBillionaire</span> <span class="o">/&gt;</span><span class="p">,</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'react-container'</span><span class="p">))</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">react-container</span><span class="dl">'</span><span class="p">))</span>
   <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/09/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p2-front-end/filter-in-react-way-full-code.html" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
