@@ -1,5 +1,0 @@
-# robotstxt.org/
-
-User-agent: *
-
-Sitemap: https://poanchen.github.io/sitemap.xml
