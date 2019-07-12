@@ -52,6 +52,7 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- How to add Azure Pipelines badge to your repository's README in GitHub?
 - The right way to manage nested callbacks
 - How to get an interview with Microsoft and what is their interview process like?
 - How to calculate time and space complexity of an algorithm?
