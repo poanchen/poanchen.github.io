@@ -29,7 +29,9 @@ it will also run the server and automatically open up the website.
 2. git add .
 3. git commit -S -m "your commit message"
 4. git push poanchen2 will-jekyll-template
-5. Azure DevOps Builds should be triggered automatically. Once the new build is generated successfully, head over to the Azure DevOps Releases to create a new Release based on the latest build. Hit deploy button and lay back enjoy the moment.
+5. Azure DevOps Builds should be triggered automatically. Once the new build is generated successfully, 
+head over to the Azure DevOps Releases to create a new Release based on the latest build. Hit deploy button 
+and lay back enjoy the moment.
 6. Remember to head over to Webmaster Tools to update the sitemap.xml so that Google will 
 index your new blog
 7. You are done!!!
