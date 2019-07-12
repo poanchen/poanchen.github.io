@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "How to add Azure Pipelines badge to your repository&#39;s README in GitHub?",
+      "category" : "",
+      "tags"     : "PoAn (Baron) Chen, Azure, Azure Pipelines, Azure DevOps, and GitHub",
+      "url"      : "/blog/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub",
+      "date"     : "12 Jul 2019"
+    } ,
+  
+    {
       "title"    : "The right way to manage nested callbacks",
       "category" : "",
       "tags"     : "PoAn (Baron) Chen, JavaScript, Asynchronous Programming, Callback, Callback hell, Async/await, and Promise",

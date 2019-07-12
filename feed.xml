@@ -5,9 +5,29 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 11 Jul 2019 16:19:54 +0000</pubDate>
-    <lastBuildDate>Thu, 11 Jul 2019 16:19:54 +0000</lastBuildDate>
+    <pubDate>Fri, 12 Jul 2019 09:46:42 +0000</pubDate>
+    <lastBuildDate>Fri, 12 Jul 2019 09:46:42 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>How to add Azure Pipelines badge to your repository's README in GitHub?</title>
+        <description>&lt;p&gt;Ever wanted to be cool? not just anyone-kind-cool but developer-kind-cool or better yet Azure-kind-cool. Do you have a project hosting on GitHub and you would like to show the status of your build? How green it has always been? You are in luck. In this short tutorial, I would like to show you guys how to easily add Azure Pipelines badge into your README on GitHub.&lt;/p&gt; &lt;p&gt;Simply head over to your Azure DevOps page (in this case, my page url looks like this https://dev.azure.com/poanchen/poanchen.github.io), &lt;img src=&quot;/img/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub/1.JPG&quot; alt=&quot;Azure DevOps page&quot; /&gt;&lt;/p&gt; &lt;p&gt;Next, ensure Pipeline -&amp;gt; Builds tab is opened. &lt;img src=&quot;/img/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub/2.png&quot;...</description>
+        <pubDate>Fri, 12 Jul 2019 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub</guid>
+        
+        <category>PoAn (Baron) Chen</category>
+        
+        <category>Azure</category>
+        
+        <category>Azure Pipelines</category>
+        
+        <category>Azure DevOps</category>
+        
+        <category>GitHub</category>
+        
+        
+      </item>
     
       <item>
         <title>The right way to manage nested callbacks</title>
@@ -173,26 +193,6 @@
         <category>Restful API</category>
         
         <category>Roman Numerals Conversion</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to create a GitHub pull request with a specific commits?</title>
-        <description>&lt;p&gt;Ever wanted to create a pull request in GitHub but only wished to commit changes that is relevant? You are in luck. In this tutorial, I am going to show you how I would do it. Recently, I tried to create a pull request in GitHub and this is what I see.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits/create pull request with other changes.png&quot; alt=&quot;creating a pull request along with other changes&quot; /&gt;&lt;/p&gt; &lt;p&gt;The problem that I have here is that I only wanted to create a pull request with only the &lt;strong&gt;a51afa6&lt;/strong&gt; and &lt;strong&gt;07f39f7&lt;/strong&gt;. But, it seems like you cannot really do anything on...</description>
-        <pubDate>Sun, 12 Nov 2017 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits</guid>
-        
-        <category>Git</category>
-        
-        <category>Git cherry-pick</category>
-        
-        <category>GitHub</category>
-        
-        <category>GitHub pull request</category>
-        
-        <category>PoAn (Baron) Chen</category>
         
         
       </item>
