@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "The easiest way to make Let&#39;s Encrypt renewal automated",
+      "category" : "",
+      "tags"     : "PoAn (Baron) Chen, Let's Encrypt, Cron, and Bash",
+      "url"      : "/blog/2019/07/13/The-easiest-way-to-make-Let-s-Encrypt-renewal-automated",
+      "date"     : "13 Jul 2019"
+    } ,
+  
+    {
       "title"    : "How to add Azure Pipelines badge to your repository&#39;s README in GitHub?",
       "category" : "",
       "tags"     : "PoAn (Baron) Chen, Azure, Azure Pipelines, Azure DevOps, and GitHub",

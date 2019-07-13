@@ -5,9 +5,27 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Jul 2019 09:46:42 +0000</pubDate>
-    <lastBuildDate>Fri, 12 Jul 2019 09:46:42 +0000</lastBuildDate>
+    <pubDate>Sat, 13 Jul 2019 16:07:05 +0000</pubDate>
+    <lastBuildDate>Sat, 13 Jul 2019 16:07:05 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>The easiest way to make Let's Encrypt renewal automated</title>
+        <description>&lt;p&gt;Are you using Let’s Encrypt as your CA (certificate authority) to issue you a trusted certificate for your own domain? Sometimes forgetting to renew when it expires every 90 days? Keep getting email warning you about the expiry date of your SSL certificate? or find out the hard way by getting email about the complain of your site not being able to access due to the expired SSL certificate? You are in luck, in this short tutorial, I am going to show you guys how to make Let’s Encrypt renewal automatic. So that you will never have to worry about...</description>
+        <pubDate>Sat, 13 Jul 2019 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2019/07/13/The-easiest-way-to-make-Let-s-Encrypt-renewal-automated</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/07/13/The-easiest-way-to-make-Let-s-Encrypt-renewal-automated</guid>
+        
+        <category>PoAn (Baron) Chen</category>
+        
+        <category>Let's Encrypt</category>
+        
+        <category>Cron</category>
+        
+        <category>Bash</category>
+        
+        
+      </item>
     
       <item>
         <title>How to add Azure Pipelines badge to your repository's README in GitHub?</title>
@@ -171,28 +189,6 @@
         <category>Java</category>
         
         <category>PoAn (Baron) Chen</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Build a scalable, reliable, and inexpensive RESTful API using AWS Lambda that will do the Roman Numerals Conversion</title>
-        <description>&lt;h2 id=&quot;prerequisite-concepts-skills-andor-values&quot;&gt;Prerequisite Concepts, Skills and/or Values&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Experienced with at least one of the programming language ranging from Node.js/Java/C#/Python.&lt;/li&gt; &lt;li&gt;Worked with RESTful API.&lt;/li&gt; &lt;li&gt;Familiar with Algebra.&lt;/li&gt; &lt;li&gt;Understand how HTTP(s)/web request works.&lt;/li&gt; &lt;li&gt;AWS account with admin privilege.&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt; &lt;p&gt;Building a scalable and reliable RESTful API from scratch can be challenging with hardware and software in mind. Using &lt;a href=&quot;https://docs.aws.amazon.com/lambda/latest/dg/welcome.html&quot;&gt;AWS Lambda&lt;/a&gt; allows the developer to build a RESTful API that are scalable, reliable and inexpensive without worrying too much about the compute resources, server and operating system maintenance, capacity provisioning and automatic scaling, code and security path deployment, code monitoring...</description>
-        <pubDate>Sun, 03 Dec 2017 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2017/12/03/Build-a-scalable-reliable-and-inexpensive-RESTful-API-using-AWS-Lambda-that-will-do-the-Roman-numerals-conversion</guid>
-        
-        <category>AWS</category>
-        
-        <category>AWS Lambda</category>
-        
-        <category>JSON</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Restful API</category>
-        
-        <category>Roman Numerals Conversion</category>
         
         
       </item>
