@@ -124,6 +124,12 @@
         </a>
       </li>
     
+      <li>
+        <a href="/alexa-rank">
+          Alexa Rank
+        </a>
+      </li>
+    
     <li><a class="feed" href="/feed.xml" title="Atom/RSS feed">Feed</a></li>
   </ul>
 </nav>
@@ -162,7 +168,7 @@
 <p>As you can see, it is a fairly simple REST API in PHP that return a JSON to allow user to know if the username exist or not.<br />
 The output should look something like this.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="nl">"", "result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span></code></pre></figure>
 
 <p>The reason why the username is empty. It is because we didn’t pass in any username to the PHP file. We just simply call it.</p>
 
@@ -292,7 +298,7 @@ At this point, we may try to add some error code so that we know what is actuall
 
 <p>Now, when we query the PHP code, we should see something like this.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w"> </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="nl">"test", "email"</span><span class="p">:</span><span class="w"> </span><span class="nl">"", "password"</span><span class="p">:</span><span class="w"> </span><span class="nl">"", "errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span></code></pre></figure>
 
 <p>Whenever, we see the errors array, we know that something went wrong. Like, in this example, 1 means that username existed. Also, by checking the result, we know that it was a false. Which tells us that it was a failure to create an account for user.<br />
 Now, let’s try to combine this with the front-end code, so that we can actually see how it works in the user’s point of view.</p>

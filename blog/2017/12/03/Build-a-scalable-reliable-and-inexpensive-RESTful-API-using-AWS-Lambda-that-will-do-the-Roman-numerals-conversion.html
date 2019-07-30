@@ -124,6 +124,12 @@
         </a>
       </li>
     
+      <li>
+        <a href="/alexa-rank">
+          Alexa Rank
+        </a>
+      </li>
+    
     <li><a class="feed" href="/feed.xml" title="Atom/RSS feed">Feed</a></li>
   </ul>
 </nav>
@@ -217,24 +223,24 @@
 <p>Thanks to Amazon. API Gateway is fairly easy to set up and configure. However, its compatibility could be the problem but still fairly easy to solve. We know that the API Gateway expects Lambda functions to return certain output. You must code your function accordingly. This is the structure it expects:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
-    </span><span class="s2">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">},</span><span class="w">
-    </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"body_text_goes_here"</span><span class="w">
+    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"body_text_goes_here"</span><span class="w">
   </span><span class="p">}</span></code></pre></figure>
 
 <p>In the case of the Eratosthenes function, we actually return json as the body so we have to use backslashes to escape our json-within-json:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">},</span><span class="w">
-    </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">message</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Hello World</span><span class="se">\"</span><span class="s2">}"</span><span class="w">
+    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="nl">"{\"message\"</span><span class="p">:</span><span class="w"> </span><span class="err">\</span><span class="s2">"Hello World</span><span class="se">\"</span><span class="s2">}"</span><span class="w">
   </span><span class="p">}</span></code></pre></figure>
 
 <p>API Gateway will read the “body” element and return it as the body of the response:
 backslashes to escape our json-within-json:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello World"</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello World"</span><span class="w">
   </span><span class="p">}</span></code></pre></figure>
 
 <p>Now, to accommodate that (for Lambda to work with API Gateway). Here is what the Lambda function might look like.</p>
