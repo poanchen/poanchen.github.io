@@ -1,0 +1,45 @@
+---
+layout: minimal-post
+title: "Alexa rank"
+description: "Historic Alexa rank for poanchen.github.io"
+---
+<h2>Alexa rank</h2>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+<canvas id="myChart"></canvas>
+<script>
+var request = new XMLHttpRequest();
+request.onreadystatechange = function() {
+	if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+		var labels = [], data = [], json = JSON.parse(request.response);
+		for(var i = 0; i < json.length; i++) {
+			labels.push(json[i]['Date and Time']);
+			data.push(json[i]['Global Rank']);
+		}
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: labels,
+				datasets: [{
+					label: 'Global Rank for poanchen.github.io',
+					data: data,
+					fill: false
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							reverse: true
+						}
+					}]
+				}
+			}
+		});
+	}
+};
+request.open('GET', 'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io - Sheet1.json?sp=racwdl&st=2019-07-30T07:28:11Z&se=2029-07-31T07:28:00Z&sv=2018-03-28&sig=BZN2%2FCcHbhhy7SE2uTB6EJnFueTo7rchssd2CUf36iA%3D&sr=c', true);
+request.send(null);
+</script>

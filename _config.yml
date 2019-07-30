@@ -46,6 +46,8 @@ links:
     url: /blog
   - title: Tags
     url: /tags
+  - title: Alexa Rank
+    url: /alexa-rank
 
 # exclude node related stuff
 exclude: 
