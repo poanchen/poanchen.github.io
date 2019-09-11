@@ -151,8 +151,8 @@
   <span class="k">CREATE</span> <span class="k">USER</span> <span class="n">someuser</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'securepassword'</span><span class="p">;</span>
   <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="k">ALL</span> <span class="n">TABLES</span> <span class="k">IN</span> <span class="k">SCHEMA</span> <span class="k">public</span> <span class="k">TO</span> <span class="n">someuser</span><span class="p">;</span>
   <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">"some_table_name"</span><span class="p">(</span>
-    <span class="nv">"id"</span> <span class="n">int</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="nv">"data"</span> <span class="n">text</span> <span class="k">NOT</span> <span class="k">NULL</span>
+    <span class="nv">"id"</span> <span class="nb">int</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="nv">"data"</span> <span class="nb">text</span> <span class="k">NOT</span> <span class="k">NULL</span>
   <span class="p">);</span>
   <span class="k">INSERT</span> <span class="k">INTO</span> <span class="nv">"some_table_name"</span> <span class="k">values</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nv">"some text"</span><span class="p">);</span></code></pre></figure>
 
@@ -165,8 +165,8 @@
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">  <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="nv">"database"</span><span class="p">;</span>
   <span class="k">CREATE</span> <span class="k">USER</span> <span class="n">someuser</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'securepassword'</span><span class="p">;</span>
   <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">"some_table_name"</span><span class="p">(</span>
-    <span class="nv">"id"</span> <span class="n">int</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="nv">"data"</span> <span class="n">text</span> <span class="k">NOT</span> <span class="k">NULL</span>
+    <span class="nv">"id"</span> <span class="nb">int</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="nv">"data"</span> <span class="nb">text</span> <span class="k">NOT</span> <span class="k">NULL</span>
   <span class="p">);</span>
   <span class="k">INSERT</span> <span class="k">INTO</span> <span class="nv">"some_table_name"</span> <span class="k">values</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nv">"some text"</span><span class="p">);</span>
   <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="k">ALL</span> <span class="n">TABLES</span> <span class="k">IN</span> <span class="k">SCHEMA</span> <span class="k">public</span> <span class="k">TO</span> <span class="n">someuser</span><span class="p">;</span></code></pre></figure>

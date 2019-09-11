@@ -5,9 +5,27 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 03 Aug 2019 02:53:13 +0000</pubDate>
-    <lastBuildDate>Sat, 03 Aug 2019 02:53:13 +0000</lastBuildDate>
-    <generator>Jekyll v3.8.6</generator>
+    <pubDate>Wed, 11 Sep 2019 21:34:40 +0000</pubDate>
+    <lastBuildDate>Wed, 11 Sep 2019 21:34:40 +0000</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>What is a Pure function and how can it be a good practice?</title>
+        <description>&lt;h2 id=&quot;what-is-a-pure-function&quot;&gt;What is a pure function?&lt;/h2&gt; &lt;p&gt;Pure function is a function that &lt;strong&gt;its return value is determined by its inputs and nothing else&lt;/strong&gt;. Simple as that. Let me give you an example of a pure function in Java,&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PureFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;...</description>
+        <pubDate>Wed, 11 Sep 2019 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice</guid>
+        
+        <category>Java</category>
+        
+        <category>PoAn (Baron) Chen</category>
+        
+        <category>React</category>
+        
+        <category>Redux</category>
+        
+        
+      </item>
     
       <item>
         <title>The easiest way to make Let's Encrypt renewal automated</title>
@@ -167,26 +185,6 @@
         <category>GitHub</category>
         
         <category>GitHub commit</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Solving the Fibonacci problem using Dynamic Programming in Java</title>
-        <description>&lt;p&gt;Today, I am going to give a tutorial on how to solve the Fibonacci problem using Dynamic Programming in Java. Before we start to talk about Dynamic Programming. I would like to start briefly on what the Fibonacci problem is. If you already know the problem. Feel free to skip to the next section.&lt;/p&gt; &lt;h2 id=&quot;fibonacci-problem&quot;&gt;Fibonacci problem&lt;/h2&gt; &lt;p&gt;According to &lt;a href=&quot;https://en.wikipedia.org/wiki/Fibonacci_number&quot;&gt;Wikipedia&lt;/a&gt;, “&lt;em&gt;Fibonacci number&lt;/em&gt; are the numbers in the following integer sequence, called the &lt;em&gt;Fibonacci sequence&lt;/em&gt;, and characterized by the fact that every number after the first two is the sum of the two preceding ones”&lt;/p&gt; &lt;p&gt;For example: 1, 1, 2,...</description>
-        <pubDate>Fri, 09 Feb 2018 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java</guid>
-        
-        <category>Competitive programming</category>
-        
-        <category>Dynamic programming</category>
-        
-        <category>Fibonacci problem</category>
-        
-        <category>Java</category>
         
         <category>PoAn (Baron) Chen</category>
         
