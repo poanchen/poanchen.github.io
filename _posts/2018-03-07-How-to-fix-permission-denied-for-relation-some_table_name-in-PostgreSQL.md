@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to fix 'permission denied for relation some_table_name' in PostgreSQL?"
+title: "How to fix permission denied for relation some_table_name in PostgreSQL?"
 author: poanchen
 date: 2018-03-07 08:30:30
 tags:

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to fix 'login must use security token' in Salesforce?"
+title: "How to fix login must use security token in Salesforce?"
 author: poanchen
 date: 2018-08-27 08:30:30
 tags:
