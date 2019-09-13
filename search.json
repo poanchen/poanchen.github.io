@@ -49,7 +49,7 @@
     } ,
   
     {
-      "title"    : "How to fix &#39;login must use security token&#39; in Salesforce?",
+      "title"    : "How to fix login must use security token in Salesforce?",
       "category" : "",
       "tags"     : "PoAn (Baron) Chen and Salesforce",
       "url"      : "/blog/2018/08/27/how-to-fix-login-must-use-security-token-in-Salesforce",
@@ -65,7 +65,7 @@
     } ,
   
     {
-      "title"    : "How to fix &#39;permission denied for relation some_table_name&#39; in PostgreSQL?",
+      "title"    : "How to fix permission denied for relation some_table_name in PostgreSQL?",
       "category" : "",
       "tags"     : "Database, PoAn (Baron) Chen, PostgreSQL, and SQL",
       "url"      : "/blog/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL",
@@ -161,7 +161,7 @@
     } ,
   
     {
-      "title"    : "How to fix &#39;error This file requires compiler and library support for the ISO C++ 2011 standard&#39;?",
+      "title"    : "How to fix error This file requires compiler and library support for the ISO C++ 2011 standard?",
       "category" : "",
       "tags"     : "C++ 11, CMake, ISO C++ 2011 standard, and PoAn (Baron) Chen",
       "url"      : "/blog/2017/09/24/How-to-fix-error-This-file-requires-compiler-and-library-support-for-the-ISO-C++-2011-standard",
