@@ -126,3 +126,4 @@ I'll try to keep this list current and up to date. If you know of a great resour
 ](https://github.com/MostlyAdequate).
 * [Functional Programming: Pure Functions](https://www.sitepoint.com/functional-programming-pure-functions/) by [Arne Brasseur](https://www.sitepoint.com/author/abrasseur/).
 * [Motivation](https://redux.js.org/introduction/motivation) by [ReduxJS](https://redux.js.org/).
+* [Algorithms Introduction](https://yangshun.github.io/tech-interview-handbook/algorithms/algorithms-introduction/#general-tips) by [Yangshun Tay](https://github.com/yangshun).
