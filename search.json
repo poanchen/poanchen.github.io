@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Why using a global variable to solve Leetcode problem can be a bad idea?",
+      "category" : "",
+      "tags"     : "Python, PoAn (Baron) Chen, and Leetcode",
+      "url"      : "/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea",
+      "date"     : "13 Sep 2019"
+    } ,
+  
+    {
       "title"    : "What is a Pure function and how can it be a good practice?",
       "category" : "",
       "tags"     : "Java, PoAn (Baron) Chen, React, and Redux",

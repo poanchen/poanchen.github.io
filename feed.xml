@@ -5,9 +5,25 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 14 Sep 2019 05:58:51 +0000</pubDate>
-    <lastBuildDate>Sat, 14 Sep 2019 05:58:51 +0000</lastBuildDate>
+    <pubDate>Sat, 14 Sep 2019 06:35:52 +0000</pubDate>
+    <lastBuildDate>Sat, 14 Sep 2019 06:35:52 +0000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Why using a global variable to solve Leetcode problem can be a bad idea?</title>
+        <description>&lt;p&gt;I recently run into the issue of having inconsistent result for the exact same test case that I run locally comparing with the code that &lt;a href=&quot;https://leetcode.com&quot;&gt;Leetcode&lt;/a&gt; runs on their server. How is that even possible? At first, my suspicion would be the development environment but I code my solution right in their website. In addition, other people solution got accepted, so it is gotta be something wrong with my code. And, it turns out, it is. It is because of how I use the global variable in my solution.&lt;/p&gt; &lt;p&gt;Before I talk about how using a global variable to...</description>
+        <pubDate>Fri, 13 Sep 2019 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea</guid>
+        
+        <category>Python</category>
+        
+        <category>PoAn (Baron) Chen</category>
+        
+        <category>Leetcode</category>
+        
+        
+      </item>
     
       <item>
         <title>What is a Pure function and how can it be a good practice?</title>
@@ -169,24 +185,6 @@
         <category>PostgreSQL</category>
         
         <category>SQL</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to delete a commit completely in GitHub?</title>
-        <description>&lt;p&gt;Ever needed to delete a commit completely in GitHub but tried hundred of thousands of tutorials and still does not work? You are in luck! In this tutorial, I am going to teach you guys how to make a GitHub commit disappear forever. Note: before you carry on with this tutorial, make sure you do not have any local changes or stash all your local changes to be safe.&lt;/p&gt; &lt;p&gt;Follow this tutorial in order to delete one or more commits in GitHub. First, you use the following command to list all or some of your latest GitHub commits.&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code...</description>
-        <pubDate>Sat, 24 Feb 2018 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2018/02/24/How-to-delete-a-commit-completely-in-GitHub</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/02/24/How-to-delete-a-commit-completely-in-GitHub</guid>
-        
-        <category>Git</category>
-        
-        <category>GitHub</category>
-        
-        <category>GitHub commit</category>
-        
-        <category>PoAn (Baron) Chen</category>
         
         
       </item>
