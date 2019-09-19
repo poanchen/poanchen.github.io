@@ -143,7 +143,13 @@
       <article role="article" id="scroll" class="post-content" itemprop="articleBody">
           <p>Connecting to UVic wifi with Linux for the first time can be a pain in the ass. I literally spent hours trying to figure out how to connect my Linux based laptop to UVic wifi. I thought that it would be helpful to share how I did it that will probably save you some struggles. Here is the set up that I did that worked. Please let me know in the comment if this does not work for you. I will try to reply and help you out.</p>
 
-<p>First step, connect to the Uvic network and not the UvicStart. A Wi-Fi Network Authentication Required dialog should come up. Change the <strong>Authentication</strong> method from Tunneled TLS to <strong>Protected EAP (PEAP)</strong>. Next, browse your <strong>CA certificate</strong> in the path <strong>/etc/ssl/certs</strong> to select <strong>thawte_Primary_Root_CA.pem</strong>. Later, put in your UVic Netlink ID as your Username (Make sure to put <strong>@uvic.ca</strong> as well) and UVic Netlink ID password as your Password. All together, it should look something similar to this.</p>
+<p>First step, connect to the Uvic network and not the UvicStart. A Wi-Fi Network Authentication Required dialog should come up. Change the <strong>Authentication</strong> method from Tunneled TLS to <strong>Protected EAP (PEAP)</strong>.</p>
+
+<p>For those who are using <strong>Debian 9</strong>, head over to <a href="https://www.uvic.ca/dl/public/fr.php?filename=GlobalSignRoot.cer">here</a> first to download the cert file from uvic website and save it in the directory of <strong>/etc/ssl/certs</strong>.</p>
+
+<p>Next, simply browse your <strong>CA certificate</strong> in the path <strong>/etc/ssl/certs</strong> to select <strong>thawte_Primary_Root_CA.pem</strong> for <strong>Ubuntu 16.04 LTS</strong> user and <strong>GlobalSignRoot.cer</strong> for <strong>Debian 9</strong> user.</p>
+
+<p>Later, put in your UVic Netlink ID as your Username (Make sure to put <strong>@uvic.ca</strong> as well) and UVic Netlink ID password as your Password. All together, it should look something similar to this.</p>
 
 <p><img src="/img/2017/11/08/Connecting to UVic wifi with Ubuntu 16.04 LTS/connect to uvic wifi set up screenshot.png" alt="Set up to connect to uvic wifi" /></p>
 
