@@ -54,6 +54,9 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- Why using a global variable to solve Leetcode problem can be a bad idea?
+- What is a Pure function and how can it be a good practice?
+- How to add alexa rank in your website?
 - The easiest way to make Let's Encrypt renewal automated.
 - How to add Azure Pipelines badge to your repository's README in GitHub?
 - The right way to manage nested callbacks
