@@ -34,7 +34,7 @@ The idea is to have as many bullet points as you can so that you can increase yo
 
 Once you got all these, it is time for you to apply. There are many ways you can apply for Microsoft but these are the ways that I know.
 
-1. Apply through their [career](https://careers.microsoft.com) page or any other third party site like [LinkedIn](https://www.linkedin.com/company/microsoft/jobs/).
+1. Apply through their [career](https://careers.microsoft.com) page or popular job posting site like [LinkedIn](https://www.linkedin.com/company/microsoft/jobs/).
 2. Apply in-person during Career Fair.
 3. Apply through referral with their current employee.
 4. Apply through the winning of the major coding competition hosted by the company.
@@ -50,7 +50,7 @@ Their interview process normally goes like this in short for a Software Engineer
 1 X 30-60 mins Skype/Phone interview with a recruiter/experienced Software Engineer/Manager<br>
 4 X 45 mins back-to-back On-site technical interview with an experienced Software Engineer/Manager
 
-Let's talk about this in a chronological way,
+Let's talk about this in a chronological way, (not a real timeline)
 
 September 10, 2019 Apply through their [career](https://careers.microsoft.com) page.
 > Nothing to talk about here except be prepared to have a well-rounded résumé. Be sure to include things like "Improved the page load time by X% by doing..." instead of your job responsibility as it may sound boring. Recruiter from large company loves number as it shows how much impact you had.
@@ -85,7 +85,7 @@ October 15, 2019 On-site interview day.
 16:00 Last 45 mins Interview with a Software Engineer D<br>
 16:45 Forth interview finished. Prepare to leave soon.<br>
 17:00 Recruiter thanks everyone for coming and encourage everyone to grab a nice dinner with other candidates.<br><br>
-Note: 45 mins Interview with a Software Engineer - The interviewee would most likely ask you some kind of Algorithms and Data Structures questions where you would ask clarify questions first, talk about how your approach is, and write your working code on the whiteboard/paper, last but not least, discuss your solution's time and space complexity. At the end, you will have opportiunity to ask them any questions. (Make sure you do them and ask good questions.) [Here](https://www.youtube.com/watch?v=XKu_SEDAykw) is what the interview might look like.
+Note: 45 mins Interview with a Software Engineer - The interviewer would most likely ask you some kind of Algorithms and Data Structures questions where you would ask clarify questions first, talk about how your approach is, and write your working code on the whiteboard/paper, last but not least, discuss your solution's time and space complexity. At the end, you will have opportiunity to ask them any questions. (Make sure you do them and ask good questions.) [Here](https://www.youtube.com/watch?v=XKu_SEDAykw) is what the interview might look like.
 
 October 16, 2019 The day after On-site interview.
 > Pack your stuff and fly back. Your flight might be in the afternoon, this means that you still got some time to visit the city.
@@ -100,14 +100,14 @@ These are the 12 things that I would like to add that I think it might help in t
 2. Definitely bring a cup of water with you into the interview room. (Yes, you will be thirsty as you will basically be talking the whole time for 45 mins)
 3. Bring some whiteboard marker just in case when the room has non-working ones.
 4. As you will be placed in a room of around 20+ candidates, you are strongly encourage to talk to others and make friends. (dinner plans later)
-5. Think out loud during the interview. Let your interviewee know your approach so that they can correct you when your idea does not work.
+5. Think out loud during the interview. Let your interviewer know your approach so that they can correct you when your idea does not work.
 6. Ask as many clarify questions as you can before trying to come up with a solution to the problem.
 7. If you are stuck, try to come up with the brute force solution and then go from there. (Make sure you keep thinking out loud during this process)
 8. Use your whiteboard space efficiently. (Write test/edge cases on the side)
 9. Always test your code during and after.
 10. Ask good questions will make you look good.
 11. Sometimes, you might need to come up with few different stories for the same questions as different people might ask you the same questions twice.
-12. Interviewee will never try to trick you, if they say that piece of code might be missing something, that means it ACTUALLY is missing something.
+12. Interviewer will never try to trick you, if they say that piece of code might be missing something, that means it ACTUALLY is missing something.
 
 Now, I should have documented everything you need to know about the interview process at Microsoft. Let me know in the comments below if you have any questions/concerns and I would be happy to help in any way. Good luck!
 
