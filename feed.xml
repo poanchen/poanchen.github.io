@@ -5,9 +5,31 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Sep 2019 19:55:21 +0000</pubDate>
-    <lastBuildDate>Sun, 22 Sep 2019 19:55:21 +0000</lastBuildDate>
+    <pubDate>Sun, 24 Nov 2019 01:55:50 +0000</pubDate>
+    <lastBuildDate>Sun, 24 Nov 2019 01:55:50 +0000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>How to create an Azure IoT Central application programmatically?</title>
+        <description>&lt;p&gt;Before I dive into the code and show you guys how to create an Azure IoT Central application programmatically, I would like to give an introduction of what an Azure IoT Central is and why do we need it?&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://azure.microsoft.com/en-us/services/iot-central&quot;&gt;Azure IoT Central&lt;/a&gt; is a&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Connect fast with a hassle-free, hosted IoT platform&lt;br /&gt;&lt;br /&gt; Easily connect, monitor, and manage your Internet of Things (IoT) assets at scale. Azure IoT Central is a hosted, extensible software as a service (SaaS) platform that simplifies setup of your IoT solution and helps reduce the burden and costs of IoT management, operations,...</description>
+        <pubDate>Sat, 23 Nov 2019 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically</guid>
+        
+        <category>Azure</category>
+        
+        <category>Azure IoT</category>
+        
+        <category>Azure IoT Central</category>
+        
+        <category>Node.js</category>
+        
+        <category>PoAn (Baron) Chen</category>
+        
+        <category>TypeScript</category>
+        
+        
+      </item>
     
       <item>
         <title>Why using a global variable to solve Leetcode problem can be a bad idea?</title>
@@ -167,24 +189,6 @@
         <category>Signing git commit</category>
         
         <category>Windows 10</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to fix permission denied for relation some_table_name in PostgreSQL?</title>
-        <description>&lt;p&gt;Ever needed to create a bunch of tables for a newly created user to access in PostgreSQL and see the following error message pop up, ‘&lt;strong&gt;permission denied for relation some_table_name&lt;/strong&gt;’? You are in luck, in this tutorial, I am going to guide you guys through it to make the error message goes away.&lt;/p&gt; &lt;p&gt;Let me give you guys an example on how this error message might occur (at least this is how I found out),&lt;/p&gt; &lt;p&gt;Check out this following sql file,&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt; &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;&quot;database&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;someuser&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt;...</description>
-        <pubDate>Wed, 07 Mar 2018 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/03/07/How-to-fix-permission-denied-for-relation-some_table_name-in-PostgreSQL</guid>
-        
-        <category>Database</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>PostgreSQL</category>
-        
-        <category>SQL</category>
         
         
       </item>

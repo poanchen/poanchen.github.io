@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "How to create an Azure IoT Central application programmatically?",
+      "category" : "",
+      "tags"     : "Azure, Azure IoT, Azure IoT Central, Node.js, PoAn (Baron) Chen, and TypeScript",
+      "url"      : "/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically",
+      "date"     : "23 Nov 2019"
+    } ,
+  
+    {
       "title"    : "Why using a global variable to solve Leetcode problem can be a bad idea?",
       "category" : "",
       "tags"     : "Python, PoAn (Baron) Chen, and Leetcode",
