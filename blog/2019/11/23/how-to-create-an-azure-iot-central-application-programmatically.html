@@ -166,11 +166,14 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 
 <p>For simplicity, we are going to use <a href="https://www.typescriptlang.org">TypeScript</a> as our primary programming language.</p>
 
+<p>Note: Please take a look at <a href="https://github.com/emgarten/iotcentral-arm-sdk-examples">this</a> repo in case TypeScript isn’t your language. We provide examples/sample code for Azure IoT Central in NodeJs/TypeScript, Python, .Net, Ruby, Java, and Go. (Not officially from Microsoft)</p>
+
 <p>Let’s start with importing the necessary node modules,</p>
 
 <figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">msRestNodeAuth</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@azure/ms-rest-nodeauth</span><span class="dl">"</span><span class="p">;</span>
   <span class="k">import</span> <span class="p">{</span> <span class="nx">IotCentralClient</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@azure/arm-iotcentral</span><span class="dl">"</span><span class="p">;</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">App</span><span class="p">,</span> <span class="nx">OperationInputs</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@azure/arm-iotcentral/lib/models/index</span><span class="dl">"</span><span class="p">;</span></code></pre></figure>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">App</span><span class="p">,</span> <span class="nx">OperationInputs</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@azure/arm-iotcentral/src/models/index</span><span class="dl">"</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">AppPatch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@azure/arm-iotcentral/esm/models</span><span class="dl">"</span><span class="p">;</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/iotcentral-arm-sdk-examples/blob/master/nodejs/index.ts" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -189,10 +192,13 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
   <span class="kd">const</span> <span class="nx">NEWAPP</span><span class="p">:</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">subdomain</span><span class="p">:</span> <span class="nx">RESOURCENAME</span><span class="p">,</span>
     <span class="na">sku</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">S1</span><span class="dl">'</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ST2</span><span class="dl">'</span> <span class="c1">// Don't know what ST2 is? Check out this website, https://azure.microsoft.com/en-us/pricing/details/iot-central/</span>
     <span class="p">},</span>
-    <span class="na">location</span><span class="p">:</span> <span class="dl">'</span><span class="s1">West US</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">location</span><span class="p">:</span> <span class="dl">'</span><span class="s1">unitedstates</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">displayName</span><span class="p">:</span> <span class="nx">RESOURCENAME</span>
+  <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">UPDATEAPP</span><span class="p">:</span> <span class="nx">AppPatch</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">displayName</span><span class="p">:</span> <span class="nx">RESOURCENAME</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">-new-name</span><span class="dl">"</span>
   <span class="p">};</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/iotcentral-arm-sdk-examples/blob/master/nodejs/index.ts" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
@@ -239,6 +245,22 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 
 <p><a href="https://github.com/poanchen/iotcentral-arm-sdk-examples/blob/master/nodejs/index.ts" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
+<p>You can also update application’s display name by doing this, (not your domain name)</p>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">async</span> <span class="kd">function</span> <span class="nx">updateApp</span><span class="p">(</span><span class="nx">client</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">,</span> <span class="nx">RESOURCENAME</span><span class="p">,</span> <span class="nx">UPDATEAPP</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">client</span><span class="p">));</span>
+  <span class="p">}</span></code></pre></figure>
+
+<p>If you wanna see all your applications under a specific resource group name, do the following,</p>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">async</span> <span class="kd">function</span> <span class="nx">listAllAppsByResourceGroup</span><span class="p">(</span><span class="nx">client</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">listByResourceGroup</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">client</span><span class="p">));</span>
+  <span class="p">}</span></code></pre></figure>
+
 <p>You can also delete application programmatically by doing this,</p>
 
 <figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteApp</span><span class="p">(</span><span class="nx">client</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span> <span class="p">{</span>
@@ -255,6 +277,8 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">checkIfNameExist</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">createOrUpdateApp</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">retrieveAppInfo</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">updateApp</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">listAllAppsByResourceGroup</span><span class="p">)</span>
     <span class="c1">// .then(deleteApp)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">done</span><span class="dl">"</span><span class="p">);</span>
@@ -269,7 +293,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 
 <p><a href="https://github.com/poanchen/iotcentral-arm-sdk-examples/blob/master/nodejs/index.ts" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
-<p>Now, you have learned to login, check if app name is available, create or update app, retrieve app info, delete app within Azure IoT Central.</p>
+<p>Now, you have learned to login, check if app name is available, create or update app, retrieve app info, update an app, list all the applications under a specific resource group name, delete app within Azure IoT Central.</p>
 
 <p>Okay, do let me know in the comments below if you have any questions/concerns and I would be happy to help in any way. Happy using <a href="https://azure.microsoft.com/en-us/services/iot-central/">Azure IoT Central</a>!</p>
 
@@ -287,6 +311,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
   <li><a href="https://azure.microsoft.com/en-us/services/iot-central/">Azure IoT Central</a> by <a href="https://microsoft.com">Microsoft</a></li>
   <li><a href="https://azure.microsoft.com/en-us/free/">Azure</a> by <a href="https://microsoft.com">Microsoft</a></li>
   <li><a href="https://docs.microsoft.com/en-us/azure/iot-central/core/howto-connect-devkit">Connect an MXChip IoT DevKit device to your Azure IoT Central application</a> by <a href="https://microsoft.com">Microsoft</a></li>
+  <li><a href="https://azure.microsoft.com/en-us/pricing/details/iot-central/">Azure IoT Central pricing</a> by <a href="https://microsoft.com">Microsoft</a></li>
 </ul>
 
       </article>
