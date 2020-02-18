@@ -34,12 +34,15 @@ Okay, now that you have an account with Azure Portal, subscription id, and resou
 
 For simplicity, we are going to use [TypeScript](https://www.typescriptlang.org) as our primary programming language.
 
+Note: Please take a look at [this](https://github.com/emgarten/iotcentral-arm-sdk-examples) repo in case TypeScript isn't your language. We provide examples/sample code for Azure IoT Central in NodeJs/TypeScript, Python, .Net, Ruby, Java, and Go. (Not officially from Microsoft)
+
 Let's start with importing the necessary node modules,
 
 {% highlight TypeScript %}
   import * as msRestNodeAuth from "@azure/ms-rest-nodeauth";
   import { IotCentralClient } from "@azure/arm-iotcentral";
-  import { App, OperationInputs } from "@azure/arm-iotcentral/lib/models/index";
+  import { App, OperationInputs } from "@azure/arm-iotcentral/src/models/index";
+  import { AppPatch } from "@azure/arm-iotcentral/esm/models";
 {% endhighlight %}
 <a href="https://github.com/poanchen/iotcentral-arm-sdk-examples/blob/master/nodejs/index.ts" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
@@ -59,10 +62,13 @@ Next, you would also need to hard-code your sensitive information in the code so
   const NEWAPP: App = {
     subdomain: RESOURCENAME,
     sku: {
-        name: 'S1'
+        name: 'ST2' // Don't know what ST2 is? Check out this website, https://azure.microsoft.com/en-us/pricing/details/iot-central/
     },
-    location: 'West US',
+    location: 'unitedstates',
     displayName: RESOURCENAME
+  };
+  const UPDATEAPP: AppPatch = {
+    displayName: RESOURCENAME + "-new-name"
   };
 {% endhighlight %}
 <a href="https://github.com/poanchen/iotcentral-arm-sdk-examples/blob/master/nodejs/index.ts" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
@@ -113,6 +119,26 @@ Ever want to see information about your application? do the following,
 {% endhighlight %}
 <a href="https://github.com/poanchen/iotcentral-arm-sdk-examples/blob/master/nodejs/index.ts" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
+You can also update application's display name by doing this, (not your domain name)
+
+{% highlight TypeScript %}
+  async function updateApp(client): Promise<IotCentralClient> {
+    const result = await client.apps.update(RESOURCEGROUPNAME, RESOURCENAME, UPDATEAPP);
+    console.log(result);
+    return new Promise<IotCentralClient>(resolve => resolve(client));
+  }
+{% endhighlight %}
+
+If you wanna see all your applications under a specific resource group name, do the following,
+
+{% highlight TypeScript %}
+  async function listAllAppsByResourceGroup(client): Promise<IotCentralClient> {
+    const result = await client.apps.listByResourceGroup(RESOURCEGROUPNAME);
+    console.log(result);
+    return new Promise<IotCentralClient>(resolve => resolve(client));
+  }
+{% endhighlight %}
+
 You can also delete application programmatically by doing this,
 
 {% highlight TypeScript %}
@@ -131,6 +157,8 @@ Finally, call the async function like this,
     .then(checkIfNameExist)
     .then(createOrUpdateApp)
     .then(retrieveAppInfo)
+    .then(updateApp)
+    .then(listAllAppsByResourceGroup)
     // .then(deleteApp)
     .then(() => {
         console.log("done");
@@ -145,7 +173,7 @@ Finally, call the async function like this,
 {% endhighlight %}
 <a href="https://github.com/poanchen/iotcentral-arm-sdk-examples/blob/master/nodejs/index.ts" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
 
-Now, you have learned to login, check if app name is available, create or update app, retrieve app info, delete app within Azure IoT Central.
+Now, you have learned to login, check if app name is available, create or update app, retrieve app info, update an app, list all the applications under a specific resource group name, delete app within Azure IoT Central.
 
 Okay, do let me know in the comments below if you have any questions/concerns and I would be happy to help in any way. Happy using [Azure IoT Central](https://azure.microsoft.com/en-us/services/iot-central/)!
 
@@ -162,3 +190,4 @@ I'll try to keep this list current and up to date. If you know of a great resour
 * [Azure IoT Central](https://azure.microsoft.com/en-us/services/iot-central/) by [Microsoft](https://microsoft.com)
 * [Azure](https://azure.microsoft.com/en-us/free/) by [Microsoft](https://microsoft.com)
 * [Connect an MXChip IoT DevKit device to your Azure IoT Central application](https://docs.microsoft.com/en-us/azure/iot-central/core/howto-connect-devkit) by [Microsoft](https://microsoft.com)
+* [Azure IoT Central pricing](https://azure.microsoft.com/en-us/pricing/details/iot-central/) by [Microsoft](https://microsoft.com)
