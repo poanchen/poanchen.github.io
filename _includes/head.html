@@ -11,7 +11,12 @@
 
   <!-- Google Site Verification -->
   {% if site.google_site_verification %}
-      <meta name="google-site-verification" content="{{site.google_site_verification}}" />
+    <meta name="google-site-verification" content="{{site.google_site_verification}}" />
+  {% endif %}
+
+  <!-- Google AdSense Verification -->
+  {% if site.google_adsense_username %}
+    <script data-ad-client="{{site.google_adsense_username}}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   {% endif %}
 
   <!-- Social: Twitter -->
