@@ -23,16 +23,18 @@ stages:
       displayName: Install jekyll-sitemap
 
     - task: Npm@1
+      displayName: npm Install
       inputs:
         command: 'install'
     
     - task: Npm@1
-      displayName: Npm Install Gulp Globally
+      displayName: npm Install Gulp Globally
       inputs:
         command: 'custom'
         customCommand: 'install --global gulp-cli@2.2.0'
     
     - task: Gulp@1
+      displayName: gulp js, stylus
       inputs:
         gulpFile: 'gulpfile.js'
         targets: 'js, stylus'
