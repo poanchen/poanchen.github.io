@@ -51,7 +51,7 @@ gulp.task('stylus', function(){
 		gulp.src('src/styl/main.styl')
 		.pipe(plumber())
 		.pipe(stylus({
-			use:[koutoSwiss(), prefixer(), jeet(),rupture()],
+			use:[koutoSwiss(), prefixer(), jeet(), rupture()],
 			compress: true
 		}))
 		.pipe(gulp.dest('_site/assets/css/'))
