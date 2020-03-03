@@ -27,9 +27,10 @@ stages:
         command: 'install'
     
     - task: Npm@1
+      displayName: Npm Install Gulp Globally
       inputs:
         command: 'custom'
-        customCommand: 'npm install --global gulp-cli@2.2.0'
+        customCommand: 'install --global gulp-cli@2.2.0'
     
     - task: Gulp@1
       inputs:
