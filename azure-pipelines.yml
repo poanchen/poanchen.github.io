@@ -27,10 +27,6 @@ stages:
       inputs:
         command: 'install'
     
-    - task: CmdLine@2
-      displayName: npm Install Gulp Globally
-      inputs:
-        script: 'sudo npm install --global gulp-cli@2.2.0'
     - task: Gulp@1
       displayName: gulp js, stylus
       inputs:
