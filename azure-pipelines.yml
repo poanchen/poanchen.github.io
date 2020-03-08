@@ -30,7 +30,6 @@ stages:
     - task: Gulp@1
       displayName: gulp js, stylus
       inputs:
-        gulpFile: '/gulpfile.js'
         targets: 'js, stylus'
         enableCodeCoverage: false
       
