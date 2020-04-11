@@ -20,35 +20,28 @@ var jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
+function jekyllBuild() {
 	browserSync.notify(messages.jekyllBuild);
-	return cp.spawn(jekyllCommand, ['build'], {stdio: 'inherit'})
-		.on('close', done);
-});
+	return cp.spawn(jekyllCommand, ['build'], {stdio: 'inherit'});
+}
 
-/**
- * Rebuild Jekyll & do page reload
- */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+function reloadBrowserSync(done) {
 	browserSync.reload();
-});
+	done();
+}
 
-/**
- * Wait for jekyll-build, then launch the Server
- */
-gulp.task('browser-sync', ['jekyll-build'], function() {
-	browserSync({
-		server: {
-			baseDir: '_site'
-		}
-	});
-});
+function doBrowserSync(done) {
+	browserSync.init({
+    server: {
+      baseDir: "./_site/"
+    },
+    port: 3000
+  });
+  done();
+}
 
-/**
- * Stylus task
- */
-gulp.task('stylus', function(){
-		gulp.src('src/styl/main.styl')
+function runStylus() {
+	return gulp.src('src/styl/main.styl')
 		.pipe(plumber())
 		.pipe(stylus({
 			use:[koutoSwiss(), prefixer(), jeet(), rupture()],
@@ -56,43 +49,38 @@ gulp.task('stylus', function(){
 		}))
 		.pipe(gulp.dest('_site/assets/css/'))
 		.pipe(browserSync.reload({stream:true}))
-		.pipe(gulp.dest('assets/css'))
-});
+		.pipe(gulp.dest('assets/css'));
+}
 
-/**
- * Javascript Task
- */
-gulp.task('js', function(){
+function runJs() {
 	return gulp.src('src/js/**/*.js')
 		.pipe(plumber())
 		.pipe(concat('main.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('assets/js/'))
-});
+		.pipe(gulp.dest('assets/js/'));
+}
 
-/**
- * Imagemin Task
- */
-gulp.task('imagemin', function() {
+function runImagemin() {
 	return gulp.src('src/img/**/*.{jpg,png,gif,PNG,JPG}')
 		.pipe(plumber())
 		.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
 		.pipe(gulp.dest('img/'));
-});
+}
 
 /**
  * Watch stylus files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
-gulp.task('watch', function () {
-	gulp.watch('src/styl/**/*.styl', ['stylus']);
-	gulp.watch('src/js/**/*.js', ['js']);
-	gulp.watch('src/img/**/*.{jpg,png,gif,PNG,JPG}', ['imagemin']);
-	gulp.watch(['*.html', 'about/index.html', 'blog/index.html', '_includes/*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
-});
+function watch() {
+	gulp.watch('src/styl/**/*.styl', runStylus);
+	gulp.watch('src/js/**/*.js', runJs);
+	gulp.watch('src/img/**/*.{jpg,png,gif,PNG,JPG}', runImagemin);
+	gulp.watch(['*.html', 'about/index.html', 'blog/index.html', '_includes/*.html', '_layouts/*.html', '_posts/*'],
+		gulp.series(jekyllBuild, reloadBrowserSync));
+}
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['js', 'stylus', 'browser-sync', 'watch']);
+gulp.task('default', gulp.series(runJs, runStylus, gulp.series(jekyllBuild, doBrowserSync), watch));
