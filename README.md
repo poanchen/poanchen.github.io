@@ -54,6 +54,8 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- How to update package-lock.json file in order to honour the ^ and ~ symbol?
+- What is the difference between ~ and ^ in package.json?
 - How to create an Azure IoT Central application programmatically?
 - Why using a global variable to solve Leetcode problem can be a bad idea?
 - What is a Pure function and how can it be a good practice?
