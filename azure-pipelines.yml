@@ -30,7 +30,7 @@ stages:
     - task: Gulp@1
       inputs:
         gulpFile: 'gulpfile.js'
-        targets: 'runJs, runStylus'
+        targets: 'compileJsStylus'
         enableCodeCoverage: false
       
     - script: 'jekyll build'
