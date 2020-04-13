@@ -84,3 +84,4 @@ function watch() {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', gulp.series(runJs, runStylus, gulp.series(jekyllBuild, doBrowserSync), watch));
+gulp.task('compileJsStylus', gulp.series(runJs, runStylus));
