@@ -54,6 +54,7 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- How to make use of the Google Analytics to show page views on a post?
 - How to update package-lock.json file in order to honour the ^ and ~ symbol?
 - What is the difference between ~ and ^ in package.json?
 - How to create an Azure IoT Central application programmatically?
