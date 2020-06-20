@@ -1,15 +1,17 @@
 <p id="stats"></p>
 
 <script>
-var request = new XMLHttpRequest();
-request.onreadystatechange = function() {
-  if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
-    var json = JSON.parse(request.response);
-    if (json[getPathName()] != undefined) {
-      document.getElementById('stats').innerHTML = `${Number(json[getPathName()]).toLocaleString()} views`;
-    }
-  }
-};
-request.open('GET', 'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io%20-%20views.json?sp=r&st=2020-04-18T03:32:30Z&se=2030-04-18T11:32:30Z&spr=https&sv=2019-02-02&sr=b&sig=0d1sCUnCzdw8IeO8GwNsuKiGgot3sQuwF3QPsboa2uw%3D', true);
-request.send(null);
+  document.addEventListener("DOMContentLoaded", function(){
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+        var json = JSON.parse(request.response);
+        if (json[getPathName()] != undefined) {
+          document.getElementById('stats').innerHTML = `${Number(json[getPathName()]).toLocaleString()} views`;
+        }
+      }
+    };
+    request.open('GET', 'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io%20-%20views.json?sp=r&st=2020-04-18T03:32:30Z&se=2030-04-18T11:32:30Z&spr=https&sv=2019-02-02&sr=b&sig=0d1sCUnCzdw8IeO8GwNsuKiGgot3sQuwF3QPsboa2uw%3D', true);
+    request.send(null);
+  });
 </script>
