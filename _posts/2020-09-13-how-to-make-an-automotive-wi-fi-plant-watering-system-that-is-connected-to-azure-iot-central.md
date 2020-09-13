@@ -68,7 +68,7 @@ In words,
 
 Here is the PIN map of ESP8266, just for your information,
 
-<img src="\img\2020\09\13\how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central/NODEMCU_DEVKIT_V1.0_PINMAP.PNG" alt="NODEMCU_DEVKIT_V1.0_PINMAP">
+<img src="\img\2020\09\13\how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central/NODEMCU_DEVKIT_V1.0_PINMAP.png" alt="NODEMCU_DEVKIT_V1.0_PINMAP">
 
 The above picture is from [here](https://github.com/nodemcu/nodemcu-devkit-v1.0#pin-map).
 
@@ -164,8 +164,8 @@ Initially, the Relay Module is set to be off. Every 60 seconds, it will check th
 
 Here is what it looks like in real life,
 
-<img src="\img\2020\09\13\how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central/ESP8266 without plant real life.JPG" alt="ESP8266 without plant real life">
-<img src="\img\2020\09\13\how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central/ESP8266 with plant real life.JPG" alt="ESP8266 with plant real life">
+<img src="\img\2020\09\13\how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central/ESP8266 without plant real life.jpg" alt="ESP8266 without plant real life">
+<img src="\img\2020\09\13\how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central/ESP8266 with plant real life.jpg" alt="ESP8266 with plant real life">
 
 Now, I just need to figure out how to send data to [Azure IoT Central](https://azure.microsoft.com/services/iot-central).
 
