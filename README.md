@@ -104,4 +104,4 @@ according to https://github.com/holman/left/issues/34
 - How to set up a Node.js application for production on Ubuntu 14.04?
 - How to build a simple chat bot using Hubot that determine gender based on their first name?
 - How to automatically send a welcome email to new user when they sign up for their account in WordPress programmatically?
-- How to create a simple REST API in PHP and call them in JavaScript
+- How to create a simple REST API in PHP and call them in JavaScript?
