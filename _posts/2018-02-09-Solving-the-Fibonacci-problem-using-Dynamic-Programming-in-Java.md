@@ -100,6 +100,7 @@ Now that we are going with the right direction. Each number in the sequence *ONL
 Hence, the running time should get further improved here compared with the top down approach. However, the next question is, do we really need to save the results to the cache? and waste another O(N) space. The answer here is not really. We can use constant space and store the only necessary partial results along the way:
 {% highlight java %}
   public int getFibonacciNumberBottomUpWithoutCache(int n) {
+    if (n == 0 || n == 1) return n;
     int fnMin2 = 0;
     int fnMin1 = 1;
     int sum = 0;
