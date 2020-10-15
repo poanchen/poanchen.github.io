@@ -4,5 +4,11 @@
     "profile_picture": "poanchen.jpg",
     "main_website": "https://github.com/poanchen",
     "description": "Software Engineer at Microsoft. Graduated from @uvic. Previously worked at @illumina, @ACDSee, @AEHelp and @AcePersonnel1. My words are my own."
+  },
+  "junilearning": {
+    "name": "Juni Learning",
+    "profile_picture": "junilearning.png",
+    "main_website": "https://junilearning.com",
+    "description": "We are an award-winning online computer science and mathematics academy that offers private online courses to students from ages 8–18."
   }
 }

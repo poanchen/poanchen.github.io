@@ -58,6 +58,7 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- What Are Algorithms & Why Are They Important?
 - How to display an Alexa rank chart in your website?
 - What to do when git branch has diverged?
 - How to make an automatic Wi-Fi plant watering system that is connected to Azure IoT Central?
