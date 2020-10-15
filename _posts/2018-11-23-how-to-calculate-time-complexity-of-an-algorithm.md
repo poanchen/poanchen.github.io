@@ -29,7 +29,7 @@ Let me give you example of how the code would look like for each running time in
 As we all know, math operators like +, -, \*, / computes in constant time. Since the code does nothing but addition and printing, it indeed runs in constant time.
 
 Next,
-
+<div id="binarySearch"></div>
 {% highlight java %}
   // Time complexity: O(log(n))
   // Space complexity: O(1)
@@ -224,7 +224,7 @@ Next,
 We have nested of three for loops in the print2DArray method, they all go up to the size of the matrix which makes this code a cubic time or O(n \* n \* n).
 
 Before we talk about how we can get time complexity of O(n^n), let's perhaps talk about how you can get O(4^n) first. Say, you are given this question,
-
+<div id="maxValueListOperators"></div>
 > Given a list of float numbers, insert “+”, “-”, “\*” or “/” between each consecutive pair of numbers to find the maximum value you can get. For simplicity, assume that all operators are of equal precedence order and evaluation happens from left to right.
 For example:<br><br>
 Given a list of number, [1, 12, 3], the maximum value you can get is 39 if you do 1 + 12 * 3.

@@ -41,7 +41,7 @@ The basic idea of Dynamic Programming is to save the result of the subproblem so
 Let's take the simple example of the Fibonacci numbers: finding the nth Fibonacci number defined by Fn = Fn-1 + Fn-2 and F0=0, F1=1
 
 The easiest and obvious way of doing this is to use the recursion:
-
+<div id="recursion"></div>
 ### Recursion
 {% highlight java %}
   public int getFibonacciNumberRecursively(int n) {
@@ -59,7 +59,7 @@ As you can see in the tree diagram, number 7 has been computed *1* time. Number 
 Here is where the Dynamic Programming comes into play that will save us all.
 
 ### Top Down - Memoization
-
+<div id="dp"></div>
 When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.
 {% highlight java %}
   public HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();

@@ -25,20 +25,40 @@ An algorithm is a set of step-by-step procedures, or a set of rules to follow, f
 
 Algorithmic programming is all about writing a set of rules that instruct the computer how to perform a task. A computer program is essentially an algorithm that tells the computer what specific steps to execute, in what specific order, in order to carry out a specific task. Algorithms are written using particular syntax, depending on the programming language being used.
 
+Here is an example of a simple algorithm that will add two number and return its result using the programming language of Java,
+
+{% highlight java %}
+  public class PureFunction {
+    public static int add(int a, int b) {
+      return a + b;
+    }
+    public static void main(String [] args) {
+      int c = add(10, 5);
+      System.out.println(c); // 15
+    }
+  }
+{% endhighlight %}
+<a href="https://github.com/poanchen/code-for-blog/blob/master/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice/PureFunction.java" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a>
+
+This is essentially an algorithm that will find the value of c in this formula, a + b = c.
+
 ## Types of Algorithms
 
 Algorithms are classified based on the concepts that they use to accomplish a task. While there are many types of algorithms, the most fundamental types of computer science algorithms are:
-1. Divide and conquer algorithms – divide the problem into smaller subproblems of the same type; solve those smaller problems, and combine those solutions to solve the original problem.
-2. Brute force algorithms – try all possible solutions until a satisfactory solution is found.
+1. Divide and conquer algorithms – divide the problem into smaller subproblems of the same type; solve those smaller problems, and combine those solutions to solve the original problem. Here is an [example](/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm#binarySearch) of Divide and conquer algorithm, a binary search algorithm that will search an element from a sorted array, for each run, it would either find it or divide the problem into half and head into the half that for sure has the answer. Continuing doing so until an element has been found if the element is in the array.
+2. Brute force algorithms – try all possible solutions until a satisfactory solution is found. Here is an [example](/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea#dfs) of Brute force algorithm, a Depth-first Search algorithm that will basically traverse the whole tree before giving up.
 3. Randomized algorithms – use a random number at least once during the computation to find a solution to the problem.
-4. Greedy algorithms – find an optimal solution at the local level with the intent of finding an optimal solution for the whole problem.
-5. Recursive algorithms – solve the lowest and simplest version of a problem to then solve increasingly larger versions of the problem until the solution to the original problem is found.
-6. Backtracking algorithms – divide the problem into subproblems, each which can be attempted to be solved; however, if the desired solution is not reached, move backwards in the problem until a path is found that moves it forward.
-7. Dynamic programming algorithms – break a complex problem into a collection of simpler subproblems, then solve each of those subproblems only once, storing their solution for future use instead of re-computing their solutions.
+4. Greedy algorithms – find an optimal solution at the local level with the intent of finding an optimal solution for the whole problem. Here is an [example](/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm#maxValueListOperators) of Greedy algorithm.
+5. Recursive algorithms – solve the lowest and simplest version of a problem to then solve increasingly larger versions of the problem until the solution to the original problem is found. Here is an [example](/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java#recursion) of Recursive algorithm.
+6. Backtracking algorithms – divide the problem into subproblems, each which can be attempted to be solved; however, if the desired solution is not reached, move backwards in the problem until a path is found that moves it forward. Here is an [example](https://github.com/poanchen/leetcode-problems/blob/master/Word%20Search/Solution.java) of Backtracking algorithm.
+7. Dynamic programming algorithms – break a complex problem into a collection of simpler subproblems, then solve each of those subproblems only once, storing their solution for future use instead of re-computing their solutions. Here is an [example](/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java#dp) of Dynamic programming algorithm.
 
 ## Example of an Algorithm
 
 ### Solving a Rubik’s Cube
+
+<img src="\img\2020\10\14\What-Are-Algorithms-and-Why-Are-They-Important/rubiks-cube.jpg" alt="rubiks cube">
+Source: <a href="https://runrunchan.wordpress.com/2014/06/28/rubiks-cube">RUBIK’S CUBE</a> by <a href="https://runrunchan.wordpress.com/author/runrunchan">runrunchan</a>
 
 There are a number of different algorithms, from simple to very complicated, that exist for solving a Rubik’s cube. Below is just one simple algorithm. First, let’s specify a notation to use (similar to picking a programming language).
 
@@ -118,7 +138,7 @@ Algorithmic thinking, or the ability to define clear steps to solve a problem, i
 
 ## Wrapping Up
 
-For full disclosure, this article is mostly written by [Juni Learning](https://junilearning.com) and slightly modified by [PoAn (Baron) Chen](https://poanchen.github.io). This [article](https://junilearning.com/blog/college-and-career/preparing-for-the-ap-computer-science-a-exam) originally appeared on [junilearning.com](https://junilearning.com). Hopefully, by bring-in different writting technic, it will attract more readers to this site. I hope that this article will help some of you to understand what an algorithms is and why they are important and thank you for reading!
+For full disclosure, this article is a combined work mostly written by [Juni Learning](https://junilearning.com) and slightly modified by [PoAn (Baron) Chen](https://poanchen.github.io). This [article](https://junilearning.com/blog/college-and-career/preparing-for-the-ap-computer-science-a-exam) originally appeared on [junilearning.com](https://junilearning.com). Hopefully, by bring-in different writting technic, it will attract more readers to this site. I hope that this article will help some of you to understand what an algorithms is and why they are important and thank you for reading!
 
 ## Resources
 

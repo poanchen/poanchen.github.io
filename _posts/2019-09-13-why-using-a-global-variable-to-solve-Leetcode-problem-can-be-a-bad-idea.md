@@ -11,7 +11,7 @@ tags:
 I recently run into the issue of having inconsistent result for the exact same test case that I run locally comparing with the code that [Leetcode](https://leetcode.com) runs on their server. How is that even possible? At first, my suspicion would be the development environment but I code my solution right in their website. In addition, other people solution got accepted, so it is gotta be something wrong with my code. And, it turns out, it is. It is because of how I use the global variable in my solution.
 
 Before I talk about how using a global variable to solve [Leetcode](https://leetcode.com) problem can be a bad idea. I want to show you my code first.
-
+<div id="dfs"></div>
 {% highlight python %}
 # Definition for a binary tree node.
 # class TreeNode:
