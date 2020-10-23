@@ -58,6 +58,7 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- How to activate virtual environment in PowerShell?
 - What Are Algorithms & Why Are They Important?
 - How to display an Alexa rank chart in your website?
 - What to do when git branch has diverged?
