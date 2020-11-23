@@ -58,6 +58,7 @@ gem install jekyll-sitemap
 according to https://github.com/holman/left/issues/34
 
 ## List of post topic that I have written for my blog
+- How to make a Linux-based Azure Function works with file system?
 - How to prepopulate GitHub issue to make people's life easier in Jekyll?
 - How to activate virtual environment in PowerShell?
 - What Are Algorithms & Why Are They Important?
