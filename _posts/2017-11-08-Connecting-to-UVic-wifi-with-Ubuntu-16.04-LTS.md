@@ -13,9 +13,7 @@ Connecting to UVic wifi with Linux for the first time can be a pain in the ass. 
 
 First step, connect to the Uvic network and not the UvicStart. A Wi-Fi Network Authentication Required dialog should come up. Change the **Authentication** method from Tunneled TLS to **Protected EAP (PEAP)**. 
 
-For those who are using **Debian 9**, head over to [here](https://www.uvic.ca/dl/public/fr.php?filename=GlobalSignRoot.cer) first to download the cert file from uvic website and save it in the directory of **/etc/ssl/certs**.
-
-Next, simply browse your **CA certificate** in the path **/etc/ssl/certs** to select **thawte_Primary_Root_CA.pem** for **Ubuntu 16.04 LTS** user and **GlobalSignRoot.cer** for **Debian 9** user.
+Next, for **Ubuntu 16.04 LTS** users, simply browse to your **CA certificate** in the path **/etc/ssl/certs** to select **thawte_Primary_Root_CA.pem**. For those who are using **Debian 10**, you do not need to select a CA certificate; just check **No CA certificate is required**.
 
 Later, put in your UVic Netlink ID as your Username (Make sure to put **@uvic.ca** as well) and UVic Netlink ID password as your Password. All together, it should look something similar to this.
 
