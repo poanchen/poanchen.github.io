@@ -1,40 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PoAn (Baron) Chen's site</title>
+    <title>PoAn (Baron) Chen&apos;s site</title>
     <description>A blog written by PoAn (Baron) Chen.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Nov 2020 17:11:31 -0800</pubDate>
-    <lastBuildDate>Sat, 28 Nov 2020 17:11:31 -0800</lastBuildDate>
-    <generator>Jekyll v3.7.0</generator>
-    
-      <item>
-        <title>How to fix authentication failed, it is either not correct, or expired, or does not have the correct permission with AzureFileCopy?</title>
-        <description>&lt;p&gt;Have you ever try to copy over your artifact from &lt;a href=&quot;https://azure.microsoft.com/services/devops&quot;&gt;Azure DevOps&lt;/a&gt; to &lt;a href=&quot;https://azure.microsoft.com/services/storage/blobs&quot;&gt;Azure Blob Storage&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Are you having trouble building a Linux-based &lt;a href=&quot;https://azure.microsoft.com/services/functions&quot;&gt;Azure Function&lt;/a&gt; that needs to work with file system? You are in luck! In this article, I am going to quickly talk about some of the tips working with Linux-based Azure Function, specifically on file system.&lt;/p&gt; &lt;p&gt;As you should know, Azure Function is serverless. This means that &lt;a href=&quot;https://azure.microsoft.com&quot;&gt;Azure&lt;/a&gt; is going to take care all of your computing resources. Either few or millions. Azure will handle that for you. What you need to do...</description>
-        <pubDate>Fri, 27 Nov 2020 16:30:30 -0800</pubDate>
-        <link>http://localhost:4000/blog/2020/11/27/How-to-fix-authentication-failed-it-is-either-not-correct-or-expired-or-does-not-have-the-correct-permission-with-AzureFileCopy</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/11/27/How-to-fix-authentication-failed-it-is-either-not-correct-or-expired-or-does-not-have-the-correct-permission-with-AzureFileCopy</guid>
-        
-        <category>Azure</category>
-        
-        <category>AzureFileCopy</category>
-        
-        <category>Azure Blob Storage</category>
-        
-        <category>Azure DevOps</category>
-        
-        <category>Azure DevOps Build</category>
-        
-        
-      </item>
+    <link>https://poanchen.github.io/</link>
+    <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 22 Jan 2022 23:21:34 +0000</pubDate>
+    <lastBuildDate>Sat, 22 Jan 2022 23:21:34 +0000</lastBuildDate>
+    <generator>Jekyll v4.2.1</generator>
     
       <item>
         <title>How to make a Linux-based Azure Function works with file system?</title>
         <description>&lt;p&gt;Are you having trouble building a Linux-based &lt;a href=&quot;https://azure.microsoft.com/services/functions&quot;&gt;Azure Function&lt;/a&gt; that needs to work with file system? You are in luck! In this article, I am going to quickly talk about some of the tips working with Linux-based Azure Function, specifically on file system.&lt;/p&gt; &lt;p&gt;As you should know, Azure Function is serverless. This means that &lt;a href=&quot;https://azure.microsoft.com&quot;&gt;Azure&lt;/a&gt; is going to take care all of your computing resources. Either few or millions. Azure will handle that for you. What you need to do is to provide blocks of code for Azure Function to run. This is extremely useful for resources who...</description>
-        <pubDate>Sun, 22 Nov 2020 16:30:30 -0800</pubDate>
-        <link>http://localhost:4000/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system</guid>
+        <pubDate>Mon, 23 Nov 2020 00:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/11/23/How-to-make-a-Linux-based-Azure-Function-works-with-file-system</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/11/23/How-to-make-a-Linux-based-Azure-Function-works-with-file-system</guid>
         
         <category>Azure</category>
         
@@ -46,11 +26,11 @@
       </item>
     
       <item>
-        <title>How to prepopulate GitHub issue to make people's life easier in Jekyll?</title>
+        <title>How to prepopulate GitHub issue to make people&apos;s life easier in Jekyll?</title>
         <description>&lt;p&gt;Have you ever click on a button that take you to GitHub issue that look something like this,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;\img\2020\10\27\How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll/githubissue.JPG&quot; alt=&quot;githubissue&quot; /&gt;&lt;/p&gt; &lt;p&gt;As you can see, the information about the blog URL and the GitHub source URL is already prepopulated. User simply need to put down their concerns and that is it. Look nice and all right?&lt;/p&gt; &lt;p&gt;Ever wonder how this works? You are in luck, this article will teach you how it works and how to include it in your Jekyll site.&lt;/p&gt; &lt;p&gt;This is actually pretty simple. The magic is done through the query parameters.&lt;/p&gt; &lt;h3 id=&quot;what-is-a-query-parameters&quot;&gt;What is a...</description>
-        <pubDate>Tue, 27 Oct 2020 01:30:30 -0700</pubDate>
-        <link>http://localhost:4000/blog/2020/10/27/How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/10/27/How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll</guid>
+        <pubDate>Tue, 27 Oct 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/10/27/How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/10/27/How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll</guid>
         
         <category>GitHub</category>
         
@@ -62,9 +42,9 @@
       <item>
         <title>How to activate virtual environment in PowerShell?</title>
         <description>&lt;h3 id=&quot;what-is-virtual-environment-using-nodejs-terminology&quot;&gt;What is virtual environment? (using Node.js terminology)&lt;/h3&gt; &lt;p&gt;For people who are familiar with &lt;a href=&quot;https://nodejs.org&quot;&gt;Node.js&lt;/a&gt; development environment, virtual environment is somewhat similar. In &lt;a href=&quot;https://nodejs.org&quot;&gt;Node.js&lt;/a&gt;, for your specific project, all the modules you installed is tailored specific to your project. It doesn’t affect anything outside of that project unless you &lt;a href=&quot;https://www.npmjs.com&quot;&gt;npm&lt;/a&gt; install the module with -g tag. We have something similar to Python development environment as well. It is called virtual environment. It is essentially a place where you can &lt;a href=&quot;https://pypi.org&quot;&gt;pip&lt;/a&gt; install any modules and knowing that anything you do in this environment isn’t going to affect...</description>
-        <pubDate>Thu, 22 Oct 2020 17:30:30 -0700</pubDate>
-        <link>http://localhost:4000/blog/2020/10/22/how-to-activate-virtual-environment-in-powershell</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/10/22/how-to-activate-virtual-environment-in-powershell</guid>
+        <pubDate>Fri, 23 Oct 2020 00:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/10/23/how-to-activate-virtual-environment-in-powershell</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/10/23/how-to-activate-virtual-environment-in-powershell</guid>
         
         <category>Python</category>
         
@@ -78,9 +58,9 @@
       <item>
         <title>What Are Algorithms &amp; Why Are They Important?</title>
         <description>&lt;h2 id=&quot;what-is-an-algorithm&quot;&gt;What Is An Algorithm?&lt;/h2&gt; &lt;p&gt;An algorithm is a set of step-by-step procedures, or a set of rules to follow, for completing a specific task or solving a particular problem. Algorithms are all around us. The recipe for baking a cake, the method we use to solve a long division problem, and the process of doing laundry are all examples of an algorithm. Here’s what baking a cake might look like, written out as a list of instructions, just like an algorithm:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Preheat the oven&lt;/li&gt; &lt;li&gt;Gather the ingredients&lt;/li&gt; &lt;li&gt;Measure out the ingredients&lt;/li&gt; &lt;li&gt;Mix together the ingredients to make the...</description>
-        <pubDate>Wed, 14 Oct 2020 01:30:30 -0700</pubDate>
-        <link>http://localhost:4000/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important</guid>
+        <pubDate>Wed, 14 Oct 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important</guid>
         
         <category>Algorithms</category>
         
@@ -94,9 +74,9 @@
       <item>
         <title>How to display an Alexa rank chart in your website?</title>
         <description>&lt;p&gt;Ever wonder how to display an &lt;a href=&quot;https://www.alexa.com/siteinfo/poanchen.github.io#section_traffic&quot;&gt;Alexa rank chart&lt;/a&gt; in your website? You are in luck, in this tutorial, we are going to show you how it can be done.&lt;/p&gt; &lt;p&gt;In a nutshell, this is how it works. We would query this free &lt;a href=&quot;https://data.alexa.com/data?cli=10&amp;amp;url=poanchen.github.io&quot;&gt;Alexa API endpoint&lt;/a&gt; once a day to get the Alexa global rank for a specifc website. We then &lt;a href=&quot;https://docs.python.org/3.7/library/xml.etree.elementtree.html&quot;&gt;parse&lt;/a&gt; the result as XML and send the rank to &lt;a href=&quot;https://www.google.com/sheets/about&quot;&gt;Google Sheets&lt;/a&gt; via &lt;a href=&quot;https://ifttt.com&quot;&gt;IFTTT&lt;/a&gt;. Now that we have the rank stored in &lt;a href=&quot;https://www.google.com/sheets/about&quot;&gt;Google Sheets&lt;/a&gt;, we simply need to download it and go through...</description>
-        <pubDate>Sun, 20 Sep 2020 01:30:30 -0700</pubDate>
-        <link>http://localhost:4000/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website</guid>
+        <pubDate>Sun, 20 Sep 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website</guid>
         
         <category>Alexa</category>
         
@@ -118,9 +98,9 @@
       <item>
         <title>What to do when git branch has diverged?</title>
         <description>&lt;p&gt;Ever try to commit and push your changes to master branch and see this annoying message stated that your branch and ‘origin/master’ branch have diverged,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;\img\2020\09\19\what-to-do-when-git-branch-has-diverged/branch diverged.JPG&quot; alt=&quot;branch diverged&quot; /&gt;&lt;/p&gt; &lt;p&gt;You are in luck, in this tutorial, we are going to talk about how this happen, how to fix it and how to avoid this from happening in the future. Before we talk about how to fix it, we should talk about how this can happen to you. I have drawn the diagram to show you what happened, here is the picture,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;\img\2020\09\19\what-to-do-when-git-branch-has-diverged/branch diverged diagram.JPG&quot; alt=&quot;branch diverged diagram&quot;...</description>
-        <pubDate>Sat, 19 Sep 2020 01:30:30 -0700</pubDate>
-        <link>http://localhost:4000/blog/2020/09/19/what-to-do-when-git-branch-has-diverged</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/09/19/what-to-do-when-git-branch-has-diverged</guid>
+        <pubDate>Sat, 19 Sep 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/09/19/what-to-do-when-git-branch-has-diverged</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/09/19/what-to-do-when-git-branch-has-diverged</guid>
         
         <category>Git</category>
         
@@ -132,9 +112,9 @@
       <item>
         <title>How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?</title>
         <description>&lt;p&gt;I often forget to water my plants, and as a result they would get really dry and sometimes even die. So I thought it would be cool to build an automotive Wi-Fi plant watering system that will continue to water my plant until it reaches a certain level of moist. In addition, I am planning to leverage &lt;a href=&quot;https://azure.microsoft.com/services/iot-central&quot;&gt;Azure IoT Central&lt;/a&gt;, so that I have a nice dashboard that I can work with and check when was the last time the system watered my plant as well as the moist level for the past few hours/days/weeks. In this tutorial, I...</description>
-        <pubDate>Sun, 13 Sep 2020 01:30:30 -0700</pubDate>
-        <link>http://localhost:4000/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central</guid>
+        <pubDate>Sun, 13 Sep 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central</guid>
         
         <category>Azure IoT Central</category>
         
@@ -154,9 +134,9 @@
       <item>
         <title>How to make use of the Google Analytics to show page views on a post?</title>
         <description>&lt;p&gt;Ever wonder how to show views on your website? You are in luck, this post will cover all the technical details that you need to get it started. The simplest way to show how many views this post has is to have a count that got increment it every time when there is a visit. Sounds good and all until, someone kept refreshing the same page to max out the number. Now, this person would be thinking, we just need some unique identifier to identify this person, for example, IP address and then we would only counts them as one...</description>
-        <pubDate>Wed, 17 Jun 2020 01:30:30 -0700</pubDate>
-        <link>http://localhost:4000/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post</guid>
+        <pubDate>Wed, 17 Jun 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post</guid>
         
         <category>Azure Blob Storage</category>
         
@@ -176,9 +156,27 @@
       <item>
         <title>How to update package-lock.json file in order to honour the ^ and ~ symbol?</title>
         <description>&lt;p&gt;In case you have no idea what ^ and ~ symbol mean in package.json file, please take a look at this blog &lt;a href=&quot;/blog/2020/04/12/what-is-the-difference-between-~-and-in-package-json&quot;&gt;post&lt;/a&gt; that I did.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;package-lock.json file is useful when multiple people are collaborating on the same project and wanting all the dev members to have similar environment (in this case, similar library versioning across all their packages and its dependencies) as the lock file is simply a snapshot of the dependencies tree graph. Also, useful for CI/CD build pipeline. A popular build pipeline is &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops&quot;&gt;Azure DevOps&lt;/a&gt;.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;There are many reasons why you want to...</description>
-        <pubDate>Mon, 13 Apr 2020 01:30:30 -0700</pubDate>
-        <link>http://localhost:4000/blog/2020/04/13/how-to-update-package-lock-json-file-in-order-to-honour-the-and-~-symbol</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/04/13/how-to-update-package-lock-json-file-in-order-to-honour-the-and-~-symbol</guid>
+        <pubDate>Mon, 13 Apr 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/04/13/how-to-update-package-lock-json-file-in-order-to-honour-the-and-~-symbol</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/04/13/how-to-update-package-lock-json-file-in-order-to-honour-the-and-~-symbol</guid>
+        
+        <category>JavaScript</category>
+        
+        <category>Node.js</category>
+        
+        <category>npm</category>
+        
+        <category>PoAn (Baron) Chen</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>What is the difference between ~ and ^ in package.json?</title>
+        <description>&lt;p&gt;A typical package.json looks something like this,&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;poanchen.github.io&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Data for poanchen.github.io. Blog and pages generated by Jekyll. Hosted on GitHub. https://poanchen.github.io&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gulpfile.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;echo &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Error: no test specified&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &amp;amp;&amp;amp; exit 1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;repository&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;git&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;...</description>
+        <pubDate>Sun, 12 Apr 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/04/12/what-is-the-difference-between-~-and-in-package-json</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/04/12/what-is-the-difference-between-~-and-in-package-json</guid>
         
         <category>JavaScript</category>
         

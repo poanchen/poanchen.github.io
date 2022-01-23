@@ -27,14 +27,14 @@
   <meta name="twitter:title" content="How to display an Alexa rank chart in your website?">
   <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
   
-  <meta property="twitter:image:src" content="http://localhost:4000/img/blog-image.png">
+  <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
   
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="og:url" content="http://localhost:4000/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website">
+  <meta property="og:url" content="https://poanchen.github.io/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website">
   <meta property="og:title" content="How to display an Alexa rank chart in your website?">
   
-  <meta property="og:image" content="http://localhost:4000/img/blog-image.png">
+  <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
   
   <meta property="og:description" content="A blog written by PoAn (Baron) Chen.">
   <meta property="og:site_name" content="PoAn (Baron) Chen's site">
@@ -42,7 +42,7 @@
   <!-- Social: Google+ / Schema.org  -->
   <meta itemprop="name" content="How to display an Alexa rank chart in your website?"/>
   <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
-  <meta itemprop="image" content="http://localhost:4000/img/blog-image.png"/>
+  <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
@@ -67,8 +67,8 @@
   <meta name="theme-color" content="#0562DC">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website">
-  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="https://poanchen.github.io/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website">
+  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
   
   <!-- Buy Me a Coffee widget -->
   <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="poanchen" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
@@ -79,7 +79,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2020-09-20 01:30:30 -0700" class="date">20 Sep 2020</time>
+            <time itemprop="datePublished" datetime="2020-09-20 08:30:30 +0000" class="date">20 Sep 2020</time>
         
         <h1 class="post-title" itemprop="name">How to display an Alexa rank chart in your website?</h1>
         
@@ -231,16 +231,16 @@
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="c"># config for your site</span>
-<span class="n">config</span><span class="p">[</span><span class="s">"website"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"https://poanchen.github.io"</span>
+<span class="c1"># config for your site
+</span><span class="n">config</span><span class="p">[</span><span class="s">"website"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"https://poanchen.github.io"</span>
 
-<span class="c"># config for your ifttt</span>
-<span class="n">config</span><span class="p">[</span><span class="s">"iftttApiEndpoint"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"https://maker.ifttt.com/trigger/</span><span class="si">%</span><span class="s">s/with/key/</span><span class="si">%</span><span class="s">s"</span>
+<span class="c1"># config for your ifttt
+</span><span class="n">config</span><span class="p">[</span><span class="s">"iftttApiEndpoint"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"https://maker.ifttt.com/trigger/%s/with/key/%s"</span>
 <span class="n">config</span><span class="p">[</span><span class="s">"iftttEventName"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"add_alexa_rank"</span>
-<span class="n">config</span><span class="p">[</span><span class="s">"iftttApiMakerKey"</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'IFTTTAPIMAKERKEY'</span><span class="p">]</span> <span class="c"># get the key from https://ifttt.com/maker_webhooks/settings</span>
-
-<span class="c"># config for alexa site</span>
-<span class="n">config</span><span class="p">[</span><span class="s">"alexaCli"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">config</span><span class="p">[</span><span class="s">"iftttApiMakerKey"</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'IFTTTAPIMAKERKEY'</span><span class="p">]</span> <span class="c1"># get the key from https://ifttt.com/maker_webhooks/settings
+</span>
+<span class="c1"># config for alexa site
+</span><span class="n">config</span><span class="p">[</span><span class="s">"alexaCli"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">config</span><span class="p">[</span><span class="s">"alexaApiEndpoint"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"http://data.alexa.com/data"</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website/addAlexaConfig.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
@@ -253,100 +253,100 @@
 
 <p>We simply need to call Alexa API endpoint to get the rank.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span><span class="p">,</span> <span class="n">xml</span><span class="o">.</span><span class="n">etree</span><span class="o">.</span><span class="n">ElementTree</span> <span class="k">as</span> <span class="n">ET</span><span class="p">,</span> <span class="n">sys</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span><span class="p">,</span> <span class="n">xml</span><span class="p">.</span><span class="n">etree</span><span class="p">.</span><span class="n">ElementTree</span> <span class="k">as</span> <span class="n">ET</span><span class="p">,</span> <span class="n">sys</span>
 <span class="nb">execfile</span><span class="p">(</span><span class="s">"config.py"</span><span class="p">)</span>
 <span class="n">CLI</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">"alexaCli"</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">getDefaultAlexaParams</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">cli</span><span class="o">=</span><span class="n">CLI</span><span class="p">):</span>
-  <span class="k">return</span> <span class="s">"""?cli=</span><span class="si">%</span><span class="s">d&amp;url=</span><span class="si">%</span><span class="s">s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">cli</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+  <span class="k">return</span> <span class="s">"""?cli=%d&amp;url=%s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">cli</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">getGlobalRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">):</span>
   <span class="k">try</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"POPULARITY"</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"TEXT"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">"POPULARITY"</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">"TEXT"</span><span class="p">)</span>
   <span class="k">except</span><span class="p">:</span>
     <span class="k">pass</span>
 <span class="k">def</span> <span class="nf">getCountryNameIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">):</span>
   <span class="k">try</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"COUNTRY"</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"NAME"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">"COUNTRY"</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">"NAME"</span><span class="p">)</span>
   <span class="k">except</span><span class="p">:</span>
     <span class="k">pass</span>
 <span class="k">def</span> <span class="nf">getCountryRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">):</span>
   <span class="k">try</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"COUNTRY"</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"RANK"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">"COUNTRY"</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">"RANK"</span><span class="p">)</span>
   <span class="k">except</span><span class="p">:</span>
     <span class="k">pass</span>
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-  <span class="c"># getting site rank from Alexa api</span>
-  <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"alexaApiEndpoint"</span><span class="p">]</span> <span class="o">+</span> 
+  <span class="c1"># getting site rank from Alexa api
+</span>  <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"alexaApiEndpoint"</span><span class="p">]</span> <span class="o">+</span> 
     <span class="n">getDefaultAlexaParams</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"website"</span><span class="p">]))</span>
-  <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="n">requests</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">r</span><span class="p">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="n">requests</span><span class="p">.</span><span class="n">codes</span><span class="p">.</span><span class="n">ok</span><span class="p">:</span>
     <span class="k">print</span> <span class="s">"Alexa api end-point went wrong. Please try again later"</span>
-    <span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sys</span><span class="p">.</span><span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-  <span class="c"># reading the xml and retrieve the rank</span>
-  <span class="n">xml</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+  <span class="c1"># reading the xml and retrieve the rank
+</span>  <span class="n">xml</span> <span class="o">=</span> <span class="n">ET</span><span class="p">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">content</span><span class="p">)</span>
 
-  <span class="k">print</span><span class="p">(</span><span class="n">getGlobalRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">))</span> <span class="c"># for example, 523849</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">getCountryNameIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">))</span> <span class="c"># for example, United States</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">getCountryRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">))</span> <span class="c"># for example, 359604</span></code></pre></figure>
+  <span class="k">print</span><span class="p">(</span><span class="n">getGlobalRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">))</span> <span class="c1"># for example, 523849
+</span>  <span class="k">print</span><span class="p">(</span><span class="n">getCountryNameIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">))</span> <span class="c1"># for example, United States
+</span>  <span class="k">print</span><span class="p">(</span><span class="n">getCountryRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">))</span> <span class="c1"># for example, 359604</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website/getAlexaRank.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
 <h4 id="parse-the-result-as-xml-and-send-the-rank-to-google-sheets-via-ifttt">Parse the result as XML and send the rank to Google Sheets via IFTTT</h4>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span><span class="p">,</span> <span class="n">xml</span><span class="o">.</span><span class="n">etree</span><span class="o">.</span><span class="n">ElementTree</span> <span class="k">as</span> <span class="n">ET</span><span class="p">,</span> <span class="n">sys</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span><span class="p">,</span> <span class="n">xml</span><span class="p">.</span><span class="n">etree</span><span class="p">.</span><span class="n">ElementTree</span> <span class="k">as</span> <span class="n">ET</span><span class="p">,</span> <span class="n">sys</span>
 <span class="nb">execfile</span><span class="p">(</span><span class="s">"config.py"</span><span class="p">)</span>
 <span class="n">CLI</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">"alexaCli"</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">getDefaultAlexaParams</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">cli</span><span class="o">=</span><span class="n">CLI</span><span class="p">):</span>
-  <span class="k">return</span> <span class="s">"""?cli=</span><span class="si">%</span><span class="s">d&amp;url=</span><span class="si">%</span><span class="s">s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">cli</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+  <span class="k">return</span> <span class="s">"""?cli=%d&amp;url=%s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">cli</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">getDefaultAlexaPostParams</span><span class="p">(</span><span class="n">gr</span><span class="p">,</span> <span class="n">cn</span><span class="p">,</span> <span class="n">cr</span><span class="p">):</span>
   <span class="k">return</span> <span class="p">{</span><span class="s">"value1"</span><span class="p">:</span> <span class="n">gr</span><span class="p">,</span> <span class="s">"value2"</span><span class="p">:</span> <span class="n">cn</span><span class="p">,</span> <span class="s">"value3"</span><span class="p">:</span> <span class="n">cr</span><span class="p">}</span>
 <span class="k">def</span> <span class="nf">getGlobalRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">):</span>
   <span class="k">try</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"POPULARITY"</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"TEXT"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">"POPULARITY"</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">"TEXT"</span><span class="p">)</span>
   <span class="k">except</span><span class="p">:</span>
     <span class="k">pass</span>
 <span class="k">def</span> <span class="nf">getCountryNameIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">):</span>
   <span class="k">try</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"COUNTRY"</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"NAME"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">"COUNTRY"</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">"NAME"</span><span class="p">)</span>
   <span class="k">except</span><span class="p">:</span>
     <span class="k">pass</span>
 <span class="k">def</span> <span class="nf">getCountryRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">):</span>
   <span class="k">try</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"COUNTRY"</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"RANK"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xml</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">"COUNTRY"</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">"RANK"</span><span class="p">)</span>
   <span class="k">except</span><span class="p">:</span>
     <span class="k">pass</span>
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-  <span class="c"># getting site rank from Alexa api</span>
-  <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"alexaApiEndpoint"</span><span class="p">]</span> <span class="o">+</span> 
+  <span class="c1"># getting site rank from Alexa api
+</span>  <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"alexaApiEndpoint"</span><span class="p">]</span> <span class="o">+</span> 
     <span class="n">getDefaultAlexaParams</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"website"</span><span class="p">]))</span>
-  <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="n">requests</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">r</span><span class="p">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="n">requests</span><span class="p">.</span><span class="n">codes</span><span class="p">.</span><span class="n">ok</span><span class="p">:</span>
     <span class="k">print</span> <span class="s">"Alexa api end-point went wrong. Please try again later"</span>
-    <span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sys</span><span class="p">.</span><span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-  <span class="c"># reading the xml and retrieve the rank</span>
-  <span class="n">xml</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+  <span class="c1"># reading the xml and retrieve the rank
+</span>  <span class="n">xml</span> <span class="o">=</span> <span class="n">ET</span><span class="p">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">content</span><span class="p">)</span>
 
-  <span class="c"># trigger the ifttt api</span>
-  <span class="n">payload</span> <span class="o">=</span> <span class="n">getDefaultAlexaPostParams</span><span class="p">(</span><span class="n">getGlobalRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">),</span>
+  <span class="c1"># trigger the ifttt api
+</span>  <span class="n">payload</span> <span class="o">=</span> <span class="n">getDefaultAlexaPostParams</span><span class="p">(</span><span class="n">getGlobalRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">),</span>
     <span class="n">getCountryNameIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">),</span>
     <span class="n">getCountryRankIfAny</span><span class="p">(</span><span class="n">xml</span><span class="p">))</span>
-  <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"iftttApiEndpoint"</span><span class="p">]</span> <span class="o">%</span> \
+  <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"iftttApiEndpoint"</span><span class="p">]</span> <span class="o">%</span> \
     <span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"iftttEventName"</span><span class="p">],</span> <span class="n">config</span><span class="p">[</span><span class="s">"iftttApiMakerKey"</span><span class="p">]),</span> 
     <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="n">requests</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">r</span><span class="p">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="n">requests</span><span class="p">.</span><span class="n">codes</span><span class="p">.</span><span class="n">ok</span><span class="p">:</span>
     <span class="k">print</span> <span class="s">"Ifttt api end-point went wrong. Please try again later"</span>
-    <span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sys</span><span class="p">.</span><span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
   <span class="k">print</span> <span class="s">"yaa, entry has been added to your Google spreadsheet"</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website/addAlexaRank.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
 <p>Now, we would need to set up a cron job to run this guy once a day. Here is how I set it up,</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="mo">00</span> <span class="mi">9</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">the</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">alexa</span><span class="o">-</span><span class="n">rank</span><span class="o">-</span><span class="n">ifttt</span><span class="p">;</span> <span class="n">python</span> <span class="n">addAlexaRank</span><span class="o">.</span><span class="n">py</span> <span class="o">&gt;&gt;</span> <span class="n">add</span><span class="o">-</span><span class="n">alexa</span><span class="o">-</span><span class="n">rank</span><span class="o">.</span><span class="n">log</span><span class="p">;</span> 
-<span class="n">date</span> <span class="o">&gt;&gt;</span> <span class="n">add</span><span class="o">-</span><span class="n">alexa</span><span class="o">-</span><span class="n">rank</span><span class="o">.</span><span class="n">log</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="mi">00</span> <span class="mi">9</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">the</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">alexa</span><span class="o">-</span><span class="n">rank</span><span class="o">-</span><span class="n">ifttt</span><span class="p">;</span> <span class="n">python</span> <span class="n">addAlexaRank</span><span class="p">.</span><span class="n">py</span> <span class="o">&gt;&gt;</span> <span class="n">add</span><span class="o">-</span><span class="n">alexa</span><span class="o">-</span><span class="n">rank</span><span class="p">.</span><span class="n">log</span><span class="p">;</span> 
+<span class="n">date</span> <span class="o">&gt;&gt;</span> <span class="n">add</span><span class="o">-</span><span class="n">alexa</span><span class="o">-</span><span class="n">rank</span><span class="p">.</span><span class="n">log</span><span class="p">;</span></code></pre></figure>
 
 <p>At 9:00 AM every day, the cron job will be responsible to run this script once and output its result to the log file. In case you need help with figuring out your cron job time, check out this <a href="https://crontab.guru/#00_9_*_*_*">awesome</a> website.</p>
 
@@ -366,17 +366,17 @@
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="n">config</span><span class="p">[</span><span class="s">'excelDownloadUrl'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"urlToYourGoogleSheet"</span> <span class="c"># for example, "https://docs.google.com/spreadsheets/d/XXXXXXXXXXXXX/export?format=csv"</span>
-<span class="n">config</span><span class="p">[</span><span class="s">'excelFileName'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"poanchen - alexa"</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'excelDownloadUrl'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"urlToYourGoogleSheet"</span> <span class="c1"># for example, "https://docs.google.com/spreadsheets/d/XXXXXXXXXXXXX/export?format=csv"
+</span><span class="n">config</span><span class="p">[</span><span class="s">'excelFileName'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"poanchen - alexa"</span>
 <span class="n">config</span><span class="p">[</span><span class="s">'excelFileExtension'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"json"</span>
 <span class="n">config</span><span class="p">[</span><span class="s">'excelFilePath'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"./"</span>
 
-<span class="c"># Azure Portal</span>
-<span class="n">config</span><span class="p">[</span><span class="s">'accountName'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"poanchengithubio"</span>
-<span class="n">config</span><span class="p">[</span><span class="s">'accountKey'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'AZUREPORTALACCOUNTKEY'</span><span class="p">]</span> <span class="c"># get the key from https://portal.azure.com</span>
-
-<span class="c"># Azure Blob Storage</span>
-<span class="n">config</span><span class="p">[</span><span class="s">'containerName'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"poanchen"</span></code></pre></figure>
+<span class="c1"># Azure Portal
+</span><span class="n">config</span><span class="p">[</span><span class="s">'accountName'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"poanchengithubio"</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'accountKey'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'AZUREPORTALACCOUNTKEY'</span><span class="p">]</span> <span class="c1"># get the key from https://portal.azure.com
+</span>
+<span class="c1"># Azure Blob Storage
+</span><span class="n">config</span><span class="p">[</span><span class="s">'containerName'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"poanchen"</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website/uploadAlexaConfig.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -385,43 +385,43 @@
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span><span class="p">,</span> <span class="n">csv</span><span class="p">,</span> <span class="n">re</span>
 <span class="nb">execfile</span><span class="p">(</span><span class="s">"config.py"</span><span class="p">)</span>
 
-<span class="c"># Download the sheets</span>
-<span class="k">print</span> <span class="s">"Beginning to download the CSV from Google Sheets"</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">'excelDownloadUrl'</span><span class="p">])</span>
-<span class="nb">open</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">'excelFileName'</span><span class="p">],</span> <span class="s">'wb'</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="c1"># Download the sheets
+</span><span class="k">print</span> <span class="s">"Beginning to download the CSV from Google Sheets"</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">'excelDownloadUrl'</span><span class="p">])</span>
+<span class="nb">open</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">'excelFileName'</span><span class="p">],</span> <span class="s">'wb'</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">content</span><span class="p">)</span>
 <span class="k">print</span> <span class="s">"Finished downloading the sheets..."</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website/downloadAlexaRank.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
 <h4 id="go-through-the-google-sheets-ranks-to-retrieve-global-rank-for-each-month-of-the-year">Go through the Google Sheets (ranks) to retrieve global rank for each month of the year</h4>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># Convert CSV to JSON (Including Data Decimation)</span>
-<span class="kn">import</span> <span class="nn">json</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Convert CSV to JSON (Including Data Decimation)
+</span><span class="kn">import</span> <span class="nn">json</span>
 <span class="k">print</span> <span class="s">"Converting CSV to JSON format..."</span>
 <span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s">'March'</span><span class="p">,</span> <span class="s">'April'</span><span class="p">,</span> <span class="s">'May'</span><span class="p">,</span> <span class="s">'June'</span><span class="p">,</span> <span class="s">'July'</span><span class="p">,</span> <span class="s">'August'</span><span class="p">,</span> <span class="s">'September'</span><span class="p">,</span> <span class="s">'October'</span><span class="p">,</span> <span class="s">'November'</span><span class="p">,</span> <span class="s">'December'</span><span class="p">,</span> <span class="s">'January'</span><span class="p">,</span> <span class="s">'February'</span><span class="p">]</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">json_data</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">been_throughed_months</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">'excelFileName'</span><span class="p">])</span> <span class="k">as</span> <span class="n">csvDataFile</span><span class="p">:</span>
-  <span class="n">csvReader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvDataFile</span><span class="p">)</span>
+  <span class="n">csvReader</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvDataFile</span><span class="p">)</span>
   <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csvReader</span><span class="p">:</span>
-    <span class="n">matchDate</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">r'^(</span><span class="si">%</span><span class="s">s) (\d*),\s(\d*)\sat\s\d\d:\d\d[AP]M'</span> <span class="o">%</span> <span class="n">months</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">12</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="k">if</span> <span class="n">matchDate</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">matchDate</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
-      <span class="n">date_and_time</span> <span class="o">=</span> <span class="n">matchDate</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s">', '</span> <span class="o">+</span> <span class="n">matchDate</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">date_and_time</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">been_throughed_months</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">''</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="s">''</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="s">''</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">matchDate</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="mi">28</span><span class="p">:</span>
-        <span class="n">json_data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="n">matchDate</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s">'^(%s) (\d*),\s(\d*)\sat\s\d\d:\d\d[AP]M'</span> <span class="o">%</span> <span class="n">months</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">12</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">matchDate</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">matchDate</span><span class="p">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+      <span class="n">date_and_time</span> <span class="o">=</span> <span class="n">matchDate</span><span class="p">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s">', '</span> <span class="o">+</span> <span class="n">matchDate</span><span class="p">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">date_and_time</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">been_throughed_months</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">''</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="s">''</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="s">''</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">matchDate</span><span class="p">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="mi">28</span><span class="p">:</span>
+        <span class="n">json_data</span><span class="p">.</span><span class="n">append</span><span class="p">({</span>
           <span class="s">"Date and Time"</span> <span class="p">:</span> <span class="n">date_and_time</span><span class="p">,</span>
           <span class="s">"Global Rank"</span> <span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
           <span class="s">"Top Ranked Country"</span> <span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="s">''</span> <span class="k">else</span> <span class="s">""</span><span class="p">,</span>
           <span class="s">"Country Rank"</span> <span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="s">''</span> <span class="k">else</span> <span class="s">""</span><span class="p">,</span>
         <span class="p">})</span>
-        <span class="n">been_throughed_months</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">date_and_time</span><span class="p">)</span>
+        <span class="n">been_throughed_months</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">date_and_time</span><span class="p">)</span>
         <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="k">print</span> <span class="s">"Finished converting...Time to write to a file and save as JSON"</span>
 <span class="n">full_file_name</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">'excelFileName'</span><span class="p">]</span> <span class="o">+</span>\
   <span class="s">"."</span> <span class="o">+</span>\
   <span class="n">config</span><span class="p">[</span><span class="s">'excelFileExtension'</span><span class="p">]</span>
-<span class="nb">open</span><span class="p">(</span><span class="n">full_file_name</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_data</span><span class="p">))</span>
+<span class="nb">open</span><span class="p">(</span><span class="n">full_file_name</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_data</span><span class="p">))</span>
 <span class="k">print</span> <span class="s">"Finished writing."</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website/parseAlexaRank.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
@@ -430,13 +430,13 @@
 
 <h4 id="upload-the-json-file-to-azure-blob-storage">Upload the JSON file to Azure Blob Storage</h4>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># Upload the JSON file to my Azure Blob Storage</span>
-<span class="kn">from</span> <span class="nn">azure.storage.blob</span> <span class="kn">import</span> <span class="n">BlockBlobService</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Upload the JSON file to my Azure Blob Storage
+</span><span class="kn">from</span> <span class="nn">azure.storage.blob</span> <span class="kn">import</span> <span class="n">BlockBlobService</span>
 <span class="k">print</span> <span class="s">"Beginning to upload the JSON file"</span>
 <span class="n">blob_service</span> <span class="o">=</span> <span class="n">BlockBlobService</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">'accountName'</span><span class="p">],</span> <span class="n">config</span><span class="p">[</span><span class="s">'accountKey'</span><span class="p">])</span>
 <span class="n">full_path_to_file</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">'excelFilePath'</span><span class="p">]</span> <span class="o">+</span>\
   <span class="n">full_file_name</span>
-<span class="n">blob_service</span><span class="o">.</span><span class="n">create_blob_from_path</span><span class="p">(</span>
+<span class="n">blob_service</span><span class="p">.</span><span class="n">create_blob_from_path</span><span class="p">(</span>
   <span class="n">config</span><span class="p">[</span><span class="s">'containerName'</span><span class="p">],</span>
   <span class="n">full_file_name</span><span class="p">,</span>
   <span class="n">full_path_to_file</span><span class="p">)</span>
@@ -446,7 +446,7 @@
 
 <p>Now, we would need to set up a cron job to run this guy once a month. Here is how I set it up,</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="mo">00</span> <span class="mi">9</span> <span class="mi">15</span> <span class="o">*</span> <span class="o">*</span> <span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">the</span><span class="o">/</span><span class="n">upload</span><span class="o">-</span><span class="n">alexa</span><span class="o">-</span><span class="n">rank</span><span class="p">;</span> <span class="n">python</span> <span class="n">script</span><span class="o">.</span><span class="n">py</span> <span class="o">&gt;&gt;</span> <span class="n">output</span><span class="o">.</span><span class="n">log</span><span class="p">;</span> <span class="n">date</span> <span class="o">&gt;&gt;</span> <span class="n">output</span><span class="o">.</span><span class="n">log</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="mi">00</span> <span class="mi">9</span> <span class="mi">15</span> <span class="o">*</span> <span class="o">*</span> <span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">the</span><span class="o">/</span><span class="n">upload</span><span class="o">-</span><span class="n">alexa</span><span class="o">-</span><span class="n">rank</span><span class="p">;</span> <span class="n">python</span> <span class="n">script</span><span class="p">.</span><span class="n">py</span> <span class="o">&gt;&gt;</span> <span class="n">output</span><span class="p">.</span><span class="n">log</span><span class="p">;</span> <span class="n">date</span> <span class="o">&gt;&gt;</span> <span class="n">output</span><span class="p">.</span><span class="n">log</span><span class="p">;</span></code></pre></figure>
 
 <p>At 9:00 AM on the 15th of the month, the cron job will be responsible to run this script once and output its result to the log file. In case you need help with figuring out your cron job time, check out this <a href="https://crontab.guru/#00_9_15_*_*">awesome</a> website.</p>
 
@@ -466,16 +466,16 @@
 	<span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">DONE</span> <span class="o">&amp;&amp;</span> <span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
 		<span class="kd">var</span> <span class="nx">labels</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">response</span><span class="p">);</span>
 		<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">json</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-			<span class="nx">labels</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="s1">'Date and Time'</span><span class="p">]);</span>
-			<span class="nx">data</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="s1">'Global Rank'</span><span class="p">]);</span>
+			<span class="nx">labels</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="dl">'</span><span class="s1">Date and Time</span><span class="dl">'</span><span class="p">]);</span>
+			<span class="nx">data</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="dl">'</span><span class="s1">Global Rank</span><span class="dl">'</span><span class="p">]);</span>
 		<span class="p">}</span>
-		<span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myChart'</span><span class="p">).</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">'2d'</span><span class="p">);</span>
+		<span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">myChart</span><span class="dl">'</span><span class="p">).</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">'</span><span class="s1">2d</span><span class="dl">'</span><span class="p">);</span>
 		<span class="kd">var</span> <span class="nx">myChart</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Chart</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="p">{</span>
-			<span class="na">type</span><span class="p">:</span> <span class="s1">'line'</span><span class="p">,</span>
+			<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">line</span><span class="dl">'</span><span class="p">,</span>
 			<span class="na">data</span><span class="p">:</span> <span class="p">{</span>
 				<span class="na">labels</span><span class="p">:</span> <span class="nx">labels</span><span class="p">,</span>
 				<span class="na">datasets</span><span class="p">:</span> <span class="p">[{</span>
-					<span class="na">label</span><span class="p">:</span> <span class="s1">'Global Rank for poanchen.github.io'</span><span class="p">,</span>
+					<span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Global Rank for poanchen.github.io</span><span class="dl">'</span><span class="p">,</span>
 					<span class="na">data</span><span class="p">:</span> <span class="nx">data</span><span class="p">,</span>
 					<span class="na">fill</span><span class="p">:</span> <span class="kc">false</span>
 				<span class="p">}]</span>
@@ -492,7 +492,7 @@
 		<span class="p">});</span>
 	<span class="p">}</span>
 <span class="p">};</span>
-<span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'https://poanchengithubio.blob.core.windows.net/poanchen/poanchen - alexa.json?sp=rl&amp;st=2020-09-12T11:44:01Z&amp;se=2030-09-13T11:44:00Z&amp;sv=2019-12-12&amp;sr=b&amp;sig=m8jGz72tUxYfyyflfTVdr7CVdTcyN4aMPIM6uEi4hRE%3D'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">https://poanchengithubio.blob.core.windows.net/poanchen/poanchen - alexa.json?sp=rl&amp;st=2020-09-12T11:44:01Z&amp;se=2030-09-13T11:44:00Z&amp;sv=2019-12-12&amp;sr=b&amp;sig=m8jGz72tUxYfyyflfTVdr7CVdTcyN4aMPIM6uEi4hRE%3D</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 <span class="nx">request</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
@@ -512,7 +512,7 @@
 
 <h2 id="resources">Resources</h2>
 
-<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to display an Alexa rank chart in your website?%5D(http://localhost:4000/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website)%0A*+GitHub+Source+URL%3A+%5BHow-to-display-an-Alexa-rank-chart-in-your-website.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2020-09-20-How-to-display-an-Alexa-rank-chart-in-your-website.md)">let us know</a>.</p>
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to display an Alexa rank chart in your website?%5D(https://poanchen.github.io/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website)%0A*+GitHub+Source+URL%3A+%5BHow-to-display-an-Alexa-rank-chart-in-your-website.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2020-09-20-How-to-display-an-Alexa-rank-chart-in-your-website.md)">let us know</a>.</p>
 
 <h3 id="getting-started">Getting started</h3>
 
@@ -529,15 +529,15 @@
       </article>
       <section class="share">
   <h3>Share</h3>
-  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to display an Alexa rank chart in your website?&quot; by &#64;poanbaronchen http://localhost:4000/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website"
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to display an Alexa rank chart in your website?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website"
   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
     <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website"
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website"
   onclick="window.open(this.href, 'facebook-share', 'width=550,height=296');return false;" title="Share on Facebook">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
   </a>
-  <a href="mailto:?subject=Check out this great article, How to display an Alexa rank chart in your website?&body=Hi, I found this webpage and thought you might like it, http://localhost:4000/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website">
+  <a href="mailto:?subject=Check out this great article, How to display an Alexa rank chart in your website?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website">
     <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
   </a>
 </section>
@@ -597,7 +597,7 @@
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
 <script src="/assets/js/main.js"></script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -606,7 +606,7 @@
   ga('create', 'UA-85924009-1', 'auto');
   ga('send', 'pageview');
 </script>
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script> -->
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script>
     </section>
   </body>
 </html>

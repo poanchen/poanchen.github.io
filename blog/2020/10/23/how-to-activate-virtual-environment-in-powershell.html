@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>How to make a Linux-based Azure Function works with file system?</title>
+  <title>How to activate virtual environment in PowerShell?</title>
   <meta name="description" content="A blog written by PoAn (Baron) Chen.">
 
   <!-- Google Authorship Markup -->
@@ -24,25 +24,25 @@
   <!-- Social: Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@poanbaronchen">
-  <meta name="twitter:title" content="How to make a Linux-based Azure Function works with file system?">
+  <meta name="twitter:title" content="How to activate virtual environment in PowerShell?">
   <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
   
-  <meta property="twitter:image:src" content="http://localhost:4000/img/blog-image.png">
+  <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
   
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="og:url" content="http://localhost:4000/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system">
-  <meta property="og:title" content="How to make a Linux-based Azure Function works with file system?">
+  <meta property="og:url" content="https://poanchen.github.io/blog/2020/10/23/how-to-activate-virtual-environment-in-powershell">
+  <meta property="og:title" content="How to activate virtual environment in PowerShell?">
   
-  <meta property="og:image" content="http://localhost:4000/img/blog-image.png">
+  <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
   
   <meta property="og:description" content="A blog written by PoAn (Baron) Chen.">
   <meta property="og:site_name" content="PoAn (Baron) Chen's site">
 
   <!-- Social: Google+ / Schema.org  -->
-  <meta itemprop="name" content="How to make a Linux-based Azure Function works with file system?"/>
+  <meta itemprop="name" content="How to activate virtual environment in PowerShell?"/>
   <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
-  <meta itemprop="image" content="http://localhost:4000/img/blog-image.png"/>
+  <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
@@ -67,8 +67,8 @@
   <meta name="theme-color" content="#0562DC">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system">
-  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="https://poanchen.github.io/blog/2020/10/23/how-to-activate-virtual-environment-in-powershell">
+  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
   
   <!-- Buy Me a Coffee widget -->
   <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="poanchen" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
@@ -79,9 +79,9 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2020-11-22 16:30:30 -0800" class="date">22 Nov 2020</time>
+            <time itemprop="datePublished" datetime="2020-10-23 00:30:30 +0000" class="date">23 Oct 2020</time>
         
-        <h1 class="post-title" itemprop="name">How to make a Linux-based Azure Function works with file system?</h1>
+        <h1 class="post-title" itemprop="name">How to activate virtual environment in PowerShell?</h1>
         
             <p id="stats"></p>
 
@@ -169,47 +169,63 @@
 
     <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
       <article role="article" id="scroll" class="post-content" itemprop="articleBody">
-          <p>Are you having trouble building a Linux-based <a href="https://azure.microsoft.com/services/functions">Azure Function</a> that needs to work with file system? You are in luck! In this article, I am going to quickly talk about some of the tips working with Linux-based Azure Function, specifically on file system.</p>
+          <h3 id="what-is-virtual-environment-using-nodejs-terminology">What is virtual environment? (using Node.js terminology)</h3>
 
-<p>As you should know, Azure Function is serverless. This means that <a href="https://azure.microsoft.com">Azure</a> is going to take care all of your computing resources. Either few or millions. Azure will handle that for you. What you need to do is to provide blocks of code for Azure Function to run. This is extremely useful for resources who may suddenly need huge number of computing power at once. Since Azure will handle the scaling for you, the resource your code run in can be changed during execution, as a result, your blocks of code has no guaranteed that it will start and finish in the same Azure resource, hence, the file you save earlier might not be available in this particular resource. How to deal with this? Here are the tips,</p>
+<p>For people who are familiar with <a href="https://nodejs.org">Node.js</a> development environment, virtual environment is somewhat similar. In <a href="https://nodejs.org">Node.js</a>, for your specific project, all the modules you installed is tailored specific to your project. It doesn’t affect anything outside of that project unless you <a href="https://www.npmjs.com">npm</a> install the module with -g tag. We have something similar to Python development environment as well. It is called virtual environment. It is essentially a place where you can <a href="https://pypi.org">pip</a> install any modules and knowing that anything you do in this environment isn’t going to affect anything out there.</p>
 
-<ol>
-  <li>It is recommanded to use home folder as temporary storage for linux-based Azure Function. (Remember, this is temporary. In order to have the files persisted, consider to use <a href="https://azure.microsoft.com/services/storage/blobs">Azure Blob Storage</a>).</li>
-  <li>Avoid storing files in Azure Function unless there are no alternatives.</li>
-  <li>You might be using a Windows-based OS as your development environment. Remember to handle the logic so that it works for both environment. (/home/username does not necessary work with Windows-based file system)</li>
-  <li>It can sometimes be difficult to debug the code. It is recommaned to use as many try and catch to properly throw errors so that you can figure out what went wrong.</li>
-  <li>Highly recommaned to use Visual Studio Code to develop and deploy your Azure Function. Instructions <a href="https://docs.microsoft.com/azure/azure-functions/functions-develop-vs-code">here</a>.</li>
-</ol>
+<h3 id="how-python-virtual-environment-can-be-useful">How Python virtual environment can be useful?</h3>
 
-<p>Tada! Now that you have seen this, you should be able to go ahead and continue to work on your Azure Function to successfully interact with the file system, start interacting!!!</p>
+<p>This is super useful since people can experinement anything they want inside this isolated area. Once they are satisfy with the modules that are installed, simple run <a href="https://pypi.org">pip</a> freeze and port its result to a <a href="https://github.com/poanchen/upload-post-stats/blob/master/requirements.txt">requiement text file</a> so that others can have exactly the same development environment as you do. This is especially helpful in a team setting where group of people working on the same project together. On the other hand, for someone who has multiple Python project on their local computer may need different version of library, this virtual environment also comes in handy for that as well. In the following, we will be showing on how one can activate virtual environment in <a href="https://docs.microsoft.com/powershell/scripting/overview?view=powershell-7">PowerShell</a>.</p>
+
+<h3 id="how-to-activate-python-virtual-environment-in-powershell">How to activate Python virtual environment in PowerShell</h3>
+
+<p>Assume that you already have the virtual environment set up and you are wondering how one can enter the virtual environment in <a href="https://docs.microsoft.com/powershell/scripting/overview?view=powershell-7">PowerShell</a>. It is actually pretty simple, simply run the follow command.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">.<span class="se">\.</span>venv<span class="se">\S</span>cripts<span class="se">\A</span>ctivate</code></pre></figure>
+
+<p><a href="https://github.com/poanchen/code-for-blog/blob/master/2020/10/23/how-to-activate-virtual-environment-in-powershell/activateVirtualEnvironment.sh" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<p>Once we are in the virtual environment, it will be indicated on the left side. If we try import a library that we installed only in this virtual environment, we will be able to.
+<img src="\img\2020\10\23\how-to-activate-virtual-environment-in-powershell/virtual env.JPG" alt="virtual env" /></p>
+
+<p>If we try to import it anywhere else where we don’t have the library install. This will happen,
+<img src="\img\2020\10\23\how-to-activate-virtual-environment-in-powershell/without virtual env.JPG" alt="without virtual env" /></p>
+
+<blockquote>
+  <p>What Happens in Vegas, Stays in Vegas</p>
+</blockquote>
+
+<p>Same thing will happen to the library installed in the virtual environment.</p>
+
+<p>Tada! Now that you are in the virtual environment, start coding!!!</p>
 
 <h2 id="wrapping-up">Wrapping Up</h2>
 
-<p>Hopefully this article has help you to prepopulate GitHub issue with customized text and thank you for reading!</p>
+<p>Hopefully this article has help you understand what a virtual environment, how it can be useful, and how to activate it and thank you for reading!</p>
 
 <h2 id="resources">Resources</h2>
 
-<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to make a Linux-based Azure Function works with file system?%5D(http://localhost:4000/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system)%0A*+GitHub+Source+URL%3A+%5BHow-to-make-a-Linux-based-Azure-Function-works-with-file-system.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2020-11-22-How-to-make-a-Linux-based-Azure-Function-works-with-file-system.md)">let us know</a>.</p>
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to activate virtual environment in PowerShell?%5D(https://poanchen.github.io/blog/2020/10/23/how-to-activate-virtual-environment-in-powershell)%0A*+GitHub+Source+URL%3A+%5Bhow-to-activate-virtual-environment-in-powershell.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2020-10-23-how-to-activate-virtual-environment-in-powershell.md)">let us know</a>.</p>
 
 <h3 id="getting-started">Getting started</h3>
 
 <ul>
-  <li><a href="https://docs.microsoft.com/azure/azure-functions/functions-develop-vs-code">Develop Azure Functions by using Visual Studio Code</a> by <a href="https://azure.microsoft.com">Azure</a></li>
-  <li><a href="https://github.com/Azure/azure-functions-host/issues/3626">Question Where is the correct way to WRITE temporary data folder locally in azure function? #3626</a></li>
+  <li><a href="https://stackoverflow.com/questions/23948317/why-is-virtualenv-necessary">Why is virtualenv necessary?</a></li>
+  <li><a href="https://stackoverflow.com/questions/46896093/how-to-activate-virtual-environment-from-windows-10-command-prompt">How to activate virtual environment from Windows 10 command prompt?</a></li>
 </ul>
 
       </article>
       <section class="share">
   <h3>Share</h3>
-  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to make a Linux-based Azure Function works with file system?&quot; by &#64;poanbaronchen http://localhost:4000/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system"
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to activate virtual environment in PowerShell?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2020/10/23/how-to-activate-virtual-environment-in-powershell"
   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
     <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system"
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2020/10/23/how-to-activate-virtual-environment-in-powershell"
   onclick="window.open(this.href, 'facebook-share', 'width=550,height=296');return false;" title="Share on Facebook">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
   </a>
-  <a href="mailto:?subject=Check out this great article, How to make a Linux-based Azure Function works with file system?&body=Hi, I found this webpage and thought you might like it, http://localhost:4000/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system">
+  <a href="mailto:?subject=Check out this great article, How to activate virtual environment in PowerShell?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2020/10/23/how-to-activate-virtual-environment-in-powershell">
     <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
   </a>
 </section>
@@ -269,7 +285,7 @@
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
 <script src="/assets/js/main.js"></script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -278,7 +294,7 @@
   ga('create', 'UA-85924009-1', 'auto');
   ga('send', 'pageview');
 </script>
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script> -->
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script>
     </section>
   </body>
 </html>

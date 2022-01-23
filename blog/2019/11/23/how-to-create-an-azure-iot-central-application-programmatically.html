@@ -27,14 +27,14 @@
   <meta name="twitter:title" content="How to create an Azure IoT Central application programmatically?">
   <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
   
-  <meta property="twitter:image:src" content="http://localhost:4000/img/blog-image.png">
+  <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
   
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="og:url" content="http://localhost:4000/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically">
+  <meta property="og:url" content="https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically">
   <meta property="og:title" content="How to create an Azure IoT Central application programmatically?">
   
-  <meta property="og:image" content="http://localhost:4000/img/blog-image.png">
+  <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
   
   <meta property="og:description" content="A blog written by PoAn (Baron) Chen.">
   <meta property="og:site_name" content="PoAn (Baron) Chen's site">
@@ -42,7 +42,7 @@
   <!-- Social: Google+ / Schema.org  -->
   <meta itemprop="name" content="How to create an Azure IoT Central application programmatically?"/>
   <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
-  <meta itemprop="image" content="http://localhost:4000/img/blog-image.png"/>
+  <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
@@ -67,8 +67,8 @@
   <meta name="theme-color" content="#0562DC">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically">
-  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically">
+  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
   
   <!-- Buy Me a Coffee widget -->
   <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="poanchen" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
@@ -79,7 +79,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2019-11-23 00:30:30 -0800" class="date">23 Nov 2019</time>
+            <time itemprop="datePublished" datetime="2019-11-23 08:30:30 +0000" class="date">23 Nov 2019</time>
         
         <h1 class="post-title" itemprop="name">How to create an Azure IoT Central application programmatically?</h1>
         
@@ -198,10 +198,10 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 
 <p>Let’s start with importing the necessary node modules,</p>
 
-<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">msRestNodeAuth</span> <span class="k">from</span> <span class="s2">"@azure/ms-rest-nodeauth"</span><span class="p">;</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">IotCentralClient</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"@azure/arm-iotcentral"</span><span class="p">;</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">App</span><span class="p">,</span> <span class="nx">OperationInputs</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"@azure/arm-iotcentral/src/models/index"</span><span class="p">;</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">AppPatch</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"@azure/arm-iotcentral/esm/models"</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">msRestNodeAuth</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@azure/ms-rest-nodeauth</span><span class="dl">"</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">IotCentralClient</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@azure/arm-iotcentral</span><span class="dl">"</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">App</span><span class="p">,</span> <span class="nx">OperationInputs</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@azure/arm-iotcentral/src/models/index</span><span class="dl">"</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">AppPatch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@azure/arm-iotcentral/esm/models</span><span class="dl">"</span><span class="p">;</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/iotcentral-arm-sdk-examples/blob/master/nodejs/index.ts" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -210,9 +210,9 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 
 <p>Next, you would also need to hard-code your sensitive information in the code so that Azure IoT Central can use it to create resource for you. (It is recommended that you use <a href="https://github.com/poanchen/auto-submit-pro-unlimited-work-hours-form/blob/master/.env.example">environment variable</a> to store your secrets instead of putting it in the code)</p>
 
-<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="kd">const</span> <span class="nx">SUBSCRIPTIONID</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s2">"FILL IN SUB ID"</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">RESOURCEGROUPNAME</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s2">"myResourceGroup"</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">RESOURCENAME</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s2">"my-app-name"</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="kd">const</span> <span class="nx">SUBSCRIPTIONID</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">FILL IN SUB ID</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">RESOURCEGROUPNAME</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">myResourceGroup</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">RESOURCENAME</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">my-app-name</span><span class="dl">"</span><span class="p">;</span>
 
   <span class="kd">const</span> <span class="nx">NAME</span><span class="p">:</span> <span class="nx">OperationInputs</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">name</span><span class="p">:</span> <span class="nx">RESOURCENAME</span>
@@ -220,13 +220,13 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
   <span class="kd">const</span> <span class="nx">NEWAPP</span><span class="p">:</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">subdomain</span><span class="p">:</span> <span class="nx">RESOURCENAME</span><span class="p">,</span>
     <span class="na">sku</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s1">'ST2'</span> <span class="c1">// Don't know what ST2 is? Check out this website, https://azure.microsoft.com/en-us/pricing/details/iot-central/</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ST2</span><span class="dl">'</span> <span class="c1">// Don't know what ST2 is? Check out this website, https://azure.microsoft.com/en-us/pricing/details/iot-central/</span>
     <span class="p">},</span>
-    <span class="na">location</span><span class="p">:</span> <span class="s1">'unitedstates'</span><span class="p">,</span>
+    <span class="na">location</span><span class="p">:</span> <span class="dl">'</span><span class="s1">unitedstates</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">displayName</span><span class="p">:</span> <span class="nx">RESOURCENAME</span>
   <span class="p">};</span>
   <span class="kd">const</span> <span class="nx">UPDATEAPP</span><span class="p">:</span> <span class="nx">AppPatch</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">displayName</span><span class="p">:</span> <span class="nx">RESOURCENAME</span> <span class="o">+</span> <span class="s2">"-new-name"</span>
+    <span class="na">displayName</span><span class="p">:</span> <span class="nx">RESOURCENAME</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">-new-name</span><span class="dl">"</span>
   <span class="p">};</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/iotcentral-arm-sdk-examples/blob/master/nodejs/index.ts" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
@@ -234,7 +234,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 <p>The code usually begins with a login, (we write it as an async function since we are trying to avoid <a href="https://poanchen.github.io/blog/2019/06/19/The-right-way-to-manage-nested-callbacks">callback hells</a>)</p>
 
 <figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">async</span> <span class="kd">function</span> <span class="nx">login</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">msRestNodeAuth</span><span class="p">.</span><span class="nx">DeviceTokenCredentials</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">creds</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">msRestNodeAuth</span><span class="p">.</span><span class="nx">interactiveLogin</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">creds</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">msRestNodeAuth</span><span class="p">.</span><span class="nx">interactiveLogin</span><span class="p">();</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">msRestNodeAuth</span><span class="p">.</span><span class="nx">DeviceTokenCredentials</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">creds</span><span class="p">));</span>
   <span class="p">}</span></code></pre></figure>
 
@@ -244,7 +244,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 
 <figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">async</span> <span class="kd">function</span> <span class="nx">checkIfNameExist</span><span class="p">(</span><span class="nx">creds</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IotCentralClient</span><span class="p">(</span><span class="nx">creds</span><span class="p">,</span> <span class="nx">SUBSCRIPTIONID</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">checkNameAvailability</span><span class="p">(</span><span class="nx">NAME</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">checkNameAvailability</span><span class="p">(</span><span class="nx">NAME</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">client</span><span class="p">));</span>
   <span class="p">}</span></code></pre></figure>
@@ -254,7 +254,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 <p>Next, you would also need to create an application within the Azure IoT Central in order to provision and monitor your devices.</p>
 
 <figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">async</span> <span class="kd">function</span> <span class="nx">createOrUpdateApp</span><span class="p">(</span><span class="nx">client</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">createOrUpdate</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">,</span> <span class="nx">RESOURCENAME</span><span class="p">,</span> <span class="nx">NEWAPP</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">createOrUpdate</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">,</span> <span class="nx">RESOURCENAME</span><span class="p">,</span> <span class="nx">NEWAPP</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">client</span><span class="p">));</span>
   <span class="p">}</span></code></pre></figure>
@@ -266,7 +266,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 <p>Ever want to see information about your application? do the following,</p>
 
 <figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">async</span> <span class="kd">function</span> <span class="nx">retrieveAppInfo</span><span class="p">(</span><span class="nx">client</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">,</span> <span class="nx">RESOURCENAME</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">,</span> <span class="nx">RESOURCENAME</span><span class="p">)</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">client</span><span class="p">));</span>
   <span class="p">}</span></code></pre></figure>
@@ -276,7 +276,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 <p>You can also update application’s display name by doing this, (not your domain name)</p>
 
 <figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">async</span> <span class="kd">function</span> <span class="nx">updateApp</span><span class="p">(</span><span class="nx">client</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">,</span> <span class="nx">RESOURCENAME</span><span class="p">,</span> <span class="nx">UPDATEAPP</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">,</span> <span class="nx">RESOURCENAME</span><span class="p">,</span> <span class="nx">UPDATEAPP</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">client</span><span class="p">));</span>
   <span class="p">}</span></code></pre></figure>
@@ -284,7 +284,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 <p>If you wanna see all your applications under a specific resource group name, do the following,</p>
 
 <figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">async</span> <span class="kd">function</span> <span class="nx">listAllAppsByResourceGroup</span><span class="p">(</span><span class="nx">client</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">listByResourceGroup</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">listByResourceGroup</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">client</span><span class="p">));</span>
   <span class="p">}</span></code></pre></figure>
@@ -292,7 +292,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 <p>You can also delete application programmatically by doing this,</p>
 
 <figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteApp</span><span class="p">(</span><span class="nx">client</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">deleteMethod</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">,</span> <span class="nx">RESOURCENAME</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">deleteMethod</span><span class="p">(</span><span class="nx">RESOURCEGROUPNAME</span><span class="p">,</span> <span class="nx">RESOURCENAME</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IotCentralClient</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">client</span><span class="p">));</span>
   <span class="p">}</span></code></pre></figure>
@@ -309,10 +309,10 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">listAllAppsByResourceGroup</span><span class="p">)</span>
     <span class="c1">// .then(deleteApp)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"done"</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">done</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">})</span>
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'An error occurred:'</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">An error occurred:</span><span class="dl">'</span><span class="p">);</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="p">{</span>
             <span class="na">depth</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="na">colors</span><span class="p">:</span> <span class="kc">true</span>
@@ -331,7 +331,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 
 <h2 id="resources">Resources</h2>
 
-<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to create an Azure IoT Central application programmatically?%5D(http://localhost:4000/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically)%0A*+GitHub+Source+URL%3A+%5Bhow-to-create-an-azure-iot-central-application-programmatically.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2019-11-23-how-to-create-an-azure-iot-central-application-programmatically.md)">let us know</a>.</p>
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to create an Azure IoT Central application programmatically?%5D(https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically)%0A*+GitHub+Source+URL%3A+%5Bhow-to-create-an-azure-iot-central-application-programmatically.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2019-11-23-how-to-create-an-azure-iot-central-application-programmatically.md)">let us know</a>.</p>
 
 <h3 id="getting-started">Getting started</h3>
 
@@ -345,15 +345,15 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
       </article>
       <section class="share">
   <h3>Share</h3>
-  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to create an Azure IoT Central application programmatically?&quot; by &#64;poanbaronchen http://localhost:4000/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically"
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to create an Azure IoT Central application programmatically?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically"
   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
     <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically"
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically"
   onclick="window.open(this.href, 'facebook-share', 'width=550,height=296');return false;" title="Share on Facebook">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
   </a>
-  <a href="mailto:?subject=Check out this great article, How to create an Azure IoT Central application programmatically?&body=Hi, I found this webpage and thought you might like it, http://localhost:4000/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically">
+  <a href="mailto:?subject=Check out this great article, How to create an Azure IoT Central application programmatically?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically">
     <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
   </a>
 </section>
@@ -413,7 +413,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
 <script src="/assets/js/main.js"></script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -422,7 +422,7 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
   ga('create', 'UA-85924009-1', 'auto');
   ga('send', 'pageview');
 </script>
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script> -->
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script>
     </section>
   </body>
 </html>

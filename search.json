@@ -1,19 +1,11 @@
 [
   
     {
-      "title"    : "How to fix authentication failed, it is either not correct, or expired, or does not have the correct permission with AzureFileCopy?",
-      "category" : "",
-      "tags"     : "Azure, AzureFileCopy, Azure Blob Storage, Azure DevOps, and Azure DevOps Build",
-      "url"      : "/blog/2020/11/27/How-to-fix-authentication-failed-it-is-either-not-correct-or-expired-or-does-not-have-the-correct-permission-with-AzureFileCopy",
-      "date"     : "27 Nov 2020"
-    } ,
-  
-    {
       "title"    : "How to make a Linux-based Azure Function works with file system?",
       "category" : "",
       "tags"     : "Azure, Azure Function, and Linux",
-      "url"      : "/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system",
-      "date"     : "22 Nov 2020"
+      "url"      : "/blog/2020/11/23/How-to-make-a-Linux-based-Azure-Function-works-with-file-system",
+      "date"     : "23 Nov 2020"
     } ,
   
     {
@@ -28,8 +20,8 @@
       "title"    : "How to activate virtual environment in PowerShell?",
       "category" : "",
       "tags"     : "Python, Virtual Environment, and PowerShell",
-      "url"      : "/blog/2020/10/22/how-to-activate-virtual-environment-in-powershell",
-      "date"     : "22 Oct 2020"
+      "url"      : "/blog/2020/10/23/how-to-activate-virtual-environment-in-powershell",
+      "date"     : "23 Oct 2020"
     } ,
   
     {

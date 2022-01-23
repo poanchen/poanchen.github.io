@@ -27,14 +27,14 @@
   <meta name="twitter:title" content="How to calculate time complexity of an algorithm?">
   <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
   
-  <meta property="twitter:image:src" content="http://localhost:4000/img/blog-image.png">
+  <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
   
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="og:url" content="http://localhost:4000/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm">
+  <meta property="og:url" content="https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm">
   <meta property="og:title" content="How to calculate time complexity of an algorithm?">
   
-  <meta property="og:image" content="http://localhost:4000/img/blog-image.png">
+  <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
   
   <meta property="og:description" content="A blog written by PoAn (Baron) Chen.">
   <meta property="og:site_name" content="PoAn (Baron) Chen's site">
@@ -42,7 +42,7 @@
   <!-- Social: Google+ / Schema.org  -->
   <meta itemprop="name" content="How to calculate time complexity of an algorithm?"/>
   <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
-  <meta itemprop="image" content="http://localhost:4000/img/blog-image.png"/>
+  <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
@@ -67,8 +67,8 @@
   <meta name="theme-color" content="#0562DC">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm">
-  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm">
+  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
   
   <!-- Buy Me a Coffee widget -->
   <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="poanchen" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
@@ -79,7 +79,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2018-11-23 00:30:30 -0800" class="date">23 Nov 2018</time>
+            <time itemprop="datePublished" datetime="2018-11-23 08:30:30 +0000" class="date">23 Nov 2018</time>
         
         <h1 class="post-title" itemprop="name">How to calculate time complexity of an algorithm?</h1>
         
@@ -183,7 +183,7 @@
   <span class="c1">// Space complexity: O(1)</span>
   <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">15</span><span class="o">;</span>
   <span class="n">x</span> <span class="o">+=</span> <span class="mi">6</span><span class="o">;</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">x</span><span class="o">);</span> <span class="c1">// should print 21</span></code></pre></figure>
+  <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">x</span><span class="o">);</span> <span class="c1">// should print 21</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm/constantTime.java" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -204,13 +204,13 @@
     <span class="o">}</span>
     <span class="k">return</span> <span class="o">-(</span><span class="n">low</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">19</span><span class="o">,</span> <span class="mi">25</span><span class="o">};</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">2</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">);</span> <span class="c1">// true</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">19</span><span class="o">)</span> <span class="o">==</span> <span class="mi">5</span><span class="o">);</span> <span class="c1">// true</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// true</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">20</span><span class="o">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">7</span><span class="o">);</span> <span class="c1">// true</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">18</span><span class="o">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">6</span><span class="o">);</span> <span class="c1">// true</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">2</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">);</span> <span class="c1">// true</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">19</span><span class="o">)</span> <span class="o">==</span> <span class="mi">5</span><span class="o">);</span> <span class="c1">// true</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// true</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">20</span><span class="o">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">7</span><span class="o">);</span> <span class="c1">// true</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">18</span><span class="o">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">6</span><span class="o">);</span> <span class="c1">// true</span>
   <span class="o">}</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm/logarithmicTime.java" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
@@ -223,17 +223,17 @@
   <span class="c1">// Space complexity: O(1)</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPrime</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">boolean</span> <span class="n">isPrime</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">i</span> <span class="o">&amp;&amp;</span> <span class="n">isPrime</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">i</span> <span class="o">&amp;&amp;</span> <span class="n">isPrime</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="n">isPrime</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
     <span class="o">}</span>
     <span class="k">return</span> <span class="n">isPrime</span><span class="o">;</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">7</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">12</span><span class="o">)</span> <span class="o">==</span> <span class="kc">false</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">==</span> <span class="kc">false</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">);</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">);</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">7</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">);</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">12</span><span class="o">)</span> <span class="o">==</span> <span class="kc">false</span><span class="o">);</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isPrime</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">==</span> <span class="kc">false</span><span class="o">);</span>
   <span class="o">}</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm/sqrtTime.java" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
@@ -254,10 +254,10 @@ If both a and b were greater than the square root of n, a * b would be greater t
   <span class="c1">// Space complexity: O(1)</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
     <span class="n">printArray</span><span class="o">(</span><span class="n">arr</span><span class="o">);</span>
   <span class="o">}</span></code></pre></figure>
@@ -272,10 +272,10 @@ If both a and b were greater than the square root of n, a * b would be greater t
   <span class="c1">// Space complexity: O(1)</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
     <span class="n">printArray</span><span class="o">(</span><span class="n">arr</span><span class="o">);</span>
     <span class="n">printArray</span><span class="o">(</span><span class="n">arr</span><span class="o">);</span>
@@ -293,12 +293,12 @@ If both a and b were greater than the square root of n, a * b would be greater t
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print2DArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">m</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">","</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">m</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">","</span><span class="o">);</span>
       <span class="o">}</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">];</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
@@ -324,13 +324,13 @@ If both a and b were greater than the square root of n, a * b would be greater t
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
         <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span> <span class="o">{</span>
-          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">m</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">","</span><span class="o">);</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">m</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">","</span><span class="o">);</span>
         <span class="o">}</span>
       <span class="o">}</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">];</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
@@ -356,13 +356,13 @@ If both a and b were greater than the square root of n, a * b would be greater t
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
         <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span> <span class="o">{</span>
-          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">m</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">","</span><span class="o">);</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">m</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">","</span><span class="o">);</span>
         <span class="o">}</span>
       <span class="o">}</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[][]</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">];</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
     <span class="n">m</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
@@ -400,7 +400,7 @@ Given a list of number, [1, 12, 3], the maximum value you can get is 39 if you d
   <span class="c1">// Space complexity: O(1)</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">getMaxAnswer</span><span class="o">(</span><span class="kt">double</span> <span class="n">res</span><span class="o">,</span> <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span><span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>
     <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
       <span class="n">getMaxAnswer</span><span class="o">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">arr</span><span class="o">[</span><span class="n">index</span><span class="o">],</span> <span class="n">arr</span><span class="o">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
       <span class="n">getMaxAnswer</span><span class="o">(</span><span class="n">res</span> <span class="o">-</span> <span class="n">arr</span><span class="o">[</span><span class="n">index</span><span class="o">],</span> <span class="n">arr</span><span class="o">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
@@ -408,7 +408,7 @@ Given a list of number, [1, 12, 3], the maximum value you can get is 39 if you d
       <span class="n">getMaxAnswer</span><span class="o">(</span><span class="n">res</span> <span class="o">/</span> <span class="n">arr</span><span class="o">[</span><span class="n">index</span><span class="o">],</span> <span class="n">arr</span><span class="o">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
     <span class="o">}</span>
   <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span>
     <span class="n">getMaxAnswer</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">*</span> <span class="mf">1.0</span><span class="o">,</span> <span class="n">arr</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
   <span class="o">}</span></code></pre></figure>
@@ -425,7 +425,7 @@ Given a list of number, [1, 12, 3], the maximum value you can get is 39 if you d
 
 <h2 id="resources">Resources</h2>
 
-<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to calculate time complexity of an algorithm?%5D(http://localhost:4000/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm)%0A*+GitHub+Source+URL%3A+%5Bhow-to-calculate-time-complexity-of-an-algorithm.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2018-11-23-how-to-calculate-time-complexity-of-an-algorithm.md)">let us know</a>.</p>
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to calculate time complexity of an algorithm?%5D(https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm)%0A*+GitHub+Source+URL%3A+%5Bhow-to-calculate-time-complexity-of-an-algorithm.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2018-11-23-how-to-calculate-time-complexity-of-an-algorithm.md)">let us know</a>.</p>
 
 <h3 id="getting-started">Getting started</h3>
 
@@ -436,15 +436,15 @@ Given a list of number, [1, 12, 3], the maximum value you can get is 39 if you d
       </article>
       <section class="share">
   <h3>Share</h3>
-  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to calculate time complexity of an algorithm?&quot; by &#64;poanbaronchen http://localhost:4000/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm"
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to calculate time complexity of an algorithm?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm"
   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
     <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm"
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm"
   onclick="window.open(this.href, 'facebook-share', 'width=550,height=296');return false;" title="Share on Facebook">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
   </a>
-  <a href="mailto:?subject=Check out this great article, How to calculate time complexity of an algorithm?&body=Hi, I found this webpage and thought you might like it, http://localhost:4000/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm">
+  <a href="mailto:?subject=Check out this great article, How to calculate time complexity of an algorithm?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm">
     <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
   </a>
 </section>
@@ -504,7 +504,7 @@ Given a list of number, [1, 12, 3], the maximum value you can get is 39 if you d
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
 <script src="/assets/js/main.js"></script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -513,7 +513,7 @@ Given a list of number, [1, 12, 3], the maximum value you can get is 39 if you d
   ga('create', 'UA-85924009-1', 'auto');
   ga('send', 'pageview');
 </script>
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script> -->
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script>
     </section>
   </body>
 </html>

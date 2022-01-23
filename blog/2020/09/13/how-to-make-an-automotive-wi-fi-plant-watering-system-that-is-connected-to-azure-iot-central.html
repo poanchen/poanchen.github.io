@@ -27,14 +27,14 @@
   <meta name="twitter:title" content="How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?">
   <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
   
-  <meta property="twitter:image:src" content="http://localhost:4000/img/blog-image.png">
+  <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
   
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="og:url" content="http://localhost:4000/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central">
+  <meta property="og:url" content="https://poanchen.github.io/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central">
   <meta property="og:title" content="How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?">
   
-  <meta property="og:image" content="http://localhost:4000/img/blog-image.png">
+  <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
   
   <meta property="og:description" content="A blog written by PoAn (Baron) Chen.">
   <meta property="og:site_name" content="PoAn (Baron) Chen's site">
@@ -42,7 +42,7 @@
   <!-- Social: Google+ / Schema.org  -->
   <meta itemprop="name" content="How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?"/>
   <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
-  <meta itemprop="image" content="http://localhost:4000/img/blog-image.png"/>
+  <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
@@ -67,8 +67,8 @@
   <meta name="theme-color" content="#0562DC">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central">
-  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="https://poanchen.github.io/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central">
+  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
   
   <!-- Buy Me a Coffee widget -->
   <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="poanchen" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
@@ -79,7 +79,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2020-09-13 01:30:30 -0700" class="date">13 Sep 2020</time>
+            <time itemprop="datePublished" datetime="2020-09-13 08:30:30 +0000" class="date">13 Sep 2020</time>
         
         <h1 class="post-title" itemprop="name">How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?</h1>
         
@@ -198,7 +198,7 @@
 
 <p>Copy the below URL into the Additional Boards Manager URLs</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">arduino</span><span class="o">.</span><span class="n">esp8266</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">stable</span><span class="o">/</span><span class="n">package_esp8266com_index</span><span class="o">.</span><span class="n">json</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">arduino</span><span class="p">.</span><span class="n">esp8266</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">stable</span><span class="o">/</span><span class="n">package_esp8266com_index</span><span class="p">.</span><span class="n">json</span></code></pre></figure>
 
 <p>Click OK to close the Preferences window.</p>
 
@@ -236,22 +236,22 @@
 
 <p>Here is what I wrote in Arduino IDE,</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">const</span> <span class="kt">int</span> <span class="n">AirValue</span> <span class="o">=</span> <span class="mi">640</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">WaterValue</span> <span class="o">=</span> <span class="mi">353</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">SoilMoisturePin</span> <span class="o">=</span> <span class="n">A0</span><span class="o">;</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">const</span> <span class="kt">int</span> <span class="nc">AirValue</span> <span class="o">=</span> <span class="mi">640</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">WaterValue</span> <span class="o">=</span> <span class="mi">353</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">SoilMoisturePin</span> <span class="o">=</span> <span class="no">A0</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">soilMoistureValue</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">soilmoisturepercent</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
 <span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">begin</span><span class="o">(</span><span class="mi">115200</span><span class="o">);</span>
-  <span class="n">pinMode</span><span class="o">(</span><span class="n">SoilMoisturePin</span><span class="o">,</span> <span class="n">INPUT</span><span class="o">);</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">begin</span><span class="o">(</span><span class="mi">115200</span><span class="o">);</span>
+  <span class="n">pinMode</span><span class="o">(</span><span class="nc">SoilMoisturePin</span><span class="o">,</span> <span class="no">INPUT</span><span class="o">);</span>
 <span class="o">}</span>
 
 <span class="kt">void</span> <span class="nf">loop</span><span class="o">()</span> <span class="o">{</span>
-  <span class="n">soilMoistureValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="o">(</span><span class="n">SoilMoisturePin</span><span class="o">);</span>
-  <span class="n">soilmoisturepercent</span> <span class="o">=</span> <span class="n">map</span><span class="o">(</span><span class="n">soilMoistureValue</span><span class="o">,</span> <span class="n">AirValue</span><span class="o">,</span> <span class="n">WaterValue</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">soilmoisturepercent</span><span class="o">);</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"%"</span><span class="o">);</span>
+  <span class="n">soilMoistureValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="o">(</span><span class="nc">SoilMoisturePin</span><span class="o">);</span>
+  <span class="n">soilmoisturepercent</span> <span class="o">=</span> <span class="n">map</span><span class="o">(</span><span class="n">soilMoistureValue</span><span class="o">,</span> <span class="nc">AirValue</span><span class="o">,</span> <span class="nc">WaterValue</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">soilmoisturepercent</span><span class="o">);</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"%"</span><span class="o">);</span>
   <span class="n">delay</span><span class="o">(</span><span class="mi">60000</span><span class="o">);</span>
 <span class="o">}</span></code></pre></figure>
 
@@ -292,33 +292,33 @@
 
 <p>Here is what I wrote in Arduino IDE,</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">const</span> <span class="kt">int</span> <span class="n">AirValue</span> <span class="o">=</span> <span class="mi">640</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">WaterValue</span> <span class="o">=</span> <span class="mi">353</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">DrySoilMoisturePercentage</span> <span class="o">=</span> <span class="mi">50</span><span class="o">;</span>
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">SoilMoisturePin</span> <span class="o">=</span> <span class="n">A0</span><span class="o">;</span>
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">RelayPin</span> <span class="o">=</span> <span class="n">D2</span><span class="o">;</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">const</span> <span class="kt">int</span> <span class="nc">AirValue</span> <span class="o">=</span> <span class="mi">640</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">WaterValue</span> <span class="o">=</span> <span class="mi">353</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">DrySoilMoisturePercentage</span> <span class="o">=</span> <span class="mi">50</span><span class="o">;</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">SoilMoisturePin</span> <span class="o">=</span> <span class="no">A0</span><span class="o">;</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">RelayPin</span> <span class="o">=</span> <span class="no">D2</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">soilMoistureValue</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">soilmoisturepercent</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
 <span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">begin</span><span class="o">(</span><span class="mi">115200</span><span class="o">);</span>
-  <span class="n">pinMode</span><span class="o">(</span><span class="n">SoilMoisturePin</span><span class="o">,</span> <span class="n">INPUT</span><span class="o">);</span>
-  <span class="n">pinMode</span><span class="o">(</span><span class="n">RelayPin</span><span class="o">,</span> <span class="n">OUTPUT</span><span class="o">);</span>
-  <span class="n">digitalWrite</span><span class="o">(</span><span class="n">RelayPin</span><span class="o">,</span> <span class="n">HIGH</span><span class="o">);</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">begin</span><span class="o">(</span><span class="mi">115200</span><span class="o">);</span>
+  <span class="n">pinMode</span><span class="o">(</span><span class="nc">SoilMoisturePin</span><span class="o">,</span> <span class="no">INPUT</span><span class="o">);</span>
+  <span class="n">pinMode</span><span class="o">(</span><span class="nc">RelayPin</span><span class="o">,</span> <span class="no">OUTPUT</span><span class="o">);</span>
+  <span class="n">digitalWrite</span><span class="o">(</span><span class="nc">RelayPin</span><span class="o">,</span> <span class="no">HIGH</span><span class="o">);</span>
 <span class="o">}</span>
 
 <span class="kt">void</span> <span class="nf">loop</span><span class="o">()</span> <span class="o">{</span>
-  <span class="n">soilMoistureValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="o">(</span><span class="n">SoilMoisturePin</span><span class="o">);</span>
-  <span class="n">soilmoisturepercent</span> <span class="o">=</span> <span class="n">map</span><span class="o">(</span><span class="n">soilMoistureValue</span><span class="o">,</span> <span class="n">AirValue</span><span class="o">,</span> <span class="n">WaterValue</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">soilmoisturepercent</span><span class="o">);</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"%"</span><span class="o">);</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">soilmoisturepercent</span> <span class="o">&lt;=</span> <span class="n">DrySoilMoisturePercentage</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Water pumps running..."</span><span class="o">);</span>
-    <span class="n">digitalWrite</span><span class="o">(</span><span class="n">RelayPin</span><span class="o">,</span> <span class="n">LOW</span><span class="o">);</span>
+  <span class="n">soilMoistureValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="o">(</span><span class="nc">SoilMoisturePin</span><span class="o">);</span>
+  <span class="n">soilmoisturepercent</span> <span class="o">=</span> <span class="n">map</span><span class="o">(</span><span class="n">soilMoistureValue</span><span class="o">,</span> <span class="nc">AirValue</span><span class="o">,</span> <span class="nc">WaterValue</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">soilmoisturepercent</span><span class="o">);</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"%"</span><span class="o">);</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">soilmoisturepercent</span> <span class="o">&lt;=</span> <span class="nc">DrySoilMoisturePercentage</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Water pumps running..."</span><span class="o">);</span>
+    <span class="n">digitalWrite</span><span class="o">(</span><span class="nc">RelayPin</span><span class="o">,</span> <span class="no">LOW</span><span class="o">);</span>
     <span class="n">delay</span><span class="o">(</span><span class="mi">5000</span><span class="o">);</span>
   <span class="o">}</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Water pumps stopped..."</span><span class="o">);</span>
-  <span class="n">digitalWrite</span><span class="o">(</span><span class="n">RelayPin</span><span class="o">,</span> <span class="n">HIGH</span><span class="o">);</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Water pumps stopped..."</span><span class="o">);</span>
+  <span class="n">digitalWrite</span><span class="o">(</span><span class="nc">RelayPin</span><span class="o">,</span> <span class="no">HIGH</span><span class="o">);</span>
   <span class="n">delay</span><span class="o">(</span><span class="mi">60000</span><span class="o">);</span>
 <span class="o">}</span></code></pre></figure>
 
@@ -356,56 +356,56 @@ Second, you need to create a <a href="https://docs.microsoft.com/azure/iot-centr
 
 <p>Here is what I wrote in Arduino IDE,</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">ESP8266HTTPClient</span><span class="o">.</span><span class="na">h</span><span class="o">&gt;</span>
-<span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">ESP8266WiFi</span><span class="o">.</span><span class="na">h</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="nc">ESP8266HTTPClient</span><span class="o">.</span><span class="na">h</span><span class="o">&gt;</span>
+<span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="nc">ESP8266WiFi</span><span class="o">.</span><span class="na">h</span><span class="o">&gt;</span>
 
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">AirValue</span> <span class="o">=</span> <span class="mi">640</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">WaterValue</span> <span class="o">=</span> <span class="mi">353</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">DrySoilMoisturePercentage</span> <span class="o">=</span> <span class="mi">50</span><span class="o">;</span>
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">SoilMoisturePin</span> <span class="o">=</span> <span class="n">A0</span><span class="o">;</span>
-<span class="kd">const</span> <span class="kt">int</span> <span class="n">RelayPin</span> <span class="o">=</span> <span class="n">D2</span><span class="o">;</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">AirValue</span> <span class="o">=</span> <span class="mi">640</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">WaterValue</span> <span class="o">=</span> <span class="mi">353</span><span class="o">;</span> <span class="c1">// you might need to calibrate this number, instruction is down below</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">DrySoilMoisturePercentage</span> <span class="o">=</span> <span class="mi">50</span><span class="o">;</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">SoilMoisturePin</span> <span class="o">=</span> <span class="no">A0</span><span class="o">;</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="nc">RelayPin</span> <span class="o">=</span> <span class="no">D2</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">soilMoistureValue</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">soilmoisturepercent</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">plantJustWatered</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
 <span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">begin</span><span class="o">(</span><span class="mi">115200</span><span class="o">);</span>
-  <span class="n">WiFi</span><span class="o">.</span><span class="na">begin</span><span class="o">(</span><span class="s">"Wi-Fi name"</span><span class="o">,</span> <span class="s">"Wi-Fi password"</span><span class="o">);</span>
-  <span class="n">pinMode</span><span class="o">(</span><span class="n">SoilMoisturePin</span><span class="o">,</span> <span class="n">INPUT</span><span class="o">);</span>
-  <span class="n">pinMode</span><span class="o">(</span><span class="n">RelayPin</span><span class="o">,</span> <span class="n">OUTPUT</span><span class="o">);</span>
-  <span class="n">digitalWrite</span><span class="o">(</span><span class="n">RelayPin</span><span class="o">,</span> <span class="n">HIGH</span><span class="o">);</span>
-  <span class="k">while</span> <span class="o">(</span><span class="n">WiFi</span><span class="o">.</span><span class="na">status</span><span class="o">()</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">begin</span><span class="o">(</span><span class="mi">115200</span><span class="o">);</span>
+  <span class="nc">WiFi</span><span class="o">.</span><span class="na">begin</span><span class="o">(</span><span class="s">"Wi-Fi name"</span><span class="o">,</span> <span class="s">"Wi-Fi password"</span><span class="o">);</span>
+  <span class="n">pinMode</span><span class="o">(</span><span class="nc">SoilMoisturePin</span><span class="o">,</span> <span class="no">INPUT</span><span class="o">);</span>
+  <span class="n">pinMode</span><span class="o">(</span><span class="nc">RelayPin</span><span class="o">,</span> <span class="no">OUTPUT</span><span class="o">);</span>
+  <span class="n">digitalWrite</span><span class="o">(</span><span class="nc">RelayPin</span><span class="o">,</span> <span class="no">HIGH</span><span class="o">);</span>
+  <span class="k">while</span> <span class="o">(</span><span class="nc">WiFi</span><span class="o">.</span><span class="na">status</span><span class="o">()</span> <span class="o">!=</span> <span class="no">WL_CONNECTED</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">delay</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
-    <span class="n">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Waiting for connection..."</span><span class="o">);</span>
+    <span class="nc">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Waiting for connection..."</span><span class="o">);</span>
   <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="kt">void</span> <span class="nf">loop</span><span class="o">()</span> <span class="o">{</span>
-  <span class="n">soilMoistureValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="o">(</span><span class="n">SoilMoisturePin</span><span class="o">);</span>
-  <span class="n">soilmoisturepercent</span> <span class="o">=</span> <span class="n">map</span><span class="o">(</span><span class="n">soilMoistureValue</span><span class="o">,</span> <span class="n">AirValue</span><span class="o">,</span> <span class="n">WaterValue</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">soilmoisturepercent</span><span class="o">);</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"%"</span><span class="o">);</span>
+  <span class="n">soilMoistureValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="o">(</span><span class="nc">SoilMoisturePin</span><span class="o">);</span>
+  <span class="n">soilmoisturepercent</span> <span class="o">=</span> <span class="n">map</span><span class="o">(</span><span class="n">soilMoistureValue</span><span class="o">,</span> <span class="nc">AirValue</span><span class="o">,</span> <span class="nc">WaterValue</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">soilmoisturepercent</span><span class="o">);</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"%"</span><span class="o">);</span>
   <span class="n">plantJustWatered</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">soilmoisturepercent</span> <span class="o">&lt;=</span> <span class="n">DrySoilMoisturePercentage</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Water pumps running..."</span><span class="o">);</span>
-    <span class="n">digitalWrite</span><span class="o">(</span><span class="n">RelayPin</span><span class="o">,</span> <span class="n">LOW</span><span class="o">);</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">soilmoisturepercent</span> <span class="o">&lt;=</span> <span class="nc">DrySoilMoisturePercentage</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Water pumps running..."</span><span class="o">);</span>
+    <span class="n">digitalWrite</span><span class="o">(</span><span class="nc">RelayPin</span><span class="o">,</span> <span class="no">LOW</span><span class="o">);</span>
     <span class="n">delay</span><span class="o">(</span><span class="mi">3500</span><span class="o">);</span>
     <span class="n">plantJustWatered</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
   <span class="o">}</span>
-  <span class="n">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Water pumps stopped..."</span><span class="o">);</span>
-  <span class="n">digitalWrite</span><span class="o">(</span><span class="n">RelayPin</span><span class="o">,</span> <span class="n">HIGH</span><span class="o">);</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">WiFi</span><span class="o">.</span><span class="na">status</span><span class="o">()</span> <span class="o">==</span> <span class="n">WL_CONNECTED</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">HTTPClient</span> <span class="n">http</span><span class="o">;</span>
+  <span class="nc">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Water pumps stopped..."</span><span class="o">);</span>
+  <span class="n">digitalWrite</span><span class="o">(</span><span class="nc">RelayPin</span><span class="o">,</span> <span class="no">HIGH</span><span class="o">);</span>
+  <span class="k">if</span> <span class="o">(</span><span class="nc">WiFi</span><span class="o">.</span><span class="na">status</span><span class="o">()</span> <span class="o">==</span> <span class="no">WL_CONNECTED</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">HTTPClient</span> <span class="n">http</span><span class="o">;</span>
     <span class="c1">// get the Azure Functions url by following this doc, https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function#test-the-function</span>
     <span class="n">http</span><span class="o">.</span><span class="na">begin</span><span class="o">(</span><span class="s">"http://iotc-fnce72a5dmyl4xs.azurewebsites.net/api/IoTCIntegration?code=1v//IKFDfdJKOdfdsoMKlkpJNOfdoOrpIWuystxtBHJUds=="</span><span class="o">);</span>
     <span class="n">http</span><span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">);</span>
     <span class="c1">// you can get your deviceId by going over this doc, https://docs.microsoft.com/azure/iot-central/core/concepts-get-connected#connect-a-single-device</span>
-    <span class="n">String</span> <span class="n">moistureData</span> <span class="o">=</span> <span class="s">"{\"device\": {\"deviceId\": \"1wc1sdkminp\"},\"measurements\": {\"MoisturePercentage\": \""</span> <span class="o">+</span> <span class="n">String</span><span class="o">(</span><span class="n">soilmoisturepercent</span><span class="o">)</span> <span class="o">+</span> <span class="s">"\", \"PlantJustWatered\": \""</span> <span class="o">+</span> <span class="n">String</span><span class="o">(</span><span class="n">plantJustWatered</span><span class="o">)</span> <span class="o">+</span> <span class="s">"\"}}"</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">moistureData</span> <span class="o">=</span> <span class="s">"{\"device\": {\"deviceId\": \"1wc1sdkminp\"},\"measurements\": {\"MoisturePercentage\": \""</span> <span class="o">+</span> <span class="nc">String</span><span class="o">(</span><span class="n">soilmoisturepercent</span><span class="o">)</span> <span class="o">+</span> <span class="s">"\", \"PlantJustWatered\": \""</span> <span class="o">+</span> <span class="nc">String</span><span class="o">(</span><span class="n">plantJustWatered</span><span class="o">)</span> <span class="o">+</span> <span class="s">"\"}}"</span><span class="o">;</span>
     <span class="kt">int</span> <span class="n">httpCode</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="na">POST</span><span class="o">(</span><span class="n">moistureData</span><span class="o">);</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">httpCode</span> <span class="o">==</span> <span class="mi">200</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Moisture data sent successfully..."</span><span class="o">);</span>
+      <span class="nc">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Moisture data sent successfully..."</span><span class="o">);</span>
     <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-      <span class="n">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Moisture data failed to send..."</span><span class="o">);</span>  
+      <span class="nc">Serial</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Moisture data failed to send..."</span><span class="o">);</span>  
     <span class="o">}</span>
     <span class="n">http</span><span class="o">.</span><span class="na">end</span><span class="o">();</span>
   <span class="o">}</span>
@@ -430,7 +430,7 @@ Second, you need to create a <a href="https://docs.microsoft.com/azure/iot-centr
 
 <h2 id="resources">Resources</h2>
 
-<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?%5D(http://localhost:4000/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central)%0A*+GitHub+Source+URL%3A+%5Bhow-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2020-09-13-how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central.md)">let us know</a>.</p>
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?%5D(https://poanchen.github.io/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central)%0A*+GitHub+Source+URL%3A+%5Bhow-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2020-09-13-how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central.md)">let us know</a>.</p>
 
 <h3 id="getting-started">Getting started</h3>
 
@@ -443,15 +443,15 @@ Second, you need to create a <a href="https://docs.microsoft.com/azure/iot-centr
       </article>
       <section class="share">
   <h3>Share</h3>
-  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?&quot; by &#64;poanbaronchen http://localhost:4000/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central"
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central"
   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
     <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central"
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central"
   onclick="window.open(this.href, 'facebook-share', 'width=550,height=296');return false;" title="Share on Facebook">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
   </a>
-  <a href="mailto:?subject=Check out this great article, How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?&body=Hi, I found this webpage and thought you might like it, http://localhost:4000/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central">
+  <a href="mailto:?subject=Check out this great article, How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central">
     <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
   </a>
 </section>
@@ -511,7 +511,7 @@ Second, you need to create a <a href="https://docs.microsoft.com/azure/iot-centr
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
 <script src="/assets/js/main.js"></script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -520,7 +520,7 @@ Second, you need to create a <a href="https://docs.microsoft.com/azure/iot-centr
   ga('create', 'UA-85924009-1', 'auto');
   ga('send', 'pageview');
 </script>
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script> -->
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script>
     </section>
   </body>
 </html>

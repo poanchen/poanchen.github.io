@@ -27,14 +27,14 @@
   <meta name="twitter:title" content="Solving the Fibonacci problem using Dynamic Programming in Java">
   <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
   
-  <meta property="twitter:image:src" content="http://localhost:4000/img/blog-image.png">
+  <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
   
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="og:url" content="http://localhost:4000/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java">
+  <meta property="og:url" content="https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java">
   <meta property="og:title" content="Solving the Fibonacci problem using Dynamic Programming in Java">
   
-  <meta property="og:image" content="http://localhost:4000/img/blog-image.png">
+  <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
   
   <meta property="og:description" content="A blog written by PoAn (Baron) Chen.">
   <meta property="og:site_name" content="PoAn (Baron) Chen's site">
@@ -42,7 +42,7 @@
   <!-- Social: Google+ / Schema.org  -->
   <meta itemprop="name" content="Solving the Fibonacci problem using Dynamic Programming in Java"/>
   <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
-  <meta itemprop="image" content="http://localhost:4000/img/blog-image.png"/>
+  <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
@@ -67,8 +67,8 @@
   <meta name="theme-color" content="#0562DC">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java">
-  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java">
+  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
   
   <!-- Buy Me a Coffee widget -->
   <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="poanchen" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
@@ -79,7 +79,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2018-02-09 00:30:30 -0800" class="date">09 Feb 2018</time>
+            <time itemprop="datePublished" datetime="2018-02-09 08:30:30 +0000" class="date">09 Feb 2018</time>
         
         <h1 class="post-title" itemprop="name">Solving the Fibonacci problem using Dynamic Programming in Java</h1>
         
@@ -250,7 +250,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 <div id="dp"></div>
 <p>When the recursion does a lot of unnecessary calculation, just like one above, an easy way to solve this is to cache the results. Whenever you are trying to computer a number say n. We first check if have done that before in our cache. If we did, simply return what was in the cache. Otherwise, try to compute the number. Once we get the number, we make sure to put the result to the cache for use in the future.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">hm</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;();</span>
   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFibonacciNumberTopDown</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span><span class="o">(</span><span class="n">hm</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="k">return</span> <span class="n">hm</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
     <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
@@ -272,7 +272,7 @@ with seed value of F1=1, F2=1 or F0=0, F1=1 depends on your first initial value.
 
 <p>A better way to do this is to get rid of the recursion all-together by evaluating the results in the right order. Instead of top down, we are going for bottom up.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">hm</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;();</span>
   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFibonacciNumberBottomUpWithCache</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">hm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
     <span class="n">hm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
@@ -325,7 +325,7 @@ Hence, the running time should get further improved here compared with the top d
 
 <h2 id="resources">Resources</h2>
 
-<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BSolving the Fibonacci problem using Dynamic Programming in Java%5D(http://localhost:4000/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java)%0A*+GitHub+Source+URL%3A+%5BSolving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2018-02-09-Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java.md)">let us know</a>.</p>
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BSolving the Fibonacci problem using Dynamic Programming in Java%5D(https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java)%0A*+GitHub+Source+URL%3A+%5BSolving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2018-02-09-Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java.md)">let us know</a>.</p>
 
 <h3 id="getting-started">Getting started</h3>
 
@@ -337,15 +337,15 @@ Hence, the running time should get further improved here compared with the top d
       </article>
       <section class="share">
   <h3>Share</h3>
-  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;Solving the Fibonacci problem using Dynamic Programming in Java&quot; by &#64;poanbaronchen http://localhost:4000/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java"
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;Solving the Fibonacci problem using Dynamic Programming in Java&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java"
   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
     <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java"
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java"
   onclick="window.open(this.href, 'facebook-share', 'width=550,height=296');return false;" title="Share on Facebook">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
   </a>
-  <a href="mailto:?subject=Check out this great article, Solving the Fibonacci problem using Dynamic Programming in Java&body=Hi, I found this webpage and thought you might like it, http://localhost:4000/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java">
+  <a href="mailto:?subject=Check out this great article, Solving the Fibonacci problem using Dynamic Programming in Java&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java">
     <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
   </a>
 </section>
@@ -405,7 +405,7 @@ Hence, the running time should get further improved here compared with the top d
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
 <script src="/assets/js/main.js"></script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -414,7 +414,7 @@ Hence, the running time should get further improved here compared with the top d
   ga('create', 'UA-85924009-1', 'auto');
   ga('send', 'pageview');
 </script>
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script> -->
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script>
     </section>
   </body>
 </html>

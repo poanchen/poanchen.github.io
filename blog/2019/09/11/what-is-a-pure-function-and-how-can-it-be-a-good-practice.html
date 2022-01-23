@@ -27,14 +27,14 @@
   <meta name="twitter:title" content="What is a Pure function and how can it be a good practice?">
   <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
   
-  <meta property="twitter:image:src" content="http://localhost:4000/img/blog-image.png">
+  <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
   
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="og:url" content="http://localhost:4000/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice">
+  <meta property="og:url" content="https://poanchen.github.io/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice">
   <meta property="og:title" content="What is a Pure function and how can it be a good practice?">
   
-  <meta property="og:image" content="http://localhost:4000/img/blog-image.png">
+  <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
   
   <meta property="og:description" content="A blog written by PoAn (Baron) Chen.">
   <meta property="og:site_name" content="PoAn (Baron) Chen's site">
@@ -42,7 +42,7 @@
   <!-- Social: Google+ / Schema.org  -->
   <meta itemprop="name" content="What is a Pure function and how can it be a good practice?"/>
   <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
-  <meta itemprop="image" content="http://localhost:4000/img/blog-image.png"/>
+  <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
@@ -67,8 +67,8 @@
   <meta name="theme-color" content="#0562DC">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice">
-  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="https://poanchen.github.io/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice">
+  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
   
   <!-- Buy Me a Coffee widget -->
   <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="poanchen" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
@@ -79,7 +79,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2019-09-11 01:30:30 -0700" class="date">11 Sep 2019</time>
+            <time itemprop="datePublished" datetime="2019-09-11 08:30:30 +0000" class="date">11 Sep 2019</time>
         
         <h1 class="post-title" itemprop="name">What is a Pure function and how can it be a good practice?</h1>
         
@@ -177,9 +177,9 @@
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
       <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
       <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 15</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 15</span>
     <span class="o">}</span>
   <span class="o">}</span></code></pre></figure>
 
@@ -193,11 +193,11 @@
       <span class="n">accessAddFunctionCount</span><span class="o">++;</span>
       <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
       <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 15</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 15</span>
       <span class="n">c</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">20</span><span class="o">);</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 25</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 25</span>
     <span class="o">}</span>
   <span class="o">}</span></code></pre></figure>
 
@@ -206,14 +206,14 @@
 <p>If you simply look at the returned value, it is still solely based on the inputs and nothing else. One may conclude that it is still a pure function. Let me stop you right there, there are more rules to being a pure function and the given example above isn’t one. Let me explain, it looks like whenenver the method is being called, it is incrementing the global variable accessAddFunctionCount. This is clearly violating the side effects rule. Another rule of being a pure function is that <strong>there should be no side effects</strong>. Meaning that no mutation of any non-local variable. How about the next one?</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ImPureFunctionWithReferenceArgumentMutation</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">append</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">append</span><span class="o">(</span><span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="nc">Integer</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
       <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">9</span><span class="o">));</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">());</span> <span class="c1">// 5</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">9</span><span class="o">));</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">());</span> <span class="c1">// 5</span>
       <span class="n">append</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="mi">11</span><span class="o">);</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">());</span> <span class="c1">// 6</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">());</span> <span class="c1">// 6</span>
     <span class="o">}</span>
   <span class="o">}</span></code></pre></figure>
 
@@ -230,12 +230,12 @@
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getAccessImpureAddFunctionCount</span><span class="o">()</span> <span class="o">{</span>
       <span class="k">return</span> <span class="n">accessImpureAddFunctionCount</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
       <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">impureAdd</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 15</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 15</span>
       <span class="n">c</span> <span class="o">=</span> <span class="n">impureAdd</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">20</span><span class="o">);</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 25</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getAccessImpureAddFunctionCount</span><span class="o">());</span> <span class="c1">// 2</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 25</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getAccessImpureAddFunctionCount</span><span class="o">());</span> <span class="c1">// 2</span>
     <span class="o">}</span>
   <span class="o">}</span></code></pre></figure>
 
@@ -281,7 +281,7 @@
 
 <h2 id="resources">Resources</h2>
 
-<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BWhat is a Pure function and how can it be a good practice?%5D(http://localhost:4000/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice)%0A*+GitHub+Source+URL%3A+%5Bwhat-is-a-pure-function-and-how-can-it-be-a-good-practice.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2019-09-11-what-is-a-pure-function-and-how-can-it-be-a-good-practice.md)">let us know</a>.</p>
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BWhat is a Pure function and how can it be a good practice?%5D(https://poanchen.github.io/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice)%0A*+GitHub+Source+URL%3A+%5Bwhat-is-a-pure-function-and-how-can-it-be-a-good-practice.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2019-09-11-what-is-a-pure-function-and-how-can-it-be-a-good-practice.md)">let us know</a>.</p>
 
 <h3 id="getting-started">Getting started</h3>
 
@@ -298,15 +298,15 @@
       </article>
       <section class="share">
   <h3>Share</h3>
-  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;What is a Pure function and how can it be a good practice?&quot; by &#64;poanbaronchen http://localhost:4000/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice"
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;What is a Pure function and how can it be a good practice?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice"
   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
     <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice"
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice"
   onclick="window.open(this.href, 'facebook-share', 'width=550,height=296');return false;" title="Share on Facebook">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
   </a>
-  <a href="mailto:?subject=Check out this great article, What is a Pure function and how can it be a good practice?&body=Hi, I found this webpage and thought you might like it, http://localhost:4000/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice">
+  <a href="mailto:?subject=Check out this great article, What is a Pure function and how can it be a good practice?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice">
     <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
   </a>
 </section>
@@ -366,7 +366,7 @@
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
 <script src="/assets/js/main.js"></script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -375,7 +375,7 @@
   ga('create', 'UA-85924009-1', 'auto');
   ga('send', 'pageview');
 </script>
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script> -->
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script>
     </section>
   </body>
 </html>

@@ -27,14 +27,14 @@
   <meta name="twitter:title" content="How to login to a WordPress site using CasperJS?">
   <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
   
-  <meta property="twitter:image:src" content="http://localhost:4000/img/blog-image.png">
+  <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
   
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="og:url" content="http://localhost:4000/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs">
+  <meta property="og:url" content="https://poanchen.github.io/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs">
   <meta property="og:title" content="How to login to a WordPress site using CasperJS?">
   
-  <meta property="og:image" content="http://localhost:4000/img/blog-image.png">
+  <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
   
   <meta property="og:description" content="A blog written by PoAn (Baron) Chen.">
   <meta property="og:site_name" content="PoAn (Baron) Chen's site">
@@ -42,7 +42,7 @@
   <!-- Social: Google+ / Schema.org  -->
   <meta itemprop="name" content="How to login to a WordPress site using CasperJS?"/>
   <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
-  <meta itemprop="image" content="http://localhost:4000/img/blog-image.png"/>
+  <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
@@ -67,8 +67,8 @@
   <meta name="theme-color" content="#0562DC">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs">
-  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="https://poanchen.github.io/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs">
+  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
   
   <!-- Buy Me a Coffee widget -->
   <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="poanchen" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
@@ -79,7 +79,7 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2016-10-27 01:30:30 -0700" class="date">27 Oct 2016</time>
+            <time itemprop="datePublished" datetime="2016-10-27 08:30:30 +0000" class="date">27 Oct 2016</time>
         
         <h1 class="post-title" itemprop="name">How to login to a WordPress site using CasperJS?</h1>
         
@@ -173,11 +173,11 @@
 
 <h2 id="casperjs-code-to-start-with">CasperJS code to start with</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'webpage'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
-  <span class="kd">var</span> <span class="nx">casper</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'casper'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpage</span><span class="dl">'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">casper</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">casper</span><span class="dl">'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
 
-  <span class="kd">var</span> <span class="nx">urlBeforeLoggedIn</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/wp-login.php"</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">urlAfterLoggedIn</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/wp-admin/"</span><span class="p">;</span></code></pre></figure>
+  <span class="kd">var</span> <span class="nx">urlBeforeLoggedIn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/wp-login.php</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">urlAfterLoggedIn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/wp-admin/</span><span class="dl">"</span><span class="p">;</span></code></pre></figure>
 
 <p>The above code is a simple set up to get the CasperJS working. Those two variables namely urlBeforeLoggedIn and urlAfterLoggedIn. We will be using those url to sign in and for after sign in. Then, we need to get the CasperJS to open a site. It can be as simple as something like this.</p>
 
@@ -189,10 +189,10 @@
 
 <h2 id="casperjs-code-to-submit-a-post-form">CasperJS code to submit a POST form</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForSelector</span><span class="p">(</span><span class="s1">'form[method="post"]'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">casper</span><span class="p">.</span><span class="nx">fillSelectors</span><span class="p">(</span><span class="s1">'form[method="post"]'</span><span class="p">,</span> <span class="p">{</span>
-      <span class="s1">'input[name="log"]'</span><span class="p">:</span> <span class="s1">'put_your_username_or_email_address_here'</span><span class="p">,</span>
-      <span class="s1">'input[name="pwd"]'</span><span class="p">:</span> <span class="s1">'put_your_password_here'</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForSelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">casper</span><span class="p">.</span><span class="nx">fillSelectors</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="dl">'</span><span class="s1">input[name="log"]</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put_your_username_or_email_address_here</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">input[name="pwd"]</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put_your_password_here</span><span class="dl">'</span>
     <span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
   <span class="p">});</span></code></pre></figure>
 
@@ -201,7 +201,7 @@
 <h2 id="casperjs-code-to-wait-for-the-url-to-redirect-to-logged-in-area">CasperJS code to wait for the url to redirect to logged in area</h2>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForUrl</span><span class="p">(</span><span class="nx">urlAfterLoggedIn</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">echo</span><span class="p">(</span><span class="s2">"Now, with correct username and password, you should be signed in to the site when you see this."</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">echo</span><span class="p">(</span><span class="dl">"</span><span class="s2">Now, with correct username and password, you should be signed in to the site when you see this.</span><span class="dl">"</span><span class="p">);</span>
   <span class="p">});</span></code></pre></figure>
 
 <p>When you run this CasperJS script, and see the message printed. That means that you have successfully signed in with CasperJS. To prove that we are signed in, I will be taking screenshot using the built-in function in CasperJS.</p>
@@ -210,31 +210,31 @@
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForUrl</span><span class="p">(</span><span class="nx">urlAfterLoggedIn</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">viewport</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">1080</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="s1">'./screenshot.png'</span><span class="p">,</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">width</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">});</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="dl">'</span><span class="s1">./screenshot.png</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">width</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">});</span>
   <span class="p">});</span></code></pre></figure>
 
 <p>When this script is completed, you should see an image saved in where you put your CasperJS script.</p>
 
 <h2 id="complete-code-for-casperjs-script-that-signin-to-a-wordpress-site-then-take-a-screenshot-when-it-is-in">Complete code for CasperJS script that signin to a WordPress site, then take a screenshot when it is in</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'webpage'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
-  <span class="kd">var</span> <span class="nx">casper</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'casper'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpage</span><span class="dl">'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">casper</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">casper</span><span class="dl">'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
 
-  <span class="kd">var</span> <span class="nx">urlBeforeLoggedIn</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/wp-login.php"</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">urlAfterLoggedIn</span> <span class="o">=</span> <span class="s2">"https://www.jenrenalcare.com/wp-admin/"</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">urlBeforeLoggedIn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/wp-login.php</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">urlAfterLoggedIn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/wp-admin/</span><span class="dl">"</span><span class="p">;</span>
 
   <span class="nx">casper</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="nx">urlBeforeLoggedIn</span><span class="p">);</span>
 
-  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForSelector</span><span class="p">(</span><span class="s1">'form[method="post"]'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">casper</span><span class="p">.</span><span class="nx">fillSelectors</span><span class="p">(</span><span class="s1">'form[method="post"]'</span><span class="p">,</span> <span class="p">{</span>
-      <span class="s1">'input[name="log"]'</span><span class="p">:</span> <span class="s1">'put_your_username_or_email_address_here'</span><span class="p">,</span>
-      <span class="s1">'input[name="pwd"]'</span><span class="p">:</span> <span class="s1">'put_your_password_here'</span>
+  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForSelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">casper</span><span class="p">.</span><span class="nx">fillSelectors</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="dl">'</span><span class="s1">input[name="log"]</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put_your_username_or_email_address_here</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">input[name="pwd"]</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put_your_password_here</span><span class="dl">'</span>
     <span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
   <span class="p">});</span>
 
   <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForUrl</span><span class="p">(</span><span class="nx">urlAfterLoggedIn</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">viewport</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">1080</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="s1">'./screenshot.png'</span><span class="p">,</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">width</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">});</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="dl">'</span><span class="s1">./screenshot.png</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">width</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">});</span>
   <span class="p">});</span>
 
   <span class="nx">casper</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span></code></pre></figure>
@@ -247,7 +247,7 @@
 
 <h2 id="resources">Resources</h2>
 
-<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to login to a WordPress site using CasperJS?%5D(http://localhost:4000/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs)%0A*+GitHub+Source+URL%3A+%5Bhow-to-login-to-wordpress-site-using-casperjs.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2016-10-27-how-to-login-to-wordpress-site-using-casperjs.md)">let us know</a>.</p>
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to login to a WordPress site using CasperJS?%5D(https://poanchen.github.io/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs)%0A*+GitHub+Source+URL%3A+%5Bhow-to-login-to-wordpress-site-using-casperjs.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2016-10-27-how-to-login-to-wordpress-site-using-casperjs.md)">let us know</a>.</p>
 
 <h3 id="getting-started">Getting started</h3>
 
@@ -259,15 +259,15 @@
       </article>
       <section class="share">
   <h3>Share</h3>
-  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to login to a WordPress site using CasperJS?&quot; by &#64;poanbaronchen http://localhost:4000/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs"
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to login to a WordPress site using CasperJS?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs"
   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
     <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs"
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs"
   onclick="window.open(this.href, 'facebook-share', 'width=550,height=296');return false;" title="Share on Facebook">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
   </a>
-  <a href="mailto:?subject=Check out this great article, How to login to a WordPress site using CasperJS?&body=Hi, I found this webpage and thought you might like it, http://localhost:4000/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs">
+  <a href="mailto:?subject=Check out this great article, How to login to a WordPress site using CasperJS?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2016/10/27/how-to-login-to-wordpress-site-using-casperjs">
     <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
   </a>
 </section>
@@ -327,7 +327,7 @@
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
 <script src="/assets/js/main.js"></script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -336,7 +336,7 @@
   ga('create', 'UA-85924009-1', 'auto');
   ga('send', 'pageview');
 </script>
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script> -->
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script>
     </section>
   </body>
 </html>
