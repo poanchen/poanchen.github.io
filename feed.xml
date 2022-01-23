@@ -3,192 +3,190 @@
   <channel>
     <title>PoAn (Baron) Chen's site</title>
     <description>A blog written by PoAn (Baron) Chen.</description>
-    <link>https://poanchen.github.io/</link>
-    <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Feb 2020 07:45:50 +0000</pubDate>
-    <lastBuildDate>Fri, 28 Feb 2020 07:45:50 +0000</lastBuildDate>
-    <generator>Jekyll v4.0.0</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 28 Nov 2020 17:11:31 -0800</pubDate>
+    <lastBuildDate>Sat, 28 Nov 2020 17:11:31 -0800</lastBuildDate>
+    <generator>Jekyll v3.7.0</generator>
     
       <item>
-        <title>How to create an Azure IoT Central application programmatically?</title>
-        <description>&lt;p&gt;Before I dive into the code and show you guys how to create an Azure IoT Central application programmatically, I would like to give an introduction of what an Azure IoT Central is and why do we need it?&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://azure.microsoft.com/en-us/services/iot-central&quot;&gt;Azure IoT Central&lt;/a&gt; is a&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Connect fast with a hassle-free, hosted IoT platform&lt;br /&gt;&lt;br /&gt; Easily connect, monitor, and manage your Internet of Things (IoT) assets at scale. Azure IoT Central is a hosted, extensible software as a service (SaaS) platform that simplifies setup of your IoT solution and helps reduce the burden and costs of IoT management, operations,...</description>
-        <pubDate>Sat, 23 Nov 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically</guid>
+        <title>How to fix authentication failed, it is either not correct, or expired, or does not have the correct permission with AzureFileCopy?</title>
+        <description>&lt;p&gt;Have you ever try to copy over your artifact from &lt;a href=&quot;https://azure.microsoft.com/services/devops&quot;&gt;Azure DevOps&lt;/a&gt; to &lt;a href=&quot;https://azure.microsoft.com/services/storage/blobs&quot;&gt;Azure Blob Storage&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Are you having trouble building a Linux-based &lt;a href=&quot;https://azure.microsoft.com/services/functions&quot;&gt;Azure Function&lt;/a&gt; that needs to work with file system? You are in luck! In this article, I am going to quickly talk about some of the tips working with Linux-based Azure Function, specifically on file system.&lt;/p&gt; &lt;p&gt;As you should know, Azure Function is serverless. This means that &lt;a href=&quot;https://azure.microsoft.com&quot;&gt;Azure&lt;/a&gt; is going to take care all of your computing resources. Either few or millions. Azure will handle that for you. What you need to do...</description>
+        <pubDate>Fri, 27 Nov 2020 16:30:30 -0800</pubDate>
+        <link>http://localhost:4000/blog/2020/11/27/How-to-fix-authentication-failed-it-is-either-not-correct-or-expired-or-does-not-have-the-correct-permission-with-AzureFileCopy</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/11/27/How-to-fix-authentication-failed-it-is-either-not-correct-or-expired-or-does-not-have-the-correct-permission-with-AzureFileCopy</guid>
         
         <category>Azure</category>
         
-        <category>Azure IoT</category>
+        <category>AzureFileCopy</category>
         
-        <category>Azure IoT Central</category>
-        
-        <category>Node.js</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>TypeScript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Why using a global variable to solve Leetcode problem can be a bad idea?</title>
-        <description>&lt;p&gt;I recently run into the issue of having inconsistent result for the exact same test case that I run locally comparing with the code that &lt;a href=&quot;https://leetcode.com&quot;&gt;Leetcode&lt;/a&gt; runs on their server. How is that even possible? At first, my suspicion would be the development environment but I code my solution right in their website. In addition, other people solution got accepted, so it is gotta be something wrong with my code. And, it turns out, it is. It is because of how I use the global variable in my solution.&lt;/p&gt; &lt;p&gt;Before I talk about how using a global variable to...</description>
-        <pubDate>Fri, 13 Sep 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea</guid>
-        
-        <category>Python</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Leetcode</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>What is a Pure function and how can it be a good practice?</title>
-        <description>&lt;h2 id=&quot;what-is-a-pure-function&quot;&gt;What is a pure function?&lt;/h2&gt; &lt;p&gt;Pure function is a function that &lt;strong&gt;its return value is determined by its inputs and nothing else&lt;/strong&gt;. Simple as that. Let me give you an example of a pure function in Java,&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PureFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;...</description>
-        <pubDate>Wed, 11 Sep 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice</guid>
-        
-        <category>Java</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>React</category>
-        
-        <category>Redux</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>The easiest way to make Let's Encrypt renewal automated</title>
-        <description>&lt;p&gt;Are you using Let’s Encrypt as your CA (certificate authority) to issue you a trusted certificate for your own domain? Sometimes forgetting to renew when it expires every 90 days? Keep getting email warning you about the expiry date of your SSL certificate? or find out the hard way by getting email about the complain of your site not being able to access due to the expired SSL certificate? You are in luck, in this short tutorial, I am going to show you guys how to make Let’s Encrypt renewal automatic. So that you will never have to worry about...</description>
-        <pubDate>Sat, 13 Jul 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/07/13/The-easiest-way-to-make-Let-s-Encrypt-renewal-automated</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/07/13/The-easiest-way-to-make-Let-s-Encrypt-renewal-automated</guid>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Let's Encrypt</category>
-        
-        <category>Cron</category>
-        
-        <category>Bash</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to add Azure Pipelines badge to your repository's README in GitHub?</title>
-        <description>&lt;p&gt;Ever wanted to be cool? not just anyone-kind-cool but developer-kind-cool or better yet Azure-kind-cool. Do you have a project hosting on GitHub and you would like to show the status of your build? How green it has always been? You are in luck. In this short tutorial, I would like to show you guys how to easily add Azure Pipelines badge into your README on GitHub.&lt;/p&gt; &lt;p&gt;Simply head over to your Azure DevOps page (in this case, my page url looks like this https://dev.azure.com/poanchen/poanchen.github.io), &lt;img src=&quot;/img/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub/1.JPG&quot; alt=&quot;Azure DevOps page&quot; /&gt;&lt;/p&gt; &lt;p&gt;Next, ensure Pipeline -&amp;gt; Builds tab is opened. &lt;img src=&quot;/img/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub/2.png&quot;...</description>
-        <pubDate>Fri, 12 Jul 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub</guid>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Azure</category>
-        
-        <category>Azure Pipelines</category>
+        <category>Azure Blob Storage</category>
         
         <category>Azure DevOps</category>
         
+        <category>Azure DevOps Build</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to make a Linux-based Azure Function works with file system?</title>
+        <description>&lt;p&gt;Are you having trouble building a Linux-based &lt;a href=&quot;https://azure.microsoft.com/services/functions&quot;&gt;Azure Function&lt;/a&gt; that needs to work with file system? You are in luck! In this article, I am going to quickly talk about some of the tips working with Linux-based Azure Function, specifically on file system.&lt;/p&gt; &lt;p&gt;As you should know, Azure Function is serverless. This means that &lt;a href=&quot;https://azure.microsoft.com&quot;&gt;Azure&lt;/a&gt; is going to take care all of your computing resources. Either few or millions. Azure will handle that for you. What you need to do is to provide blocks of code for Azure Function to run. This is extremely useful for resources who...</description>
+        <pubDate>Sun, 22 Nov 2020 16:30:30 -0800</pubDate>
+        <link>http://localhost:4000/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system</guid>
+        
+        <category>Azure</category>
+        
+        <category>Azure Function</category>
+        
+        <category>Linux</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to prepopulate GitHub issue to make people's life easier in Jekyll?</title>
+        <description>&lt;p&gt;Have you ever click on a button that take you to GitHub issue that look something like this,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;\img\2020\10\27\How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll/githubissue.JPG&quot; alt=&quot;githubissue&quot; /&gt;&lt;/p&gt; &lt;p&gt;As you can see, the information about the blog URL and the GitHub source URL is already prepopulated. User simply need to put down their concerns and that is it. Look nice and all right?&lt;/p&gt; &lt;p&gt;Ever wonder how this works? You are in luck, this article will teach you how it works and how to include it in your Jekyll site.&lt;/p&gt; &lt;p&gt;This is actually pretty simple. The magic is done through the query parameters.&lt;/p&gt; &lt;h3 id=&quot;what-is-a-query-parameters&quot;&gt;What is a...</description>
+        <pubDate>Tue, 27 Oct 2020 01:30:30 -0700</pubDate>
+        <link>http://localhost:4000/blog/2020/10/27/How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/10/27/How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll</guid>
+        
+        <category>GitHub</category>
+        
+        <category>Jekyll</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to activate virtual environment in PowerShell?</title>
+        <description>&lt;h3 id=&quot;what-is-virtual-environment-using-nodejs-terminology&quot;&gt;What is virtual environment? (using Node.js terminology)&lt;/h3&gt; &lt;p&gt;For people who are familiar with &lt;a href=&quot;https://nodejs.org&quot;&gt;Node.js&lt;/a&gt; development environment, virtual environment is somewhat similar. In &lt;a href=&quot;https://nodejs.org&quot;&gt;Node.js&lt;/a&gt;, for your specific project, all the modules you installed is tailored specific to your project. It doesn’t affect anything outside of that project unless you &lt;a href=&quot;https://www.npmjs.com&quot;&gt;npm&lt;/a&gt; install the module with -g tag. We have something similar to Python development environment as well. It is called virtual environment. It is essentially a place where you can &lt;a href=&quot;https://pypi.org&quot;&gt;pip&lt;/a&gt; install any modules and knowing that anything you do in this environment isn’t going to affect...</description>
+        <pubDate>Thu, 22 Oct 2020 17:30:30 -0700</pubDate>
+        <link>http://localhost:4000/blog/2020/10/22/how-to-activate-virtual-environment-in-powershell</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/10/22/how-to-activate-virtual-environment-in-powershell</guid>
+        
+        <category>Python</category>
+        
+        <category>Virtual Environment</category>
+        
+        <category>PowerShell</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>What Are Algorithms &amp; Why Are They Important?</title>
+        <description>&lt;h2 id=&quot;what-is-an-algorithm&quot;&gt;What Is An Algorithm?&lt;/h2&gt; &lt;p&gt;An algorithm is a set of step-by-step procedures, or a set of rules to follow, for completing a specific task or solving a particular problem. Algorithms are all around us. The recipe for baking a cake, the method we use to solve a long division problem, and the process of doing laundry are all examples of an algorithm. Here’s what baking a cake might look like, written out as a list of instructions, just like an algorithm:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Preheat the oven&lt;/li&gt; &lt;li&gt;Gather the ingredients&lt;/li&gt; &lt;li&gt;Measure out the ingredients&lt;/li&gt; &lt;li&gt;Mix together the ingredients to make the...</description>
+        <pubDate>Wed, 14 Oct 2020 01:30:30 -0700</pubDate>
+        <link>http://localhost:4000/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important</guid>
+        
+        <category>Algorithms</category>
+        
+        <category>Juni Learning</category>
+        
+        <category>Partnership</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to display an Alexa rank chart in your website?</title>
+        <description>&lt;p&gt;Ever wonder how to display an &lt;a href=&quot;https://www.alexa.com/siteinfo/poanchen.github.io#section_traffic&quot;&gt;Alexa rank chart&lt;/a&gt; in your website? You are in luck, in this tutorial, we are going to show you how it can be done.&lt;/p&gt; &lt;p&gt;In a nutshell, this is how it works. We would query this free &lt;a href=&quot;https://data.alexa.com/data?cli=10&amp;amp;url=poanchen.github.io&quot;&gt;Alexa API endpoint&lt;/a&gt; once a day to get the Alexa global rank for a specifc website. We then &lt;a href=&quot;https://docs.python.org/3.7/library/xml.etree.elementtree.html&quot;&gt;parse&lt;/a&gt; the result as XML and send the rank to &lt;a href=&quot;https://www.google.com/sheets/about&quot;&gt;Google Sheets&lt;/a&gt; via &lt;a href=&quot;https://ifttt.com&quot;&gt;IFTTT&lt;/a&gt;. Now that we have the rank stored in &lt;a href=&quot;https://www.google.com/sheets/about&quot;&gt;Google Sheets&lt;/a&gt;, we simply need to download it and go through...</description>
+        <pubDate>Sun, 20 Sep 2020 01:30:30 -0700</pubDate>
+        <link>http://localhost:4000/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website</guid>
+        
+        <category>Alexa</category>
+        
+        <category>Azure Blob Storage</category>
+        
+        <category>Chart.js</category>
+        
+        <category>Front-end</category>
+        
+        <category>Google Sheets</category>
+        
+        <category>IFTTT</category>
+        
+        <category>RESTful API</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>What to do when git branch has diverged?</title>
+        <description>&lt;p&gt;Ever try to commit and push your changes to master branch and see this annoying message stated that your branch and ‘origin/master’ branch have diverged,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;\img\2020\09\19\what-to-do-when-git-branch-has-diverged/branch diverged.JPG&quot; alt=&quot;branch diverged&quot; /&gt;&lt;/p&gt; &lt;p&gt;You are in luck, in this tutorial, we are going to talk about how this happen, how to fix it and how to avoid this from happening in the future. Before we talk about how to fix it, we should talk about how this can happen to you. I have drawn the diagram to show you what happened, here is the picture,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;\img\2020\09\19\what-to-do-when-git-branch-has-diverged/branch diverged diagram.JPG&quot; alt=&quot;branch diverged diagram&quot;...</description>
+        <pubDate>Sat, 19 Sep 2020 01:30:30 -0700</pubDate>
+        <link>http://localhost:4000/blog/2020/09/19/what-to-do-when-git-branch-has-diverged</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/09/19/what-to-do-when-git-branch-has-diverged</guid>
+        
+        <category>Git</category>
+        
         <category>GitHub</category>
         
         
       </item>
     
       <item>
-        <title>The right way to manage nested callbacks</title>
-        <description>&lt;p&gt;In case you do not know what a callback is, please refer to &lt;a href=&quot;https://husseinfaara.com/articles/what-the-heck-is-a-callback&quot;&gt;this&lt;/a&gt; awesome article by &lt;a href=&quot;https://husseinfaara.com/&quot;&gt;Hussein Faara&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;All in all, callbacks are great. With callback, we are allowed to write code in JavaScript asynchronously and it just work. However, in real world, as a Software Engineer, we do not simply expect things to just work and be satisfied with it. We also look at other things. For example, maintainability.&lt;/p&gt; &lt;p&gt;Let’s work with a real world example here to demonstrate what we want to talk about, say, we would like to add couple of songs to a...</description>
-        <pubDate>Wed, 19 Jun 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/06/19/The-right-way-to-manage-nested-callbacks</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/06/19/The-right-way-to-manage-nested-callbacks</guid>
+        <title>How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?</title>
+        <description>&lt;p&gt;I often forget to water my plants, and as a result they would get really dry and sometimes even die. So I thought it would be cool to build an automotive Wi-Fi plant watering system that will continue to water my plant until it reaches a certain level of moist. In addition, I am planning to leverage &lt;a href=&quot;https://azure.microsoft.com/services/iot-central&quot;&gt;Azure IoT Central&lt;/a&gt;, so that I have a nice dashboard that I can work with and check when was the last time the system watered my plant as well as the moist level for the past few hours/days/weeks. In this tutorial, I...</description>
+        <pubDate>Sun, 13 Sep 2020 01:30:30 -0700</pubDate>
+        <link>http://localhost:4000/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central</guid>
+        
+        <category>Azure IoT Central</category>
+        
+        <category>Arduino</category>
+        
+        <category>Arduino IDE</category>
+        
+        <category>DIY</category>
+        
+        <category>ESP8266</category>
+        
+        <category>Wi-Fi</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to make use of the Google Analytics to show page views on a post?</title>
+        <description>&lt;p&gt;Ever wonder how to show views on your website? You are in luck, this post will cover all the technical details that you need to get it started. The simplest way to show how many views this post has is to have a count that got increment it every time when there is a visit. Sounds good and all until, someone kept refreshing the same page to max out the number. Now, this person would be thinking, we just need some unique identifier to identify this person, for example, IP address and then we would only counts them as one...</description>
+        <pubDate>Wed, 17 Jun 2020 01:30:30 -0700</pubDate>
+        <link>http://localhost:4000/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post</guid>
+        
+        <category>Azure Blob Storage</category>
+        
+        <category>Google Analytics</category>
+        
+        <category>Python</category>
+        
+        <category>JSON</category>
+        
+        <category>XML</category>
         
         <category>PoAn (Baron) Chen</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to update package-lock.json file in order to honour the ^ and ~ symbol?</title>
+        <description>&lt;p&gt;In case you have no idea what ^ and ~ symbol mean in package.json file, please take a look at this blog &lt;a href=&quot;/blog/2020/04/12/what-is-the-difference-between-~-and-in-package-json&quot;&gt;post&lt;/a&gt; that I did.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;package-lock.json file is useful when multiple people are collaborating on the same project and wanting all the dev members to have similar environment (in this case, similar library versioning across all their packages and its dependencies) as the lock file is simply a snapshot of the dependencies tree graph. Also, useful for CI/CD build pipeline. A popular build pipeline is &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops&quot;&gt;Azure DevOps&lt;/a&gt;.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;There are many reasons why you want to...</description>
+        <pubDate>Mon, 13 Apr 2020 01:30:30 -0700</pubDate>
+        <link>http://localhost:4000/blog/2020/04/13/how-to-update-package-lock-json-file-in-order-to-honour-the-and-~-symbol</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/04/13/how-to-update-package-lock-json-file-in-order-to-honour-the-and-~-symbol</guid>
         
         <category>JavaScript</category>
         
-        <category>Asynchronous Programming</category>
+        <category>Node.js</category>
         
-        <category>Callback</category>
-        
-        <category>Callback hell</category>
-        
-        <category>Async/await</category>
-        
-        <category>Promise</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to get an interview with Microsoft and what is their interview process like?</title>
-        <description>&lt;p&gt;This post talks about how one could get an interview with Microsoft for a Software Engineer role as well as its process. If you already got an interview with them, simply &lt;a href=&quot;#interview-process-at-microsoft&quot;&gt;skip&lt;/a&gt; to the part where I discuss its interview process.&lt;/p&gt; &lt;h2 id=&quot;how-one-could-get-an-interview-with-microsoft-or-any-other-company-by-all-means&quot;&gt;How one could get an interview with Microsoft or any other company by all means&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;\img\2019\05\20\How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like/Microsoft visit.jpg&quot; alt=&quot;Me visiting Microsoft Redmond Campus&quot; /&gt;&lt;/p&gt; &lt;p&gt;As I have been interviewing with Microsoft for multiple times in the past three years, I feel I am somewhat qualify to talk about it. As you can imagine, some people would say...</description>
-        <pubDate>Sat, 18 May 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/05/18/How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/05/18/How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like</guid>
+        <category>npm</category>
         
         <category>PoAn (Baron) Chen</category>
-        
-        <category>Microsoft</category>
-        
-        <category>Interview Prep</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to calculate time complexity of an algorithm?</title>
-        <description>&lt;p&gt;Knowing how fast your algorithm runs is extremely important. Often times, you will get asked to determine your algorithm performance in a big-O sense during interview. You will be expected to know how to calculate the time and space complexity of your code, sometimes you even need to explain how you get there. In some cases, it can be pretty tricky to get it right. In this article, I am going to show you guys how to do things right.&lt;/p&gt; &lt;p&gt;In most of the cases, you are going to see these kind of Big-O running time in your code.&lt;/p&gt; &lt;p&gt;&lt;img...</description>
-        <pubDate>Fri, 23 Nov 2018 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm</guid>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Algorithm</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to fix login must use security token in Salesforce?</title>
-        <description>&lt;p&gt;Recently, I ran into this error message in Salesforce where it stated that &lt;strong&gt;“LOGIN_MUST_USE_SECURITY_TOKEN: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce–either via a desktop client or the API–from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.”&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;According to the official Salesforce documentation about &lt;a href=&quot;https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm&quot;&gt;User Authentication&lt;/a&gt;, there are two...</description>
-        <pubDate>Mon, 27 Aug 2018 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2018/08/27/how-to-fix-login-must-use-security-token-in-Salesforce</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/08/27/how-to-fix-login-must-use-security-token-in-Salesforce</guid>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Salesforce</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to set up GPG key on GitHub?</title>
-        <description>&lt;p&gt;Setting up GPG keys on GitHub is important because it allows other to know that you made the commit and not someone else. You, the person with your GitHub profile picture along with your GitHub username and name. Here is an example of a signing commit looks like on GitHub.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/2018/03/23/how-to-set-up-gpg-key-in-github/signing commit sample.png&quot; alt=&quot;signing commit sample&quot; /&gt;&lt;/p&gt; &lt;p&gt;Just like the &lt;a href=&quot;https://blog.github.com/2016-04-05-gpg-signature-verification/&quot;&gt;blog&lt;/a&gt; from GitHub mentioned, unlike any other unsigned commit. The signed commit will come with the green word &lt;em&gt;Verified&lt;/em&gt; with it (a badge) to indicate that the commit was indeed came from the user. In example,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/2018/03/23/how-to-set-up-gpg-key-in-github/commits...</description>
-        <pubDate>Fri, 23 Mar 2018 23:59:14 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/03/23/how-to-set-up-gpg-key-on-github</guid>
-        
-        <category>GitHub</category>
-        
-        <category>GPG key</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Security</category>
-        
-        <category>Signing git commit</category>
-        
-        <category>Windows 10</category>
         
         
       </item>

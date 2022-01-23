@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How to make use of the Google Analytics to show page views on a post?</title>
+  <meta name="description" content="A blog written by PoAn (Baron) Chen.">
+
+  <!-- Google Authorship Markup -->
+  <link rel="author" href="https://plus.google.com/?rel=author">
+
+  <!-- Google Site Verification -->
+  
+    <meta name="google-site-verification" content="NWo5QfMU1N3f2VTts3pXTYdZ6M89jsWfW5lONmHVV4M" />
+  
+
+  <!-- Google AdSense Verification -->
+  
+    <script data-ad-client="pub-2207110487546352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+
+  <!-- Social: Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@poanbaronchen">
+  <meta name="twitter:title" content="How to make use of the Google Analytics to show page views on a post?">
+  <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
+  
+  <meta property="twitter:image:src" content="http://localhost:4000/img/blog-image.png">
+  
+
+  <!-- Social: Facebook / Open Graph -->
+  <meta property="og:url" content="http://localhost:4000/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post">
+  <meta property="og:title" content="How to make use of the Google Analytics to show page views on a post?">
+  
+  <meta property="og:image" content="http://localhost:4000/img/blog-image.png">
+  
+  <meta property="og:description" content="A blog written by PoAn (Baron) Chen.">
+  <meta property="og:site_name" content="PoAn (Baron) Chen's site">
+
+  <!-- Social: Google+ / Schema.org  -->
+  <meta itemprop="name" content="How to make use of the Google Analytics to show page views on a post?"/>
+  <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
+  <meta itemprop="image" content="http://localhost:4000/img/blog-image.png"/>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png" />
+  <!-- Windows 8 Tile Icons -->
+  <meta name="application-name" content="PoAn (Baron) Chen Blog">
+  <meta name="msapplication-TileColor" content="#0562DC">
+  <meta name="msapplication-square70x70logo" content="smalltile.png" />
+  <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+  <meta name="msapplication-wide310x150logo" content="widetile.png" />
+  <meta name="msapplication-square310x310logo" content="largetile.png" />
+  <!-- Android Lolipop Theme Color -->
+  <meta name="theme-color" content="#0562DC">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post">
+  <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="http://localhost:4000/feed.xml" />
+  
+  <!-- Buy Me a Coffee widget -->
+  <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="poanchen" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
+</head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-email" viewBox="0 0 1024 1024"><path class="path1" d="M950.857 859.429v-438.857q-18.286 20.571-39.429 37.714-153.143 117.714-243.429 193.143-29.143 24.571-47.429 38.286t-49.429 27.714-58.571 14h-1.143q-27.429 0-58.571-14t-49.429-27.714-47.429-38.286q-90.286-75.429-243.429-193.143-21.143-17.143-39.429-37.714v438.857q0 7.429 5.429 12.857t12.857 5.429h841.143q7.429 0 12.857-5.429t5.429-12.857zM950.857 258.857v-14t-0.286-7.429-1.714-7.143-3.143-5.143-5.143-4.286-8-1.429h-841.143q-7.429 0-12.857 5.429t-5.429 12.857q0 96 84 162.286 110.286 86.857 229.143 181.143 3.429 2.857 20 16.857t26.286 21.429 25.429 18 28.857 15.714 24.571 5.143h1.143q11.429 0 24.571-5.143t28.857-15.714 25.429-18 26.286-21.429 20-16.857q118.857-94.286 229.143-181.143 30.857-24.571 57.429-66t26.571-75.143zM1024 237.714v621.714q0 37.714-26.857 64.571t-64.571 26.857h-841.143q-37.714 0-64.571-26.857t-26.857-64.571v-621.714q0-37.714 26.857-64.571t64.571-26.857h841.143q37.714 0 64.571 26.857t26.857 64.571z"/></symbol><symbol id="icon-close" viewBox="0 0 805 1024"><path class="path1" d="M741.714 755.429q0 22.857-16 38.857l-77.714 77.714q-16 16-38.857 16t-38.857-16l-168-168-168 168q-16 16-38.857 16t-38.857-16l-77.714-77.714q-16-16-16-38.857t16-38.857l168-168-168-168q-16-16-16-38.857t16-38.857l77.714-77.714q16-16 38.857-16t38.857 16l168 168 168-168q16-16 38.857-16t38.857 16l77.714 77.714q16 16 16 38.857t-16 38.857l-168 168 168 168q16 16 16 38.857z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-rss" viewBox="0 0 805 1024"><path class="path1" d="M219.429 768q0 45.714-32 77.714t-77.714 32-77.714-32-32-77.714 32-77.714 77.714-32 77.714 32 32 77.714zM512 838.286q1.143 16-9.714 27.429-10.286 12-26.857 12h-77.143q-14.286 0-24.571-9.429t-11.429-23.714q-12.571-130.857-105.429-223.714t-223.714-105.429q-14.286-1.143-23.714-11.429t-9.429-24.571v-77.143q0-16.571 12-26.857 9.714-9.714 24.571-9.714h2.857q91.429 7.429 174.857 46t148 103.714q65.143 64.571 103.714 148t46 174.857zM804.571 839.429q1.143 15.429-10.286 26.857-10.286 11.429-26.286 11.429h-81.714q-14.857 0-25.429-10t-11.143-24.286q-6.857-122.857-57.714-233.429t-132.286-192-192-132.286-233.429-58.286q-14.286-0.571-24.286-11.143t-10-24.857v-81.714q0-16 11.429-26.286 10.286-10.286 25.143-10.286h1.714q149.714 7.429 286.571 68.571t243.143 168q106.857 106.286 168 243.143t68.571 286.571z"/></symbol><symbol id="icon-google-plus" viewBox="0 0 951 1024"><path class="path1" d="M420 454.857q0 20.571 18.286 40.286t44.286 38.857 51.714 42 44 59.429 18.286 81.143q0 51.429-27.429 98.857-41.143 69.714-120.571 102.571t-170.286 32.857q-75.429 0-140.857-23.714t-98-78.571q-21.143-34.286-21.143-74.857 0-46.286 25.429-85.714t67.714-65.714q74.857-46.857 230.857-57.143-18.286-24-27.143-42.286t-8.857-41.714q0-20.571 12-48.571-26.286 2.286-38.857 2.286-84.571 0-142.571-55.143t-58-139.714q0-46.857 20.571-90.857t56.571-74.857q44-37.714 104.286-56t124.286-18.286h238.857l-78.857 50.286h-74.857q42.286 36 64 76t21.714 91.429q0 41.143-14 74t-33.714 53.143-39.714 37.143-34 35.143-14 37.714zM336.571 400q21.714 0 44.571-9.429t37.714-24.857q30.286-32.571 30.286-90.857 0-33.143-9.714-71.429t-27.714-74-48.286-59.143-66.857-23.429q-24 0-47.143 11.143t-37.429 30q-26.857 33.714-26.857 91.429 0 26.286 5.714 55.714t18 58.857 29.714 52.857 42.857 38.286 55.143 14.857zM337.714 898.857q33.143 0 63.714-7.429t56.571-22.286 41.714-41.714 15.714-62.286q0-14.286-4-28t-8.286-24-15.429-23.714-16.857-20-22-19.714-20.857-16.571-23.714-17.143-20.857-14.857q-9.143-1.143-27.429-1.143-30.286 0-60 4t-61.429 14.286-55.429 26.286-39.143 42.571-15.429 60.286q0 40 20 70.571t52.286 47.429 68 25.143 72.857 8.286zM800.571 398.286h121.714v61.714h-121.714v125.143h-60v-125.143h-121.143v-61.714h121.143v-124h60v124z"/></symbol><symbol id="icon-angle-down" viewBox="0 0 658 1024"><path class="path1" d="M614.286 420.571q0 7.429-5.714 13.143l-266.286 266.286q-5.714 5.714-13.143 5.714t-13.143-5.714l-266.286-266.286q-5.714-5.714-5.714-13.143t5.714-13.143l28.571-28.571q5.714-5.714 13.143-5.714t13.143 5.714l224.571 224.571 224.571-224.571q5.714-5.714 13.143-5.714t13.143 5.714l28.571 28.571q5.714 5.714 5.714 13.143z"/></symbol><symbol id="icon-github-alt" viewBox="0 0 951 1024"><path class="path1" d="M365.714 694.857q0 22.857-7.143 46.857t-24.571 43.429-41.429 19.429-41.429-19.429-24.571-43.429-7.143-46.857 7.143-46.857 24.571-43.429 41.429-19.429 41.429 19.429 24.571 43.429 7.143 46.857zM731.429 694.857q0 22.857-7.143 46.857t-24.571 43.429-41.429 19.429-41.429-19.429-24.571-43.429-7.143-46.857 7.143-46.857 24.571-43.429 41.429-19.429 41.429 19.429 24.571 43.429 7.143 46.857zM822.857 694.857q0-68.571-39.429-116.571t-106.857-48q-23.429 0-111.429 12-40.571 6.286-89.714 6.286t-89.714-6.286q-86.857-12-111.429-12-67.429 0-106.857 48t-39.429 116.571q0 50.286 18.286 87.714t46.286 58.857 69.714 34.286 80 16.857 85.143 4h96q46.857 0 85.143-4t80-16.857 69.714-34.286 46.286-58.857 18.286-87.714zM950.857 594.286q0 118.286-34.857 189.143-21.714 44-60.286 76t-80.571 49.143-97.143 27.143-98 12.571-95.429 2.571q-44.571 0-81.143-1.714t-84.286-7.143-87.143-17.143-78.286-29.429-69.143-46.286-49.143-65.714q-35.429-70.286-35.429-189.143 0-135.429 77.714-226.286-15.429-46.857-15.429-97.143 0-66.286 29.143-124.571 61.714 0 108.571 22.571t108 70.571q84-20 176.571-20 84.571 0 160 18.286 60-46.857 106.857-69.143t108-22.286q29.143 58.286 29.143 124.571 0 49.714-15.429 96 77.714 91.429 77.714 227.429z"/></symbol></defs></svg>
+
+    <header class="header-post" role="banner">
+    <div class="content">
+        
+            <time itemprop="datePublished" datetime="2020-06-17 01:30:30 -0700" class="date">17 Jun 2020</time>
+        
+        <h1 class="post-title" itemprop="name">How to make use of the Google Analytics to show page views on a post?</h1>
+        
+            <p id="stats"></p>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+        var json = JSON.parse(request.response);
+        if (json[getPathName()] != undefined) {
+          document.getElementById('stats').innerHTML = `${Number(json[getPathName()]).toLocaleString()} views`;
+        }
+      }
+    };
+    request.open('GET', 'https://poanchengithubio.blob.core.windows.net/poanchen/poanchen - views.json?sp=rl&st=2020-09-12T11:36:59Z&se=2030-09-13T11:36:00Z&sv=2019-12-12&sr=b&sig=91DC1qOBflhH4wv1YnUyiPUzegnwiy1mkWaXM%2B36Ft8%3D', true);
+    request.send(null);
+  });
+</script>
+
+        
+        <p itemprop="description" class="subtitle"></p>
+    </div>
+     <a class="down" data-scroll href="#scroll"><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></a>
+     <div class="search-wrapper">
+  <div class="search-form">
+    <input type="text" class="search-field" placeholder="Search...">
+    <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+    <ul class="search-results search-list"></ul>
+  </div>
+</div>
+<div id="fade" class="overlay"></div>
+<a id="slide" class="slideButton fade">
+  <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+  <svg id="close" class="icon-menu"><use xlink:href="#icon-close"></use></svg>
+</a>
+<aside id="sidebar">
+<nav id="navigation">
+  <h2>MENU</h2>
+  <ul>
+    
+      <li>
+        <a href="/">
+          PoAn (Baron) Chen
+        </a>
+      </li>
+    
+      <li>
+        <a href="/about">
+          About this site
+        </a>
+      </li>
+    
+      <li>
+        <a href="/contact">
+          Contact me
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog">
+          Blog
+        </a>
+      </li>
+    
+      <li>
+        <a href="/tags">
+          Tags
+        </a>
+      </li>
+    
+      <li>
+        <a href="/alexa-rank">
+          Alexa Rank
+        </a>
+      </li>
+    
+    <li><a class="feed" href="/feed.xml" title="Atom/RSS feed">Feed</a></li>
+  </ul>
+</nav>
+</aside>
+<a id="search" class="dosearch">
+  <svg class="icon-menu icon-search"><use xlink:href="#icon-search"></use></svg>
+</a>
+</header>
+
+    <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <article role="article" id="scroll" class="post-content" itemprop="articleBody">
+          <p>Ever wonder how to show views on your website? You are in luck, this post will cover all the technical details that you need to get it started. The simplest way to show how many views this post has is to have a count that got increment it every time when there is a visit. Sounds good and all until, someone kept refreshing the same page to max out the number. Now, this person would be thinking, we just need some unique identifier to identify this person, for example, IP address and then we would only counts them as one although, they kept on refreshing the same page. But, here comes another problem, with the same WiFi router, every user who connects to the WiFi would get assigned the same external IP address. These people are distinct, they should not be counted as just one. This is just incorrect. Now, some other people might suggest that why not just assign a <a href="https://www.howtogeek.com/119458/htg-explains-whats-a-browser-cookie">cookie</a> to them. In this way, we know if it is the exact same person. For example, we check if the person’s browser has the <a href="https://www.howtogeek.com/119458/htg-explains-whats-a-browser-cookie">cookie</a> assign, if no <a href="https://www.howtogeek.com/119458/htg-explains-whats-a-browser-cookie">cookie</a> is assign, we know this is a new person. If there is one, we know it is a returning customer. But, here comes two problem, cookie can be deleted, a person can potentially comes to the site, delete the cookie, returns back, we would think that this person is new. Another problem is that, if the same person comes to the site today, a week later, he/she comes back. Does that count as 2 views for the same person? How long should the time be between each visit from the same person in order to count as 2 views? People might have different opinions on this and to be honest, there is no right or wrong answer here. What we are trying to show you is that, this (show views) might seem simple but it is actually not an easy problem to solve. Let me give you another example, how does YouTube accurately count the views of the video. To be honest, I don’t know. But, I would bet that it is a complex one. There is a saying that we should avoid “Reinventing the Wheel”, which is what we are doing, using <a href="https://analytics.withgoogle.com">Google Analytics</a> to show views to the users. We bet that many people are already using the <a href="https://analytics.withgoogle.com">Google Analytics</a>, why not leverage it. In this post, we will show you in detail how we show views on our website and feel free to use it in your own website.</p>
+
+<p>Here is the short version of how we do it, in a nutshell, we check out the site’s sitemap.xml to get the list of blog posts, call the <a href="https://developers.google.com/analytics/devguides/reporting/core/v3/">Google’s Core Reporting API</a> to get views for each post, store it as JSON and then simply upload the file to <a href="https://azure.microsoft.com/en-ca/services/storage/blobs">Azure Blob Storage</a>. And, of course, we need to do this once a day. (To keep the data fresh with one day old data) The scheduling part is done through <a href="https://en.wikipedia.org/wiki/Cron">cron job</a>. In the front end, we simply call the API to get the static JSON from <a href="https://azure.microsoft.com/en-ca/services/storage/blobs">Azure Blob Storage</a> and show it to user. And that is it. (Should be do-able with one breath haha)</p>
+
+<p>Here is the long version of how we do it, let’s break it down to few parts</p>
+
+<p>Note: In the following example, we will be using the programming language, <a href="https://www.python.org/">Python</a> as it is one of the best scripting language,</p>
+
+<p>Before we start with coding, these are some of the config you need to set/get in order to continue,</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">config</span><span class="p">[</span><span class="s">'absolute_path_to_this_project'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'absolutePathToThisProject'</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'json_file_name'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"fileName.json"</span>
+
+<span class="c"># XML</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'xml_url'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'urlToYourXml'</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'xml_file_name'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'yourFileName'</span>
+
+<span class="c"># Google's Core Reporting API</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'client_secret_file_name'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'yourFileName.json'</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'views_start_date'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'views_start_date'</span> <span class="c"># 2020-01-01</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'views_end_date'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'views_end_date'</span> <span class="c"># 2020-02-01</span>
+
+<span class="c"># Azure Portal</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'account_name'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'azureAccountName'</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'account_key'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'azureAccountKey'</span>
+
+<span class="c"># Azure Blob Storage</span>
+<span class="n">config</span><span class="p">[</span><span class="s">'container_name'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'containerName'</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/upload-post-stats/blob/298ce1ae20945499e65d8b61d550d63bd045179b/config.py#L1" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<h3 id="get-the-list-of-blog-posts-url-from-sites-sitemapxml">Get the list of blog posts url from site’s sitemap.xml</h3>
+
+<p>We will be consistenly adding new blog posts, it doesn’t make sense to hard code this value, we should make it dynamic and simply grab it from the sitemap.xml as we know it is the source of truth. (If you do not have a sitemap.xml, we strongly recommand you to have one as it helps the search engine to be able to index your pages)</p>
+
+<p>First, let’s import the config file so that we can use its value,</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="nb">execfile</span><span class="p">(</span><span class="s">'config.py'</span><span class="p">)</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/upload-post-stats/blob/298ce1ae20945499e65d8b61d550d63bd045179b/script.py#L1" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<p>Next, we need to download the XML file from the internet.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># Get the XML</span>
+<span class="kn">import</span> <span class="nn">requests</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="k">print</span> <span class="s">'Beginning to get the XML file...'</span>
+<span class="k">print</span> <span class="s">'Starting time: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">'xml_url'</span><span class="p">])</span>
+<span class="k">print</span> <span class="s">'Finished to get the XML file.'</span>
+<span class="k">print</span> <span class="s">'Ending time: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/upload-post-stats/blob/298ce1ae20945499e65d8b61d550d63bd045179b/script.py#L3" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<p>Once the XML is downloaded, we need to extract the relative blog post url from the XML file. Depends on how you configure your blog post url, the regular expression might be different but the idea is similar. Extract them and store them in an array.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># Extract relative blog posts link from the XML</span>
+<span class="k">print</span> <span class="s">'Beginning to extract relative blog posts link from the XML file...'</span>
+<span class="k">print</span> <span class="s">'Starting time: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="n">ET</span><span class="p">,</span> <span class="n">re</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">root</span><span class="p">:</span>
+  <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">'https://poanchen</span><span class="err">\</span><span class="s">.github</span><span class="err">\</span><span class="s">.io(/blog/[0-9]{4}/[0-9]{2}/[0-9]{2}/.+)'</span><span class="p">,</span> <span class="n">child</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span> <span class="s">'Finished to extract relative blog posts link from the XML file.'</span>
+<span class="k">print</span> <span class="s">'Ending time: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/upload-post-stats/blob/298ce1ae20945499e65d8b61d550d63bd045179b/script.py#L11" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<h3 id="call-the-googles-core-reporting-api-to-get-views-for-each-blog-post">Call the Google’s Core Reporting API to get views for each blog post</h3>
+
+<p>The idea is to provide the start and end date, along with the metrics that you are interested with, at the end, filter with the blog post relative url so that we can get the views for the individual post.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># Get the all time views for all the posts from Google's Core Reporting API</span>
+<span class="kn">import</span> <span class="nn">helper</span>
+<span class="k">print</span> <span class="s">'Beginning to get the all time views for each individual blog posts...'</span>
+<span class="k">print</span> <span class="s">'Starting time: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">core_reporting_api_service</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="n">get_core_reporting_api_service</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+  <span class="n">data</span><span class="p">[</span><span class="n">link</span><span class="p">]</span> <span class="o">=</span> <span class="n">core_reporting_api_service</span><span class="o">.</span><span class="n">data</span><span class="p">()</span><span class="o">.</span><span class="n">ga</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="n">ids</span><span class="o">=</span><span class="s">'ga:'</span> <span class="o">+</span> <span class="n">helper</span><span class="o">.</span><span class="n">get_the_first_profile_id</span><span class="p">(</span><span class="n">core_reporting_api_service</span><span class="p">),</span>
+                <span class="n">start_date</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s">'views_start_date'</span><span class="p">],</span>
+                <span class="n">end_date</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s">'views_end_date'</span><span class="p">]</span> <span class="p">,</span>
+                <span class="n">metrics</span><span class="o">=</span><span class="s">'ga:pageviews'</span><span class="p">,</span>
+                <span class="n">filters</span><span class="o">=</span><span class="s">'ga:pagepath==</span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">link</span><span class="p">))</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'totalsForAllResults'</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'ga:pageviews'</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'Finished to get the all time views for each individual blog posts.'</span>
+<span class="k">print</span> <span class="s">'Ending time: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/upload-post-stats/blob/298ce1ae20945499e65d8b61d550d63bd045179b/script.py#L24" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<p>You would also need to include the following helper file to make the above work (for full disclosure, most of the helper code are copied from the example code provided by Google)</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">apiclient.discovery</span> <span class="kn">import</span> <span class="n">build</span>
+<span class="kn">from</span> <span class="nn">oauth2client.service_account</span> <span class="kn">import</span> <span class="n">ServiceAccountCredentials</span>
+<span class="nb">execfile</span><span class="p">(</span><span class="s">"config.py"</span><span class="p">)</span>
+
+<span class="c"># Core Reporting API</span>
+<span class="k">def</span> <span class="nf">get_core_reporting_api_service</span><span class="p">():</span>
+  <span class="n">scope</span> <span class="o">=</span> <span class="s">'https://www.googleapis.com/auth/analytics.readonly'</span>
+  <span class="n">key_file_location</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">'client_secret_file_name'</span><span class="p">]</span>
+
+  <span class="c"># Authenticate and construct service.</span>
+  <span class="n">service</span> <span class="o">=</span> <span class="n">get_service</span><span class="p">(</span>
+          <span class="n">api_name</span><span class="o">=</span><span class="s">'analytics'</span><span class="p">,</span>
+          <span class="n">api_version</span><span class="o">=</span><span class="s">'v3'</span><span class="p">,</span>
+          <span class="n">scopes</span><span class="o">=</span><span class="p">[</span><span class="n">scope</span><span class="p">],</span>
+          <span class="n">key_file_location</span><span class="o">=</span><span class="n">key_file_location</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">service</span>
+
+<span class="c"># Common Utilits</span>
+<span class="k">def</span> <span class="nf">get_service</span><span class="p">(</span><span class="n">api_name</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">scopes</span><span class="p">,</span> <span class="n">key_file_location</span><span class="p">):</span>
+    <span class="s">"""Get a service that communicates to a Google API.
+    Args:
+        api_name: The name of the api to connect to.
+        api_version: The api version to connect to.
+        scopes: A list auth scopes to authorize for the application.
+        key_file_location: The path to a valid service account JSON key file.
+    Returns:
+        A service that is connected to the specified API.
+    """</span>
+
+    <span class="n">credentials</span> <span class="o">=</span> <span class="n">ServiceAccountCredentials</span><span class="o">.</span><span class="n">from_json_keyfile_name</span><span class="p">(</span>
+            <span class="n">key_file_location</span><span class="p">,</span> <span class="n">scopes</span><span class="o">=</span><span class="n">scopes</span><span class="p">)</span>
+
+    <span class="c"># Build the service object.</span>
+    <span class="n">service</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="n">api_name</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">service</span>
+
+<span class="k">def</span> <span class="nf">get_the_first_profile_id</span><span class="p">(</span><span class="n">service</span><span class="p">):</span>
+    <span class="n">accounts</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">management</span><span class="p">()</span><span class="o">.</span><span class="n">accounts</span><span class="p">()</span><span class="o">.</span><span class="nb">list</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">accounts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'items'</span><span class="p">):</span>
+        <span class="n">account</span> <span class="o">=</span> <span class="n">accounts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'items'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'id'</span><span class="p">)</span>
+
+        <span class="n">properties</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">management</span><span class="p">()</span><span class="o">.</span><span class="n">webproperties</span><span class="p">()</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span>
+                <span class="n">accountId</span><span class="o">=</span><span class="n">account</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">properties</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'items'</span><span class="p">):</span>
+            <span class="nb">property</span> <span class="o">=</span> <span class="n">properties</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'items'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'id'</span><span class="p">)</span>
+
+            <span class="n">profiles</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">management</span><span class="p">()</span><span class="o">.</span><span class="n">profiles</span><span class="p">()</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span>
+                    <span class="n">accountId</span><span class="o">=</span><span class="n">account</span><span class="p">,</span>
+                    <span class="n">webPropertyId</span><span class="o">=</span><span class="nb">property</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">profiles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'items'</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">profiles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'items'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'id'</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="bp">None</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/upload-post-stats/blob/298ce1ae20945499e65d8b61d550d63bd045179b/helper.py#L1" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<h3 id="store-it-as-json">Store it as JSON</h3>
+
+<p>Okay, now that we have got the views for each blog post. We simply need to convert it to JSON so that we can upload them to the Azure Blob Storage.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># Convert dict to JSON file</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">print</span> <span class="s">'Beginning to convert dict to JSON file...'</span>
+<span class="k">print</span> <span class="s">'Starting time: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">open</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">'json_file_name'</span><span class="p">],</span> <span class="s">'wb'</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="k">print</span> <span class="s">'Finished to convert dict to JSON file.'</span>
+<span class="k">print</span> <span class="s">'Ending time: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/upload-post-stats/blob/298ce1ae20945499e65d8b61d550d63bd045179b/script.py#L40" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<h3 id="upload-the-json-file-to-the-azure-blob-storage">Upload the JSON file to the Azure Blob Storage</h3>
+
+<p>We upload the file to Azure Blob Storage so that it can be publicly accessible in the internet. (In this way, we kept our site simple, no API endpoint. In addition, storing data in Azure Blob Storage is fairly cheap. I believe that they also support CDN feature in case you have lots of people from around the world who are trying to access your file/data)</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># Upload it to the Azure Blob Storage</span>
+<span class="kn">from</span> <span class="nn">azure.storage.blob</span> <span class="kn">import</span> <span class="n">BlockBlobService</span>
+<span class="k">print</span> <span class="s">'Beginning to upload the JSON file...'</span>
+<span class="k">print</span> <span class="s">'Starting time: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">blob_service</span> <span class="o">=</span> <span class="n">BlockBlobService</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">'account_name'</span><span class="p">],</span> <span class="n">config</span><span class="p">[</span><span class="s">'account_key'</span><span class="p">])</span>
+<span class="n">full_path_to_file</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">'absolute_path_to_this_project'</span><span class="p">]</span> <span class="o">+</span>\
+  <span class="n">config</span><span class="p">[</span><span class="s">'json_file_name'</span><span class="p">]</span>
+<span class="n">blob_service</span><span class="o">.</span><span class="n">create_blob_from_path</span><span class="p">(</span>
+  <span class="n">config</span><span class="p">[</span><span class="s">'container_name'</span><span class="p">],</span>
+  <span class="n">config</span><span class="p">[</span><span class="s">'json_file_name'</span><span class="p">],</span>
+  <span class="n">full_path_to_file</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'Finished to upload the JSON file.'</span>
+<span class="k">print</span> <span class="s">'Ending time: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/upload-post-stats/blob/298ce1ae20945499e65d8b61d550d63bd045179b/script.py#L48" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<h3 id="run-the-script-once-a-day-using-cron-job">Run the script once a day using Cron job</h3>
+
+<p>This is our set up for the cron job to run the script.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">00 6 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="nb">cd</span> /path/to/the/upload-post-stats<span class="p">;</span> python script.py <span class="o">&gt;&gt;</span> output.log<span class="p">;</span></code></pre></figure>
+
+<p>This simply tells the cron job to run the script once at 6AM everyday. We decided that we are okay with the one day old data. Feel free to be more aggressive on this and make it like every 15 mins or something.</p>
+
+<h3 id="call-the-api-to-get-the-static-json-from-azure-blob-storage-directly">Call the API to get the static JSON from Azure Blob Storage directly</h3>
+
+<p>This last bit will cover how we call the endpoint provided by Azure Blob Storage so that we can show the views to the user on the website.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"stats"</span><span class="nt">&gt;&lt;/p&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">function</span> <span class="nx">getPathName</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// this will make sure</span>
+  <span class="c1">// when url became /blog/2016/11/15/how-to-add-background-music-in-processing-3.0</span>
+  <span class="c1">// or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0/</span>
+  <span class="c1">// or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0.html</span>
+  <span class="c1">// will all go back to /blog/2016/11/15/how-to-add-background-music-in-processing-3.0</span>
+  <span class="c1">// for disqus to recongize the post</span>
+  <span class="kd">var</span> <span class="nx">pathname</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">dividerList</span> <span class="o">=</span> <span class="nx">pathname</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">dividerList</span><span class="p">[</span><span class="nx">dividerList</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// there exist trailing "/", we should remove them</span>
+    <span class="nx">pathname</span> <span class="o">=</span> <span class="nx">pathname</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="c1">// remove .html if any</span>
+  <span class="nx">pathname</span> <span class="o">=</span> <span class="nx">pathname</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">".html"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+  
+  <span class="k">return</span> <span class="nx">pathname</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">DONE</span> <span class="o">&amp;&amp;</span> <span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">response</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="nx">getPathName</span><span class="p">()]</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'stats'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nb">Number</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="nx">getPathName</span><span class="p">()]).</span><span class="nx">toLocaleString</span><span class="p">()}</span><span class="s2"> views`</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io%20-%20views.json?sp=r&amp;st=2020-04-18T03:32:30Z&amp;se=2030-04-18T11:32:30Z&amp;spr=https&amp;sv=2019-02-02&amp;sr=b&amp;sig=0d1sCUnCzdw8IeO8GwNsuKiGgot3sQuwF3QPsboa2uw%3D'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+<p><a href="https://github.com/poanchen/poanchen.github.io/blob/cce2064871dbea8867c64059036e992537aa217d/_includes/post-stats.html#L1" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<p>Pretty simple hul. This is all we have to make it happen.</p>
+
+<p>Here are some questions that you may have for us, and we have answer for them.</p>
+
+<h2 id="qa">Q&amp;A</h2>
+
+<p>Question: Why didn’t you guys just call the Google’s API to get the views for each blog post in the front end directly?<br />
+Answer: Google provides a few ways to authenticate the user to be able to see their data. One way is to login using their Google credential which doesn’t work in our case. As I am the only one who has access to my Google account. Another way is to use the <a href="https://developers.google.com/analytics/devguides/reporting/core/v3/quickstart/service-py#clientId">Service Accounts</a>. But this requires you to do it in the back end which is what we did.</p>
+
+<p>Question: Why did you guys pick the program language Python?<br />
+Answer: Python is really great with scripting. It has lots of library that you can leverage. In our case, we use xml, google reporting core, json, azure blob storage library. It really makes your life easier with all these libraries. We also done a lot of scripting with Python already, so it is more like a natural choice.</p>
+
+<p>Question: Why did you guys decided to use Azure Blob Storage as storage to keep the JSON file?<br />
+Answer: First, it is really cheap. Second, we do not need to worry about having an API end point. Third, we are using Jekyll to build our website. Everything is static, it doesn’t make sense to maintain an end point to handle this unless there is no other way.</p>
+
+<p>Okay, do let me know in the comments below if you have any questions/concerns and I would be happy to help in any way. I am sure your user would be happy to see views on your website!</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Hopefully you enjoyed this article and will inspire you to add views to your site leveraging Google Analytics. Let me know if this helps you. Thank you for reading!</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BHow to make use of the Google Analytics to show page views on a post?%5D(http://localhost:4000/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post)%0A*+GitHub+Source+URL%3A+%5BHow-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2020-06-17-How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post.md)">let us know</a>.</p>
+
+<h3 id="getting-started">Getting started</h3>
+
+<ul>
+  <li><a href="https://github.com/poanchen/upload-post-stats">upload-post-stats source code</a> by <a href="https://github.com/poanchen">poanchen</a>.</li>
+  <li><a href="https://www.howtogeek.com/119458/htg-explains-whats-a-browser-cookie">What is browser cookie?</a> by <a href="https://www.howtogeek.com/">How-To Geek</a>.</li>
+  <li><a href="https://developers.google.com/analytics/devguides/reporting/core/v3/">Google Reporting Core API</a> by <a href="https://developers.google.com/analytics">Google Analytics</a>.</li>
+  <li><a href="https://azure.microsoft.com/en-ca/services/storage/blobs">Azure Blob Storage</a> by <a href="https://azure.microsoft.com/en-us/">Azure</a>.</li>
+</ul>
+
+      </article>
+      <section class="share">
+  <h3>Share</h3>
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;How to make use of the Google Analytics to show page views on a post?&quot; by &#64;poanbaronchen http://localhost:4000/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post"
+  onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+    <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post"
+  onclick="window.open(this.href, 'facebook-share', 'width=550,height=296');return false;" title="Share on Facebook">
+    <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+  </a>
+  <a href="mailto:?subject=Check out this great article, How to make use of the Google Analytics to show page views on a post?&body=Hi, I found this webpage and thought you might like it, http://localhost:4000/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post">
+    <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
+  </a>
+</section>
+      <section class="author" itemprop="author">
+  <div class="details" itemscope itemtype="http://schema.org/Person">
+    
+    
+    
+    
+    <img itemprop="image" class="img-rounded" src="/img/authors/poanchen.jpg" alt="PoAn (Baron) Chen">
+    <p class="def">
+      Author
+    </p>
+    <h3 class="name">
+      
+        <a itemprop="name" href="https://github.com/poanchen" target="_blank">
+          PoAn (Baron) Chen
+        </a>
+      
+    </h3>
+    <p class="desc">
+      Software Engineer at Microsoft. Graduated from @uvic. Previously worked at @illumina, @ACDSee, @AEHelp and @AcePersonnel1. My words are my own.
+    </p>
+  </div>
+</section>
+      
+  <section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+  </section>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = document.location.href;
+      this.page.identifier = getPathName();
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '//poanchen.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+
+
+      <footer>
+  <p>Disclaimer: the theme of the site is largely based on <a href="https://github.com/willianjusten/will-jekyll-template">will-jekyll-template</a> by <a href="https://willianjusten.com.br">Willian Justen</a></p><br>
+  <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and <span class="love">❤</span> by <a href="https://github.com/poanchen" target="_blank">PoAn (Baron) Chen</a></p>
+  <div style="width:100%; text-align:center; padding-top: 10px;">
+    <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'J3J3ZC9H');kofiwidget2.draw();</script>
+  </div>
+  <div style="width:100%; text-align:center; padding-top: 10px;">
+    <style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 15px 7px 10px !important;line-height: 35px !important;height:51px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#5F7FFF !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 15px 7px 10px !important;font-size: 22px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/poanchen"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:28px !important;">Buy me a coffee</span></a>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<!-- <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85924009-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IT27J&placement=poanchengithubio" id="_carbonads_js"></script> -->
+    </section>
+  </body>
+</html>

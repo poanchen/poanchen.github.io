@@ -22,6 +22,17 @@ stages:
     - script: 'gem install jekyll-sitemap'
       displayName: Install jekyll-sitemap
 
+    - task: Npm@1
+      displayName: npm Install
+      inputs:
+        command: 'install'
+    
+    - task: Gulp@1
+      inputs:
+        gulpFile: 'gulpfile.js'
+        targets: 'compileJsStylus'
+        enableCodeCoverage: false
+      
     - script: 'jekyll build'
       displayName: Build Jekyll project
       

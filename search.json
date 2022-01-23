@@ -1,6 +1,94 @@
 [
   
     {
+      "title"    : "How to fix authentication failed, it is either not correct, or expired, or does not have the correct permission with AzureFileCopy?",
+      "category" : "",
+      "tags"     : "Azure, AzureFileCopy, Azure Blob Storage, Azure DevOps, and Azure DevOps Build",
+      "url"      : "/blog/2020/11/27/How-to-fix-authentication-failed-it-is-either-not-correct-or-expired-or-does-not-have-the-correct-permission-with-AzureFileCopy",
+      "date"     : "27 Nov 2020"
+    } ,
+  
+    {
+      "title"    : "How to make a Linux-based Azure Function works with file system?",
+      "category" : "",
+      "tags"     : "Azure, Azure Function, and Linux",
+      "url"      : "/blog/2020/11/22/How-to-make-a-Linux-based-Azure-Function-works-with-file-system",
+      "date"     : "22 Nov 2020"
+    } ,
+  
+    {
+      "title"    : "How to prepopulate GitHub issue to make people&#39;s life easier in Jekyll?",
+      "category" : "",
+      "tags"     : "GitHub and Jekyll",
+      "url"      : "/blog/2020/10/27/How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll",
+      "date"     : "27 Oct 2020"
+    } ,
+  
+    {
+      "title"    : "How to activate virtual environment in PowerShell?",
+      "category" : "",
+      "tags"     : "Python, Virtual Environment, and PowerShell",
+      "url"      : "/blog/2020/10/22/how-to-activate-virtual-environment-in-powershell",
+      "date"     : "22 Oct 2020"
+    } ,
+  
+    {
+      "title"    : "What Are Algorithms &amp; Why Are They Important?",
+      "category" : "",
+      "tags"     : "Algorithms, Juni Learning, and Partnership",
+      "url"      : "/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important",
+      "date"     : "14 Oct 2020"
+    } ,
+  
+    {
+      "title"    : "How to display an Alexa rank chart in your website?",
+      "category" : "",
+      "tags"     : "Alexa, Azure Blob Storage, Chart.js, Front-end, Google Sheets, IFTTT, and RESTful API",
+      "url"      : "/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website",
+      "date"     : "20 Sep 2020"
+    } ,
+  
+    {
+      "title"    : "What to do when git branch has diverged?",
+      "category" : "",
+      "tags"     : "Git and GitHub",
+      "url"      : "/blog/2020/09/19/what-to-do-when-git-branch-has-diverged",
+      "date"     : "19 Sep 2020"
+    } ,
+  
+    {
+      "title"    : "How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?",
+      "category" : "",
+      "tags"     : "Azure IoT Central, Arduino, Arduino IDE, DIY, ESP8266, and Wi-Fi",
+      "url"      : "/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central",
+      "date"     : "13 Sep 2020"
+    } ,
+  
+    {
+      "title"    : "How to make use of the Google Analytics to show page views on a post?",
+      "category" : "",
+      "tags"     : "Azure Blob Storage, Google Analytics, Python, JSON, XML, and PoAn (Baron) Chen",
+      "url"      : "/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post",
+      "date"     : "17 Jun 2020"
+    } ,
+  
+    {
+      "title"    : "How to update package-lock.json file in order to honour the ^ and ~ symbol?",
+      "category" : "",
+      "tags"     : "JavaScript, Node.js, npm, and PoAn (Baron) Chen",
+      "url"      : "/blog/2020/04/13/how-to-update-package-lock-json-file-in-order-to-honour-the-and-~-symbol",
+      "date"     : "13 Apr 2020"
+    } ,
+  
+    {
+      "title"    : "What is the difference between ~ and ^ in package.json?",
+      "category" : "",
+      "tags"     : "JavaScript, Node.js, npm, and PoAn (Baron) Chen",
+      "url"      : "/blog/2020/04/12/what-is-the-difference-between-~-and-in-package-json",
+      "date"     : "12 Apr 2020"
+    } ,
+  
+    {
       "title"    : "How to create an Azure IoT Central application programmatically?",
       "category" : "",
       "tags"     : "Azure, Azure IoT, Azure IoT Central, Node.js, PoAn (Baron) Chen, and TypeScript",
