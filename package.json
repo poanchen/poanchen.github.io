@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "jeet": "^6.1.4",
-    "kouto-swiss": "^0.11.14",
+    "kouto-swiss": "^1.1.0",
     "rupture": "^0.6.1"
   }
 }
