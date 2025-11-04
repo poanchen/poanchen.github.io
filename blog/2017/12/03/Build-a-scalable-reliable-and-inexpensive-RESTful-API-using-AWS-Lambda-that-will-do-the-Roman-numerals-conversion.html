@@ -239,7 +239,7 @@
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="s">"message"</span><span class="p">:</span> <span class="s">"Hello World"</span>
+      <span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Hello World</span><span class="sh">"</span>
     <span class="p">}</span></code></pre></figure>
 
 <p>Since we are building a RESTful API, we need to use <a href="https://aws.amazon.com/api-gateway/">API Gateway</a> to trigger the Lambda function.</p>
@@ -275,9 +275,9 @@ backslashes to escape our json-within-json:</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="s">"statusCode"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-      <span class="s">"headers"</span><span class="p">:</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">},</span>
-      <span class="s">"body"</span><span class="p">:</span> <span class="s">"{</span><span class="se">\"</span><span class="s">message</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">Hello World</span><span class="se">\"</span><span class="s">}"</span>
+      <span class="sh">"</span><span class="s">statusCode</span><span class="sh">"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+      <span class="sh">"</span><span class="s">headers</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">Content-Type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">application/json</span><span class="sh">"</span><span class="p">},</span>
+      <span class="sh">"</span><span class="s">body</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">{</span><span class="se">\"</span><span class="s">message</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">Hello World</span><span class="se">\"</span><span class="s">}</span><span class="sh">"</span>
     <span class="p">}</span></code></pre></figure>
 
 <p>Simply copy that and paste it into the Function code like this.</p>
@@ -862,28 +862,28 @@ backslashes to escape our json-within-json:</p>
 
 <p>Thanks to Roman library. It allows us to easily convert digital numbers to Roman Numerals with two lines of code. For example,</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">import</span> <span class="nn">roman</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">roman</span><span class="p">.</span><span class="n">toRoman</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># you should get 'X'</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">import</span> <span class="n">roman</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">roman</span><span class="p">.</span><span class="nf">toRoman</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># you should get 'X'</span></code></pre></figure>
 
 <p>Now, we simply need to make sure we can pass in data so that we can do the conversion. Here is how you can do it with Lambda.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-    <span class="n">e</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'e'</span><span class="p">)</span>
-    <span class="n">pi</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'pi'</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">e</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">pi</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">pi</span><span class="sh">'</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s">"statusCode"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-        <span class="s">"headers"</span><span class="p">:</span> <span class="p">{</span> <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">},</span>
-        <span class="s">"body"</span><span class="p">:</span> <span class="n">e</span> <span class="o">+</span> <span class="n">pi</span>
+        <span class="sh">"</span><span class="s">statusCode</span><span class="sh">"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="sh">"</span><span class="s">headers</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span> <span class="sh">"</span><span class="s">Content-Type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">application/json</span><span class="sh">"</span><span class="p">},</span>
+        <span class="sh">"</span><span class="s">body</span><span class="sh">"</span><span class="p">:</span> <span class="n">e</span> <span class="o">+</span> <span class="n">pi</span>
     <span class="p">}</span></code></pre></figure>
 
 <p>Let’s use that in our Lambda functions.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">roman</span>
+    <span class="kn">import</span> <span class="n">roman</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="s">"statusCode"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-      <span class="s">"headers"</span><span class="p">:</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">},</span>
-      <span class="s">"body"</span><span class="p">:</span> <span class="s">"{</span><span class="se">\"</span><span class="s">result</span><span class="se">\"</span><span class="s">: %d}"</span> <span class="o">%</span> <span class="p">(</span><span class="n">roman</span><span class="p">.</span><span class="n">fromRoman</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'d'</span><span class="p">)))</span>
+      <span class="sh">"</span><span class="s">statusCode</span><span class="sh">"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+      <span class="sh">"</span><span class="s">headers</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">Content-Type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">application/json</span><span class="sh">"</span><span class="p">},</span>
+      <span class="sh">"</span><span class="s">body</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">{</span><span class="se">\"</span><span class="s">result</span><span class="se">\"</span><span class="s">: %d}</span><span class="sh">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">roman</span><span class="p">.</span><span class="nf">fromRoman</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">d</span><span class="sh">'</span><span class="p">)))</span>
     <span class="p">}</span></code></pre></figure>
 
 <p>Simply update your Lambda function to the one above. The Roman Numerals Conversion should now works. Here is what it might looks like,</p>

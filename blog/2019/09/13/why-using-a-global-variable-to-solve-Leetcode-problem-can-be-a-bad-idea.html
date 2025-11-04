@@ -183,15 +183,15 @@
 </span>
 <span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
   <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
       <span class="k">return</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
-  <span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">ans</span></code></pre></figure>
+    <span class="n">self</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">.</span><span class="nf">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">.</span><span class="nf">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">self</span><span class="p">.</span><span class="nf">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">ans</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea/simplePreorderTraversal.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -208,15 +208,15 @@
 </span>
 <span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
   <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
       <span class="k">return</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
-  <span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">ans</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">.</span><span class="nf">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">.</span><span class="nf">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">self</span><span class="p">.</span><span class="nf">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">ans</span>
   <span class="k">def</span> <span class="nf">evulateAnswer</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">correctAnswer</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="c1"># ...
 </span>  <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
@@ -225,14 +225,14 @@
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">correctness</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">testCases</span><span class="p">:</span>
-      <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">preorderTraversal</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
-      <span class="k">if</span> <span class="n">evulateAnswer</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">testCasesAnswer</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">preorderTraversal</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+      <span class="k">if</span> <span class="nf">evulateAnswer</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">testCasesAnswer</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
         <span class="n">correctness</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="k">break</span>
       <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">correctness</span>
-  <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span></code></pre></figure>
+  <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="nf">main</span><span class="p">()</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea/leetcodeTestCase.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 

@@ -198,12 +198,12 @@
 
 <p>gulpfile.js</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">gulp</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">var</span> <span class="nx">deploy</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-gh-pages</span><span class="dl">'</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">gulp</span>   <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">deploy</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-gh-pages</span><span class="dl">'</span><span class="p">);</span>
 
-  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">deploy</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">"</span><span class="s2">./prod/**/*</span><span class="dl">"</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">deploy</span><span class="p">({</span> 
+  <span class="nx">gulp</span><span class="p">.</span><span class="nf">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">deploy</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nf">src</span><span class="p">(</span><span class="dl">"</span><span class="s2">./prod/**/*</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nf">pipe</span><span class="p">(</span><span class="nf">deploy</span><span class="p">({</span> 
         <span class="na">remoteUrl</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/your_github_username_here/your_github_username_here.github.io.git</span><span class="dl">"</span><span class="p">,</span>
         <span class="na">branch</span><span class="p">:</span> <span class="dl">"</span><span class="s2">master</span><span class="dl">"</span>
       <span class="p">}))</span>

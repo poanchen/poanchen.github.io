@@ -177,15 +177,15 @@ Immutable object - The object cannot be changed once created.</p>
 
 <p>Here is an example of mutating your original object in JavaScript,</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">function</span> <span class="nx">mutation</span><span class="p">(</span><span class="nx">originalArray</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">function</span> <span class="nf">mutation</span><span class="p">(</span><span class="nx">originalArray</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// directly mutating/modifying the original array</span>
     <span class="nx">originalArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">new value</span><span class="dl">"</span><span class="p">;</span>
     <span class="k">return</span> <span class="nx">originalArray</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">some value</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">another value</span><span class="dl">"</span><span class="p">];</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Return from mutation </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">mutation</span><span class="p">(</span><span class="nx">array</span><span class="p">));</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Array: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">array</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> (original array has been altered).</span><span class="dl">"</span><span class="p">);</span></code></pre></figure>
+  <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Return from mutation </span><span class="dl">"</span> <span class="o">+</span> <span class="nf">mutation</span><span class="p">(</span><span class="nx">array</span><span class="p">));</span>
+  <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Array: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">array</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> (original array has been altered).</span><span class="dl">"</span><span class="p">);</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/06/13/mutable-vs-Immutable-object-in-JavaScript/mutation-sample.js" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -193,7 +193,7 @@ Immutable object - The object cannot be changed once created.</p>
 
 <p>Here is an example of immutable-object-style coding in JavaScript,</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">function</span> <span class="nx">immutable</span><span class="p">(</span><span class="nx">originalArray</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">function</span> <span class="nf">immutable</span><span class="p">(</span><span class="nx">originalArray</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Instead of mutating/modifying the original array,</span>
     <span class="c1">// we first make a copy of the original array</span>
     <span class="c1">// In this way, the original array stay unchanged.</span>
@@ -203,8 +203,8 @@ Immutable object - The object cannot be changed once created.</p>
   <span class="p">}</span>
 
   <span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">some value</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">another value</span><span class="dl">"</span><span class="p">];</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Return from immutable </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">immutable</span><span class="p">(</span><span class="nx">array</span><span class="p">));</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Array: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">array</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> (original array stay unchanged).</span><span class="dl">"</span><span class="p">);</span></code></pre></figure>
+  <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Return from immutable </span><span class="dl">"</span> <span class="o">+</span> <span class="nf">immutable</span><span class="p">(</span><span class="nx">array</span><span class="p">));</span>
+  <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Array: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">array</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> (original array stay unchanged).</span><span class="dl">"</span><span class="p">);</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2017/06/13/mutable-vs-Immutable-object-in-JavaScript/immutable-sample.js" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 

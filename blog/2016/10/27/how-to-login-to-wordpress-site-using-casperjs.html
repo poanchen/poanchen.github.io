@@ -173,8 +173,8 @@
 
 <h2 id="casperjs-code-to-start-with">CasperJS code to start with</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpage</span><span class="dl">'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
-  <span class="kd">var</span> <span class="nx">casper</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">casper</span><span class="dl">'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpage</span><span class="dl">'</span><span class="p">).</span><span class="nf">create</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">casper</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">casper</span><span class="dl">'</span><span class="p">).</span><span class="nf">create</span><span class="p">();</span>
 
   <span class="kd">var</span> <span class="nx">urlBeforeLoggedIn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/wp-login.php</span><span class="dl">"</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">urlAfterLoggedIn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/wp-admin/</span><span class="dl">"</span><span class="p">;</span></code></pre></figure>
@@ -183,14 +183,14 @@
 
 <h2 id="casperjs-code-to-open-a-site">CasperJS code to open a site</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="nx">urlBeforeLoggedIn</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span><span class="nx">urlBeforeLoggedIn</span><span class="p">);</span></code></pre></figure>
 
 <p>This simply means that CasperJS start by going to this specific site. Then, now we need to login to the site. With CasperJS, we can simply achieve it by doing,</p>
 
 <h2 id="casperjs-code-to-submit-a-post-form">CasperJS code to submit a POST form</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForSelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">casper</span><span class="p">.</span><span class="nx">fillSelectors</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nf">waitForSelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">casper</span><span class="p">.</span><span class="nf">fillSelectors</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
       <span class="dl">'</span><span class="s1">input[name="log"]</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put_your_username_or_email_address_here</span><span class="dl">'</span><span class="p">,</span>
       <span class="dl">'</span><span class="s1">input[name="pwd"]</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put_your_password_here</span><span class="dl">'</span>
     <span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
@@ -200,44 +200,44 @@
 
 <h2 id="casperjs-code-to-wait-for-the-url-to-redirect-to-logged-in-area">CasperJS code to wait for the url to redirect to logged in area</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForUrl</span><span class="p">(</span><span class="nx">urlAfterLoggedIn</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">echo</span><span class="p">(</span><span class="dl">"</span><span class="s2">Now, with correct username and password, you should be signed in to the site when you see this.</span><span class="dl">"</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nf">waitForUrl</span><span class="p">(</span><span class="nx">urlAfterLoggedIn</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">echo</span><span class="p">(</span><span class="dl">"</span><span class="s2">Now, with correct username and password, you should be signed in to the site when you see this.</span><span class="dl">"</span><span class="p">);</span>
   <span class="p">});</span></code></pre></figure>
 
 <p>When you run this CasperJS script, and see the message printed. That means that you have successfully signed in with CasperJS. To prove that we are signed in, I will be taking screenshot using the built-in function in CasperJS.</p>
 
 <h2 id="casperjs-code-to-screenshot-where-we-are-in-casperjs-script">CasperJS code to screenshot where we are in CasperJS script</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForUrl</span><span class="p">(</span><span class="nx">urlAfterLoggedIn</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">viewport</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">1080</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="dl">'</span><span class="s1">./screenshot.png</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">width</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">});</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">casper</span><span class="p">.</span><span class="nf">waitForUrl</span><span class="p">(</span><span class="nx">urlAfterLoggedIn</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">viewport</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">1080</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">capture</span><span class="p">(</span><span class="dl">'</span><span class="s1">./screenshot.png</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">width</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">});</span>
   <span class="p">});</span></code></pre></figure>
 
 <p>When this script is completed, you should see an image saved in where you put your CasperJS script.</p>
 
 <h2 id="complete-code-for-casperjs-script-that-signin-to-a-wordpress-site-then-take-a-screenshot-when-it-is-in">Complete code for CasperJS script that signin to a WordPress site, then take a screenshot when it is in</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpage</span><span class="dl">'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
-  <span class="kd">var</span> <span class="nx">casper</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">casper</span><span class="dl">'</span><span class="p">).</span><span class="nx">create</span><span class="p">();</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpage</span><span class="dl">'</span><span class="p">).</span><span class="nf">create</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">casper</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">casper</span><span class="dl">'</span><span class="p">).</span><span class="nf">create</span><span class="p">();</span>
 
   <span class="kd">var</span> <span class="nx">urlBeforeLoggedIn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/wp-login.php</span><span class="dl">"</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">urlAfterLoggedIn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.jenrenalcare.com/wp-admin/</span><span class="dl">"</span><span class="p">;</span>
 
-  <span class="nx">casper</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="nx">urlBeforeLoggedIn</span><span class="p">);</span>
+  <span class="nx">casper</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span><span class="nx">urlBeforeLoggedIn</span><span class="p">);</span>
 
-  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForSelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">casper</span><span class="p">.</span><span class="nx">fillSelectors</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">casper</span><span class="p">.</span><span class="nf">waitForSelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">casper</span><span class="p">.</span><span class="nf">fillSelectors</span><span class="p">(</span><span class="dl">'</span><span class="s1">form[method="post"]</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
       <span class="dl">'</span><span class="s1">input[name="log"]</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put_your_username_or_email_address_here</span><span class="dl">'</span><span class="p">,</span>
       <span class="dl">'</span><span class="s1">input[name="pwd"]</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put_your_password_here</span><span class="dl">'</span>
     <span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
   <span class="p">});</span>
 
-  <span class="nx">casper</span><span class="p">.</span><span class="nx">waitForUrl</span><span class="p">(</span><span class="nx">urlAfterLoggedIn</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">viewport</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">1080</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="dl">'</span><span class="s1">./screenshot.png</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">width</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">});</span>
+  <span class="nx">casper</span><span class="p">.</span><span class="nf">waitForUrl</span><span class="p">(</span><span class="nx">urlAfterLoggedIn</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">viewport</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">1080</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">capture</span><span class="p">(</span><span class="dl">'</span><span class="s1">./screenshot.png</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="na">width</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">1080</span><span class="p">});</span>
   <span class="p">});</span>
 
-  <span class="nx">casper</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span></code></pre></figure>
+  <span class="nx">casper</span><span class="p">.</span><span class="nf">run</span><span class="p">();</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/27/how-to-login-to-wordpress-site-using-casperjs/loginToWordpressSite.js" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 

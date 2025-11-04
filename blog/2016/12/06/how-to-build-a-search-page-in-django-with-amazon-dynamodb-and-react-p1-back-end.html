@@ -179,12 +179,12 @@
 
 <h2 id="add-search-url-into-the-urlspy">Add search url into the urls.py</h2>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">from</span> <span class="n">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
 
   <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># http://127.0.0.1:8000/search
 </span>    <span class="c1"># http://127.0.0.1:8000/search/
-</span>    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s">'^search/?'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">search</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'search'</span><span class="p">),</span>
+</span>    <span class="nf">url</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">^search/?</span><span class="sh">'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">search</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">search</span><span class="sh">'</span><span class="p">),</span>
   <span class="p">]</span></code></pre></figure>
 
 <p>Then, we need to create a HTML page for search so that the search method would know which page it should render. In Django, you may simply add the HTML page in the folder named templates. If you are not familiar with templates in Django, be sure to check out this <a href="https://docs.djangoproject.com/en/1.10/topics/templates/">site</a>.</p>
@@ -197,17 +197,17 @@
 
 <h2 id="told-the-viewspy-to-render-the-searchhtml-page">Told the views.py to render the search.html page</h2>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
-  <span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">loader</span>
-  <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">from</span> <span class="n">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+  <span class="kn">from</span> <span class="n">django.template</span> <span class="kn">import</span> <span class="n">loader</span>
+  <span class="kn">from</span> <span class="n">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
 
   <span class="c1"># http://127.0.0.1:8000/search
 </span>  <span class="c1"># http://127.0.0.1:8000/search/
 </span>  <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">template</span> <span class="o">=</span> <span class="n">loader</span><span class="p">.</span><span class="n">get_template</span><span class="p">(</span><span class="s">'search.html'</span><span class="p">)</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="n">loader</span><span class="p">.</span><span class="nf">get_template</span><span class="p">(</span><span class="sh">'</span><span class="s">search.html</span><span class="sh">'</span><span class="p">)</span>
     <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">template</span><span class="p">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">request</span><span class="p">))</span></code></pre></figure>
+    <span class="k">return</span> <span class="nc">HttpResponse</span><span class="p">(</span><span class="n">template</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">request</span><span class="p">))</span></code></pre></figure>
 
 <p>Try go to the http://127.0.0.1:8000/search and see if you can see the Hello there! If you can see it, that means that you did it correctly. If you cannot, try to turn on your debug mode and see what went wrong! Next, in order for the search page to work, we need to retrieve the value of the GET parameter from the requested url. For example, say you need to find the billionaire whose net worth is under 50 Billion, and the requested url might look something like this, http://127.0.0.1:8000/search?net_worth_under=50. Or you are interested in billionaire who is currently located in New York, then the query might look something like this, http://127.0.0.1:8000/search?current_residence=New York, NY. Here is what the method might look like in order to get the values of GET parameters.</p>
 
@@ -215,13 +215,13 @@
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">retrieve_all_get_parameters</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">param</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">net_worth_under</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'net_worth_under'</span><span class="p">)</span>
-    <span class="n">current_residence</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'current_residence'</span><span class="p">)</span>
+    <span class="n">net_worth_under</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">net_worth_under</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">current_residence</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">current_residence</span><span class="sh">'</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">net_worth_under</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">net_worth_under</span> <span class="o">!=</span> <span class="s">''</span><span class="p">:</span>
-      <span class="n">param</span><span class="p">[</span><span class="s">'net_worth_under'</span><span class="p">]</span> <span class="o">=</span> <span class="n">net_worth_under</span>
-    <span class="k">if</span> <span class="n">current_residence</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">current_residence</span> <span class="o">!=</span> <span class="s">''</span><span class="p">:</span>
-      <span class="n">param</span><span class="p">[</span><span class="s">'current_residence'</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_residence</span>
+    <span class="k">if</span> <span class="n">net_worth_under</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">net_worth_under</span> <span class="o">!=</span> <span class="sh">''</span><span class="p">:</span>
+      <span class="n">param</span><span class="p">[</span><span class="sh">'</span><span class="s">net_worth_under</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">net_worth_under</span>
+    <span class="k">if</span> <span class="n">current_residence</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">current_residence</span> <span class="o">!=</span> <span class="sh">''</span><span class="p">:</span>
+      <span class="n">param</span><span class="p">[</span><span class="sh">'</span><span class="s">current_residence</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_residence</span>
 
     <span class="k">return</span> <span class="n">param</span></code></pre></figure>
 
@@ -229,17 +229,17 @@
 
 <h2 id="check-to-see-if-the-method-retrieve_all_get_parameters-is-working-properly">Check to see if the method retrieve_all_get_parameters is working properly</h2>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
-  <span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">loader</span>
-  <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">from</span> <span class="n">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+  <span class="kn">from</span> <span class="n">django.template</span> <span class="kn">import</span> <span class="n">loader</span>
+  <span class="kn">from</span> <span class="n">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
 
   <span class="c1"># http://127.0.0.1:8000/search
 </span>  <span class="c1"># http://127.0.0.1:8000/search/
 </span>  <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">template</span> <span class="o">=</span> <span class="n">loader</span><span class="p">.</span><span class="n">get_template</span><span class="p">(</span><span class="s">'search.html'</span><span class="p">)</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="n">retrieve_all_get_parameters</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="n">loader</span><span class="p">.</span><span class="nf">get_template</span><span class="p">(</span><span class="sh">'</span><span class="s">search.html</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nf">retrieve_all_get_parameters</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">template</span><span class="p">.</span><span class="n">render</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">request</span><span class="p">))</span></code></pre></figure>
+    <span class="k">return</span> <span class="nc">HttpResponse</span><span class="p">(</span><span class="n">template</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">request</span><span class="p">))</span></code></pre></figure>
 
 <h2 id="searchhtml">search.html</h2>
 
@@ -252,15 +252,15 @@
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">get_list_of_billionaires</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
-      <span class="n">table</span> <span class="o">=</span> <span class="n">dynamodb</span><span class="p">.</span><span class="n">Table</span><span class="p">(</span><span class="s">'put_your_amazon_dynamodb_table_name_here'</span><span class="p">)</span>
+      <span class="n">table</span> <span class="o">=</span> <span class="n">dynamodb</span><span class="p">.</span><span class="nc">Table</span><span class="p">(</span><span class="sh">'</span><span class="s">put_your_amazon_dynamodb_table_name_here</span><span class="sh">'</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">botocore</span><span class="p">.</span><span class="n">exceptions</span><span class="p">.</span><span class="n">ClientError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
       <span class="c1"># http://stackoverflow.com/questions/33068055/boto3-python-and-how-to-handle-errors
-</span>      <span class="k">return</span> <span class="s">'failed'</span>
+</span>      <span class="k">return</span> <span class="sh">'</span><span class="s">failed</span><span class="sh">'</span>
     <span class="k">else</span><span class="p">:</span>
-      <span class="n">response</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="n">scan</span><span class="p">()</span>
-      <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="s">'ResponseMetadata'</span><span class="p">][</span><span class="s">'HTTPStatusCode'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+      <span class="n">response</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">scan</span><span class="p">()</span>
+      <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="sh">'</span><span class="s">ResponseMetadata</span><span class="sh">'</span><span class="p">][</span><span class="sh">'</span><span class="s">HTTPStatusCode</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
-          <span class="n">item</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s">'Item'</span><span class="p">]</span>
+          <span class="n">item</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="sh">'</span><span class="s">Item</span><span class="sh">'</span><span class="p">]</span>
         <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
           <span class="k">return</span> <span class="bp">None</span>
         <span class="k">return</span> <span class="n">item</span></code></pre></figure>
@@ -268,14 +268,14 @@
 <h2 id="in-method-search">In method search,</h2>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">template</span> <span class="o">=</span> <span class="n">loader</span><span class="p">.</span><span class="n">get_template</span><span class="p">(</span><span class="s">'search.html'</span><span class="p">)</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="n">retrieve_all_get_parameters</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-    <span class="n">billionaires</span> <span class="o">=</span> <span class="n">get_list_of_billionaires</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="n">loader</span><span class="p">.</span><span class="nf">get_template</span><span class="p">(</span><span class="sh">'</span><span class="s">search.html</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nf">retrieve_all_get_parameters</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="n">billionaires</span> <span class="o">=</span> <span class="nf">get_list_of_billionaires</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
     <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="s">'billionaires'</span> <span class="p">:</span> <span class="n">billionaires</span>
+      <span class="sh">'</span><span class="s">billionaires</span><span class="sh">'</span> <span class="p">:</span> <span class="n">billionaires</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">template</span><span class="p">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">request</span><span class="p">))</span></code></pre></figure>
+    <span class="k">return</span> <span class="nc">HttpResponse</span><span class="p">(</span><span class="n">template</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">request</span><span class="p">))</span></code></pre></figure>
 
 <h2 id="in-searchhtml">In search.html,</h2>
 
@@ -304,17 +304,17 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
     <span class="n">expression_attribute_values</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="k">try</span><span class="p">:</span>
-      <span class="n">net_worth_under</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s">'net_worth_under'</span><span class="p">]</span>
-      <span class="n">filter_expression</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'(#net_worth &lt;= :net_worth_under)'</span><span class="p">)</span>
-      <span class="n">expression_attribute_names</span><span class="p">[</span><span class="s">'#net_worth'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'net_worth'</span>
-      <span class="n">expression_attribute_values</span><span class="p">[</span><span class="s">':net_worth_under'</span><span class="p">]</span> <span class="o">=</span> <span class="n">net_worth_under</span>
+      <span class="n">net_worth_under</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="sh">'</span><span class="s">net_worth_under</span><span class="sh">'</span><span class="p">]</span>
+      <span class="n">filter_expression</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sh">'</span><span class="s">(#net_worth &lt;= :net_worth_under)</span><span class="sh">'</span><span class="p">)</span>
+      <span class="n">expression_attribute_names</span><span class="p">[</span><span class="sh">'</span><span class="s">#net_worth</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">net_worth</span><span class="sh">'</span>
+      <span class="n">expression_attribute_values</span><span class="p">[</span><span class="sh">'</span><span class="s">:net_worth_under</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">net_worth_under</span>
     <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
       <span class="k">pass</span>
     <span class="k">try</span><span class="p">:</span>
-      <span class="n">current_residence</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s">'current_residence'</span><span class="p">]</span>
-      <span class="n">filter_expression</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'(#l = :current_residence)'</span><span class="p">)</span>
-      <span class="n">expression_attribute_names</span><span class="p">[</span><span class="s">'#l'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'current_location'</span>
-      <span class="n">expression_attribute_values</span><span class="p">[</span><span class="s">':current_residence'</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_residence</span>
+      <span class="n">current_residence</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="sh">'</span><span class="s">current_residence</span><span class="sh">'</span><span class="p">]</span>
+      <span class="n">filter_expression</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sh">'</span><span class="s">(#l = :current_residence)</span><span class="sh">'</span><span class="p">)</span>
+      <span class="n">expression_attribute_names</span><span class="p">[</span><span class="sh">'</span><span class="s">#l</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">current_location</span><span class="sh">'</span>
+      <span class="n">expression_attribute_values</span><span class="p">[</span><span class="sh">'</span><span class="s">:current_residence</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_residence</span>
     <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
       <span class="k">pass</span></code></pre></figure>
 
@@ -324,13 +324,13 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">filter_expression_to_string</span><span class="p">(</span><span class="n">filter_expression</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">filter_expression</span><span class="p">:</span>
-      <span class="k">return</span> <span class="s">''</span>
-    <span class="n">length_of_filter_expression</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">filter_expression</span><span class="p">)</span>
-    <span class="n">filter_expression_to_string</span> <span class="o">=</span> <span class="s">''</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length_of_filter_expression</span><span class="p">):</span>
+      <span class="k">return</span> <span class="sh">''</span>
+    <span class="n">length_of_filter_expression</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">filter_expression</span><span class="p">)</span>
+    <span class="n">filter_expression_to_string</span> <span class="o">=</span> <span class="sh">''</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">length_of_filter_expression</span><span class="p">):</span>
       <span class="n">filter_expression_to_string</span> <span class="o">+=</span> <span class="n">filter_expression</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
       <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">!=</span> <span class="n">length_of_filter_expression</span><span class="p">:</span>
-        <span class="n">filter_expression_to_string</span> <span class="o">+=</span> <span class="s">' and '</span>
+        <span class="n">filter_expression_to_string</span> <span class="o">+=</span> <span class="sh">'</span><span class="s"> and </span><span class="sh">'</span>
     <span class="k">return</span> <span class="n">filter_expression_to_string</span></code></pre></figure>
 
 <p>Once we have this, we can easily do the filtering part by doing this.</p>
@@ -338,25 +338,25 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
 <h2 id="in-method-get_list_of_billionaires-1">In method get_list_of_billionaires,</h2>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">try</span><span class="p">:</span>
-    <span class="n">table</span> <span class="o">=</span> <span class="n">dynamodb</span><span class="p">.</span><span class="n">Table</span><span class="p">(</span><span class="s">'put_your_amazon_dynamodb_table_name_here'</span><span class="p">)</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">dynamodb</span><span class="p">.</span><span class="nc">Table</span><span class="p">(</span><span class="sh">'</span><span class="s">put_your_amazon_dynamodb_table_name_here</span><span class="sh">'</span><span class="p">)</span>
   <span class="k">except</span> <span class="n">botocore</span><span class="p">.</span><span class="n">exceptions</span><span class="p">.</span><span class="n">ClientError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="c1"># http://stackoverflow.com/questions/33068055/boto3-python-and-how-to-handle-errors
-</span>    <span class="k">return</span> <span class="s">'failed'</span>
+</span>    <span class="k">return</span> <span class="sh">'</span><span class="s">failed</span><span class="sh">'</span>
   <span class="k">else</span><span class="p">:</span>
-    <span class="n">filtered_string</span> <span class="o">=</span> <span class="n">filter_expression_to_string</span><span class="p">(</span><span class="n">filter_expression</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">filtered_string</span> <span class="o">!=</span> <span class="s">''</span> <span class="ow">and</span> <span class="n">expression_attribute_names</span> <span class="ow">and</span> <span class="n">expression_attribute_values</span><span class="p">:</span>
-      <span class="n">response</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="n">scan</span><span class="p">(</span>
+    <span class="n">filtered_string</span> <span class="o">=</span> <span class="nf">filter_expression_to_string</span><span class="p">(</span><span class="n">filter_expression</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">filtered_string</span> <span class="o">!=</span> <span class="sh">''</span> <span class="ow">and</span> <span class="n">expression_attribute_names</span> <span class="ow">and</span> <span class="n">expression_attribute_values</span><span class="p">:</span>
+      <span class="n">response</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">scan</span><span class="p">(</span>
         <span class="n">FilterExpression</span> <span class="o">=</span> <span class="n">filtered_string</span><span class="p">,</span>
         <span class="n">ExpressionAttributeNames</span> <span class="o">=</span> <span class="n">expression_attribute_names</span><span class="p">,</span>
         <span class="n">ExpressionAttributeValues</span> <span class="o">=</span> <span class="n">expression_attribute_values</span><span class="p">,</span>
       <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-      <span class="n">response</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="n">scan</span><span class="p">(</span>
-        <span class="n">ReturnConsumedCapacity</span> <span class="o">=</span> <span class="s">'TOTAL'</span><span class="p">,</span>
+      <span class="n">response</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">scan</span><span class="p">(</span>
+        <span class="n">ReturnConsumedCapacity</span> <span class="o">=</span> <span class="sh">'</span><span class="s">TOTAL</span><span class="sh">'</span><span class="p">,</span>
       <span class="p">)</span>
-    <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="s">'ResponseMetadata'</span><span class="p">][</span><span class="s">'HTTPStatusCode'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="sh">'</span><span class="s">ResponseMetadata</span><span class="sh">'</span><span class="p">][</span><span class="sh">'</span><span class="s">HTTPStatusCode</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
       <span class="k">try</span><span class="p">:</span>
-        <span class="n">item</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s">'Item'</span><span class="p">]</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="sh">'</span><span class="s">Item</span><span class="sh">'</span><span class="p">]</span>
       <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">None</span>
       <span class="k">return</span> <span class="n">item</span></code></pre></figure>
@@ -377,43 +377,43 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
 
 <h2 id="full-code-for-urlspy">Full code for urls.py</h2>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">from</span> <span class="n">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
 
   <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># http://127.0.0.1:8000/search
 </span>    <span class="c1"># http://127.0.0.1:8000/search/
-</span>    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s">'^search/?'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">search</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'search'</span><span class="p">),</span>
+</span>    <span class="nf">url</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">^search/?</span><span class="sh">'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">search</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">search</span><span class="sh">'</span><span class="p">),</span>
   <span class="p">]</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/urls.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
 <h2 id="full-code-for-viewspy">Full code for views.py</h2>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
-  <span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">loader</span>
-  <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
-  <span class="kn">from</span> <span class="nn">boto3.dynamodb.conditions</span> <span class="kn">import</span> <span class="n">Key</span><span class="p">,</span> <span class="n">Attr</span>
-  <span class="kn">import</span> <span class="nn">boto3</span>
-  <span class="kn">import</span> <span class="nn">botocore</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">from</span> <span class="n">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+  <span class="kn">from</span> <span class="n">django.template</span> <span class="kn">import</span> <span class="n">loader</span>
+  <span class="kn">from</span> <span class="n">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+  <span class="kn">from</span> <span class="n">boto3.dynamodb.conditions</span> <span class="kn">import</span> <span class="n">Key</span><span class="p">,</span> <span class="n">Attr</span>
+  <span class="kn">import</span> <span class="n">boto3</span>
+  <span class="kn">import</span> <span class="n">botocore</span>
 
   <span class="c1"># dynamodb configuration
-</span>  <span class="n">dynamodb</span> <span class="o">=</span> <span class="n">boto3</span><span class="p">.</span><span class="n">resource</span><span class="p">(</span>
-    <span class="s">'dynamodb'</span><span class="p">,</span>
-    <span class="n">aws_access_key_id</span><span class="o">=</span><span class="s">'put_your_aws_access_key_here'</span><span class="p">,</span>
-    <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="s">'put_your_aws_secret_access_key_here'</span><span class="p">,</span>
-    <span class="n">region_name</span><span class="o">=</span><span class="s">'puy_your_amazon_dynamodb_region_here'</span><span class="p">)</span>
+</span>  <span class="n">dynamodb</span> <span class="o">=</span> <span class="n">boto3</span><span class="p">.</span><span class="nf">resource</span><span class="p">(</span>
+    <span class="sh">'</span><span class="s">dynamodb</span><span class="sh">'</span><span class="p">,</span>
+    <span class="n">aws_access_key_id</span><span class="o">=</span><span class="sh">'</span><span class="s">put_your_aws_access_key_here</span><span class="sh">'</span><span class="p">,</span>
+    <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="sh">'</span><span class="s">put_your_aws_secret_access_key_here</span><span class="sh">'</span><span class="p">,</span>
+    <span class="n">region_name</span><span class="o">=</span><span class="sh">'</span><span class="s">puy_your_amazon_dynamodb_region_here</span><span class="sh">'</span><span class="p">)</span>
 
   <span class="c1"># http://127.0.0.1:8000/search
 </span>  <span class="c1"># http://127.0.0.1:8000/search/
 </span>  <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">template</span> <span class="o">=</span> <span class="n">loader</span><span class="p">.</span><span class="n">get_template</span><span class="p">(</span><span class="s">'search.html'</span><span class="p">)</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="n">retrieve_all_get_parameters</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-    <span class="n">billionaires</span> <span class="o">=</span> <span class="n">get_list_of_billionaires</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="n">loader</span><span class="p">.</span><span class="nf">get_template</span><span class="p">(</span><span class="sh">'</span><span class="s">search.html</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nf">retrieve_all_get_parameters</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="n">billionaires</span> <span class="o">=</span> <span class="nf">get_list_of_billionaires</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
     <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="s">'billionaires'</span> <span class="p">:</span> <span class="n">billionaires</span>
+      <span class="sh">'</span><span class="s">billionaires</span><span class="sh">'</span> <span class="p">:</span> <span class="n">billionaires</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">template</span><span class="p">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">request</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nc">HttpResponse</span><span class="p">(</span><span class="n">template</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">request</span><span class="p">))</span>
 
   <span class="k">def</span> <span class="nf">get_list_of_billionaires</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
     <span class="n">filter_expression</span> <span class="o">=</span> <span class="p">[]</span>
@@ -421,64 +421,64 @@ It seems to be working fine. Now, let’s work on the filtering part in the sear
     <span class="n">expression_attribute_values</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="k">try</span><span class="p">:</span>
-      <span class="n">net_worth_under</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s">'net_worth_under'</span><span class="p">]</span>
-      <span class="n">filter_expression</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'(#net_worth &lt;= :net_worth_under)'</span><span class="p">)</span>
-      <span class="n">expression_attribute_names</span><span class="p">[</span><span class="s">'#net_worth'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'net_worth'</span>
-      <span class="n">expression_attribute_values</span><span class="p">[</span><span class="s">':net_worth_under'</span><span class="p">]</span> <span class="o">=</span> <span class="n">net_worth_under</span>
+      <span class="n">net_worth_under</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="sh">'</span><span class="s">net_worth_under</span><span class="sh">'</span><span class="p">]</span>
+      <span class="n">filter_expression</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sh">'</span><span class="s">(#net_worth &lt;= :net_worth_under)</span><span class="sh">'</span><span class="p">)</span>
+      <span class="n">expression_attribute_names</span><span class="p">[</span><span class="sh">'</span><span class="s">#net_worth</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">net_worth</span><span class="sh">'</span>
+      <span class="n">expression_attribute_values</span><span class="p">[</span><span class="sh">'</span><span class="s">:net_worth_under</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">net_worth_under</span>
     <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
       <span class="k">pass</span>
     <span class="k">try</span><span class="p">:</span>
-      <span class="n">current_residence</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s">'current_residence'</span><span class="p">]</span>
-      <span class="n">filter_expression</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'(#l = :current_residence)'</span><span class="p">)</span>
-      <span class="n">expression_attribute_names</span><span class="p">[</span><span class="s">'#l'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'current_location'</span>
-      <span class="n">expression_attribute_values</span><span class="p">[</span><span class="s">':current_residence'</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_residence</span>
+      <span class="n">current_residence</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="sh">'</span><span class="s">current_residence</span><span class="sh">'</span><span class="p">]</span>
+      <span class="n">filter_expression</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sh">'</span><span class="s">(#l = :current_residence)</span><span class="sh">'</span><span class="p">)</span>
+      <span class="n">expression_attribute_names</span><span class="p">[</span><span class="sh">'</span><span class="s">#l</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">current_location</span><span class="sh">'</span>
+      <span class="n">expression_attribute_values</span><span class="p">[</span><span class="sh">'</span><span class="s">:current_residence</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_residence</span>
     <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
       <span class="k">pass</span>
     <span class="k">try</span><span class="p">:</span>
-      <span class="n">table</span> <span class="o">=</span> <span class="n">dynamodb</span><span class="p">.</span><span class="n">Table</span><span class="p">(</span><span class="s">'put_your_amazon_dynamodb_table_name_here'</span><span class="p">)</span>
+      <span class="n">table</span> <span class="o">=</span> <span class="n">dynamodb</span><span class="p">.</span><span class="nc">Table</span><span class="p">(</span><span class="sh">'</span><span class="s">put_your_amazon_dynamodb_table_name_here</span><span class="sh">'</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">botocore</span><span class="p">.</span><span class="n">exceptions</span><span class="p">.</span><span class="n">ClientError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
       <span class="c1"># http://stackoverflow.com/questions/33068055/boto3-python-and-how-to-handle-errors
-</span>      <span class="k">return</span> <span class="s">'failed'</span>
+</span>      <span class="k">return</span> <span class="sh">'</span><span class="s">failed</span><span class="sh">'</span>
     <span class="k">else</span><span class="p">:</span>
-      <span class="n">filtered_string</span> <span class="o">=</span> <span class="n">filter_expression_to_string</span><span class="p">(</span><span class="n">filter_expression</span><span class="p">)</span>
-      <span class="k">if</span> <span class="n">filtered_string</span> <span class="o">!=</span> <span class="s">''</span> <span class="ow">and</span> <span class="n">expression_attribute_names</span> <span class="ow">and</span> <span class="n">expression_attribute_values</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="n">scan</span><span class="p">(</span>
+      <span class="n">filtered_string</span> <span class="o">=</span> <span class="nf">filter_expression_to_string</span><span class="p">(</span><span class="n">filter_expression</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">filtered_string</span> <span class="o">!=</span> <span class="sh">''</span> <span class="ow">and</span> <span class="n">expression_attribute_names</span> <span class="ow">and</span> <span class="n">expression_attribute_values</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">scan</span><span class="p">(</span>
           <span class="n">FilterExpression</span> <span class="o">=</span> <span class="n">filtered_string</span><span class="p">,</span>
           <span class="n">ExpressionAttributeNames</span> <span class="o">=</span> <span class="n">expression_attribute_names</span><span class="p">,</span>
           <span class="n">ExpressionAttributeValues</span> <span class="o">=</span> <span class="n">expression_attribute_values</span><span class="p">,</span>
         <span class="p">)</span>
       <span class="k">else</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="n">scan</span><span class="p">(</span>
-          <span class="n">ReturnConsumedCapacity</span> <span class="o">=</span> <span class="s">'TOTAL'</span><span class="p">,</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">scan</span><span class="p">(</span>
+          <span class="n">ReturnConsumedCapacity</span> <span class="o">=</span> <span class="sh">'</span><span class="s">TOTAL</span><span class="sh">'</span><span class="p">,</span>
         <span class="p">)</span>
-      <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="s">'ResponseMetadata'</span><span class="p">][</span><span class="s">'HTTPStatusCode'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="sh">'</span><span class="s">ResponseMetadata</span><span class="sh">'</span><span class="p">][</span><span class="sh">'</span><span class="s">HTTPStatusCode</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
-          <span class="n">item</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s">'Item'</span><span class="p">]</span>
+          <span class="n">item</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="sh">'</span><span class="s">Item</span><span class="sh">'</span><span class="p">]</span>
         <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
           <span class="k">return</span> <span class="bp">None</span>
         <span class="k">return</span> <span class="n">item</span>
 
   <span class="k">def</span> <span class="nf">retrieve_all_get_parameters</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">param</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">net_worth_under</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'net_worth_under'</span><span class="p">)</span>
-    <span class="n">current_residence</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'current_residence'</span><span class="p">)</span>
+    <span class="n">net_worth_under</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">net_worth_under</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">current_residence</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">current_residence</span><span class="sh">'</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">net_worth_under</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">net_worth_under</span> <span class="o">!=</span> <span class="s">''</span><span class="p">:</span>
-      <span class="n">param</span><span class="p">[</span><span class="s">'net_worth_under'</span><span class="p">]</span> <span class="o">=</span> <span class="n">net_worth_under</span>
-    <span class="k">if</span> <span class="n">current_residence</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">current_residence</span> <span class="o">!=</span> <span class="s">''</span><span class="p">:</span>
-      <span class="n">param</span><span class="p">[</span><span class="s">'current_residence'</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_residence</span>
+    <span class="k">if</span> <span class="n">net_worth_under</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">net_worth_under</span> <span class="o">!=</span> <span class="sh">''</span><span class="p">:</span>
+      <span class="n">param</span><span class="p">[</span><span class="sh">'</span><span class="s">net_worth_under</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">net_worth_under</span>
+    <span class="k">if</span> <span class="n">current_residence</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">current_residence</span> <span class="o">!=</span> <span class="sh">''</span><span class="p">:</span>
+      <span class="n">param</span><span class="p">[</span><span class="sh">'</span><span class="s">current_residence</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_residence</span>
 
     <span class="k">return</span> <span class="n">param</span>
 
   <span class="k">def</span> <span class="nf">filter_expression_to_string</span><span class="p">(</span><span class="n">filter_expression</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">filter_expression</span><span class="p">:</span>
-      <span class="k">return</span> <span class="s">''</span>
-    <span class="n">length_of_filter_expression</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">filter_expression</span><span class="p">)</span>
-    <span class="n">filter_expression_to_string</span> <span class="o">=</span> <span class="s">''</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length_of_filter_expression</span><span class="p">):</span>
+      <span class="k">return</span> <span class="sh">''</span>
+    <span class="n">length_of_filter_expression</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">filter_expression</span><span class="p">)</span>
+    <span class="n">filter_expression_to_string</span> <span class="o">=</span> <span class="sh">''</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">length_of_filter_expression</span><span class="p">):</span>
       <span class="n">filter_expression_to_string</span> <span class="o">+=</span> <span class="n">filter_expression</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
       <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">!=</span> <span class="n">length_of_filter_expression</span><span class="p">:</span>
-        <span class="n">filter_expression_to_string</span> <span class="o">+=</span> <span class="s">' and '</span>
+        <span class="n">filter_expression_to_string</span> <span class="o">+=</span> <span class="sh">'</span><span class="s"> and </span><span class="sh">'</span>
     <span class="k">return</span> <span class="n">filter_expression_to_string</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/12/06/how-to-build-a-search-page-in-django-with-amazon-dynamodb-and-react-p1-back-end/views.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
